@@ -1,13 +1,22 @@
 <script lang="ts">
-  export let name: string;
   import { bedVariants } from "./data/bedVariants";
   import { configStore } from "./configStore";
-  import { sidePanels } from "./data/sidePanels";
   import Select from "./Select/Select.svelte";
+  import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
   import IconHeadboard from "./assets/icon-headboard.svg";
   import IconColor from "./assets/icon-color.svg";
-  import IconAddons from "./assets/icon-addons.svg";
-  import Radio from "./Select/Radio.svelte";
+  import IconSafety from "./assets/icon-safety.svg";
+  import IconSidepanels from "./assets/icon-sidepanels.svg";
+  import IconAccessory from "./assets/icon-accessory.svg";
+  import CustomizationBlock from "./CustomizationBlock.svelte";
+  import Preview from "./Preview.svelte";
+  import SelectAssisBar from "./Select/SelectAssistBar.svelte";
+  import SelectAccessories from "./Select/SelectAccessories.svelte";
+  import SelectSide from "./Select/SelectSide.svelte";
+
+  const availableColors = bedVariants[$configStore.variant].map(
+    (item) => item.title
+  );
 </script>
 
 <main>
@@ -21,56 +30,7 @@
   </select> -->
   <div class="customization-container">
     <div class="image-frame-container">
-      <div class="image-frame">
-        {#if $configStore.liftingPole === "true"}
-          <img
-            class="image-bed-variant"
-            src={`/images/accessory/Accessory - Lifting Pole - Part 1.png`}
-            alt={`bedding`}
-          />
-        {/if}
-        <img
-          class="image-bed-variant"
-          src={`/images/base/bedding.png`}
-          alt={`bedding`}
-        />
-        <img
-          class="image-bed-variant"
-          src={`/images/empresa/headboards/${$configStore.variant}_${$configStore.color}.png`}
-          alt={`headboard - ${$configStore.variant} - ${$configStore.color}`}
-        />
-        <img
-          class="image-bed-variant"
-          src={`/images/empresa/sidePanels/${$configStore.color}_1.png`}
-          alt={`${$configStore.variant} - ${$configStore.color}`}
-        />
-        <img
-          class="image-bed-variant"
-          src={`/images/empresa/footboards/${$configStore.variant}_${$configStore.color}.png`}
-          alt={`footboard - ${$configStore.variant} - ${$configStore.color}`}
-        />
-        {#if $configStore.liftingPole === "true"}
-          <img
-            class="image-bed-variant"
-            src={`/images/accessory/Accessory - Lifting Pole - Part 2.png`}
-            alt={`bedding`}
-          />
-        {/if}
-        {#if ["Long", "Short"].includes($configStore.assistBar)}
-          <img
-            class="image-bed-variant"
-            src={`/images/accessory/Accessory - Assist Bar ${$configStore.assistBar}.png`}
-            alt={`bedding`}
-          />
-        {/if}
-        {#if $configStore.safetyMat === "true"}
-          <img
-            class="image-bed-variant"
-            src={`/images/accessory/Accessory - Safety Mat.png`}
-            alt={`bedding`}
-          />
-        {/if}
-      </div>
+      <Preview />
     </div>
     <div class="customization-form">
       <div class="form-title">Customize your Accora Floor Bed</div>
@@ -85,7 +45,7 @@
             options={Object.keys(bedVariants).map((item) => ({ title: item }))}
           />
         </div>
-
+        <!-- 
         {#if bedVariants[$configStore.variant]}
           <div class="select-container">
             <div class="iconContainer">
@@ -97,64 +57,66 @@
               options={bedVariants[$configStore.variant]}
             />
           </div>
-        {/if}
-        <div class="radios-wrapper">
-          <div class="radios-title">Assist Bar</div>
+        {/if} -->
+
+        <CustomizationBlock
+          title="Color"
+          targetSelectView="COLOR"
+          value={$configStore.color}
+          length={availableColors.length}
+        >
+          <IconColor />
+        </CustomizationBlock>
+        <SelectPreviewColor
+          colors={availableColors}
+          bind:value={$configStore.color}
+        />
+
+        <CustomizationBlock
+          title="Side Panels"
+          targetSelectView="SIDE_PANEL"
+          value={$configStore.sidePanel}
+          length={2}
+        >
+          <IconSidepanels />
+        </CustomizationBlock>
+        <SelectSide />
+
+        <!-- <div class="radios-wrapper">
           <div class="radios">
             <Radio
-              name="assist_bar"
-              label="Short"
-              value="Short"
-              bind:group={$configStore.assistBar}
-            />
-            <Radio
-              name="assist_bar"
-              label="Long"
-              bind:group={$configStore.assistBar}
-              value="Long"
-            />
-            <Radio
-              name="assist_bar"
-              label="None"
-              bind:group={$configStore.assistBar}
-              value="None"
-            />
-          </div>
-        </div>
-        <div class="radios-wrapper">
-          <div class="radios-title">Lifting Pole</div>
-          <div class="radios">
-            <Radio
-              name="liftingPole"
+              name="sidePanel"
               label="Include"
-              value="true"
-              bind:group={$configStore.liftingPole}
+              value="Included"
+              bind:group={$configStore.sidePanel}
             />
             <Radio
-              name="liftingPole"
+              name="sidePanel"
               label="Don't include"
-              bind:group={$configStore.liftingPole}
-              value="false"
+              bind:group={$configStore.sidePanel}
+              value="Excluded"
             />
           </div>
-        </div>
-        <div class="radios-wrapper">
-          <div class="radios-title">Safety mat</div>
-          <div class="radios">
-            <Radio
-              name="safetyMat"
-              label="Include"
-              value="true"
-              bind:group={$configStore.safetyMat}
-            />
-            <Radio
-              name="safetyMat"
-              label="Don't include"
-              bind:group={$configStore.safetyMat}
-              value="false"
-            />
-          </div>
-        </div>
+        </div> -->
+        <CustomizationBlock
+          title="Assist Bar"
+          targetSelectView="ASSIST_BAR"
+          value={$configStore.assistBar}
+          length={2}
+        >
+          <IconSafety />
+        </CustomizationBlock>
+        <SelectAssisBar bind:value={$configStore.assistBar} />
+
+        <CustomizationBlock
+          title="Accessories"
+          targetSelectView="ACCESSORIES"
+          value={$configStore.assistBar}
+          length={2}
+        >
+          <IconAccessory />
+        </CustomizationBlock>
+        <SelectAccessories />
       </div>
     </div>
   </div>
@@ -170,6 +132,7 @@
       box-sizing: border-box;
     }
     --primary: rgba(25, 162, 144, 1);
+    --border-color: rgba(234, 234, 234, 1);
   }
   .customization-container {
     display: flex;
@@ -245,22 +208,5 @@
     flex-grow: 1;
     max-width: 100vh;
     margin-right: 10%;
-  }
-  .image-frame {
-    /* width: #{16 * 70}px; */
-    width: 100%;
-    height: 0;
-    padding-top: 80%;
-    position: relative;
-    /* background: rgba(0, 0, 0, 0.1); */
-    overflow: none;
-    img {
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: -100%;
-      transform: translateX(50%);
-    }
   }
 </style>

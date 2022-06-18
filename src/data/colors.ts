@@ -1,0 +1,17 @@
+export const colors = [
+  "Anthracite Fineline Metallic",
+  "Bavarian Beech",
+  "Black Brown Thermo Oak",
+  "Brown Fineline Metallic",
+  "Brown Tossini Elm",
+  "Grey Beige Bamenda",
+  "Grey Beige Tossini Elm",
+  "Lincoln Walnut",
+  "Locarno Cherry",
+  "Natural Dijon Walnut",
+  "Natural Lancaster Oak",
+  "Polar Aland Pine",
+  "Sand Orleans Oak",
+  "Tobacco Gladstone Oak",
+  "Vicenza Oak",
+];
