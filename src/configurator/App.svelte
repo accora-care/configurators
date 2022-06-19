@@ -16,46 +16,47 @@
 </script>
 
 <div id="empresa-configurator">
-  <div class="customization-container">
-    <div class="image-frame-container">
+  <div class="image-frame-container">
+    <div class="sticky">
       <Preview />
     </div>
-    <div>
-      <div class="customization-form">
-        <div class="form-title">Customize your Accora Floor Bed</div>
-        <div class="customization-form-content">
-          <div class="select-container">
-            <div class="iconContainer">
-              <IconHeadboard />
-            </div>
-            <Select
-              title="Headboard"
-              bind:value={$configStore.variant}
-              options={Object.keys(bedVariants).map((item) => ({
-                title: item,
-              }))}
-            />
+  </div>
+  <div class="content-container">
+    <div class="customization-form">
+      <div class="form-title">Customize your Accora Floor Bed</div>
+      <div class="customization-form-content">
+        <div class="select-container">
+          <div class="iconContainer">
+            <IconHeadboard />
           </div>
-          <CustomizationBlock
-            title="Color"
-            targetSelectView="COLOR"
-            value={$configStore.color}
-            length={availableColors.length}
+          <Select
+            title="Headboard"
+            bind:value={$configStore.variant}
+            options={Object.keys(bedVariants).map((item) => ({
+              title: item,
+            }))}
           />
-          <SelectPreviewColor
-            colors={availableColors}
-            bind:value={$configStore.color}
-          />
+        </div>
+        <CustomizationBlock
+          title="Color"
+          targetSelectView="COLOR"
+          value={$configStore.color}
+          length={availableColors.length}
+        />
+        <SelectPreviewColor
+          colors={availableColors}
+          bind:value={$configStore.color}
+        />
 
-          <CustomizationBlock
-            title="Side Panels"
-            targetSelectView="SIDE_PANEL"
-            value={$configStore.sidePanel}
-            length={2}
-          />
-          <SelectSide />
+        <CustomizationBlock
+          title="Side Panels"
+          targetSelectView="SIDE_PANEL"
+          value={$configStore.sidePanel}
+          length={2}
+        />
+        <SelectSide />
 
-          <!-- <div class="radios-wrapper">
+        <!-- <div class="radios-wrapper">
           <div class="radios">
             <Radio
               name="sidePanel"
@@ -71,31 +72,30 @@
             />
           </div>
         </div> -->
-          <CustomizationBlock
-            title="Assist Bar"
-            targetSelectView="ASSIST_BAR"
-            value={$configStore.assistBar}
-            length={2}
-          />
-          <SelectAssisBar bind:value={$configStore.assistBar} />
+        <CustomizationBlock
+          title="Assist Bar"
+          targetSelectView="ASSIST_BAR"
+          value={$configStore.assistBar}
+          length={2}
+        />
+        <SelectAssisBar bind:value={$configStore.assistBar} />
 
-          <CustomizationBlock
-            title="Accessories"
-            targetSelectView="ACCESSORIES"
-            value={$configStore.assistBar}
-            length={2}
-          />
-          <SelectAccessories />
-        </div>
+        <CustomizationBlock
+          title="Accessories"
+          targetSelectView="ACCESSORIES"
+          value={$configStore.assistBar}
+          length={2}
+        />
+        <SelectAccessories />
       </div>
-      <div class="submit-container">
-        <div class="submit-container-content">
-          <button id="booking-button">Book a demo</button>
-          <p class="booking-info">
-            Quick delivery | 100-night risk-free trial | Training &
-            implementation.
-          </p>
-        </div>
+    </div>
+    <div class="submit-container">
+      <div class="submit-container-content">
+        <button id="booking-button">Book a demo</button>
+        <p class="booking-info">
+          Quick delivery | 100-night risk-free trial | Training &
+          implementation.
+        </p>
       </div>
     </div>
   </div>
@@ -103,10 +103,9 @@
 
 <style lang="scss">
   #empresa-configurator {
-    max-width: 1440px;
-    margin: 0 auto;
     font-family: "Poppins";
     box-sizing: border-box;
+    position: relative;
     * {
       box-sizing: border-box;
     }
@@ -117,14 +116,24 @@
     p {
       margin-bottom: 0;
     }
-  }
-  .customization-container {
     display: flex;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .content-container {
+    width: 40%;
+    max-width: 550px;
+    flex-shrink: 1;
+    min-width: 300px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      max-width: none;
+    }
   }
 
   .customization-form {
-    width: 550px;
-    flex-shrink: 0;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
@@ -161,10 +170,16 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    padding: 1rem 2rem;
+    text-align: center;
     border-radius: var(--radius) var(--radius) 0 0;
     color: white;
     font-size: 18px;
+    line-height: 1.5rem;
     font-weight: 400;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   .select-container {
@@ -191,8 +206,13 @@
 
   .image-frame-container {
     flex-grow: 1;
-    max-width: 100vh;
-    margin-right: 10%;
+    overflow: hidden;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   #booking-button {

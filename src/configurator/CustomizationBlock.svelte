@@ -38,49 +38,61 @@
     <Icon class="icon" />
   </div>
 
-  <div class="wrapper">
+  <div class="item-content">
+    <div class="title">{title}</div>
     <div class="value">
-      <div class="title">{title}</div>
       {value}
     </div>
-    <div class="custom-select-container">
-      <div class="sticker">{length} options available</div>
-      <Chevron class="chvrn" />
+  </div>
+  <div class="custom-select-container">
+    <div class="sticker">
+      {length} options <span class="available">&nbsp;available</span>
     </div>
+    <Chevron class="chvrn" />
   </div>
 </div>
 
 <style lang="scss">
-  .wrapper {
+  .available {
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+  .item-content {
+    overflow: hidden;
     flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-shrink: 1;
+    padding-right: 1rem;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 16px;
   }
   .value {
     font-size: 14px;
     flex-grow: 1;
-    padding-right: 32px;
-
-    .title {
-      font-weight: 500;
-      font-size: 16px;
-    }
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .customization-block {
     display: flex;
     align-items: center;
-    padding-right: 1rem;
     border-top: 1px solid var(--border-color);
+    padding-right: 1rem;
     cursor: pointer;
     & + & {
       border-top: 1px solid rgba(235, 236, 239, 1);
       padding-top: 1rem;
       margin-top: 1rem;
     }
-    .iconContainer {
-      padding: 16px;
-      flex-shrink: 0;
+  }
+  .iconContainer {
+    padding: 1rem;
+    flex-shrink: 0;
+    @media screen and (max-width: 1200px) {
+      padding-left: 0;
     }
   }
 
@@ -106,23 +118,25 @@
   }
   .custom-select-container {
     height: 24px;
-    display: inline-block;
-    min-width: 170px;
+    flex-grow: 1;
 
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     .sticker {
       background: #f6f6f6;
       border-radius: 5px;
-      position: absolute;
-      top: 0;
       height: 100%;
       pointer-events: none;
       padding: 0 0.5rem;
       right: 32px;
+      margin-right: 1rem;
+
+      white-space: nowrap;
 
       /* 6 options available */
 
-      position: absolute;
       display: flex;
       align-items: center;
 
@@ -135,10 +149,7 @@
     }
   }
   :global(.chvrn) {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     cursor: pointer;
   }
 </style>

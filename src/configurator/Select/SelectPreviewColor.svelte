@@ -2,9 +2,9 @@
   export let colors: string[];
   export let value: string;
 
-  import SelectionGrid from "../assets/components/SelectionGrid.svelte";
-  import SelectionGridItem from "../assets/components/SelectionGridItem.svelte";
-  import SelectionGridItemImage from "../assets/components/SelectionGridItemImage.svelte";
+  import SelectionGrid from "../components/SelectionGrid.svelte";
+  import SelectionGridItem from "../components/SelectionGridItem.svelte";
+  import SelectionGridItemImage from "../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
 </script>
 

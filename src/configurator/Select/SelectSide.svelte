@@ -1,6 +1,6 @@
 <script lang="ts">
-  import SelectionGrid from "../assets/components/SelectionGrid.svelte";
-  import SelectionGridItem from "../assets/components/SelectionGridItem.svelte";
+  import SelectionGrid from "../components/SelectionGrid.svelte";
+  import SelectionGridItem from "../components/SelectionGridItem.svelte";
   import { configStore } from "../configStore";
 </script>
 
