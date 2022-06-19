@@ -6,6 +6,21 @@
   export let value: string;
   export let targetSelectView: SELECTOR_VIEW;
   import { configStore, SELECTOR_VIEW } from "./configStore";
+
+  import IconHeadboard from "./assets/icon-headboard.svg";
+  import IconColor from "./assets/icon-color.svg";
+  import IconSafety from "./assets/icon-safety.svg";
+  import IconSidepanels from "./assets/icon-sidepanels.svg";
+  import IconAccessory from "./assets/icon-accessory.svg";
+
+  export const icons: { [key in SELECTOR_VIEW]: typeof IconHeadboard } = {
+    COLOR: IconColor,
+    ACCESSORIES: IconAccessory,
+    SIDE_PANEL: IconSidepanels,
+    ASSIST_BAR: IconSafety,
+    HEADBOARD: IconHeadboard,
+  };
+  const Icon = icons[targetSelectView];
 </script>
 
 <div
@@ -20,7 +35,7 @@
   }}
 >
   <div class="iconContainer">
-    <slot />
+    <Icon class="icon" />
   </div>
 
   <div class="wrapper">
@@ -56,7 +71,7 @@
     display: flex;
     align-items: center;
     padding-right: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
     cursor: pointer;
     & + & {
       border-top: 1px solid rgba(235, 236, 239, 1);
@@ -69,12 +84,21 @@
     }
   }
 
-  .customization-block.active {
+  :global(.active) {
     .value,
     .title {
       color: var(--primary);
     }
   }
+
+  :global(.customization-block.active path) {
+    fill: var(--primary);
+  }
+  /* :global {
+    path {
+      fill: var(--primary) !important;
+    }
+  } */
   .customization-block:hover {
     .title {
       color: var(--primary);

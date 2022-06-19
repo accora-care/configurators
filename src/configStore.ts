@@ -5,7 +5,8 @@ export type SELECTOR_VIEW =
   | "COLOR"
   | "ACCESSORIES"
   | "SIDE_PANEL"
-  | "ASSIST_BAR";
+  | "ASSIST_BAR"
+  | "HEADBOARD";
 
 const initVal: {
   variant: string;

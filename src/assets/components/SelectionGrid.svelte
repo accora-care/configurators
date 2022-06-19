@@ -19,7 +19,7 @@
     row-gap: 0.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
     transition: 0.2s all;
     max-height: 1000px;
     overflow: hidden;
@@ -32,6 +32,7 @@
       max-height: 50px;
       border: none;
       padding: 0;
+      border-top: none;
     }
   }
 </style>

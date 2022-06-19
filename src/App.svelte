@@ -4,10 +4,6 @@
   import Select from "./Select/Select.svelte";
   import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
   import IconHeadboard from "./assets/icon-headboard.svg";
-  import IconColor from "./assets/icon-color.svg";
-  import IconSafety from "./assets/icon-safety.svg";
-  import IconSidepanels from "./assets/icon-sidepanels.svg";
-  import IconAccessory from "./assets/icon-accessory.svg";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
   import SelectAssisBar from "./Select/SelectAssistBar.svelte";
@@ -19,70 +15,47 @@
   );
 </script>
 
-<main>
-  <!-- <label for="side_panel">Side panel</label>
-  <select name="side_panel" bind:value={$configStore.sidePanel}>
-    {#each sidePanels as sidePanel, i}
-      <option value={sidePanel.title}>
-        {sidePanel.title}
-      </option>
-    {/each}
-  </select> -->
+<div id="empresa-configurator">
   <div class="customization-container">
     <div class="image-frame-container">
       <Preview />
     </div>
-    <div class="customization-form">
-      <div class="form-title">Customize your Accora Floor Bed</div>
-      <div class="customization-form-content">
-        <div class="select-container">
-          <div class="iconContainer">
-            <IconHeadboard />
-          </div>
-          <Select
-            title="Headboard"
-            bind:value={$configStore.variant}
-            options={Object.keys(bedVariants).map((item) => ({ title: item }))}
-          />
-        </div>
-        <!-- 
-        {#if bedVariants[$configStore.variant]}
+    <div>
+      <div class="customization-form">
+        <div class="form-title">Customize your Accora Floor Bed</div>
+        <div class="customization-form-content">
           <div class="select-container">
             <div class="iconContainer">
-              <IconColor />
+              <IconHeadboard />
             </div>
             <Select
-              title="Color"
-              bind:value={$configStore.color}
-              options={bedVariants[$configStore.variant]}
+              title="Headboard"
+              bind:value={$configStore.variant}
+              options={Object.keys(bedVariants).map((item) => ({
+                title: item,
+              }))}
             />
           </div>
-        {/if} -->
+          <CustomizationBlock
+            title="Color"
+            targetSelectView="COLOR"
+            value={$configStore.color}
+            length={availableColors.length}
+          />
+          <SelectPreviewColor
+            colors={availableColors}
+            bind:value={$configStore.color}
+          />
 
-        <CustomizationBlock
-          title="Color"
-          targetSelectView="COLOR"
-          value={$configStore.color}
-          length={availableColors.length}
-        >
-          <IconColor />
-        </CustomizationBlock>
-        <SelectPreviewColor
-          colors={availableColors}
-          bind:value={$configStore.color}
-        />
+          <CustomizationBlock
+            title="Side Panels"
+            targetSelectView="SIDE_PANEL"
+            value={$configStore.sidePanel}
+            length={2}
+          />
+          <SelectSide />
 
-        <CustomizationBlock
-          title="Side Panels"
-          targetSelectView="SIDE_PANEL"
-          value={$configStore.sidePanel}
-          length={2}
-        >
-          <IconSidepanels />
-        </CustomizationBlock>
-        <SelectSide />
-
-        <!-- <div class="radios-wrapper">
+          <!-- <div class="radios-wrapper">
           <div class="radios">
             <Radio
               name="sidePanel"
@@ -98,33 +71,39 @@
             />
           </div>
         </div> -->
-        <CustomizationBlock
-          title="Assist Bar"
-          targetSelectView="ASSIST_BAR"
-          value={$configStore.assistBar}
-          length={2}
-        >
-          <IconSafety />
-        </CustomizationBlock>
-        <SelectAssisBar bind:value={$configStore.assistBar} />
+          <CustomizationBlock
+            title="Assist Bar"
+            targetSelectView="ASSIST_BAR"
+            value={$configStore.assistBar}
+            length={2}
+          />
+          <SelectAssisBar bind:value={$configStore.assistBar} />
 
-        <CustomizationBlock
-          title="Accessories"
-          targetSelectView="ACCESSORIES"
-          value={$configStore.assistBar}
-          length={2}
-        >
-          <IconAccessory />
-        </CustomizationBlock>
-        <SelectAccessories />
+          <CustomizationBlock
+            title="Accessories"
+            targetSelectView="ACCESSORIES"
+            value={$configStore.assistBar}
+            length={2}
+          />
+          <SelectAccessories />
+        </div>
+      </div>
+      <div class="submit-container">
+        <div class="submit-container-content">
+          <button id="booking-button">Book a demo</button>
+          <p class="booking-info">
+            Quick delivery | 100-night risk-free trial | Training &
+            implementation.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</main>
+</div>
 
 <style lang="scss">
-  main {
-    max-width: 240px;
+  #empresa-configurator {
+    max-width: 1440px;
     margin: 0 auto;
     font-family: "Poppins";
     box-sizing: border-box;
@@ -133,6 +112,11 @@
     }
     --primary: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
+    --radius: 5px;
+    --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
+    p {
+      margin-bottom: 0;
+    }
   }
   .customization-container {
     display: flex;
@@ -141,10 +125,17 @@
   .customization-form {
     width: 550px;
     flex-shrink: 0;
-    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: var(--box-shadow-block);
+    border-radius: var(--radius);
+    overflow: hidden;
+    & > *:last-child {
+      border-bottom: none;
+    }
   }
   .customization-form-content {
-    padding: 24px;
+    padding: 1.5rem;
+    padding-bottom: 0.25rem;
+    border-radius: 0 0 var(--radius) var(--radius);
   }
 
   .radios-wrapper {
@@ -170,7 +161,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    border-radius: 5px 5px 0 0;
+    border-radius: var(--radius) var(--radius) 0 0;
     color: white;
     font-size: 18px;
     font-weight: 400;
@@ -198,15 +189,41 @@
     font-weight: 100;
   }
 
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-
   .image-frame-container {
     flex-grow: 1;
     max-width: 100vh;
     margin-right: 10%;
+  }
+
+  #booking-button {
+    background: var(--primary);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 200px;
+    color: white;
+    border-radius: 4px;
+  }
+  .booking-info {
+    font-weight: 300;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  .submit-container {
+    margin-top: 1rem;
+    background: white;
+    box-shadow: var(--box-shadow-block);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .submit-container-content {
+    padding: 1.5rem;
   }
 </style>
