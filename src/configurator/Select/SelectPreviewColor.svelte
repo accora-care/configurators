@@ -1,6 +1,5 @@
 <script lang="ts">
-  export let colors: string[];
-  export let value: string;
+  export let colors: { title: string; options: { quickship?: boolean } }[];
 
   import SelectionGrid from "../components/SelectionGrid.svelte";
   import SelectionGridItem from "../components/SelectionGridItem.svelte";
@@ -11,18 +10,20 @@
 <SelectionGrid visible={$configStore.selectorView === "COLOR"}>
   {#each colors as colorVariant}
     <SelectionGridItem
-      active={value === colorVariant}
+      isQuickship={colorVariant.options.quickship}
+      title={colorVariant.title}
+      active={$configStore.color === colorVariant.title}
       onClick={() => {
         configStore.update((s) => {
           return {
             ...s,
-            color: colorVariant,
+            color: colorVariant.title,
           };
         });
       }}
     >
       <SelectionGridItemImage
-        src={`/images/empresa/colors/${colorVariant}.png`}
+        src={`/images/empresa/colors/${colorVariant.title}.png`}
         alt={colorVariant}
       />
     </SelectionGridItem>

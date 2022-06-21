@@ -28,10 +28,19 @@
     ? "customization-block active"
     : "customization-block"}
   on:click={() => {
-    configStore.update((s) => ({
-      ...s,
-      selectorView: targetSelectView,
-    }));
+    configStore.update((s) => {
+      if (s.selectorView === "COLOR") {
+        // color was too long, collapsed color will not move the scroll, we do it manually
+        try {
+          document.getElementById("empresa-configurator").scrollIntoView();
+        } catch {}
+      }
+      return {
+        ...s,
+        selectorView:
+          s.selectorView === targetSelectView ? null : targetSelectView,
+      };
+    });
   }}
 >
   <div class="iconContainer">

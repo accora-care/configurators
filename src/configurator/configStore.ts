@@ -8,17 +8,17 @@ export type SELECTOR_VIEW =
   | "ASSIST_BAR"
   | "HEADBOARD";
 
-const initVal: {
+export const initVal: {
   variant: string;
   color: string;
   sidePanel: string;
   liftingPole: string;
   safetyMat: string;
   assistBar: string;
-  selectorView: SELECTOR_VIEW;
+  selectorView: SELECTOR_VIEW | null;
 } = {
-  variant: "Atelier",
-  color: "Anthracite Fineline Metallic",
+  variant: "Skandi",
+  color: "Locarno Cherry",
   sidePanel: "Included",
   liftingPole: "true",
   safetyMat: "false",

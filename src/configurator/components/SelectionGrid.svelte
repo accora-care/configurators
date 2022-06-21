@@ -14,7 +14,7 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 0.5rem;
     row-gap: 0.5rem;
     padding-top: 1rem;
@@ -23,11 +23,11 @@
     transition: 0.2s all;
     max-height: 1000px;
     overflow: hidden;
-    @media screen and (max-width: 1200px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media screen and (max-width: 1300px) {
+      grid-template-columns: 1fr 1fr 1fr;
     }
     @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     @media screen and (max-width: 450px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;

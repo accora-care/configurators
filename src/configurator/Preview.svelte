@@ -47,17 +47,19 @@
     /* width: #{16 * 70}px; */
     width: 100%;
     height: 0;
-    padding-top: 80%;
+    padding-top: 70%;
     position: relative;
     /* background: rgba(0, 0, 0, 0.1); */
-    overflow: none;
     img {
       height: 100%;
-      object-fit: cover;
+      width: 100%;
+      max-height: 640px;
+      object-fit: contain;
       position: absolute;
       top: 0;
-      left: -100%;
-      transform: translateX(50%);
+      /* top: calc((100vh - 100%) / 2); */
+      /* left: -20%; */
+      transform: translateX(-10%);
     }
   }
 </style>

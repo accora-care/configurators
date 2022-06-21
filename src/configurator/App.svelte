@@ -1,6 +1,6 @@
 <script lang="ts">
   import { bedVariants } from "./data/bedVariants";
-  import { configStore } from "./configStore";
+  import { configStore, initVal } from "./configStore";
   import Select from "./Select/Select.svelte";
   import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
   import IconHeadboard from "./assets/icon-headboard.svg";
@@ -10,9 +10,7 @@
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
 
-  const availableColors = bedVariants[$configStore.variant].map(
-    (item) => item.title
-  );
+  const availableColors = bedVariants[$configStore.variant];
 </script>
 
 <div id="empresa-configurator">
@@ -43,10 +41,7 @@
           value={$configStore.color}
           length={availableColors.length}
         />
-        <SelectPreviewColor
-          colors={availableColors}
-          bind:value={$configStore.color}
-        />
+        <SelectPreviewColor colors={availableColors} />
 
         <CustomizationBlock
           title="Side Panels"
@@ -87,6 +82,16 @@
           length={2}
         />
         <SelectAccessories />
+        <div
+          class="reset"
+          on:click={() => {
+            configStore.update((s) => {
+              return initVal;
+            });
+          }}
+        >
+          Reset to default options
+        </div>
       </div>
     </div>
     <div class="submit-container">
@@ -117,7 +122,7 @@
       margin-bottom: 0;
     }
     display: flex;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 860px) {
       flex-direction: column;
     }
   }
@@ -125,9 +130,10 @@
   .content-container {
     width: 40%;
     max-width: 550px;
-    flex-shrink: 1;
-    min-width: 300px;
-    @media screen and (max-width: 768px) {
+    flex-shrink: 4;
+    flex-grow: 0;
+    min-width: 370px;
+    @media screen and (max-width: 860px) {
       width: 100%;
       max-width: none;
     }
@@ -177,7 +183,7 @@
     font-size: 18px;
     line-height: 1.5rem;
     font-weight: 400;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 860px) {
       display: none;
     }
   }
@@ -205,13 +211,14 @@
   }
 
   .image-frame-container {
-    flex-grow: 1;
-    overflow: hidden;
+    flex-grow: 2;
+    flex-shrink: 1;
   }
   .sticky {
     position: sticky;
-    top: 0;
-    max-width: 700px;
+    /* top: 0; */
+
+    top: 15vh;
     margin: 0 auto;
   }
 
@@ -245,5 +252,16 @@
   }
   .submit-container-content {
     padding: 1.5rem;
+  }
+
+  .reset {
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    cursor: pointer;
+    &:hover {
+      color: var(--primary);
+    }
   }
 </style>

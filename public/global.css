@@ -67,6 +67,8 @@ button:focus {
 }
 
 #content {
-  max-width: 1440px;
+  max-width: calc(1440px + 4rem);
   margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

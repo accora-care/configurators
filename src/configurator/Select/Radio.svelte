@@ -1,7 +1,6 @@
 <script lang="ts">
   export let value: string;
   export let name: string;
-  export let label: string;
   export let group: string;
   export let disabled: boolean = false;
 </script>
@@ -22,8 +21,10 @@
         <div class="tbs-checkmark_stem" />
         <div class="tbs-checkmark_tick" />
       </span>
-      {label}</span
-    >
+      <div class="label-desc">
+        <slot />
+      </div>
+    </span>
   </label>
 </div>
 
@@ -47,20 +48,25 @@
   .tbs-custom-radio {
     cursor: pointer;
     height: 100%;
-    width: 100%;
-    padding: 0 1rem;
-
+    flex-grow: 1;
+    padding: 1rem 1rem;
+    font-size: 0.875rem;
     display: flex;
     align-items: center;
     top: 0;
     left: 0;
     border-radius: var(--radius);
     border: 1px solid var(--border-color);
-    margin-right: 8px;
     flex-shrink: 0;
     transition: 0.2s all;
     color: var(--text-secondary);
     background: var(--bg-primary);
+  }
+
+  .label-desc {
+    flex-shrink: 1;
+    word-wrap: break-word;
+    width: calc(100% - 3rem);
   }
 
   .tbs-custom-radio .tbs-checkmark {
@@ -76,7 +82,7 @@
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
-    margin-right: 0.5rem;
+    margin-right: 1rem;
   }
   .tbs-checkmark_stem {
     position: absolute;
