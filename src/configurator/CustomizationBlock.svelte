@@ -110,6 +110,10 @@
     .title {
       color: var(--primary);
     }
+
+    :global(.chvrn) {
+      transform: rotate(180deg);
+    }
   }
 
   :global(.customization-block.active path) {
@@ -158,7 +162,7 @@
     }
   }
   :global(.chvrn) {
-    /* transform: translateY(-50%); */
     cursor: pointer;
+    transition: 0.2s all;
   }
 </style>
