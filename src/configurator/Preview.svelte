@@ -47,7 +47,7 @@
     /* width: #{16 * 70}px; */
     width: 100%;
     height: 0;
-    padding-top: 70%;
+    padding-top: 60%;
     position: relative;
     /* background: rgba(0, 0, 0, 0.1); */
     img {
