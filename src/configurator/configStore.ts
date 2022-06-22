@@ -8,22 +8,24 @@ export type SELECTOR_VIEW =
   | "ASSIST_BAR"
   | "HEADBOARD";
 
-export const initVal: {
+export type StoreValues = {
   variant: string;
   color: string;
   sidePanel: string;
-  liftingPole: string;
-  safetyMat: string;
-  assistBar: string;
+  liftingPole: "Included" | "Not included";
+  safetyMat: "Included" | "Not included";
+  assistBar: "Long" | "Short" | "None";
   selectorView: SELECTOR_VIEW | null;
-} = {
+};
+
+export const initVal: StoreValues = {
   variant: "Skandi",
   color: "Locarno Cherry",
   sidePanel: "Included",
-  liftingPole: "true",
-  safetyMat: "false",
-  assistBar: "Long",
-  selectorView: "COLOR",
+  liftingPole: "Not included",
+  safetyMat: "Not included",
+  assistBar: "None",
+  selectorView: null,
 };
 
 export const configStore = writable(initVal);

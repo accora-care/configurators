@@ -5,8 +5,8 @@
 
   export let value: string;
 
-  import { configStore } from "../configStore";
-  const bars = ["Long", "Short", "None"];
+  import { configStore, StoreValues } from "../configStore";
+  const bars: StoreValues["assistBar"][] = ["Long", "Short", "None"];
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ASSIST_BAR"}>

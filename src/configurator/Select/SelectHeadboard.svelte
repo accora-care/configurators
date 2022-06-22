@@ -32,7 +32,7 @@
       }}
     >
       <SelectionGridItemImage
-        src={`/images/empresa/headboards_preview/${title}.png`}
+        src={`/images/empresa/headboards_preview/${title}.jpg`}
         alt={title}
       />
     </SelectionGridItem>

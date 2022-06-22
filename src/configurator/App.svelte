@@ -8,6 +8,9 @@
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
   import SelectHeadboard from "./Select/SelectHeadboard.svelte";
+  import type { InitConfig } from "../Config.types";
+
+  export let config: InitConfig;
 
   const availableColors = bedVariants[$configStore.variant];
 </script>
@@ -20,7 +23,7 @@
   </div>
   <div class="content-container">
     <div class="customization-form">
-      <div class="form-title">Customize your Accora Floor Bed</div>
+      <div class="form-title">{config.mainTitle}</div>
       <div class="customization-form-content">
         <CustomizationBlock
           title="Headboard"
@@ -92,7 +95,9 @@
       <div class="submit-container-content">
         <a
           id="booking-button"
-          href={`mailto:test@example.com?subject=Requesting a bed demo&body=${encodeURIComponent(
+          href={`mailto:${
+            config.demoEmailAddress
+          }?subject=Requesting a bed demo&body=${encodeURIComponent(
             `Your message here
 
 

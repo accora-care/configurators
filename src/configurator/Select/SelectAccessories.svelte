@@ -8,13 +8,14 @@
 
 <SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"}>
   <SelectionGridItem
-    active={$configStore.liftingPole === "true"}
+    active={$configStore.liftingPole === "Included"}
     title="Lifting pole"
     onClick={() => {
       configStore.update((s) => {
         return {
           ...s,
-          liftingPole: s.liftingPole === "true" ? "false" : "true",
+          liftingPole:
+            s.liftingPole === "Included" ? "Not included" : "Included",
         };
       });
     }}
@@ -25,13 +26,13 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.safetyMat === "true"}
+    active={$configStore.safetyMat === "Included"}
     title="Safety mat"
     onClick={() => {
       configStore.update((s) => {
         return {
           ...s,
-          safetyMat: s.safetyMat === "true" ? "false" : "true",
+          safetyMat: s.safetyMat === "Included" ? "Not included" : "Included",
         };
       });
     }}
