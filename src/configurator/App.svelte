@@ -98,7 +98,8 @@
           href={`mailto:${
             config.demoEmailAddress
           }?subject=Requesting a bed demo&body=${encodeURIComponent(
-            `Your message here
+            `Your name:
+Your message here:
 
 
 ____________________________________________
