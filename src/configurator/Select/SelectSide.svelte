@@ -1,6 +1,5 @@
 <script lang="ts">
   import SelectionGrid from "../components/SelectionGrid.svelte";
-  import SelectionGridItem from "../components/SelectionGridItem.svelte";
   import { configStore } from "../configStore";
   import Radio from "./Radio.svelte";
 </script>

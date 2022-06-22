@@ -21,6 +21,9 @@
 </div>
 
 <style lang="scss">
+  .grid-item-wrapper {
+    overflow: hidden;
+  }
   .grid-item {
     padding: 0.5rem;
     border-radius: 4px;

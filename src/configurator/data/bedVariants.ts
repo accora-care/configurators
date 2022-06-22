@@ -1,5 +1,5 @@
 export const bedVariants: {
-  [k: string]: { title: string; options: object }[];
+  [k: string]: { title: string; options: { quickship?: boolean } }[];
 } = {
   ARC: [
     { title: "Anthracite Fineline Metallic", options: {} },

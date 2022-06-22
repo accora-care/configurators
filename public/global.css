@@ -72,3 +72,11 @@ button:focus {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+@media screen and (max-width: 460px) {
+  #content {
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

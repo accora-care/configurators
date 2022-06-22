@@ -88,14 +88,9 @@
   .customization-block {
     display: flex;
     align-items: center;
-    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding-right: 1rem;
     cursor: pointer;
-    & + & {
-      border-top: 1px solid rgba(235, 236, 239, 1);
-      padding-top: 1rem;
-      margin-top: 1rem;
-    }
   }
   .iconContainer {
     padding: 1rem;

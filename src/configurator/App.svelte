@@ -1,14 +1,13 @@
 <script lang="ts">
   import { bedVariants } from "./data/bedVariants";
   import { configStore, initVal } from "./configStore";
-  import Select from "./Select/Select.svelte";
   import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
-  import IconHeadboard from "./assets/icon-headboard.svg";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
   import SelectAssisBar from "./Select/SelectAssistBar.svelte";
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
+  import SelectHeadboard from "./Select/SelectHeadboard.svelte";
 
   const availableColors = bedVariants[$configStore.variant];
 </script>
@@ -23,18 +22,13 @@
     <div class="customization-form">
       <div class="form-title">Customize your Accora Floor Bed</div>
       <div class="customization-form-content">
-        <div class="select-container">
-          <div class="iconContainer">
-            <IconHeadboard />
-          </div>
-          <Select
-            title="Headboard"
-            bind:value={$configStore.variant}
-            options={Object.keys(bedVariants).map((item) => ({
-              title: item,
-            }))}
-          />
-        </div>
+        <CustomizationBlock
+          title="Headboard"
+          targetSelectView="HEADBOARD"
+          value={$configStore.variant}
+          length={Object.keys(bedVariants).length}
+        />
+        <SelectHeadboard />
         <CustomizationBlock
           title="Color"
           targetSelectView="COLOR"
@@ -96,7 +90,26 @@
     </div>
     <div class="submit-container">
       <div class="submit-container-content">
-        <button id="booking-button">Book a demo</button>
+        <a
+          id="booking-button"
+          href={`mailto:test@example.com?subject=Requesting a bed demo&body=${encodeURIComponent(
+            `Your message here
+
+
+____________________________________________
+
+My configuration:
+Headboard: ${$configStore.variant}
+Color: ${$configStore.color}
+Sidepanel: ${$configStore.sidePanel}
+Assist Bar: ${$configStore.assistBar}
+Lifting pole: ${$configStore.liftingPole}
+Safety Mat: ${$configStore.safetyMat}
+____________________________________________
+
+`
+          )}`}>Book a demo</a
+        >
         <p class="booking-info">
           Quick delivery | 100-night risk-free trial | Training &
           implementation.
@@ -136,6 +149,7 @@
     @media screen and (max-width: 860px) {
       width: 100%;
       max-width: none;
+      min-width: 0px;
     }
   }
 
@@ -258,7 +272,7 @@
     text-align: center;
     font-size: 0.75rem;
     padding: 1rem;
-    border-top: 1px solid var(--border-color);
+
     cursor: pointer;
     &:hover {
       color: var(--primary);
