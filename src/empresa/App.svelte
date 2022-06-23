@@ -173,23 +173,6 @@ ____________________________________________
     border-radius: 0 0 var(--radius) var(--radius);
   }
 
-  .radios-wrapper {
-    border-top: 1px solid rgba(235, 236, 239, 1);
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
-  .radios {
-    display: flex;
-    padding-bottom: 0.5rem;
-  }
-
-  .radios-title {
-    font-size: 16px;
-    font-weight: 500;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .form-title {
     height: 74px;
     background: var(--primary);
@@ -206,28 +189,6 @@ ____________________________________________
     @media screen and (max-width: 860px) {
       display: none;
     }
-  }
-
-  .select-container {
-    display: flex;
-    align-items: center;
-    padding-right: 1rem;
-    & + & {
-      border-top: 1px solid rgba(235, 236, 239, 1);
-      padding-top: 1rem;
-      margin-top: 1rem;
-    }
-    .iconContainer {
-      padding: 16px;
-      flex-shrink: 0;
-    }
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
 
   .image-frame-container {

@@ -1,5 +1,5 @@
 import type { InitConfig } from "./Config.types";
-import App from "./configurator/App.svelte";
+import App from "./empresa/App.svelte";
 
 const initConfig: InitConfig = {
   demoEmailAddress: "demo@example.com",
@@ -9,7 +9,6 @@ const initConfig: InitConfig = {
 const app = new App({
   target: document.getElementById("content"),
   props: {
-    name: "world",
     config: initConfig,
   },
 });

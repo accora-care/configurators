@@ -3,7 +3,7 @@
 </script>
 
 <div class="image-frame">
-  {#if $configStore.liftingPole === "true"}
+  {#if $configStore.liftingPole === "Included"}
     <img
       src={`/images/accessory/Accessory - Lifting Pole - Part 1.png`}
       alt={`bedding`}
@@ -25,7 +25,7 @@
     src={`/images/empresa/footboards/${$configStore.variant}_${$configStore.color}.png`}
     alt={`footboard - ${$configStore.variant} - ${$configStore.color}`}
   />
-  {#if $configStore.liftingPole === "true"}
+  {#if $configStore.liftingPole === "Included"}
     <img
       src={`/images/accessory/Accessory - Lifting Pole - Part 2.png`}
       alt={`bedding`}
@@ -37,7 +37,7 @@
       alt={`bedding`}
     />
   {/if}
-  {#if $configStore.safetyMat === "true"}
+  {#if $configStore.safetyMat === "Included"}
     <img src={`/images/accessory/Accessory - Safety Mat.png`} alt={`bedding`} />
   {/if}
 </div>

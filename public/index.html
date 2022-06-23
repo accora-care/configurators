@@ -17,11 +17,25 @@
     />
 
     <script defer src="/build/bundle.js"></script>
+    <script defer src="/embed/embed.js"></script>
   </head>
 
   <body>
+    <div id="empresa"></div>
     <div style="height: 50vh"></div>
     <div id="content"></div>
     <div style="height: 50vh"></div>
+    <script>
+      const jsScript = document.createElement("script");
+      jsScript.src = "/embed/embed.js";
+      document.body.appendChild(jsScript);
+
+      jsScript.addEventListener("load", () => {
+        EmpresaConfigurator("empresa", {
+          demoEmailAddress: "demo@example.com",
+          mainTitle: "Customize your Accora Floor Bed",
+        });
+      });
+    </script>
   </body>
 </html>

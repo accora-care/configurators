@@ -36,7 +36,7 @@ function serve() {
   };
 }
 
-export const createRollupConfig = () => ({
+export const createRollupConfig = (config) => ({
   input: "src/main.ts",
   output: {
     sourcemap: true,
@@ -95,4 +95,5 @@ export const createRollupConfig = () => ({
   watch: {
     clearScreen: false,
   },
+  ...config,
 });

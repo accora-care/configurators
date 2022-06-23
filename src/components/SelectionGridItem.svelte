@@ -3,7 +3,7 @@
   export let onClick: () => void;
   export let title: string = "";
   export let isQuickship: boolean = false;
-  import IconQuickship from "../assets/icon-quickship.svg";
+  import IconQuickship from "./assets/icon-quickship.svg";
 </script>
 
 <div class="grid-item-wrapper">

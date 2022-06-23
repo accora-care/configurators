@@ -1,7 +1,7 @@
 <script lang="ts">
-  import SelectionGrid from "../components/SelectionGrid.svelte";
-  import SelectionGridItem from "../components/SelectionGridItem.svelte";
-  import SelectionGridItemImage from "../components/SelectionGridItemImage.svelte";
+  import SelectionGrid from "../../components/SelectionGrid.svelte";
+  import SelectionGridItem from "../../components/SelectionGridItem.svelte";
+  import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   export let value: string;
 

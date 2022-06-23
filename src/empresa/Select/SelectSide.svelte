@@ -1,7 +1,7 @@
 <script lang="ts">
-  import SelectionGrid from "../components/SelectionGrid.svelte";
+  import SelectionGrid from "../../components/SelectionGrid.svelte";
   import { configStore } from "../configStore";
-  import Radio from "./Radio.svelte";
+  import Radio from "../../components/Radio.svelte";
 </script>
 
 <SelectionGrid
@@ -26,26 +26,9 @@
       </Radio>
     </div>
   </div>
-  <!-- <SelectionGridItem
-    active={$configStore.sidePanel === "Excluded"}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          sidePanel: "Excluded",
-        };
-      });
-    }}
-  >
-    <div class="side-panel-item">Without side panels</div>
-  </SelectionGridItem> -->
 </SelectionGrid>
 
 <style lang="scss">
-  .side-panel-item {
-    font-size: 0.875rem;
-  }
-
   .radios-wrapper {
     grid-column: 1 / all;
     display: grid;

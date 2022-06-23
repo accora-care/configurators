@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Chevron from "./assets/chevron.svg";
-
   export let length: number;
   export let title: string;
   export let value: string;
@@ -12,6 +10,7 @@
   import IconSafety from "./assets/icon-safety.svg";
   import IconSidepanels from "./assets/icon-sidepanels.svg";
   import IconAccessory from "./assets/icon-accessory.svg";
+  import Chevron from "./assets/chevron.svg";
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconHeadboard } = {
     COLOR: IconColor,
