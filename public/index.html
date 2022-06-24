@@ -17,7 +17,6 @@
     />
 
     <script defer src="/build/bundle.js"></script>
-    <script defer src="/embed/embed.js"></script>
   </head>
 
   <body>
@@ -27,7 +26,8 @@
     <div style="height: 50vh"></div>
     <script>
       const jsScript = document.createElement("script");
-      jsScript.src = "/embed/embed.js";
+      jsScript.src =
+        "https://cdn.jsdelivr.net/gh/march08/accora-configurator-empresa@latest/public/embed/embed.js";
       document.body.appendChild(jsScript);
 
       jsScript.addEventListener("load", () => {
