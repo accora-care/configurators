@@ -10,6 +10,6 @@ export default createRollupConfig({
     format: "umd",
     exports: "named",
     name: "EmpresaConfigurator",
-    file: "public/empresa/embed.js",
+    file: "public/empresa/empresa-configurator.js",
   },
 });

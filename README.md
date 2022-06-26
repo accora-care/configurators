@@ -1,6 +1,75 @@
-*Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
+# Project info
 
-*Looking for a shareable component template instead? You can [use SvelteKit for that as well](https://kit.svelte.dev/docs#packaging) or the older [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+Project built using
+
+- Svelte
+- Typescript
+- SCSS
+
+## Development
+
+To develop app, run these commands in the command line
+
+```
+// if starting for the first time
+yarn install
+// then
+yarn dev
+
+```
+
+Make sure you have `node` installed to run this project. If you don't have yarn installed
+
+```
+npm install -g yarn
+```
+
+## UMD js files for web embedding
+
+We will need to build and compile the project first on your local machine:
+
+```
+yarn build:embed
+```
+
+New files will be created for each configurator, e.g. for empresa, these files will be created:
+
+```
+/public/empresa
+   - /bundle.css
+   - /empresa-configurator.js
+   - /empresa-configurator.js.map
+```
+
+As a simple solution for js and css delivery we are using [jsDelivery](https://www.jsdelivr.com/), for that reason the build code **must be included in the git**. You will need to make a new release version of the repository to promote new changes.
+
+## Empresa Configurator
+
+To include empresa configurator on the website, create a div element with `id` in the desired location of the html.
+
+```html
+<div id="empresa-configurator"></div>
+```
+
+At the end of `<body>`, include this script, make sure to edit the config:
+
+```html
+<script>
+  const empresaConfig = {
+    demoEmailAddress: "demo@example.com",
+    mainTitle: "Customize your Accora Floor Bed",
+    bookADemoHref: "https://us.accora.care/book-a-demo",
+  };
+  const jsScript = document.createElement("script");
+  jsScript.src =
+    "https://cdn.jsdelivr.net/gh/accora-care/configurator@latest/public/empresa/empresa-configurator.js";
+  document.body.appendChild(jsScript);
+
+  jsScript.addEventListener("load", () => {
+    EmpresaConfigurator("empresa-configurator", empresaConfig);
+  });
+</script>
+```
 
 ---
 
@@ -15,8 +84,7 @@ npx degit sveltejs/template svelte-app
 cd svelte-app
 ```
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
+_Note that you will need to have [Node.js](https://nodejs.org) installed._
 
 ## Get started
 
@@ -49,12 +117,11 @@ npm run build
 
 You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
 
-
 ## Single-page app mode
 
 By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for _any_ path. You can make it so by editing the `"start"` command in package.json:
 
 ```js
 "start": "sirv public --single"
