@@ -1,5 +1,5 @@
 import type { InitConfig } from "./Config.types";
-import App from "./empresa/App.svelte";
+import App from "./App.svelte";
 
 const initConfig: InitConfig = {
   demoEmailAddress: "demo@example.com",

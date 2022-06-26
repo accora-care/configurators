@@ -1,11 +1,15 @@
 import { createRollupConfig } from "./rollup.createConfig";
 
+/**
+ * builds empresa UMD module
+ */
 export default createRollupConfig({
-  input: "src/embed.ts",
+  input: "src/empresa/embed.ts",
   output: {
     sourcemap: true,
     format: "umd",
+    exports: "named",
     name: "EmpresaConfigurator",
-    file: "public/embed/embed.js",
+    file: "public/empresa/embed.js",
   },
 });

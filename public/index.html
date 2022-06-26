@@ -26,8 +26,10 @@
     <div style="height: 50vh"></div>
     <script>
       const jsScript = document.createElement("script");
-      jsScript.src =
-        "https://cdn.jsdelivr.net/gh/march08/accora-configurator-empresa@latest/public/embed/embed.js";
+      // jsScript.src =
+      //   "https://cdn.jsdelivr.net/gh/march08/accora-configurator-empresa@latest/public/embed/embed.js";
+
+      jsScript.src = "/empresa/embed.js";
       document.body.appendChild(jsScript);
 
       jsScript.addEventListener("load", () => {
