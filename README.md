@@ -45,6 +45,15 @@ As a simple solution for js and css delivery we are using [jsDelivery](https://w
 
 ## Empresa Configurator
 
+Include styles in `<head>`
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/empresa/bundle.css"
+/>
+```
+
 To include empresa configurator on the website, create a div element with `id` in the desired location of the html.
 
 ```html
@@ -62,7 +71,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
   };
   const jsScript = document.createElement("script");
   jsScript.src =
-    "https://cdn.jsdelivr.net/gh/accora-care/configurator@latest/public/empresa/empresa-configurator.js";
+    "https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/empresa/empresa-configurator.js";
   document.body.appendChild(jsScript);
 
   jsScript.addEventListener("load", () => {

@@ -20,24 +20,24 @@
   </head>
 
   <body>
-    <!-- <div id="empresa"></div> -->
+    <div id="empresa-configurator"></div>
     <div style="height: 50vh"></div>
     <div id="content"></div>
     <div style="height: 50vh"></div>
-    <!-- <script>
+    <script type="text/javascript">
+      const empresaConfig = {
+        demoEmailAddress: "demo@example.com",
+        mainTitle: "Customize your Accora Floor Bed",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+      };
       const jsScript = document.createElement("script");
-      // jsScript.src =
-      //   "https://cdn.jsdelivr.net/gh/march08/accora-configurator-empresa@latest/public/embed/embed.js";
-
-      jsScript.src = "/empresa/embed.js";
+      jsScript.src =
+        "https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/empresa/empresa-configurator.js";
       document.body.appendChild(jsScript);
 
       jsScript.addEventListener("load", () => {
-        EmpresaConfigurator("empresa", {
-          demoEmailAddress: "demo@example.com",
-          mainTitle: "Customize your Accora Floor Bed",
-        });
+        EmpresaConfigurator("empresa-configurator", empresaConfig);
       });
-    </script> -->
+    </script>
   </body>
 </html>
