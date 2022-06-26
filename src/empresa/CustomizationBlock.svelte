@@ -23,9 +23,8 @@
 </script>
 
 <div
-  class={$configStore.selectorView === targetSelectView
-    ? "customization-block active"
-    : "customization-block"}
+  class="acc-customization-select"
+  class:active={$configStore.selectorView === targetSelectView}
   on:click={() => {
     configStore.update((s) => {
       if (s.selectorView === "COLOR") {
@@ -42,56 +41,54 @@
     });
   }}
 >
-  <div class="iconContainer">
-    <Icon class="icon" />
+  <div class="acc-customization-icon-container">
+    <Icon class="acc-customization-icon-container__icon" />
   </div>
 
-  <div class="item-content">
+  <div class="acc-customization-content">
     <div class="title">{title}</div>
     <div class="value">
       {value}
     </div>
   </div>
-  <div class="custom-select-container">
-    <div class="sticker">
-      {length} options <span class="available">&nbsp;available</span>
+  <div class="acc-select-container">
+    <div class="acc-select-container__sticker">
+      {length} options
+      <span class="acc-select-container__sticker__available"
+        >&nbsp;available</span
+      >
     </div>
-    <Chevron class="chvrn" />
+    <Chevron class="acc-chevron" />
   </div>
 </div>
 
-<style lang="scss">
-  .available {
-    @media screen and (max-width: 1200px) {
-      display: none;
-    }
-  }
-  .item-content {
+<style lang="scss" global>
+  .acc-customization-content {
     overflow: hidden;
     flex-grow: 1;
     flex-shrink: 1;
     padding-right: 1rem;
+    .title {
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .value {
+      font-size: 14px;
+      flex-grow: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
-  .title {
-    font-weight: 500;
-    font-size: 16px;
-  }
-  .value {
-    font-size: 14px;
-    flex-grow: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  .customization-block {
+  .acc-customization-select {
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
     padding-right: 1rem;
     cursor: pointer;
   }
-  .iconContainer {
+  .acc-customization-icon-container {
     padding: 1rem;
     flex-shrink: 0;
     @media screen and (max-width: 1200px) {
@@ -99,31 +96,32 @@
     }
   }
 
-  :global(.active) {
+  .acc-customization-select.active {
     .value,
     .title {
       color: var(--primary);
     }
 
-    :global(.chvrn) {
+    .acc-chevron {
       transform: rotate(180deg);
+    }
+    path {
+      fill: var(--primary);
     }
   }
 
-  :global(.customization-block.active path) {
-    fill: var(--primary);
-  }
-  /* :global {
-    path {
-      fill: var(--primary) !important;
-    }
-  } */
-  .customization-block:hover {
+  .acc-customization-select:hover {
     .title {
       color: var(--primary);
     }
   }
-  .custom-select-container {
+  .acc-chevron {
+    cursor: pointer;
+    transition: 0.2s all;
+  }
+
+  // select container
+  .acc-select-container {
     height: 24px;
     flex-grow: 1;
 
@@ -131,7 +129,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    .sticker {
+    .acc-select-container__sticker {
       background: #f6f6f6;
       border-radius: 5px;
       height: 100%;
@@ -153,10 +151,11 @@
       text-align: center;
 
       color: #333232;
+      .acc-select-container__sticker__available {
+        @media screen and (max-width: 1200px) {
+          display: none;
+        }
+      }
     }
-  }
-  :global(.chvrn) {
-    cursor: pointer;
-    transition: 0.2s all;
   }
 </style>

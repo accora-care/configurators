@@ -8,7 +8,7 @@
   {...$$restProps}
   visible={$configStore.selectorView === "SIDE_PANEL"}
 >
-  <div class="radios-wrapper">
+  <div class="acc-radios-wrapper">
     <Radio
       name="sidePanel"
       value="Included"
@@ -28,8 +28,8 @@
   </div>
 </SelectionGrid>
 
-<style lang="scss">
-  .radios-wrapper {
+<style lang="scss" global>
+  .acc-radios-wrapper {
     grid-column: 1 / all;
     display: grid;
     grid-template-columns: 1fr 1fr;

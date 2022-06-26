@@ -2,17 +2,17 @@
   export let visible: boolean;
 </script>
 
-<div class="container">
-  <div class={visible ? "grid" : "grid grid-hidden"}>
+<div class="acc-grid-container">
+  <div class="acc-grid" class:acc-grid-hidden={!visible}>
     <slot />
   </div>
 </div>
 
-<style lang="scss">
-  .container {
+<style lang="scss" global>
+  .acc-grid-container {
     overflow: hidden;
   }
-  .grid {
+  .acc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 0.5rem;
@@ -35,13 +35,13 @@
     & > * {
       transition: 0.4s all;
     }
-    &.grid-hidden {
-      opacity: 0;
-      height: 0px;
-      max-height: 50px;
-      border: none;
-      padding: 0;
-      border-bottom: none;
-    }
+  }
+  :global(.acc-grid.acc-grid-hidden) {
+    opacity: 0;
+    height: 0px;
+    max-height: 50px;
+    border: none;
+    padding: 0;
+    border-bottom: none;
   }
 </style>

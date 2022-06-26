@@ -8,23 +8,24 @@
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
   import SelectHeadboard from "./Select/SelectHeadboard.svelte";
-  import type { InitConfig } from "../Config.types";
+  import type { InitConfig } from "./Config.types";
+  import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
+  import PreviewContainer from "../components/PreviewContainer.svelte";
 
   export let config: InitConfig;
 
-  const availableColors = bedVariants[$configStore.variant];
+  $: availableColors = bedVariants[$configStore.variant];
 </script>
 
-<div id="empresa-configurator">
-  <div class="image-frame-container">
-    <div class="sticky">
-      <Preview />
-    </div>
-  </div>
-  <div class="content-container">
-    <div class="customization-form">
-      <div class="form-title">{config.mainTitle}</div>
-      <div class="customization-form-content">
+<ConfiguratorContainer>
+  <PreviewContainer>
+    <Preview />
+  </PreviewContainer>
+
+  <div class="acc-content">
+    <div class="acc-form">
+      <div class="acc-form-title">{config.mainTitle}</div>
+      <div class="acc-form-content">
         <CustomizationBlock
           title="Headboard"
           targetSelectView="HEADBOARD"
@@ -47,23 +48,6 @@
           length={2}
         />
         <SelectSide />
-
-        <!-- <div class="radios-wrapper">
-          <div class="radios">
-            <Radio
-              name="sidePanel"
-              label="Include"
-              value="Included"
-              bind:group={$configStore.sidePanel}
-            />
-            <Radio
-              name="sidePanel"
-              label="Don't include"
-              bind:group={$configStore.sidePanel}
-              value="Excluded"
-            />
-          </div>
-        </div> -->
         <CustomizationBlock
           title="Assist Bar"
           targetSelectView="ASSIST_BAR"
@@ -80,7 +64,7 @@
         />
         <SelectAccessories />
         <div
-          class="reset"
+          class="reset-form"
           on:click={() => {
             configStore.update((s) => {
               return initVal;
@@ -91,31 +75,9 @@
         </div>
       </div>
     </div>
-    <div class="submit-container">
-      <div class="submit-container-content">
-        <a
-          id="booking-button"
-          href={`mailto:${
-            config.demoEmailAddress
-          }?subject=Requesting a bed demo&body=${encodeURIComponent(
-            `Your name:
-Your message here:
-
-
-____________________________________________
-
-My configuration:
-Headboard: ${$configStore.variant}
-Color: ${$configStore.color}
-Sidepanel: ${$configStore.sidePanel}
-Assist Bar: ${$configStore.assistBar}
-Lifting pole: ${$configStore.liftingPole}
-Safety Mat: ${$configStore.safetyMat}
-____________________________________________
-
-`
-          )}`}>Book a demo</a
-        >
+    <div class="acc-submit">
+      <div class="acc-submit-content">
+        <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
         <p class="booking-info">
           Quick delivery | 100-night risk-free trial | Training &
           implementation.
@@ -123,30 +85,10 @@ ____________________________________________
       </div>
     </div>
   </div>
-</div>
+</ConfiguratorContainer>
 
-<style lang="scss">
-  #empresa-configurator {
-    font-family: "Poppins";
-    box-sizing: border-box;
-    position: relative;
-    * {
-      box-sizing: border-box;
-    }
-    --primary: rgba(25, 162, 144, 1);
-    --border-color: rgba(234, 234, 234, 1);
-    --radius: 5px;
-    --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
-    p {
-      margin-bottom: 0;
-    }
-    display: flex;
-    @media screen and (max-width: 860px) {
-      flex-direction: column;
-    }
-  }
-
-  .content-container {
+<style lang="scss" global>
+  .acc-content {
     width: 40%;
     max-width: 550px;
     flex-shrink: 4;
@@ -159,21 +101,31 @@ ____________________________________________
     }
   }
 
-  .customization-form {
+  .acc-form {
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
     & > *:last-child {
       border-bottom: none;
     }
+    .reset-form {
+      text-align: center;
+      font-size: 0.75rem;
+      padding: 1rem;
+
+      cursor: pointer;
+      &:hover {
+        color: var(--primary);
+      }
+    }
   }
-  .customization-form-content {
+  .acc-form-content {
     padding: 1.5rem;
     padding-bottom: 0.25rem;
     border-radius: 0 0 var(--radius) var(--radius);
   }
 
-  .form-title {
+  .acc-form-title {
     height: 74px;
     background: var(--primary);
     justify-content: center;
@@ -191,58 +143,36 @@ ____________________________________________
     }
   }
 
-  .image-frame-container {
-    flex-grow: 2;
-    flex-shrink: 1;
-  }
-  .sticky {
-    position: sticky;
-    /* top: 0; */
-
-    top: 15vh;
-    margin: 0 auto;
-  }
-
-  #booking-button {
-    background: var(--primary);
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    border: none;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 200px;
-    color: white;
-    border-radius: 4px;
-  }
-  .booking-info {
-    font-weight: 300;
-    text-align: center;
-    font-size: 0.875rem;
-  }
-
-  .submit-container {
+  .acc-submit {
     margin-top: 1rem;
     background: white;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
     margin-bottom: 2rem;
-  }
-  .submit-container-content {
-    padding: 1.5rem;
-  }
+    &-content {
+      padding: 1.5rem;
+    }
 
-  .reset {
-    text-align: center;
-    font-size: 0.75rem;
-    padding: 1rem;
-
-    cursor: pointer;
-    &:hover {
-      color: var(--primary);
+    &-button,
+    &-button:visited {
+      background: var(--primary);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      border: none;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 200px;
+      color: white;
+      border-radius: 4px;
+    }
+    .booking-info {
+      font-weight: 300;
+      text-align: center;
+      font-size: 0.875rem;
     }
   }
 </style>

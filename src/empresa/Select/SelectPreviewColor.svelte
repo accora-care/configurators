@@ -6,7 +6,7 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
 
-  const sortedColors = colors.sort((a) => (a.options?.quickship ? -1 : 1));
+  $: sortedColors = colors.sort((a) => (a.options?.quickship ? -1 : 1));
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "COLOR"}>
@@ -26,7 +26,7 @@
     >
       <SelectionGridItemImage
         src={`/images/empresa/colors/${colorVariant.title}.png`}
-        alt={colorVariant}
+        alt={colorVariant.title}
         cls="cls"
       />
     </SelectionGridItem>

@@ -5,7 +5,7 @@
   import { configStore } from "../configStore";
   import { bedVariants } from "../data/bedVariants";
 
-  const variantsByOrder = Object.entries(bedVariants)
+  $: variantsByOrder = Object.entries(bedVariants)
     .map(([bedVariant, colors]) => {
       return {
         title: bedVariant,

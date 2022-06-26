@@ -5,10 +5,10 @@
   export let disabled: boolean = false;
 </script>
 
-<div class="tbs-radio-container">
-  <label class="tbs-form-label-radio">
+<div class="acc-radio-container">
+  <label class="acc-form-label-radio">
     <input
-      class="tbs-input-radio"
+      class="acc-input-radio"
       type="radio"
       bind:group
       {name}
@@ -16,10 +16,10 @@
       required
       {disabled}
     />
-    <span class="tbs-custom-radio">
-      <span class="tbs-checkmark">
-        <div class="tbs-checkmark_stem" />
-        <div class="tbs-checkmark_tick" />
+    <span class="acc-custom-radio">
+      <span class="acc-checkmark">
+        <div class="acc-checkmark_stem" />
+        <div class="acc-checkmark_tick" />
       </span>
       <div class="label-desc">
         <slot />
@@ -28,12 +28,12 @@
   </label>
 </div>
 
-<style lang="scss">
-  .tbs-radio-container {
+<style lang="scss" global>
+  .acc-radio-container {
     position: relative;
     flex-grow: 1;
   }
-  .tbs-form-label-radio {
+  .acc-form-label-radio {
     color: var(--text-primary);
     display: flex;
     align-items: center;
@@ -41,11 +41,11 @@
     width: 100%;
   }
 
-  .tbs-input-radio {
+  .acc-input-radio {
     display: none;
   }
 
-  .tbs-custom-radio {
+  .acc-custom-radio {
     cursor: pointer;
     height: 100%;
     flex-grow: 1;
@@ -69,11 +69,11 @@
     width: calc(100% - 3rem);
   }
 
-  .tbs-custom-radio .tbs-checkmark {
+  .acc-custom-radio .acc-checkmark {
     background: var(--border-color);
   }
 
-  .tbs-checkmark {
+  .acc-checkmark {
     display: inline-block;
     border-radius: 50%;
     width: 22px;
@@ -84,7 +84,7 @@
     transform: rotate(45deg);
     margin-right: 1rem;
   }
-  .tbs-checkmark_stem {
+  .acc-checkmark_stem {
     position: absolute;
     width: 2px;
     height: 9px;
@@ -93,7 +93,7 @@
     border-radius: 1px;
   }
 
-  .tbs-checkmark_tick {
+  .acc-checkmark_tick {
     position: absolute;
     width: 5px;
     height: 2px;
@@ -103,34 +103,34 @@
     border-radius: 1px;
   }
 
-  .tbs-checkmark_stem,
-  .tbs-checkmark_tick {
+  .acc-checkmark_stem,
+  .acc-checkmark_tick {
     background-color: var(--primary);
     transition: 0.1s all;
     opacity: 0.3;
   }
 
-  .tbs-form-label-radio:hover {
-    .tbs-custom-radio {
-      .tbs-checkmark_stem,
-      .tbs-checkmark_tick {
+  .acc-form-label-radio:hover {
+    .acc-custom-radio {
+      .acc-checkmark_stem,
+      .acc-checkmark_tick {
         opacity: 1;
       }
     }
   }
 
-  .tbs-input-radio:checked + .tbs-custom-radio {
+  .acc-input-radio:checked + .acc-custom-radio {
     border-color: var(--primary);
-    .tbs-checkmark {
+    .acc-checkmark {
       background: var(--primary);
     }
-    .tbs-checkmark_stem,
-    .tbs-checkmark_tick {
+    .acc-checkmark_stem,
+    .acc-checkmark_tick {
       background: white !important;
       opacity: 1;
     }
   }
-  .tbs-input-radio:disabled + .tbs-custom-radio {
+  .acc-input-radio:disabled + .acc-custom-radio {
     cursor: not-allowed;
     background: var(--bg-secondary);
   }
