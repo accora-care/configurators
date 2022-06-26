@@ -65,7 +65,6 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script>
   const empresaConfig = {
-    demoEmailAddress: "demo@example.com",
     mainTitle: "Customize your Accora Floor Bed",
     bookADemoHref: "https://us.accora.care/book-a-demo",
   };
