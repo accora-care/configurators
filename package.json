@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
+    "deploy": "yarn build && node gh-pages",
     "build:embed": "rollup -c rollup.config.empresa.js",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
