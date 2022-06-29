@@ -10,6 +10,8 @@ import css from "rollup-plugin-css-only";
 import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
+const ASSET_URL =
+  "https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public";
 
 function serve() {
   let server;
@@ -36,77 +38,110 @@ function serve() {
   };
 }
 
-export const createRollupConfig = (config) => ({
-  input: "src/main.ts",
-  output: {
-    sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/build/bundle.js",
-  },
-  plugins: [
-    svelteSVG({
-      // optional SVGO options
-      // pass empty object to enable defaults
-      svgo: {},
-    }),
-    svelte({
-      preprocess: sveltePreprocess({
-        sourceMap: !production,
-        globalStyle: true,
-        postcss: {
-          plugins: [require("autoprefixer")()],
+const createRollupConfigBase = (foo) => {
+  const defaultConfig = {
+    input: "src/main.ts",
+    output: {
+      sourcemap: true,
+      format: "iife",
+      name: "app",
+      file: "public/build/bundle.js",
+    },
+    plugins: [
+      svelteSVG({
+        // optional SVGO options
+        // pass empty object to enable defaults
+        svgo: {},
+      }),
+      svelte({
+        preprocess: sveltePreprocess({
+          sourceMap: !production,
+          globalStyle: true,
+          postcss: {
+            plugins: [require("autoprefixer")()],
+          },
+          scss: {},
+        }),
+
+        compilerOptions: {
+          // enable run-time checks when not in production
+          dev: !production,
         },
-        scss: {},
+      }),
+      // we'll extract any component CSS out into
+      // a separate file - better for performance
+      css({ output: "bundle.css" }),
+
+      // If you have external dependencies installed from
+      // npm, you'll most likely need these plugins. In
+      // some cases you'll need additional configuration -
+      // consult the documentation for details:
+      // https://github.com/rollup/plugins/tree/master/packages/commonjs
+      resolve({
+        browser: true,
+        dedupe: ["svelte"],
+      }),
+      commonjs(),
+      typescript({
+        sourceMap: !production,
+        inlineSources: !production,
       }),
 
-      compilerOptions: {
-        // enable run-time checks when not in production
-        dev: !production,
-      },
-    }),
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
-    css({ output: "bundle.css" }),
+      // In dev mode, call `npm run start` once
+      // the bundle has been generated
+      !production && serve(),
 
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
-    commonjs(),
-    typescript({
-      sourceMap: !production,
-      inlineSources: !production,
-    }),
-    replace({
-      include: ["src/**/*.ts", "src/**/*.svelte"],
-      preventAssignment: true,
-      values: {
-        "process.env.IMAGE_URL": production
-          ? "'https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public'"
-          : "''",
-      },
-    }),
+      // Watch the `public` directory and refresh the
+      // browser on changes when not in production
+      !production && livereload("public"),
 
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
+      // If we're building for production (npm run build
+      // instead of npm run dev), minify
+      production && terser(),
+    ],
+    watch: {
+      clearScreen: false,
+    },
+  };
 
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
+  return foo(defaultConfig);
+};
 
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
-  ...config,
-});
+export const createRollupConfigEmbed = (foo) => {
+  const nextConfig = createRollupConfigBase((baseConfig) => {
+    return {
+      ...baseConfig,
+      plugins: [
+        ...baseConfig.plugins,
+        replace({
+          include: ["src/**/*.ts", "src/**/*.svelte"],
+          preventAssignment: true,
+          values: {
+            "process.env.IMAGE_URL": `'${ASSET_URL}'`,
+          },
+        }),
+      ],
+    };
+  });
+
+  return foo(nextConfig);
+};
+
+export const createRollupConfig = (foo) => {
+  const nextConfig = createRollupConfigBase((baseConfig) => {
+    return {
+      ...baseConfig,
+      plugins: [
+        ...baseConfig.plugins,
+        replace({
+          include: ["src/**/*.ts", "src/**/*.svelte"],
+          preventAssignment: true,
+          values: {
+            "process.env.IMAGE_URL": "''",
+          },
+        }),
+      ],
+    };
+  });
+  return foo(nextConfig);
+};

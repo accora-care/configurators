@@ -1,3 +1,8 @@
 import { createRollupConfig } from "./rollup.createConfig";
 
-export default createRollupConfig({ input: "src/main.ts" });
+export default createRollupConfig((config) => {
+  return {
+    ...config,
+    input: "src/main.ts",
+  };
+});
