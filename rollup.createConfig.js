@@ -7,7 +7,6 @@ import sveltePreprocess from "svelte-preprocess";
 import { svelteSVG } from "rollup-plugin-svelte-svg";
 import typescript from "@rollup/plugin-typescript";
 import css from "rollup-plugin-css-only";
-import scss from "rollup-plugin-scss";
 
 const production = !process.env.ROLLUP_WATCH;
 
