@@ -5,7 +5,7 @@
   export let disabled: boolean = false;
 </script>
 
-<div class="acc-radio-container">
+<div class="acc-radio-container" class:disabled>
   <label class="acc-form-label-radio">
     <input
       class="acc-input-radio"
@@ -78,9 +78,7 @@
     border-radius: 50%;
     width: 22px;
     height: 22px;
-    border: 1px solid var(--primary);
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    border: 1px solid var(--border-color);
     transform: rotate(45deg);
     margin-right: 1rem;
   }
@@ -89,7 +87,7 @@
     width: 2px;
     height: 9px;
     left: 11px;
-    top: 6px;
+    top: 5px;
     border-radius: 1px;
   }
 
@@ -99,7 +97,7 @@
     height: 2px;
     background-color: white;
     left: 8px;
-    top: 13px;
+    top: 12px;
     border-radius: 1px;
   }
 
@@ -123,11 +121,20 @@
     border-color: var(--primary);
     .acc-checkmark {
       background: var(--primary);
+      border: var(--primary);
     }
     .acc-checkmark_stem,
     .acc-checkmark_tick {
       background: white !important;
       opacity: 1;
+    }
+  }
+
+  .acc-radio-container.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    .label-desc {
+      opacity: 0.4;
     }
   }
   .acc-input-radio:disabled + .acc-custom-radio {

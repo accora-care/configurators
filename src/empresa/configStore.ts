@@ -11,7 +11,7 @@ export type SELECTOR_VIEW =
 export type StoreValues = {
   variant: string;
   color: string;
-  sidePanel: string;
+  sidePanel: "Included" | "Not included";
   liftingPole: "Included" | "Not included";
   safetyMat: "Included" | "Not included";
   assistBar: "Long" | "Short" | "None";
@@ -20,7 +20,7 @@ export type StoreValues = {
 
 export const initVal: StoreValues = {
   variant: "Skandi",
-  color: "Locarno Cherry",
+  color: "Natural Lancaster Oak",
   sidePanel: "Included",
   liftingPole: "Not included",
   safetyMat: "Not included",

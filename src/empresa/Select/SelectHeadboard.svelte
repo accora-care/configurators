@@ -4,6 +4,8 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
   import { bedVariants } from "../data/bedVariants";
+  import { sidePanels } from "../data/sidePanels";
+  import { isSidePanelAllowed } from "../isSidePanelAllowed";
 
   $: variantsByOrder = Object.entries(bedVariants)
     .map(([bedVariant, colors]) => {
@@ -27,6 +29,9 @@
           return {
             ...s,
             variant: title,
+            sidePanel: isSidePanelAllowed({ ...s, variant: title })
+              ? s.sidePanel
+              : "Not included",
           };
         });
       }}

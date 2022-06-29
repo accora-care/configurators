@@ -1,5 +1,6 @@
 <script lang="ts">
   import { configStore } from "./configStore";
+  import { isSidePanelAllowed } from "./isSidePanelAllowed";
 </script>
 
 <div class="image-frame">
@@ -15,7 +16,7 @@
     src={`/images/empresa/headboards/${$configStore.variant}_${$configStore.color}.png`}
     alt={`headboard - ${$configStore.variant} - ${$configStore.color}`}
   />
-  {#if $configStore.sidePanel === "Included"}
+  {#if $configStore.sidePanel === "Included" && isSidePanelAllowed($configStore)}
     <img
       src={`/images/empresa/sidePanels/${$configStore.color}_1.png`}
       alt={`${$configStore.variant} - ${$configStore.color}`}
