@@ -27,7 +27,6 @@
       <SelectionGridItemImage
         src={`/images/empresa/colors/${colorVariant.title}.png`}
         alt={colorVariant.title}
-        cls="cls"
       />
     </SelectionGridItem>
   {/each}

@@ -7,6 +7,7 @@ import sveltePreprocess from "svelte-preprocess";
 import { svelteSVG } from "rollup-plugin-svelte-svg";
 import typescript from "@rollup/plugin-typescript";
 import css from "rollup-plugin-css-only";
+import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -81,6 +82,15 @@ export const createRollupConfig = (config) => ({
     typescript({
       sourceMap: !production,
       inlineSources: !production,
+    }),
+    replace({
+      include: ["src/**/*.ts", "src/**/*.svelte"],
+      preventAssignment: true,
+      values: {
+        "process.env.IMAGE_URL": production
+          ? "'https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public'"
+          : "''",
+      },
     }),
 
     // In dev mode, call `npm run start` once

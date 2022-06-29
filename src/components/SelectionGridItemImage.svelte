@@ -1,8 +1,10 @@
 <script lang="ts">
-  export let cls: string = "";
+  import Img from "./Img.svelte";
+
+  let { class: cls, ...rest } = $$restProps;
 </script>
 
-<img class={"acc-grid-item-preview-image " + cls} alt="" {...$$restProps} />
+<Img class={"acc-grid-item-preview-image " + cls} alt="" {...rest} />
 
 <style lang="scss" global>
   .acc-grid-item-preview-image {
