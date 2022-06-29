@@ -1,10 +1,10 @@
-import { publish } from "gh-pages";
+const gh = require("gh-pages");
 
-publish(
-  "build", // path to public directory
+gh.publish(
+  "public", // path to public directory
   {
     branch: "gh-pages",
-    repo: "https://github.com/accora-care/configurators.git", // Update to point to your repository
+    repo: "git@github.com:accora-care/configurators.git", // Update to point to your repository
     dotfiles: true,
   },
   () => {
