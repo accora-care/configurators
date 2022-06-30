@@ -22,7 +22,7 @@
     <Preview />
   </PreviewContainer>
 
-  <div class="acc-content">
+  <div id="acc-empresa" class="acc-content">
     <div class="acc-form">
       <div class="acc-form-title">{config.mainTitle}</div>
       <div class="acc-form-content">

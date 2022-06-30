@@ -30,7 +30,9 @@
       if (s.selectorView === "COLOR") {
         // color was too long, collapsed color will not move the scroll, we do it manually
         try {
-          document.getElementById("empresa-configurator").scrollIntoView();
+          document.getElementById("acc-empresa").scrollIntoView({
+            behavior: "smooth",
+          });
         } catch {}
       }
       return {
