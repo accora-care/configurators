@@ -6,7 +6,15 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
 
-  $: sortedColors = colors.sort((a) => (a.options?.quickship ? -1 : 1));
+  $: sortedColors = colors.sort((a, b) => {
+    if ((a.options?.quickship ? -1 : 0) && (b.options?.quickship ? -1 : 0)) {
+      return 0;
+    }
+    if (a.options?.quickship ? -1 : 0) {
+      return -1;
+    }
+    return 1;
+  });
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "COLOR"}>
