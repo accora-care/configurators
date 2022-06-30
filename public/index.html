@@ -39,5 +39,73 @@
         EmpresaConfigurator("empresa-configurator", empresaConfig);
       });
     </script>
+
+    <!-- <script>
+      const CACHE_KEY = "ACC_WEBINAR_ACCESS_FORM";
+      const hideForm = () => {
+        try {
+          localStorage.setItem(CACHE_KEY, "TRUE");
+          document.getElementById("recording-registration").style.display =
+            "none";
+          document.getElementById("recording-video").style.display = "block";
+        } catch {}
+      };
+
+      $(window).load(function () {
+        try {
+          if (localStorage.getItem(CACHE_KEY) === "TRUE") {
+            hideForm();
+          }
+        } catch {}
+      });
+
+      hbspt.forms.create({
+        region: "eu1",
+        portalId: "25005558",
+        formId: "6cf5a34d-7a37-4747-b645-862694b81b9b",
+        onFormSubmitted: () => {
+          hideForm();
+        },
+      });
+    </script> -->
+
+    <!--[if lte IE 8]>
+      <script
+        charset="utf-8"
+        type="text/javascript"
+        src="//js-eu1.hsforms.net/forms/v2-legacy.js"
+      ></script>
+    <![endif]-->
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js-eu1.hsforms.net/forms/v2.js"
+    ></script>
+    <script>
+      const CACHE_KEY = "ACC_WEBINAR_ACCESS_FORM";
+      const hideForm = () => {
+        try {
+          localStorage.setItem(CACHE_KEY, "TRUE");
+          document.getElementById("recording-registration").style.display =
+            "none";
+          document.getElementById("recording-video").style.display = "block";
+        } catch {}
+      };
+      // $(window).load(function () {
+      //   try {
+      //     if (localStorage.getItem(CACHE_KEY) === "TRUE") {
+      //       hideForm();
+      //     }
+      //   } catch {}
+      // });
+      hbspt.forms.create({
+        region: "eu1",
+        portalId: "25005558",
+        formId: "6cf5a34d-7a37-4747-b645-862694b81b9b",
+        onFormSubmitted: () => {
+          hideForm();
+        },
+      });
+    </script>
   </body>
 </html>
