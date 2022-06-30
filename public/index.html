@@ -7,8 +7,8 @@
     <title>Svelte app</title>
 
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./build/bundle.css" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/build/bundle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
 
-    <script defer src="./build/bundle.js"></script>
+    <script defer src="/build/bundle.js"></script>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
     <div style="height: 50vh"></div>
     <div id="content"></div>
     <div style="height: 50vh"></div>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       const empresaConfig = {
         mainTitle: "Customize your Accora Floor Bed",
         bookADemoHref: "https://us.accora.care/book-a-demo",
@@ -38,7 +38,7 @@
       jsScript.addEventListener("load", () => {
         EmpresaConfigurator("empresa-configurator", empresaConfig);
       });
-    </script>
+    </script> -->
 
     <!-- <script>
       const CACHE_KEY = "ACC_WEBINAR_ACCESS_FORM";
@@ -76,36 +76,5 @@
         src="//js-eu1.hsforms.net/forms/v2-legacy.js"
       ></script>
     <![endif]-->
-    <script
-      charset="utf-8"
-      type="text/javascript"
-      src="//js-eu1.hsforms.net/forms/v2.js"
-    ></script>
-    <script>
-      const CACHE_KEY = "ACC_WEBINAR_ACCESS_FORM";
-      const hideForm = () => {
-        try {
-          localStorage.setItem(CACHE_KEY, "TRUE");
-          document.getElementById("recording-registration").style.display =
-            "none";
-          document.getElementById("recording-video").style.display = "block";
-        } catch {}
-      };
-      // $(window).load(function () {
-      //   try {
-      //     if (localStorage.getItem(CACHE_KEY) === "TRUE") {
-      //       hideForm();
-      //     }
-      //   } catch {}
-      // });
-      hbspt.forms.create({
-        region: "eu1",
-        portalId: "25005558",
-        formId: "6cf5a34d-7a37-4747-b645-862694b81b9b",
-        onFormSubmitted: () => {
-          hideForm();
-        },
-      });
-    </script>
   </body>
 </html>
