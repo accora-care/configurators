@@ -11,10 +11,17 @@
   import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
+  import { isSidePanelAllowed } from "./isSidePanelAllowed";
 
   export let config: InitConfig;
 
   $: availableColors = bedVariants[$configStore.variant];
+  let valueSidePanels = "";
+  configStore.subscribe((state) => {
+    valueSidePanels = isSidePanelAllowed(state)
+      ? state.sidePanel
+      : "Not available";
+  });
 </script>
 
 <ConfiguratorContainer>
@@ -44,7 +51,7 @@
         <CustomizationBlock
           title="Side Panels"
           targetSelectView="SIDE_PANEL"
-          value={$configStore.sidePanel}
+          value={valueSidePanels}
           length={2}
         />
         <SelectSide />

@@ -29,9 +29,6 @@
           return {
             ...s,
             variant: title,
-            sidePanel: isSidePanelAllowed({ ...s, variant: title })
-              ? s.sidePanel
-              : "Not included",
           };
         });
       }}

@@ -140,5 +140,10 @@
   .acc-input-radio:disabled + .acc-custom-radio {
     cursor: not-allowed;
     background: var(--bg-secondary);
+    border-color: var(--border-color) !important;
+    .acc-checkmark {
+      background: var(--border-color);
+      border: var(--border-color);
+    }
   }
 </style>
