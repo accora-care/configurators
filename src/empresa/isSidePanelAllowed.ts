@@ -7,3 +7,11 @@ export const isSidePanelAllowed = (state: StoreValues) => {
 
   return true;
 };
+
+export const sidePanelExceptionReason = (state: StoreValues) => {
+  if (state.variant === "ARC") {
+    return "Not available for ARC";
+  }
+
+  return null;
+};

@@ -11,16 +11,14 @@
   import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
-  import { isSidePanelAllowed } from "./isSidePanelAllowed";
+  import { sidePanelExceptionReason } from "./isSidePanelAllowed";
 
   export let config: InitConfig;
 
   $: availableColors = bedVariants[$configStore.variant];
   let valueSidePanels = "";
   configStore.subscribe((state) => {
-    valueSidePanels = isSidePanelAllowed(state)
-      ? state.sidePanel
-      : "Not available";
+    valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
   });
 </script>
 
