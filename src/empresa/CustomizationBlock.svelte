@@ -69,13 +69,13 @@
     overflow: hidden;
     flex-grow: 1;
     flex-shrink: 1;
-    padding-right: 1rem;
+    padding-right: 1.6rem;
     .title {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 1.6rem;
     }
     .value {
-      font-size: 14px;
+      font-size: 1.4rem;
       flex-grow: 1;
       overflow: hidden;
       white-space: nowrap;
@@ -87,11 +87,11 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-right: 1rem;
+    padding-right: 1.6rem;
     cursor: pointer;
   }
   .acc-customization-icon-container {
-    padding: 1rem;
+    padding: 1.6rem;
     flex-shrink: 0;
     @media screen and (max-width: 1200px) {
       padding-left: 0;
@@ -124,7 +124,7 @@
 
   // select container
   .acc-select-container {
-    height: 24px;
+    height: 2.4rem;
     flex-grow: 1;
 
     position: relative;
@@ -133,12 +133,12 @@
     justify-content: flex-end;
     .acc-select-container__sticker {
       background: #f6f6f6;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       height: 100%;
       pointer-events: none;
-      padding: 0 0.5rem;
-      right: 32px;
-      margin-right: 1rem;
+      padding: 0 0.8rem;
+      right: 3.2rem;
+      margin-right: 1.6rem;
 
       white-space: nowrap;
 
@@ -148,8 +148,8 @@
       align-items: center;
 
       font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
       text-align: center;
 
       color: #333232;

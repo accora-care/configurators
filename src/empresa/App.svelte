@@ -115,8 +115,8 @@
     }
     .reset-form {
       text-align: center;
-      font-size: 0.75rem;
-      padding: 1rem;
+      font-size: 1.2rem;
+      padding: 1.6rem;
 
       cursor: pointer;
       &:hover {
@@ -125,8 +125,8 @@
     }
   }
   .acc-form-content {
-    padding: 1.5rem;
-    padding-bottom: 0.25rem;
+    padding: 2.4rem;
+    padding-bottom: 0.4rem;
     border-radius: 0 0 var(--radius) var(--radius);
   }
 
@@ -136,12 +136,12 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1.6rem 3.2rem;
     text-align: center;
     border-radius: var(--radius) var(--radius) 0 0;
     color: white;
-    font-size: 18px;
-    line-height: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
     font-weight: 400;
     @media screen and (max-width: 860px) {
       display: none;
@@ -149,20 +149,20 @@
   }
 
   .acc-submit {
-    margin-top: 1rem;
+    margin-top: 1.6rem;
     background: white;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 3.2rem;
     &-content {
-      padding: 1.5rem;
+      padding: 2.4rem;
     }
 
     &-button,
     &-button:visited {
       background: var(--primary);
-      height: 48px;
+      height: 4.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,12 +172,13 @@
       width: 100%;
       max-width: 200px;
       color: white;
-      border-radius: 4px;
+      border-radius: 0.4rem;
+      text-decoration: none;
     }
     .booking-info {
       font-weight: 300;
       text-align: center;
-      font-size: 0.875rem;
+      font-size: 1.4rem;
     }
   }
 </style>

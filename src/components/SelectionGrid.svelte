@@ -15,10 +15,10 @@
   .acc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    column-gap: 0.8rem;
+    row-gap: 0.8rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
     border-bottom: 1px solid var(--border-color);
     transition: 0.2s all;
     max-height: 1000px;

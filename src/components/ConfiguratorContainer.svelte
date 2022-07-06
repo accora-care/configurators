@@ -12,7 +12,7 @@
     }
     --primary: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
-    --radius: 5px;
+    --radius: 0.5rem;
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
     p {
       margin-bottom: 0;

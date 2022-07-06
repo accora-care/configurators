@@ -49,8 +49,8 @@
     cursor: pointer;
     height: 100%;
     flex-grow: 1;
-    padding: 1rem 1rem;
-    font-size: 0.875rem;
+    padding: 1.6rem 1.6rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     top: 0;
@@ -66,7 +66,7 @@
   .label-desc {
     flex-shrink: 1;
     word-wrap: break-word;
-    width: calc(100% - 3rem);
+    width: calc(100% - 4.8rem);
   }
 
   .acc-custom-radio .acc-checkmark {
@@ -80,7 +80,7 @@
     height: 22px;
     border: 1px solid var(--border-color);
     transform: rotate(45deg);
-    margin-right: 1rem;
+    margin-right: 1.6rem;
   }
   .acc-checkmark_stem {
     position: absolute;
@@ -96,8 +96,8 @@
     width: 5px;
     height: 2px;
     background-color: white;
-    left: 8px;
-    top: 12px;
+    left: .8rem;
+    top: 1.2rem;
     border-radius: 1px;
   }
 

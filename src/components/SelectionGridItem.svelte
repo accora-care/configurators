@@ -22,8 +22,8 @@
 
 <style lang="scss" global>
   .acc-grid-item {
-    padding: 0.5rem;
-    border-radius: 4px;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
     transition: 0.2s all;
     border: 1px solid transparent;
     cursor: pointer;
@@ -39,29 +39,31 @@
       overflow: hidden;
     }
     &-title {
-      font-size: 0.75rem;
-      line-height: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
       text-align: center;
       font-weight: 300;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
     &-quickship {
       background: #828282;
       display: flex;
       align-items: center;
-      font-size: 0.625rem;
+      font-size: 1rem;
       justify-content: center;
-      padding: 0 0.5rem;
-      height: 20px;
-      border-radius: 10px;
+      padding: 0 0.8rem;
+      height: 2rem;
+      border-radius: 1rem;
       color: white;
       font-weight: 300;
       margin: 0 auto;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
       width: min-content;
     }
     &-qctext {
-      margin-left: 0.25rem;
+      margin-left: 0.4rem;
+      margin-top: 0.5rem;
+      word-break: keep-all;
     }
   }
 </style>

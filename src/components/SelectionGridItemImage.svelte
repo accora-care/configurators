@@ -10,6 +10,6 @@
   .acc-grid-item-preview-image {
     width: 100%;
     display: block;
-    border-radius: 4px;
+    border-radius: 0.4rem;;
   }
 </style>
