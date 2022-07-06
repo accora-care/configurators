@@ -17,8 +17,17 @@
 
   $: availableColors = bedVariants[$configStore.variant];
   let valueSidePanels = "";
+  let accessoriesDisplayValue = "none";
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
+
+    accessoriesDisplayValue =
+      [
+        $configStore.liftingPole === "Included" ? "Lifting pole" : null,
+        $configStore.safetyMat === "Included" ? "Safety mat" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
   });
 </script>
 
@@ -64,7 +73,7 @@
         <CustomizationBlock
           title="Accessories"
           targetSelectView="ACCESSORIES"
-          value={$configStore.assistBar}
+          value={accessoriesDisplayValue}
           length={2}
         />
         <SelectAccessories />
@@ -162,6 +171,7 @@
     &-button,
     &-button:visited {
       background: var(--primary);
+      font-size: 1.6rem;
       height: 4.8rem;
       display: flex;
       align-items: center;
@@ -179,6 +189,7 @@
       font-weight: 300;
       text-align: center;
       font-size: 1.4rem;
+      margin-top: 1.8rem;
     }
   }
 </style>

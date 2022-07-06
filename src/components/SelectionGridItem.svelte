@@ -62,7 +62,6 @@
     }
     &-qctext {
       margin-left: 0.4rem;
-      margin-top: 0.5rem;
       word-break: keep-all;
     }
   }
