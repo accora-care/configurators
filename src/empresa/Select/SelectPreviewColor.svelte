@@ -5,15 +5,12 @@
   import SelectionGridItem from "../../components/SelectionGridItem.svelte";
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
+  import { colorsOrder } from "../data/colors";
 
   $: sortedColors = colors.sort((a, b) => {
-    if ((a.options?.quickship ? -1 : 0) && (b.options?.quickship ? -1 : 0)) {
-      return 0;
-    }
-    if (a.options?.quickship ? -1 : 0) {
-      return -1;
-    }
-    return 1;
+    const indexA = colorsOrder.findIndex((color) => color === a.title) ?? 10000;
+    const indexB = colorsOrder.findIndex((color) => color === b.title) ?? 10000;
+    return indexA - indexB;
   });
 </script>
 

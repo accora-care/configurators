@@ -1,4 +1,7 @@
-export const colors = [
+export const colorsOrder = [
+  "Natural Lancaster Oak",
+  "Locarno Cherry",
+  "Natural Dijon Walnut",
   "Anthracite Fineline Metallic",
   "Bavarian Beech",
   "Black Brown Thermo Oak",
@@ -7,9 +10,6 @@ export const colors = [
   "Grey Beige Bamenda",
   "Grey Beige Tossini Elm",
   "Lincoln Walnut",
-  "Locarno Cherry",
-  "Natural Dijon Walnut",
-  "Natural Lancaster Oak",
   "Polar Aland Pine",
   "Sand Orleans Oak",
   "Tobacco Gladstone Oak",
