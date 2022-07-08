@@ -15,12 +15,13 @@
 
   export let config: InitConfig;
 
-  $: availableColors = bedVariants[$configStore.variant];
   let valueSidePanels = "";
   let accessoriesDisplayValue = "none";
+  let availableColors = [];
+
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
-
+    availableColors = bedVariants[state.variant] || [];
     accessoriesDisplayValue =
       [
         $configStore.liftingPole === "Included" ? "Lifting pole" : null,

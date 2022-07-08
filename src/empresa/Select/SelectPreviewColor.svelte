@@ -5,6 +5,7 @@
   import SelectionGridItem from "../../components/SelectionGridItem.svelte";
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
+  import { bedVariants } from "../data/bedVariants";
   import { colorsOrder } from "../data/colors";
 
   $: sortedColors = colors.sort((a, b) => {
@@ -14,7 +15,7 @@
   });
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "COLOR"}>
+<SelectionGrid visible={$configStore.selectorView === "COLOR" || true}>
   {#each sortedColors as colorVariant}
     <SelectionGridItem
       isQuickship={colorVariant.options.quickship}

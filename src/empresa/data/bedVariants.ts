@@ -72,7 +72,7 @@ export const bedVariants: {
     { title: "Polar Aland Pine", options: {} },
     { title: "Sand Orleans Oak", options: {} },
     { title: "Tobacco Gladstone Oak", options: {} },
-    { title: "Vicenza", options: {} },
+    { title: "Vicenza Oak", options: {} },
   ],
   Classic: [
     { title: "Anthracite Fineline Metallic", options: {} },
