@@ -94,8 +94,8 @@
       <div class="acc-submit-content">
         <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
         <p class="booking-info">
-          Quick delivery | 100-night risk-free trial | Training &
-          implementation.
+          {config.footerText ||
+            "Quick Ship Options | 14 Day Free Trial | Training and Implementation"}
         </p>
       </div>
     </div>

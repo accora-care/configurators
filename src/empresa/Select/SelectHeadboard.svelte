@@ -18,7 +18,7 @@
     .sort((variant) => (variant.isQuickship ? -1 : 1));
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "HEADBOARD" || true}>
+<SelectionGrid visible={$configStore.selectorView === "HEADBOARD"}>
   {#each variantsByOrder as { title, isQuickship }}
     <SelectionGridItem
       {isQuickship}

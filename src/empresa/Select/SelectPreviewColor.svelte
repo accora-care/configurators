@@ -15,7 +15,7 @@
   });
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "COLOR" || true}>
+<SelectionGrid visible={$configStore.selectorView === "COLOR"}>
   {#each sortedColors as colorVariant}
     <SelectionGridItem
       isQuickship={colorVariant.options.quickship}
