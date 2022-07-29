@@ -5,25 +5,31 @@
 </script>
 
 <div class="image-frame">
-  <Img src={`/images/floorbed1/bed-frame.png`} class="image-frame-img" />
+  <Img src={`/images/floorbed1/1200/bed-frame.png`} class="image-frame-img" />
   {#if $configStore.liftingPole}
-    <Img src={`/images/floorbed1/liftingPole.png`} class="image-frame-img" />
+    <Img
+      src={`/images/floorbed1/1200/liftingPole.png`}
+      class="image-frame-img"
+    />
   {/if}
-  <Img src={`/images/floorbed1/mattress.png`} class="image-frame-img" />
+  <Img src={`/images/floorbed1/1200/mattress.png`} class="image-frame-img" />
   {#if $configStore.sideRails}
-    <Img src={`/images/floorbed1/sideRails.png`} class="image-frame-img" />
+    <Img src={`/images/floorbed1/1200/sideRails.png`} class="image-frame-img" />
   {/if}
   {#if $configStore.bumpers}
-    <Img src={`/images/floorbed1/bumpers.png`} class="image-frame-img" />
+    <Img src={`/images/floorbed1/1200/bumpers.png`} class="image-frame-img" />
   {/if}
   {#if $configStore.lever}
-    <Img src={`/images/floorbed1/lever.png`} class="image-frame-img" />
+    <Img src={`/images/floorbed1/1200/lever.png`} class="image-frame-img" />
   {/if}
   {#if $configStore.pumpHolder}
-    <Img src={`/images/floorbed1/pumpHolder.png`} class="image-frame-img" />
+    <Img
+      src={`/images/floorbed1/1200/pumpHolder.png`}
+      class="image-frame-img"
+    />
   {/if}
   {#if $configStore.safetyMat}
-    <Img src={`/images/floorbed1/safetyMat.png`} class="image-frame-img" />
+    <Img src={`/images/floorbed1/1200/safetyMat.png`} class="image-frame-img" />
   {/if}
 </div>
 
