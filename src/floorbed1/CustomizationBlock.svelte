@@ -56,6 +56,7 @@
     border-bottom: 1px solid var(--border-color);
     padding-right: 1.6rem;
     &.noclick {
+      padding-right: 0;
       cursor: initial;
       &:hover {
         .title {

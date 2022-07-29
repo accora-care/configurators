@@ -20,7 +20,7 @@
     <div class="acc-form">
       <div class="acc-form-title">{config.mainTitle}</div>
       <div class="acc-form-content">
-        <CustomizationBlock title="Accessories" length={2} />
+        <CustomizationBlock title="Accessories" length={5} />
         <SelectAccessories />
         <div
           class="reset-form"
