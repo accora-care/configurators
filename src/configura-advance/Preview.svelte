@@ -2,7 +2,6 @@
   import Img from "../components/Img.svelte";
 
   import { configStore } from "./configStore";
-  import { isSidePanelAllowed } from "./isSidePanelAllowed";
 </script>
 
 <div class="image-frame">

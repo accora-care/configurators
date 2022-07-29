@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { bedVariants } from "./data/bedVariants";
   import { configStore, initVal } from "./configStore";
 
   import CustomizationBlock from "./CustomizationBlock.svelte";
@@ -8,7 +7,6 @@
   import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
-  import { sidePanelExceptionReason } from "./isSidePanelAllowed";
 
   export let config: InitConfig;
 </script>

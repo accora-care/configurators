@@ -4,7 +4,7 @@ import { writable } from "svelte/store";
 export type StoreValues = {
   headrest: boolean;
   lateralSupport: boolean;
-  backrest: "normal" | "postral";
+  backrest: "normal" | "postural";
 };
 
 export const initVal: StoreValues = {

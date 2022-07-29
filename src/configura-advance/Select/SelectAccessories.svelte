@@ -8,6 +8,40 @@
 
 <SelectionGrid visible={true}>
   <SelectionGridItem
+    active={$configStore.backrest === "normal"}
+    title="Waterfall backrest"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          backrest: "normal",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/configura-advance/normal-head.png`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
+    active={$configStore.backrest === "postural"}
+    title="Postural backrest"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          backrest: "postural",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/configura-advance/postral-backrest.png`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
     active={$configStore.headrest}
     title="Headrest"
     onClick={() => {
@@ -38,40 +72,6 @@
   >
     <SelectionGridItemImage
       src={`/images/configura-advance/lateral-support.png`}
-      class="image-frame-img"
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
-    active={$configStore.backrest === "normal"}
-    title="Normal backrest"
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          backrest: "normal",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/configura-advance/normal-head.png`}
-      class="image-frame-img"
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
-    active={$configStore.backrest === "postral"}
-    title="Postral backrest"
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          backrest: "postral",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/configura-advance/postral-backrest.png`}
       class="image-frame-img"
     />
   </SelectionGridItem>
