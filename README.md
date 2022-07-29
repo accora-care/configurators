@@ -50,7 +50,7 @@ Include styles in `<head>`
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/accora-care/configurators/public/empresa/bundle.css"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/empresa/bundle.css"
 />
 ```
 
@@ -65,7 +65,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/empresa/empresa-configurator.js"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/empresa/empresa-configurator.js"
 ></script>
 <script defer>
   const empresaConfig = {
@@ -83,7 +83,7 @@ Include styles in `<head>`
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/floorbed1/bundle.css"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/floorbed1/bundle.css"
 />
 ```
 
@@ -98,7 +98,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/floorbed1/floorbed1-configurator.js"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/floorbed1/floorbed1-configurator.js"
 ></script>
 <script defer>
   const floorbed1Config = {

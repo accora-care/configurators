@@ -25,6 +25,23 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    active={$configStore.liftingPole}
+    title="Self-assist pole"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          liftingPole: !s.liftingPole,
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/floorbed1/liftingPole_preview.png`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
     active={$configStore.bumpers}
     title="Head and foot bumpers"
     onClick={() => {
@@ -39,23 +56,6 @@
   >
     <SelectionGridItemImage
       src={`/images/floorbed1/bumpers_preview.png`}
-      class="image-frame-img"
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
-    active={$configStore.liftingPole}
-    title="Self-assist pole"
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          liftingPole: !s.liftingPole,
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/floorbed1/liftingPole_preview.png`}
       class="image-frame-img"
     />
   </SelectionGridItem>
