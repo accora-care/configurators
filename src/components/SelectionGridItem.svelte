@@ -6,18 +6,18 @@
   import IconQuickship from "./assets/icon-quickship.svg";
 </script>
 
-<div class="acc-grid-item-wrapper">
-  <div class="acc-grid-item" class:active on:click={onClick}>
+<div class="acc-grid-item" class:active on:click={onClick}>
+  <div>
     <slot />
     {#if title}
       <div class="acc-grid-item-title">{title}</div>
     {/if}
-    {#if isQuickship}
-      <div class="acc-grid-item-quickship">
-        <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
-      </div>
-    {/if}
   </div>
+  {#if isQuickship}
+    <div class="acc-grid-item-quickship">
+      <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+    </div>
+  {/if}
 </div>
 
 <style lang="scss" global>
@@ -28,6 +28,9 @@
     border: 1px solid transparent;
     cursor: pointer;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &.active {
       border: 1px solid var(--primary);

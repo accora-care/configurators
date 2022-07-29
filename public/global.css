@@ -67,7 +67,8 @@ button:focus {
   border-color: #666;
 }
 
-#content {
+#content,
+.content {
   max-width: calc(1440px + 4rem);
   margin: 0 auto;
   padding-left: 2rem;
@@ -75,7 +76,8 @@ button:focus {
 }
 
 @media screen and (max-width: 460px) {
-  #content {
+  #content,
+  .content {
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
