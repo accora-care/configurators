@@ -63,19 +63,49 @@ To include empresa configurator on the website, create a div element with `id` i
 At the end of `<body>`, include this script, make sure to edit the config:
 
 ```html
-<script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/empresa/empresa-configurator.js"
+></script>
+<script defer>
   const empresaConfig = {
     mainTitle: "Customize your Accora Floor Bed",
     bookADemoHref: "https://us.accora.care/book-a-demo",
   };
-  const jsScript = document.createElement("script");
-  jsScript.src =
-    "https://cdn.jsdelivr.net/gh/accora-care/configurators/public/empresa/empresa-configurator.js";
-  document.body.appendChild(jsScript);
+  EmpresaConfigurator("empresa-configurator", empresaConfig);
+</script>
+```
 
-  jsScript.addEventListener("load", () => {
-    EmpresaConfigurator("empresa-configurator", empresaConfig);
-  });
+## Floorbed 1 Configurator
+
+Include styles in `<head>`
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/floorbed1/bundle.css"
+/>
+```
+
+To include empresa configurator on the website, create a div element with `id` in the desired location of the html.
+
+```html
+<div id="floorbed1-configurator"></div>
+```
+
+At the end of `<body>`, include this script, make sure to edit the config:
+
+```html
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@latest/public/floorbed1/floorbed1-configurator.js"
+></script>
+<script defer>
+  const floorbed1Config = {
+    mainTitle: "Customize your Accora Floorbed 1",
+    bookADemoHref: "https://us.accora.care/book-a-demo",
+  };
+  AccoraFloorbedOne("floorbed1-configurator", floorbed1Config);
 </script>
 ```
 
