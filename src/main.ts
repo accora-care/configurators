@@ -25,7 +25,7 @@ const floorbed1 = new Floorbed1Svelte({
   target: document.getElementById("floorbed1"),
   props: {
     config: {
-      mainTitle: "Customize your Accora Floorbed1",
+      mainTitle: "Customize your Accora Floorbed 1",
       bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
