@@ -1,21 +1,24 @@
 import type { InitConfig } from "./Config.types";
-import App from "./App.svelte";
+import Floorbed1Svelte from "./Floorbed1.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora Floor Bed",
+  mainTitle: "Customize your Accora Floorbed 1",
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 
-export const EmpresaConfigurator = (targetId: string, config: InitConfig) => {
-  const app = new App({
+export const AccoraFloorbedOne = (targetId: string, config: InitConfig) => {
+  const app = new Floorbed1Svelte({
     target: document.getElementById(targetId),
     props: {
-      config,
+      config: {
+        ...initConfig,
+        config,
+      },
     },
   });
 
   return app;
 };
 
-(window as any).EmpresaConfigurator = EmpresaConfigurator;
-export default EmpresaConfigurator;
+(window as any).AccoraFloorbedOne = AccoraFloorbedOne;
+export default AccoraFloorbedOne;
