@@ -34,7 +34,7 @@
       alt={"Long assist bar"}
     />
     {#if !!assistBarException}
-      {assistBarException}
+      <span class="acc-exception">{assistBarException}</span>
     {/if}
   </SelectionGridItem>
   <SelectionGridItem
@@ -73,5 +73,8 @@
   </SelectionGridItem>
 </SelectionGrid>
 
-<style lang="scss">
+<style lang="scss" global>
+  .acc-exception {
+    font-size: 1rem;
+  }
 </style>
