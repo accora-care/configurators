@@ -5,30 +5,72 @@
 
   export let value: string;
 
-  import { configStore, StoreValues } from "../configStore";
-  const bars: StoreValues["assistBar"][] = ["Long", "Short", "None"];
+  import { configStore } from "../configStore";
+  import { assistBarLongException } from "../isLongBarAllowed";
+
+  let assistBarException = "";
+
+  configStore.subscribe((state) => {
+    assistBarException = assistBarLongException(state);
+  });
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ASSIST_BAR"}>
-  {#each bars as bar}
-    <SelectionGridItem
-      active={value === bar}
-      title={`${bar}`}
-      onClick={() => {
-        configStore.update((s) => {
-          return {
-            ...s,
-            assistBar: bar,
-          };
-        });
-      }}
-    >
-      <SelectionGridItemImage
-        src={`/images/empresa/accessory/${bar} - preview.jpg`}
-        alt={bar}
-      />
-    </SelectionGridItem>
-  {/each}
+  <SelectionGridItem
+    active={value === "Long"}
+    title={"Long"}
+    disabled={!!assistBarException}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          assistBar: "Long",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa/accessory/${"Long"} - preview.jpg`}
+      alt={"Long assist bar"}
+    />
+    {#if !!assistBarException}
+      {assistBarException}
+    {/if}
+  </SelectionGridItem>
+  <SelectionGridItem
+    active={value === "Short"}
+    title={"Short"}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          assistBar: "Short",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa/accessory/${"Short"} - preview.jpg`}
+      alt={"Short assist bar"}
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
+    active={value === "None"}
+    title={"None"}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          assistBar: "None",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa/accessory/${"None"} - preview.jpg`}
+      alt={"None "}
+    />
+  </SelectionGridItem>
 </SelectionGrid>
 
 <style lang="scss">

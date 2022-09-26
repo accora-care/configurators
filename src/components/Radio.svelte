@@ -96,7 +96,7 @@
     width: 5px;
     height: 2px;
     background-color: white;
-    left: .8rem;
+    left: 0.8rem;
     top: 1.2rem;
     border-radius: 1px;
   }

@@ -3,10 +3,11 @@
   export let onClick: () => void;
   export let title: string = "";
   export let isQuickship: boolean = false;
+  export let disabled: boolean = false;
   import IconQuickship from "./assets/icon-quickship.svg";
 </script>
 
-<div class="acc-grid-item" class:active on:click={onClick}>
+<div class="acc-grid-item" class:active class:disabled on:click={onClick}>
   <div>
     <slot />
     {#if title}
@@ -66,6 +67,17 @@
     &-qctext {
       margin-left: 0.4rem;
       word-break: keep-all;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      .label-desc {
+        opacity: 0.4;
+      }
+      img {
+        opacity: 0.4;
+      }
     }
   }
 </style>
