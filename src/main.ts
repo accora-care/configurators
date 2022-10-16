@@ -17,7 +17,10 @@ const app = new App({
 const configura = new ConfiguraAdvanceSvelte({
   target: document.getElementById("configura-advance"),
   props: {
-    config: initConfig,
+    config: {
+      mainTitle: "Customize your Accora Configura Advance",
+      bookADemoHref: "https://us.accora.care/book-a-demo",
+    },
   },
 });
 
