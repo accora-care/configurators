@@ -2,7 +2,7 @@ import type { InitConfig } from "./Config.types";
 import App from "./ConfiguraAdvance.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora Floor Bed",
+  mainTitle: "Customize your Accora Configura Advance",
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 

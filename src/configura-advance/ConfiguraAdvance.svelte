@@ -21,7 +21,7 @@
     <div class="acc-form">
       <div class="acc-form-title">{config.mainTitle}</div>
       <div class="acc-form-content">
-        <CustomizationBlock title="Options & accessories" length={5} />
+        <CustomizationBlock title="Options & accessories" length={6} />
         <SelectAccessories />
         <div
           class="reset-form"
@@ -40,7 +40,7 @@
         <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
         <p class="booking-info">
           {config.footerText ||
-            "Quick Ship Options | 14 Day Free Trial | Training and Implementation"}
+            "14 Day Free Trial | Training and Implementation"}
         </p>
       </div>
     </div>
