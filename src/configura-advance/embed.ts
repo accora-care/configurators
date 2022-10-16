@@ -1,5 +1,5 @@
 import type { InitConfig } from "./Config.types";
-import App from "./App.svelte";
+import App from "./ConfiguraAdvance.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Floor Bed",

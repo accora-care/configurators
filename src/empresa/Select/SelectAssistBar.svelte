@@ -76,5 +76,6 @@
 <style lang="scss" global>
   .acc-exception {
     font-size: 1rem;
+    line-height: 1;
   }
 </style>

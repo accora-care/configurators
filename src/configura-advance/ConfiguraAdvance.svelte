@@ -7,6 +7,7 @@
   import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
+  import SelectBackrest from "./Select/SelectBackrest.svelte";
 
   export let config: InitConfig;
 </script>
@@ -20,7 +21,7 @@
     <div class="acc-form">
       <div class="acc-form-title">{config.mainTitle}</div>
       <div class="acc-form-content">
-        <CustomizationBlock title="Accessories" length={2} />
+        <CustomizationBlock title="Options & accessories" length={5} />
         <SelectAccessories />
         <div
           class="reset-form"

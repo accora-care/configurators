@@ -7,6 +7,8 @@
 </script>
 
 <SelectionGrid visible={true}>
+  <!-- BACKREST -->
+
   <SelectionGridItem
     active={$configStore.backrest === "normal"}
     title="Waterfall backrest"
@@ -20,7 +22,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-advance/normal-head.png`}
+      src={`/images/configura-advance/backrest--standard--preview.jpg`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -37,10 +39,47 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-advance/postral-backrest.png`}
+      src={`/images/configura-advance/backrest--postural--preview.jpg`}
       class="image-frame-img"
     />
   </SelectionGridItem>
+
+  <!-- ARMRESTS -->
+  <SelectionGridItem
+    active={!$configStore.dropdownArmrest}
+    title="Fixed armrests"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          dropdownArmrest: false,
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/configura-advance/armrest--fixed--preview.jpg`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
+    active={$configStore.dropdownArmrest}
+    title="Dropdown armrests"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          dropdownArmrest: true,
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/configura-advance/armrest--dropdown--preview.jpg`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+  <!-- ACCESSORIES -->
   <SelectionGridItem
     active={$configStore.headrest}
     title="Headrest"
@@ -54,7 +93,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-advance/headrest.png`}
+      src={`/images/configura-advance/headrest--preview.jpg`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -71,7 +110,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-advance/lateral-support.png`}
+      src={`/images/configura-advance/lat_support_preview.jpg`}
       class="image-frame-img"
     />
   </SelectionGridItem>
