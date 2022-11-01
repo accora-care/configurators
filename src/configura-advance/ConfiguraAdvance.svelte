@@ -39,7 +39,7 @@
         <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
         <p class="booking-info">
           {config.footerText ||
-            "14 Day Free Trial | Training and Implementation"}
+            "14 Day Free Trial | Assembly and Support"}
         </p>
       </div>
     </div>
