@@ -6,37 +6,32 @@
 </script>
 
 <PreviewFrame>
-  {#if $configStore.dropdownArmrest}
-    <Img src={`/images/configura-advance/armrest_left--alternate.png`} />
-  {:else}
-    <Img src={`/images/configura-advance/armrest_left--standard.png`} />
-  {/if}
-  {#if $configStore.backrest === "normal"}
-    <Img src={`/images/configura-advance/backrest--standard.png`} />
-  {:else}
-    <Img src={`/images/configura-advance/backrest--postural.png`} />
-  {/if}
+  <Img
+    src={$configStore.dropdownArmrest
+      ? `/images/configura-advance/armrest_left--alternate.png`
+      : `/images/configura-advance/armrest_left--standard.png`}
+  />
+
+  <Img
+    src={$configStore.backrest === "normal"
+      ? `/images/configura-advance/backrest--standard.png`
+      : `/images/configura-advance/backrest--postural.png`}
+  />
   <Img src={`/images/configura-advance/base.png`} />
 
   {#if $configStore.lateralSupport}
     <Img src={`/images/configura-advance/lat_support_left.png`} />
-  {/if}
-  {#if $configStore.lateralSupport}
     <Img src={`/images/configura-advance/lat_support_right.png`} />
   {/if}
 
-  {#if $configStore.dropdownArmrest}
-    <Img src={`/images/configura-advance/armrest_right--alternate.png`} />
-  {:else}
-    <Img src={`/images/configura-advance/armrest_right--standard.png`} />
-  {/if}
+  <Img
+    src={$configStore.dropdownArmrest
+      ? `/images/configura-advance/armrest_right--alternate.png`
+      : `/images/configura-advance/armrest_right--standard.png`}
+  />
 
-  {#if $configStore.headrest}
-    {#if $configStore.backrest === "normal"}
-      {null}
-    {:else}
-      <Img src={`/images/configura-advance/headrest--postural.png`} />
-    {/if}
+  {#if $configStore.headrest && $configStore.backrest === "postural"}
+    <Img src={`/images/configura-advance/headrest--postural.png`} />
   {/if}
 
   <!-- <Img
