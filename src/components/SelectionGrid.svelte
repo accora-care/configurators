@@ -1,8 +1,12 @@
 <script lang="ts">
   export let visible: boolean;
+  export let title: string = "";
 </script>
 
 <div class="acc-grid-container">
+  {#if !!title}
+    <span class="acc-grid-title">{title}</span>
+  {/if}
   <div class="acc-grid" class:acc-grid-hidden={!visible}>
     <slot />
   </div>
@@ -35,6 +39,12 @@
     & > * {
       transition: 0.4s all;
     }
+  }
+  .acc-grid-title {
+    font-size: 1.6em;
+    display: block;
+    padding-top: 1em;
+    padding-left: 1.6em;
   }
   :global(.acc-grid.acc-grid-hidden) {
     opacity: 0;

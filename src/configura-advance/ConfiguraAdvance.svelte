@@ -7,7 +7,6 @@
   import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
-  import SelectBackrest from "./Select/SelectBackrest.svelte";
 
   export let config: InitConfig;
 </script>

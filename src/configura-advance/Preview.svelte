@@ -33,7 +33,7 @@
 
   {#if $configStore.headrest}
     {#if $configStore.backrest === "normal"}
-      <Img src={`/images/configura-advance/headrest--standard.png`} />
+      {null}
     {:else}
       <Img src={`/images/configura-advance/headrest--postural.png`} />
     {/if}

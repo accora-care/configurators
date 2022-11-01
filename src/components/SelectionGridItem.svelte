@@ -4,12 +4,21 @@
   export let title: string = "";
   export let isQuickship: boolean = false;
   export let disabled: boolean = false;
+  export let notAllowedMessage: string = "";
   import IconQuickship from "./assets/icon-quickship.svg";
 </script>
 
-<div class="acc-grid-item" class:active class:disabled on:click={onClick}>
+<div
+  class="acc-grid-item"
+  class:active
+  class:disabled={!!notAllowedMessage || disabled}
+  on:click={onClick}
+>
   <div>
     <slot />
+    {#if !!notAllowedMessage}
+      <span class="acc-exception">{notAllowedMessage}</span>
+    {/if}
     {#if title}
       <div class="acc-grid-item-title">{title}</div>
     {/if}

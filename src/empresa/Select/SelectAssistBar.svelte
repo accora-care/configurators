@@ -19,7 +19,7 @@
   <SelectionGridItem
     active={value === "Long"}
     title={"Long"}
-    disabled={!!assistBarException}
+    notAllowedMessage={assistBarException}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -33,9 +33,6 @@
       src={`/images/empresa/accessory/${"Long"} - preview.jpg`}
       alt={"Long assist bar"}
     />
-    {#if !!assistBarException}
-      <span class="acc-exception">{assistBarException}</span>
-    {/if}
   </SelectionGridItem>
   <SelectionGridItem
     active={value === "Short"}
