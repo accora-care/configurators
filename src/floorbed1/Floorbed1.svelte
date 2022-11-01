@@ -16,7 +16,7 @@
     <Preview />
   </PreviewContainer>
 
-  <div id="acc-empresa" class="acc-content">
+  <div id="acc-floorbed1" class="acc-content">
     <div class="acc-form">
       <div class="acc-form-title">{config.mainTitle}</div>
       <div class="acc-form-content">
