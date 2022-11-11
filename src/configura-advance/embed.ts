@@ -6,7 +6,10 @@ const initConfig: InitConfig = {
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 
-export const EmpresaConfigurator = (targetId: string, config: InitConfig) => {
+export const EmpresaConfigurator = (
+  targetId: string,
+  config: InitConfig = initConfig
+) => {
   const app = new App({
     target: document.getElementById(targetId),
     props: {
