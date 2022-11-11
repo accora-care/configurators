@@ -135,7 +135,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.7.0/public/floorbed1/configura-advance.js"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.7.0/public/configura-advance/configura-advance-configurator.js"
 ></script>
 <script defer>
   const configuraAdvanceConfig = {
