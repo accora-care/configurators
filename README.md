@@ -50,7 +50,7 @@ Include styles in `<head>`
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/empresa/bundle.css"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/empresa/bundle.css"
 />
 ```
 
@@ -65,7 +65,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/empresa/empresa-configurator.js"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/empresa/empresa-configurator.js"
 ></script>
 <script defer>
   const empresaConfig = {
@@ -76,6 +76,8 @@ At the end of `<body>`, include this script, make sure to edit the config:
 </script>
 ```
 
+---
+
 ## Floorbed 1 Configurator
 
 Include styles in `<head>`
@@ -83,7 +85,7 @@ Include styles in `<head>`
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/floorbed1/bundle.css"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/floorbed1/bundle.css"
 />
 ```
 
@@ -98,7 +100,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 ```html
 <script
   type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.4.0/public/floorbed1/floorbed1-configurator.js"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/floorbed1/floorbed1-configurator.js"
 ></script>
 <script defer>
   const floorbed1Config = {
@@ -106,6 +108,41 @@ At the end of `<body>`, include this script, make sure to edit the config:
     bookADemoHref: "https://us.accora.care/book-a-demo",
   };
   AccoraFloorbedOne("floorbed1-configurator", floorbed1Config);
+</script>
+```
+
+---
+
+## Configura Advance Configurator
+
+Include styles in `<head>`
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/configura-advance/bundle.css"
+/>
+```
+
+To include empresa configurator on the website, create a div element with `id` in the desired location of the html.
+
+```html
+<div id="configura-advance"></div>
+```
+
+At the end of `<body>`, include this script, make sure to edit the config:
+
+```html
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@1.6.0/public/floorbed1/configura-advance.js"
+></script>
+<script defer>
+  const configuraAdvanceConfig = {
+    mainTitle: "Customize your Accora Configura Advance",
+    bookADemoHref: "https://us.accora.care/book-a-demo",
+  };
+  ConfiguraAdvance("configura-advance", configuraAdvanceConfig);
 </script>
 ```
 
