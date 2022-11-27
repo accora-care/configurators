@@ -41,9 +41,9 @@
     }
   }
   .acc-grid-title {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     display: block;
-    padding-top: 1em;
+    padding-top: 1rem;
     padding-left: 1.6em;
   }
   :global(.acc-grid.acc-grid-hidden) {

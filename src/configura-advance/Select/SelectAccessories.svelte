@@ -23,6 +23,7 @@
         return {
           ...s,
           backrest: "normal",
+          headrest: false,
         };
       });
     }}
