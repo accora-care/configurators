@@ -20,7 +20,6 @@
       .join("\n");
     Array.from(document.getElementsByName("quote_request_details")).forEach(
       (el) => {
-        console.log("ELLLL", el);
         (el as any).value = `${title}\n${quoteRequestDetails}`;
       }
     );
