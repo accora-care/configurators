@@ -11,6 +11,7 @@
       box-sizing: border-box;
     }
     --primary: rgba(0, 136, 113, 1);
+    --primary-hover: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
     --radius: 0.5rem;
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);

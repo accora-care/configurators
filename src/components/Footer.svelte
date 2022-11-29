@@ -90,8 +90,9 @@
     color: white;
     border-radius: 0.4rem;
     text-decoration: none !important;
+    transition: 0.15s all;
     &:hover {
-      box-shadow: inset 0 0 100px 0 rgba(0, 0, 0, 0.06);
+      background-color: var(--primary-hover);
     }
   }
 </style>
