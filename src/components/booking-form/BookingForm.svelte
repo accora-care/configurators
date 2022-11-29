@@ -266,7 +266,8 @@
     .hs-form-field,
     fieldset.form-columns-1 .hs-form-field,
     fieldset.form-columns-2 .hs-form-field {
-      width: auto !important;
+      width: 1px !important;
+      min-width: 200px;
       flex-grow: 1;
     }
     .legal-consent-container {
