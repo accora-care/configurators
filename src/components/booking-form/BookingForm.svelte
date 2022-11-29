@@ -124,7 +124,7 @@
     border-bottom: 1px solid var(--border-color);
   }
   .acc-modal-wrapper {
-    --primary: rgba(25, 162, 144, 1);
+    --primary: rgba(0, 136, 113, 1);
     --border-color: rgba(234, 234, 234, 1);
     --radius: 0.5em;
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
