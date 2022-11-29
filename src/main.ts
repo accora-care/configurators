@@ -8,8 +8,8 @@ const initConfig: InitConfig = {
   bookADemoHref: "https://us.accora.care/book-a-demo",
   hubspotFormConfig: {
     region: "eu1",
-    portalId: "26542071",
-    formId: "e18cc455-a3b4-44ec-a397-a3adf2fa775e",
+    portalId: "25005558",
+    formId: "be70d855-99ac-4972-ae5d-64fbee9bea77",
   },
 };
 

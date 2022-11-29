@@ -3,12 +3,16 @@
   import Portal from "svelte-portal";
   import type {
     HubspotFormConfig,
+    InitConfig,
     SubmitFormDescription,
   } from "../../Config.types";
+  import Img from "../Img.svelte";
   export let handleClose: VoidFunction;
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
-  export let hubspotFormConfig: HubspotFormConfig;
+  export let config: InitConfig;
+
+  let submitted = false;
 
   const onReady = () => {
     const quoteRequestDetails = descriptionFormField
@@ -25,11 +29,14 @@
   onMount(async () => {
     // @ts-ignore
     hbspt.forms.create({
-      ...hubspotFormConfig,
+      ...config.hubspotFormConfig,
       target: "#acc-quote-form",
       submitButtonClass: "button nav___button-book",
       cssClass: "acc-hubspot-form",
       onFormReady: onReady,
+      onFormSubmitted: () => {
+        submitted = true;
+      },
     });
   });
 </script>
@@ -39,34 +46,52 @@
     <div class="acc-modal">
       <div class="acc-close-btn" on:click={handleClose} />
       <div class="acc-modal-scrollarea">
-        <div class="acc-modal-header">
-          <h3>Get a quote - {title}</h3>
-          <div class="acc-preview-description">
-            <div class="acc-form-preview-container">
-              <slot />
+        {#if !submitted}
+          <div class="acc-modal-header">
+            <h3>Get a quote - {title}</h3>
+            <div class="acc-preview-description">
+              <div class="acc-form-preview-container">
+                <slot />
+              </div>
+              <ul class="acc-booking-list">
+                {#each descriptionFormField as item}
+                  {#if item.value}
+                    <li class="acc-booking-item">
+                      <span class="acc-booking-item-title">{item.label}</span>:
+                      <span class="acc-booking-item-value">{item.value}</span>
+                    </li>
+                  {/if}
+                {/each}
+              </ul>
             </div>
-            <ul class="acc-booking-list">
-              {#each descriptionFormField as item}
-                {#if item.value}
-                  <li class="acc-booking-item">
-                    <span class="acc-booking-item-title">{item.label}</span>:
-                    <span class="acc-booking-item-value">{item.value}</span>
-                  </li>
-                {/if}
-              {/each}
-            </ul>
           </div>
-        </div>
-        <div class="acc-modal-content" id="acc-quote-form">
-          <script>
-          </script>
-        </div>
+        {:else}
+          <div class="acc-thank-you-title">
+            <Img class="acc-form-check" src="/icons/checked.png" alt="Ok" />
+            <h3>{config.thankYouTitle || "Thank you for your request"}</h3>
+          </div>
+        {/if}
+        <div class="acc-modal-content" id="acc-quote-form" />
+        {#if submitted}
+          <div class="acc-modal-footer">
+            <a class="acc-submit-button" href={"/"}>Go back to homepage</a>
+            <span class="acc-close-text" on:click={handleClose}
+              >Close this form</span
+            >
+          </div>
+        {/if}
       </div>
     </div>
   </div>
 </Portal>
 
 <style lang="scss" global>
+  .acc-form-check {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-bottom: 2em;
+  }
   .acc-preview-description {
     display: flex;
     align-items: center;
@@ -98,14 +123,11 @@
       padding-bottom: 0;
     }
     border-bottom: 1px solid var(--border-color);
-    h3 {
-      font-size: 2em;
-    }
   }
   .acc-modal-wrapper {
     --primary: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
-    --radius: 0.5rem;
+    --radius: 0.5em;
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
     font-size: 16px;
     position: fixed;
@@ -118,6 +140,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    h3 {
+      font-size: 2em;
+    }
+    .acc-close-text {
+      display: inline-block;
+      padding: 1em;
+      color: var(--text-primary);
+      opacity: 0.7;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      text-decoration: none;
+    }
   }
   .acc-modal-scrollarea {
     overflow-y: auto; /* has to be scroll, not auto */
@@ -150,27 +186,51 @@
       &:after {
         content: "";
         position: absolute;
-        top: 8px;
+        top: 9px;
         left: 0;
         border-radius: 1px;
-        height: 4px;
+        height: 2px;
         width: 100%;
-        background: #333;
+        background: #666;
         display: block;
         transform: rotate(45deg);
       }
       &:before {
         transform: rotate(-45deg);
       }
+      &:hover {
+        &:before,
+        &:after {
+          background: #222;
+        }
+      }
     }
   }
-  .acc-modal-content {
+  .acc-modal-content,
+  .acc-thank-you-title,
+  .acc-modal-footer {
     padding: 3em;
     @media screen and (max-width: 768px) {
       padding: 2em;
     }
+    max-width: 900px;
+  }
+  .acc-thank-you-title {
+    padding-bottom: 0 !important;
+  }
+  .acc-modal-footer {
+    padding-top: 0 !important;
+    text-align: center;
   }
   .acc-modal #acc-quote-form {
+    .submitted-message {
+      background: transparent;
+      color: var(--text-primary);
+      text-align: left;
+      display: block;
+      padding: 0;
+      font-weight: 400;
+    }
     form {
       width: 100%;
       max-width: 760px;
@@ -212,6 +272,9 @@
     }
     .legal-consent-container {
       font-size: 0.75em;
+    }
+    input[type="submit"] {
+      cursor: pointer;
     }
   }
 </style>

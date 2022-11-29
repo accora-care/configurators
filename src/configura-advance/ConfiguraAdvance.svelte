@@ -4,11 +4,11 @@
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
   import SelectAccessories from "./Select/SelectAccessories.svelte";
-  import type { InitConfig } from "./Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
   import Footer from "../components/Footer.svelte";
+  import type { InitConfig } from "../Config.types";
 
   export let config: InitConfig;
 </script>

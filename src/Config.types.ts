@@ -9,6 +9,7 @@ export type InitConfig = {
   bookADemoHref: string;
   footerText?: string;
   hubspotFormConfig?: HubspotFormConfig;
+  thankYouTitle?: string;
 };
 
 export type SubmitFormDescription = { label: string; value: string }[];

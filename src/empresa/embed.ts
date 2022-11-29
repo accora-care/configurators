@@ -1,4 +1,4 @@
-import type { InitConfig } from "./Config.types";
+import type { InitConfig } from "../Config.types";
 import App from "./App.svelte";
 
 const initConfig: InitConfig = {

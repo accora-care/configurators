@@ -37,7 +37,7 @@
   <BookingForm
     {title}
     {descriptionFormField}
-    hubspotFormConfig={config.hubspotFormConfig}
+    {config}
     handleClose={() => {
       settingsStore.update((s) => {
         return {
@@ -83,8 +83,10 @@
     outline: none;
     border: none;
     margin: 0 auto;
-    width: 100%;
-    max-width: 200px;
+    width: auto;
+    width: fit-content;
+    padding-left: 2em;
+    padding-right: 2em;
     color: white;
     border-radius: 0.4rem;
     text-decoration: none !important;
