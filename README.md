@@ -49,11 +49,21 @@ Include styles in `<head>` globally
 
 ```html
 <!--Embed code-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/all.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/all.js"
+></script>
 <!--Configurator styles-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/bundle.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/bundle.css"
+/>
 <!--Hubspot: copy this only if hubspot has never been added yet-->
-<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"><script>
+<script
+  charset="utf-8"
+  type="text/javascript"
+  src="https://js-eu1.hsforms.net/forms/embed/v2.js"
+></script>
 ```
 
 ### Initiate each configurator separately
@@ -75,10 +85,10 @@ Include only configurator you want to appear on specific page.
 
 ```html
 <!--Where you want to render the configurator-->
-<div id="floorbed1"></div>
+<div id="floorbed1-configurator"></div>
 <!--At the end of body-->
 <script type="text/javascript">
-  AccoraConfigurators.FloorbedOne("floorbed1");
+  AccoraConfigurators.FloorbedOne("floorbed1-configurator");
 </script>
 ```
 
