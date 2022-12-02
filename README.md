@@ -56,6 +56,43 @@ Include styles in `<head>` globally
 <script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"><script>
 ```
 
+### Initiate each configurator separately
+
+Include only configurator you want to appear on specific page.
+
+#### Empresa
+
+```html
+<!--Where you want to render the configurator-->
+<div id="empresa-configurator"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.Empresa("empresa-configurator");
+</script>
+```
+
+#### Floorbed1
+
+```html
+<!--Where you want to render the configurator-->
+<div id="floorbed1"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.FloorbedOne("floorbed1");
+</script>
+```
+
+#### Configura Advance
+
+```html
+<!--Where you want to render the configurator-->
+<div id="configura-advance"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.ConfiguraAdvance("configura-advance");
+</script>
+```
+
 ## Empresa Configurator only
 
 Include styles in `<head>`
