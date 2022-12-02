@@ -3,13 +3,19 @@ import ConfiguraAdvance from "./configura-advance/ConfiguraAdvance.svelte";
 import Empresa from "./empresa/Empresa.svelte";
 import Floorbed1 from "./floorbed1/Floorbed1.svelte";
 
+const DEFAULT_HUBSPOT_CONFIG = {
+  region: "eu1",
+  portalId: "25005558",
+  formId: "be70d855-99ac-4972-ae5d-64fbee9bea77",
+};
+
 /**
  * Floorbed1
  */
 export const AccoraFloorbedOne = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig
+  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
 ) => {
   const app = new Floorbed1({
     target: document.getElementById(targetId),
@@ -34,7 +40,7 @@ export const AccoraFloorbedOne = (
 export const EmpresaConfigurator = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig
+  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
 ) => {
   const app = new Empresa({
     target: document.getElementById(targetId),
@@ -60,7 +66,7 @@ export const EmpresaConfigurator = (
 export const ConfiguraAdvanceConfigurator = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig
+  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
 ) => {
   const app = new ConfiguraAdvance({
     target: document.getElementById(targetId),
