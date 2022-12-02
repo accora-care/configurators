@@ -43,7 +43,20 @@ New files will be created for each configurator, e.g. for empresa, these files w
 
 As a simple solution for js and css delivery we are using [jsDelivery](https://www.jsdelivr.com/), for that reason the build code **must be included in the git**. You will need to make a new release version of the repository to promote new changes.
 
-## Empresa Configurator
+## Add any configurator - easiest
+
+Include styles in `<head>` globally
+
+```html
+<!--Embed code-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/all.js"></script>
+<!--Configurator styles-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/accora-care/configurators@2.0.0/public/configurators/bundle.css"/>
+<!--Hubspot: copy this only if hubspot has never been added yet-->
+<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"><script>
+```
+
+## Empresa Configurator only
 
 Include styles in `<head>`
 
@@ -78,7 +91,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 
 ---
 
-## Floorbed 1 Configurator
+## Floorbed 1 Configurator only
 
 Include styles in `<head>`
 
@@ -113,7 +126,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 
 ---
 
-## Configura Advance Configurator
+## Configura Advance Configurator onlyDEFAULT_HUBSPOT_CONFIG
 
 Include styles in `<head>`
 

@@ -57,8 +57,6 @@ export const EmpresaConfigurator = (
   return app;
 };
 
-(window as any).EmpresaConfigurator = EmpresaConfigurator;
-
 /**
  * Configura advance
  */
@@ -83,4 +81,8 @@ export const ConfiguraAdvanceConfigurator = (
   return app;
 };
 
-(window as any).ConfiguraAdvance = ConfiguraAdvanceConfigurator;
+(window as any).AccoraConfigurators = {
+  Empresa: EmpresaConfigurator,
+  ConfiguraAdvance: ConfiguraAdvanceConfigurator,
+  FloorbedOne: AccoraFloorbedOne,
+};
