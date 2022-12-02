@@ -7,6 +7,7 @@ export type StoreValues = {
   liftingPole: boolean;
   pumpHolder: boolean;
   safetyMat: boolean;
+  sideRails: boolean;
 };
 
 export const initVal: StoreValues = {
@@ -15,6 +16,7 @@ export const initVal: StoreValues = {
   liftingPole: false,
   pumpHolder: false,
   safetyMat: false,
+  sideRails: false,
 };
 
 export const configStore = writable(initVal);

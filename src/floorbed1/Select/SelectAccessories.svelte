@@ -96,4 +96,23 @@
       class="image-frame-img"
     />
   </SelectionGridItem>
+  <SelectionGridItem
+    active={$configStore.sideRails}
+    title="Side rails"
+    onClick={() => {
+      configStore.update((s) => {
+        const nextState = !s.sideRails;
+        return {
+          ...s,
+          sideRails: nextState,
+          // lever: nextState ? false : s.lever,
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/floorbed1/sideRails_preview.png`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
 </SelectionGrid>

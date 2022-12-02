@@ -60,6 +60,10 @@
           label: "Pump holder",
           value: $configStore.pumpHolder ? "Included ✓" : "Not included",
         },
+        {
+          label: "Side rails",
+          value: $configStore.sideRails ? "Included ✓" : "Not included",
+        },
       ]}
     >
       <Preview />

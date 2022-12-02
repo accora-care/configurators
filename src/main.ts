@@ -1,5 +1,5 @@
 import type { InitConfig } from "./Config.types";
-import App from "./empresa/App.svelte";
+import App from "./empresa/Empresa.svelte";
 import ConfiguraAdvanceSvelte from "./configura-advance/ConfiguraAdvance.svelte";
 import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
 

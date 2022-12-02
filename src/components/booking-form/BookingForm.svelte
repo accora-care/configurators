@@ -47,7 +47,7 @@
       <div class="acc-modal-scrollarea">
         {#if !submitted}
           <div class="acc-modal-header">
-            <h3>Get a quote - {title}</h3>
+            <h3>Request a quote - {title}</h3>
             <div class="acc-preview-description">
               <div class="acc-form-preview-container">
                 <slot />

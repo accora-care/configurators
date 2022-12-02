@@ -1,4 +1,4 @@
-import type { InitConfig } from "../Config.types";
+import type { HubspotFormConfig, InitConfig } from "../Config.types";
 import App from "./ConfiguraAdvance.svelte";
 
 const initConfig: InitConfig = {
@@ -8,12 +8,17 @@ const initConfig: InitConfig = {
 
 export const ConfiguraAdvance = (
   targetId: string,
-  config: InitConfig = initConfig
+  config: InitConfig,
+  hubspotFormConfig: HubspotFormConfig
 ) => {
   const app = new App({
     target: document.getElementById(targetId),
     props: {
-      config,
+      config: {
+        ...initConfig,
+        ...config,
+        hubspotFormConfig,
+      },
     },
   });
 

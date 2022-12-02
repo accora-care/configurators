@@ -22,7 +22,7 @@
           });
         }}
       >
-        Get a quote
+        Request a quote
       </span>
     {:else}
       <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
