@@ -27,10 +27,6 @@
     {:else}
       <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
     {/if}
-    <p class="booking-info">
-      {config.footerText ||
-        "Quick Ship Options | 14 Day Free Trial | Assembly and Support"}
-    </p>
   </div>
 </div>
 {#if $settingsStore.isQuoteOpen === title && !!descriptionFormField}
