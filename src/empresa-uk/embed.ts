@@ -2,7 +2,7 @@ import type { HubspotFormConfig, InitConfig } from "../Config.types";
 import App from "./Empresa.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora Empresa",
+  mainTitle: "Customize your Accora Floor Bed",
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 

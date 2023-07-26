@@ -26,18 +26,51 @@
   };
 
   onMount(async () => {
-    // @ts-ignore
-    hbspt.forms.create({
-      ...config.hubspotFormConfig,
-      target: "#acc-quote-form",
-      submitButtonClass: "button nav___button-book",
-      cssClass: "acc-hubspot-form",
-      onFormReady: onReady,
-      onFormSubmitted: () => {
-        submitted = true;
-      },
-    });
+    if (config.hubspotFormConfig) {
+      // @ts-ignore
+      hbspt.forms.create({
+        ...config.hubspotFormConfig,
+        target: "#acc-quote-form",
+        submitButtonClass: "button nav___button-book",
+        cssClass: "acc-hubspot-form",
+        onFormReady: onReady,
+        onFormSubmitted: () => {
+          submitted = true;
+        },
+      });
+    }
+    else if (config.cognitoFormConfig) {
+      // @ts-ignore
+      const cognitoApi = Cognito(config.cognitoFormConfig.key);
+      const cognitoForm = cognitoApi.mount(config.cognitoFormConfig.form, '#acc-quote-form');
+      const configuratorOptions = [];
+      
+      descriptionFormField.forEach((item) => {
+        if (item.value) {
+          configuratorOptions.push(`${item.label}: ${item.value}`);
+        }
+      });
+
+      cognitoForm.prefill({
+        "ConfiguratorOptions": configuratorOptions.join(", "),
+      });
+    }
   });
+
+  const prefillSubmitFormDescription = () => {
+    const configuratorOptions = [];
+    
+    descriptionFormField.forEach((item) => {
+      if (item.value) {
+        configuratorOptions.push(`${item.label}: ${item.value}`);
+      }
+    })
+
+    Cognito.prefill({
+      // "ConfiguratorOptions": JSON.stringify(descriptionFormField),
+      "ConfiguratorOptions": configuratorOptions.join(", "),
+    });
+  }
 </script>
 
 <Portal target="body">
@@ -70,7 +103,9 @@
             <h3>{config.thankYouTitle || "Thank you for your request"}</h3>
           </div>
         {/if}
-        <div class="acc-modal-content" id="acc-quote-form" />
+        <div class="acc-modal-content">
+          <div id="acc-quote-form" />
+        </div>
         {#if submitted}
           <div class="acc-modal-footer">
             <a class="acc-submit-button" href={"/"}>Go back to homepage</a>

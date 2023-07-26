@@ -10,7 +10,7 @@
 
 <div class="acc-submit">
   <div class="acc-submit-content">
-    {#if !!config.hubspotFormConfig}
+    {#if !!config.hubspotFormConfig || !!config.cognitoFormConfig}
       <span
         class="acc-submit-button"
         on:click={() => {

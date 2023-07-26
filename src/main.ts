@@ -1,5 +1,6 @@
 import type { InitConfig } from "./Config.types";
 import App from "./empresa/Empresa.svelte";
+import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import ConfiguraAdvanceSvelte from "./configura-advance/ConfiguraAdvance.svelte";
 import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
 
@@ -19,6 +20,22 @@ const app = new App({
     config: initConfig,
   },
 });
+
+const empresaUK = new EmpresaUK({
+  target: document.getElementById("empresa-uk"),
+  props: {
+    config: {
+      ...initConfig,
+      mainTitle: "Customize your Accora Empressa",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "31",
+      },
+    }
+  },
+});
+
 const configura = new ConfiguraAdvanceSvelte({
   target: document.getElementById("configura-advance"),
   props: {

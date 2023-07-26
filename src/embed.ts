@@ -1,12 +1,18 @@
-import type { HubspotFormConfig, InitConfig } from "./Config.types";
+import type { HubspotFormConfig, CognitoFormConfig, InitConfig } from "./Config.types";
 import ConfiguraAdvance from "./configura-advance/ConfiguraAdvance.svelte";
 import Empresa from "./empresa/Empresa.svelte";
+import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import Floorbed1 from "./floorbed1/Floorbed1.svelte";
 
 const DEFAULT_HUBSPOT_CONFIG = {
   region: "eu1",
   portalId: "25005558",
   formId: "be70d855-99ac-4972-ae5d-64fbee9bea77",
+};
+
+const DEFAULT_COGNITO_CONFIG = {
+  key: "2xcyxIw4NUSCrwloJjtcpg",
+  form: "31",
 };
 
 /**
@@ -46,10 +52,33 @@ export const EmpresaConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Floor Bed",
+        mainTitle: "Customize your Accora Empresa",
         bookADemoHref: "https://us.accora.care/book-a-demo",
         ...config,
         hubspotFormConfig,
+      },
+    },
+  });
+
+  return app;
+};
+
+/**
+ * Empresa (UK)
+ */
+export const EmpresaUKConfigurator = (
+  targetId: string,
+  config: InitConfig,
+  cognitoFormConfig: CognitoFormConfig = DEFAULT_COGNITO_CONFIG
+) => {
+  const app = new EmpresaUK({
+    target: document.getElementById(targetId),
+    props: {
+      config: {
+        mainTitle: "Customize your Accora Empresa",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+        ...config,
+        cognitoFormConfig,
       },
     },
   });
@@ -83,6 +112,7 @@ export const ConfiguraAdvanceConfigurator = (
 
 (window as any).AccoraConfigurators = {
   Empresa: EmpresaConfigurator,
+  EmpresaUK: EmpresaUKConfigurator,
   ConfiguraAdvance: ConfiguraAdvanceConfigurator,
   FloorbedOne: AccoraFloorbedOne,
 };

@@ -4,11 +4,17 @@ export type HubspotFormConfig = {
   formId: string;
 };
 
+export type CognitoFormConfig = {
+  key: string;
+  form: string;
+};
+
 export type InitConfig = {
   mainTitle: string;
   bookADemoHref: string;
   footerText?: string;
   hubspotFormConfig?: HubspotFormConfig;
+  cognitoFormConfig?: CognitoFormConfig;
   thankYouTitle?: string;
 };
 

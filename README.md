@@ -64,6 +64,8 @@ Include styles in `<head>` globally
   type="text/javascript"
   src="https://js-eu1.hsforms.net/forms/embed/v2.js"
 ></script>
+<!--Cognito: copy this only if Cognito has never been added yet-->
+<script src="https://cognitoforms.com/f/seamless.js"></script>
 ```
 
 ### Initiate each configurator separately
@@ -78,6 +80,17 @@ Include only configurator you want to appear on specific page.
 <!--At the end of body-->
 <script type="text/javascript">
   AccoraConfigurators.Empresa("empresa-configurator");
+</script>
+```
+
+#### Empresa (UK)
+
+```html
+<!--Where you want to render the configurator-->
+<div id="empresa-uk-configurator"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.EmpresaUK("empresa-uk-configurator");
 </script>
 ```
 
