@@ -7,6 +7,7 @@ export type HubspotFormConfig = {
 export type CognitoFormConfig = {
   key: string;
   form: string;
+  optionsFieldName?: string;
 };
 
 export type InitConfig = {

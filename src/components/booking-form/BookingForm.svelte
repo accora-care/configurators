@@ -43,34 +43,22 @@
       // @ts-ignore
       const cognitoApi = Cognito(config.cognitoFormConfig.key);
       const cognitoForm = cognitoApi.mount(config.cognitoFormConfig.form, '#acc-quote-form');
-      const configuratorOptions = [];
       
-      descriptionFormField.forEach((item) => {
-        if (item.value) {
-          configuratorOptions.push(`${item.label}: ${item.value}`);
-        }
-      });
+      if (config.cognitoFormConfig.optionsFieldName) {
+        const configuratorOptions = [];
 
-      cognitoForm.prefill({
-        "ConfiguratorOptions": configuratorOptions.join(", "),
-      });
+        descriptionFormField.forEach((item) => {
+          if (item.value) {
+            configuratorOptions.push(`${item.label}: ${item.value}`);
+          }
+        });
+
+        cognitoForm.prefill({
+          [config.cognitoFormConfig.optionsFieldName]: configuratorOptions.join(", "),
+        });
+      }
     }
   });
-
-  const prefillSubmitFormDescription = () => {
-    const configuratorOptions = [];
-    
-    descriptionFormField.forEach((item) => {
-      if (item.value) {
-        configuratorOptions.push(`${item.label}: ${item.value}`);
-      }
-    })
-
-    Cognito.prefill({
-      // "ConfiguratorOptions": JSON.stringify(descriptionFormField),
-      "ConfiguratorOptions": configuratorOptions.join(", "),
-    });
-  }
 </script>
 
 <Portal target="body">

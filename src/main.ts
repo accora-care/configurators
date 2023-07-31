@@ -31,6 +31,7 @@ const empresaUK = new EmpresaUK({
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",
         form: "31",
+        optionsFieldName: "ConfiguratorOptions",
       },
     }
   },
