@@ -44,6 +44,12 @@
       const cognitoApi = Cognito(config.cognitoFormConfig.key);
       const cognitoForm = cognitoApi.mount(config.cognitoFormConfig.form, '#acc-quote-form');
       
+      if (config.cognitoFormConfig.productFieldName) {
+        cognitoForm.prefill({
+          [config.cognitoFormConfig.productFieldName]: title,
+        });
+      }
+
       if (config.cognitoFormConfig.optionsFieldName) {
         const configuratorOptions = [];
 

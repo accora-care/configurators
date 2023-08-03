@@ -13,6 +13,7 @@ const DEFAULT_HUBSPOT_CONFIG = {
 const DEFAULT_COGNITO_CONFIG = {
   key: "2xcyxIw4NUSCrwloJjtcpg",
   form: "31",
+  productFieldName: "ProductName",
   optionsFieldName: "ConfiguratorOptions",
 };
 
