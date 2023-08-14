@@ -3,33 +3,50 @@
   import { configStore } from "../configStore";
   import Radio from "../../components/Radio.svelte";
   import { isSidePanelAllowed } from "../isSidePanelAllowed";
+  import SelectionGridItem from "../../components/SelectionGridItem.svelte";
+  import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 </script>
 
 <SelectionGrid
   {...$$restProps}
   visible={$configStore.selectorView === "SIDE_PANEL"}
 >
-  <div class="acc-radios-wrapper">
-    <Radio
-      name="sidePanel"
-      value="Included"
-      bind:group={$configStore.sidePanel}
-      disabled={!isSidePanelAllowed($configStore)}
-    >
-      With side<br /> panels {!isSidePanelAllowed($configStore)
-        ? " - not available"
-        : ""}
-    </Radio>
-    <div>
-      <Radio
-        name="sidePanel"
-        bind:group={$configStore.sidePanel}
-        value="Not included"
-      >
-        Without side<br /> panels
-      </Radio>
-    </div>
-  </div>
+  <SelectionGridItem
+    active={$configStore.sidePanel === "Not included"}
+    title="No side panels"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          sidePanel: "Not included",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa/sidePanels_preview/noSidePanel.jpg`}
+      alt="No side panels"
+    />
+  </SelectionGridItem>
+
+  <SelectionGridItem
+    active={$configStore.sidePanel === "Included"}
+    title="With side panels{!isSidePanelAllowed($configStore) ? ' - not available' : ''}"
+    disabled={!isSidePanelAllowed($configStore)}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          sidePanel: "Included",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa/sidePanels_preview/noSidePanel.jpg`}
+      alt="With side panels"
+    />
+  </SelectionGridItem>
 </SelectionGrid>
 
 <style lang="scss" global>

@@ -7,7 +7,7 @@
   import { sidePanels } from "../data/sidePanels";
   import { isSidePanelAllowed } from "../isSidePanelAllowed";
 
-  $: variantsByOrder = Object.entries(bedVariants)
+  $: woodenVariantsByOrder = Object.entries(bedVariants.wooden)
     .map(([bedVariant, colors]) => {
       return {
         title: bedVariant,
@@ -16,10 +16,20 @@
       };
     })
     .sort((variant) => (variant.isQuickship ? -1 : 1));
+
+  $: fabricVariantsByOrder = Object.entries(bedVariants.fabric)
+    .map(([bedVariant, fabrics]) => {
+      return {
+        title: bedVariant,
+        fabrics,
+        isQuickship: !!fabrics.find((item) => item.options?.quickship),
+      };
+    })
+    .sort((variant) => (variant.isQuickship ? -1 : 1));
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "HEADBOARD"}>
-  {#each variantsByOrder as { title, isQuickship }}
+<SelectionGrid visible={$configStore.selectorView === "HEADBOARD"} title="Wooden Styles">
+  {#each woodenVariantsByOrder as { title, isQuickship }}
     <SelectionGridItem
       {isQuickship}
       {title}
@@ -35,6 +45,29 @@
     >
       <SelectionGridItemImage
         src={`/images/empresa/headboards_preview/${title}.jpg`}
+        alt={title}
+      />
+    </SelectionGridItem>
+  {/each}
+</SelectionGrid>
+
+<SelectionGrid visible={$configStore.selectorView === "HEADBOARD"} title="Fabric Styles">
+  {#each fabricVariantsByOrder as { title, isQuickship }}
+    <SelectionGridItem
+      {isQuickship}
+      {title}
+      active={$configStore.variant === title}
+      onClick={() => {
+        configStore.update((s) => {
+          return {
+            ...s,
+            variant: title,
+          };
+        });
+      }}
+    >
+      <SelectionGridItemImage
+        src={`/images/empresa-uk/headboards_preview/fabric/${title}.png`}
         alt={title}
       />
     </SelectionGridItem>

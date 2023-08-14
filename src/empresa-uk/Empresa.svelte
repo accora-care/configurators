@@ -2,6 +2,7 @@
   import { bedVariants } from "./data/bedVariants";
   import { configStore, initVal } from "./configStore";
   import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
+  import SelectPreviewFabric from "./Select/SelectPreviewFabric.svelte";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
   import SelectAssisBar from "./Select/SelectAssistBar.svelte";
@@ -20,10 +21,12 @@
   let valueSidePanels = "";
   let accessoriesDisplayValue = "none";
   let availableColors = [];
+  let availableFabrics = [];
 
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
-    availableColors = bedVariants[state.variant] || [];
+    availableColors = bedVariants.wooden[state.variant] || [];
+    availableFabrics = bedVariants.fabric[state.variant] || [];
     accessoriesDisplayValue =
       [
         $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
@@ -49,16 +52,23 @@
           title="Headboard"
           targetSelectView="HEADBOARD"
           value={$configStore.variant}
-          length={Object.keys(bedVariants).length}
+          length={Object.keys(bedVariants.wooden).length + Object.keys(bedVariants.fabric).length}
         />
         <SelectHeadboard />
         <CustomizationBlock
-          title="Color"
+          title="Wood Finish"
           targetSelectView="COLOR"
           value={$configStore.color}
           length={availableColors.length}
         />
         <SelectPreviewColor colors={availableColors} />
+        <CustomizationBlock
+          title="Fabric Finish"
+          targetSelectView="FABRIC"
+          value={$configStore.fabric}
+          length={availableFabrics.length}
+        />
+        <SelectPreviewFabric fabrics={availableFabrics} />
 
         <CustomizationBlock
           title="Side Panels"

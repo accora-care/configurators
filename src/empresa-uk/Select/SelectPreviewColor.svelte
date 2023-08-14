@@ -5,7 +5,6 @@
   import SelectionGridItem from "../../components/SelectionGridItem.svelte";
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
-  import { bedVariants } from "../data/bedVariants";
   import { colorsOrder } from "../data/colors";
 
   $: sortedColors = colors.sort((a, b) => {

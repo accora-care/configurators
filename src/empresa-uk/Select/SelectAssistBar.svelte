@@ -17,24 +17,6 @@
 
 <SelectionGrid visible={$configStore.selectorView === "ASSIST_BAR"}>
   <SelectionGridItem
-    active={value === "Long"}
-    title={"Long"}
-    notAllowedMessage={assistBarException}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          assistBar: "Long",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/empresa/accessory/${"Long"} - preview.jpg`}
-      alt={"Long assist bar"}
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
     active={value === "Short"}
     title={"Short"}
     onClick={() => {

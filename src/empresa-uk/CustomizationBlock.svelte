@@ -5,8 +5,11 @@
   export let targetSelectView: SELECTOR_VIEW;
   import { configStore, SELECTOR_VIEW } from "./configStore";
 
+  $: disabled = ! length;
+
   import IconHeadboard from "./assets/icon-headboard.svg";
   import IconColor from "./assets/icon-color.svg";
+  import IconFabric from "./assets/icon-fabric.svg";
   import IconSafety from "./assets/icon-safety.svg";
   import IconSidepanels from "./assets/icon-sidepanels.svg";
   import IconAccessory from "./assets/icon-accessory.svg";
@@ -14,6 +17,7 @@
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconHeadboard } = {
     COLOR: IconColor,
+    FABRIC: IconFabric,
     ACCESSORIES: IconAccessory,
     SIDE_PANEL: IconSidepanels,
     ASSIST_BAR: IconSafety,
@@ -24,23 +28,26 @@
 
 <div
   class="acc-customization-select"
+  class:disabled={disabled}
   class:active={$configStore.selectorView === targetSelectView}
   on:click={() => {
-    configStore.update((s) => {
-      if (s.selectorView === "COLOR") {
-        // color was too long, collapsed color will not move the scroll, we do it manually
-        try {
-          document.getElementById("acc-empresa-uk").scrollIntoView({
-            behavior: "smooth",
-          });
-        } catch {}
-      }
-      return {
-        ...s,
-        selectorView:
-          s.selectorView === targetSelectView ? null : targetSelectView,
-      };
-    });
+    if (! disabled) {
+      configStore.update((s) => {
+        if (s.selectorView === "COLOR") {
+          // color was too long, collapsed color will not move the scroll, we do it manually
+          try {
+            document.getElementById("acc-empresa-uk").scrollIntoView({
+              behavior: "smooth",
+            });
+          } catch {}
+        }
+        return {
+          ...s,
+          selectorView:
+            s.selectorView === targetSelectView ? null : targetSelectView,
+        };
+      });
+    }
   }}
 >
   <div class="acc-customization-icon-container">
@@ -90,6 +97,10 @@
     border-bottom: 1px solid var(--border-color);
     padding-right: calc(1.6rem / var(--root-font-size));
     cursor: pointer;
+
+    &.disabled {
+      opacity: 0.5;
+    }
   }
   .acc-customization-icon-container {
     padding: calc(1.6rem / var(--root-font-size));

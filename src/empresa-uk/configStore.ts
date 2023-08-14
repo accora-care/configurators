@@ -3,6 +3,7 @@ import { writable } from "svelte/store";
 
 export type SELECTOR_VIEW =
   | "COLOR"
+  | "FABRIC"
   | "ACCESSORIES"
   | "SIDE_PANEL"
   | "ASSIST_BAR"
@@ -11,6 +12,7 @@ export type SELECTOR_VIEW =
 export type StoreValues = {
   variant: string;
   color: string;
+  fabric: string;
   sidePanel: "Included" | "Not included";
   liftingPole: "Included" | "Not included";
   safetyMat: "Included" | "Not included";
@@ -22,6 +24,7 @@ export type StoreValues = {
 export const initVal: StoreValues = {
   variant: "ARC",
   color: "Vicenza Oak",
+  fabric: "Silver",
   sidePanel: "Not included",
   liftingPole: "Not included",
   safetyMat: "Not included",
