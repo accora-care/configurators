@@ -13,7 +13,7 @@
     --primary: rgba(0, 136, 113, 1);
     --primary-hover: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
-    --radius: 0.5rem;
+    --radius: calc(0.5rem / var(--root-font-size));
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
     p {
       margin-bottom: 0;

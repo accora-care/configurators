@@ -49,30 +49,30 @@
 
 <style lang="scss" global>
   .acc-submit {
-    margin-top: 1.6rem;
+    margin-top: calc(1.6rem / var(--root-font-size));
     background: white;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
-    margin-bottom: 3.2rem;
+    margin-bottom: calc(3.2rem / var(--root-font-size));
     cursor: pointer;
     &-content {
-      padding: 2.4rem;
+      padding: calc(2.4rem / var(--root-font-size));
     }
 
     .booking-info {
       font-weight: 300;
       text-align: center;
-      font-size: 1.4rem;
-      margin-top: 1.8rem;
+      font-size: calc(1.4rem / var(--root-font-size));
+      margin-top: calc(1.8rem / var(--root-font-size));
     }
   }
 
   .acc-submit-button,
   .acc-submit-button:visited {
     background: var(--primary);
-    font-size: 1.6rem;
-    height: 4.8rem;
+    font-size: calc(1.6rem / var(--root-font-size));
+    height: calc(4.8rem / var(--root-font-size));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +84,7 @@
     padding-left: 2em;
     padding-right: 2em;
     color: white;
-    border-radius: 0.4rem;
+    border-radius: calc(0.4rem / var(--root-font-size));
     text-decoration: none !important;
     transition: 0.15s all;
     &:hover {

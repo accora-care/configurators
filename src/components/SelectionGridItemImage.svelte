@@ -9,6 +9,6 @@
   .acc-grid-item-preview-image {
     width: 100%;
     display: block;
-    border-radius: 0.4rem;
+    border-radius: calc(0.4rem / var(--root-font-size));
   }
 </style>

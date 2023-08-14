@@ -70,13 +70,13 @@
     overflow: hidden;
     flex-grow: 1;
     flex-shrink: 1;
-    padding-right: 1.6rem;
+    padding-right: calc(1.6rem / var(--root-font-size));
     .title {
       font-weight: 500;
-      font-size: 1.6rem;
+      font-size: calc(1.6rem / var(--root-font-size));
     }
     .value {
-      font-size: 1.4rem;
+      font-size: calc(1.4rem / var(--root-font-size));
       flex-grow: 1;
       overflow: hidden;
       white-space: nowrap;
@@ -88,11 +88,11 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-right: 1.6rem;
+    padding-right: calc(1.6rem / var(--root-font-size));
     cursor: pointer;
   }
   .acc-customization-icon-container {
-    padding: 1.6rem;
+    padding: calc(1.6rem / var(--root-font-size));
     flex-shrink: 0;
     @media screen and (max-width: 1200px) {
       padding-left: 0;
@@ -125,7 +125,7 @@
 
   // select container
   .acc-select-container {
-    height: 2.4rem;
+    height: calc(2.4rem / var(--root-font-size));
     flex-grow: 1;
 
     position: relative;
@@ -134,12 +134,12 @@
     justify-content: flex-end;
     .acc-select-container__sticker {
       background: #f6f6f6;
-      border-radius: 0.5rem;
+      border-radius: calc(0.5rem / var(--root-font-size));
       height: 100%;
       pointer-events: none;
-      padding: 0 0.8rem;
-      right: 3.2rem;
-      margin-right: 1.6rem;
+      padding: 0 calc(0.8rem / var(--root-font-size));
+      right: calc(3.2rem / var(--root-font-size));
+      margin-right: calc(1.6rem / var(--root-font-size));
 
       white-space: nowrap;
 
@@ -149,8 +149,8 @@
       align-items: center;
 
       font-weight: 400;
-      font-size: 1.2rem;
-      line-height: 1.6rem;
+      font-size: calc(1.2rem / var(--root-font-size));
+      line-height: calc(1.6rem / var(--root-font-size));
       text-align: center;
 
       color: #333232;

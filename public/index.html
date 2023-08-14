@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -58,7 +58,7 @@
 
       /* Fields */
       .hs-form-field {
-        margin-bottom: 2rem;
+        margin-bottom: calc(2rem / var(--root-font-size));
       }
 
       .hs-form-field,
@@ -72,7 +72,7 @@
       }
 
       .hs-form-field label {
-        font-size: 1.5rem;
+        font-size: calc(1.5rem / var(--root-font-size));
         display: flex;
       }
 
@@ -90,12 +90,12 @@
       textarea,
       .nice-select {
         width: 100%;
-        height: 4.8rem !important;
+        height: calc(4.8rem / var(--root-font-size)) !important;
         font-family: inherit;
-        font-size: 1.6rem;
+        font-size: calc(1.6rem / var(--root-font-size));
         letter-spacing: -0.01em;
         font-weight: 400;
-        line-height: 1.2;
+        line-height: calc(1.2 / var(--root-font-size));
         color: #000;
         background-color: #fff;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -109,7 +109,7 @@
         transition: border-color 250ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
           box-shadow 250ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
-        padding: 1.6rem;
+        padding: calc(1.6rem / var(--root-font-size));
         margin-bottom: 0px;
 
         -webkit-appearance: none;
@@ -128,11 +128,11 @@
       }
 
       .hs-fieldtype-textarea textarea {
-        height: 18rem;
+        height: calc(18rem / var(--root-font-size));
         min-width: 100%;
         max-width: 100%;
-        min-height: 18rem;
-        max-height: 60rem;
+        min-height: calc(18rem / var(--root-font-size));
+        max-height: calc(60rem / var(--root-font-size));
       }
 
       input::placeholder,
@@ -170,14 +170,14 @@
       }
 
       .hs-fieldtype-booleancheckbox label {
-        font-size: 1.6rem;
+        font-size: calc(1.6rem / var(--root-font-size));
         font-weight: 400;
         display: flex;
         align-items: flex-start;
         text-align: left;
       }
       .hs-fieldtype-checkbox .hs-field-desc {
-        font-size: 1.2rem;
+        font-size: calc(1.2rem / var(--root-font-size));
       }
 
       .legal-consent-container .hs-form-booleancheckbox-display > span {
@@ -186,7 +186,7 @@
 
       .hs-fieldtype-booleancheckbox input[type="checkbox"],
       .hs-form-checkbox input[type="checkbox"] {
-        margin-top: 0.4rem;
+        margin-top: calc(0.4rem / var(--root-font-size));
         width: 16px !important;
         height: 16px !important;
         flex-shrink: 0;
@@ -213,7 +213,7 @@
       .hs_submit {
         width: 100%;
         display: flex;
-        margin-top: 1.6rem;
+        margin-top: calc(1.6rem / var(--root-font-size));
       }
 
       .hs-button.primary.large {
@@ -225,16 +225,16 @@
         line-height: inherit;
         cursor: pointer;
         color: #fff;
-        height: 5.5rem;
+        height: calc(5.5rem / var(--root-font-size));
 
-        font-size: 1.4rem;
+        font-size: calc(1.4rem / var(--root-font-size));
         font-weight: 400;
-        line-height: 1.5;
+        line-height: calc(1.5 / var(--root-font-size));
 
-        padding: 1.4rem 3.2rem;
+        padding: calc(1.4rem / var(--root-font-size)) calc(3.2rem / var(--root-font-size));
 
         border: none;
-        border-radius: 0.6rem;
+        border-radius: calc(0.6rem / var(--root-font-size));
         background-color: var(--base-mainColor);
         -webkit-transition: background-color 250ms
             cubic-bezier(0.455, 0.03, 0.515, 0.955),
@@ -249,14 +249,14 @@
       }
 
       .hs-richtext p {
-        font-size: 1.4rem;
+        font-size: calc(1.4rem / var(--root-font-size));
       }
 
       /* Success */
       .submitted-message {
-        font-size: 1.6rem;
+        font-size: calc(1.6rem / var(--root-font-size));
         font-weight: 500;
-        padding: 2rem 3rem;
+        padding: calc(2rem / var(--root-font-size)) calc(3rem / var(--root-font-size));
         display: flex;
         color: white;
         border-radius: 6px;
@@ -272,13 +272,13 @@
       /* Errors */
       .hs-error-msgs {
         list-style: none;
-        padding-left: 1rem;
+        padding-left: calc(1rem / var(--root-font-size));
       }
 
       .hs-error-msgs label {
-        font-size: 1.2rem;
+        font-size: calc(1.2rem / var(--root-font-size));
         margin: 0;
-        margin-top: 0.25rem;
+        margin-top: calc(0.25rem / var(--root-font-size));
         font-weight: 400;
         text-transform: none;
         opacity: 1;
@@ -308,13 +308,13 @@
         }
         /* Fields */
         .hs-form-field {
-          margin-bottom: 0.8rem;
+          margin-bottom: calc(0.8rem / var(--root-font-size));
         }
         /* Inputs */
         input,
         textarea,
         .nice-select {
-          font-size: 2rem;
+          font-size: calc(2rem / var(--root-font-size));
         }
         /* Buttons */
         .hs-button.primary.large {
@@ -328,7 +328,7 @@
         }
         /* Success */
         .submitted-message {
-          font-size: 2rem;
+          font-size: calc(2rem / var(--root-font-size));
         }
       }
     </style>

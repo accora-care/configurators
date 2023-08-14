@@ -12,12 +12,12 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 1.6rem 3.2rem;
+    padding: calc(1.6rem / var(--root-font-size)) calc(3.2rem / var(--root-font-size));
     text-align: center;
     border-radius: var(--radius) var(--radius) 0 0;
     color: white;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: calc(1.8rem / var(--root-font-size));
+    line-height: calc(2.4rem / var(--root-font-size));
     font-weight: 400;
     @media screen and (max-width: 860px) {
       display: none;

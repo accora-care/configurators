@@ -37,6 +37,6 @@
     grid-column: 1 / all;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.6rem;
+    gap: calc(1.6rem / var(--root-font-size));
   }
 </style>

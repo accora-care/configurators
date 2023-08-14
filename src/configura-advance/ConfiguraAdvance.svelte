@@ -86,8 +86,8 @@
     }
     .reset-form {
       text-align: center;
-      font-size: 1.2rem;
-      padding: 1.6rem;
+      font-size: calc(1.2rem / var(--root-font-size));
+      padding: calc(1.6rem / var(--root-font-size));
 
       cursor: pointer;
       &:hover {
@@ -96,8 +96,8 @@
     }
   }
   .acc-form-content {
-    padding: 2.4rem;
-    padding-bottom: 0.4rem;
+    padding: calc(2.4rem / var(--root-font-size));
+    padding-bottom: calc(0.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

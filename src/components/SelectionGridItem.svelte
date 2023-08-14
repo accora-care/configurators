@@ -32,8 +32,8 @@
 
 <style lang="scss" global>
   .acc-grid-item {
-    padding: 0.8rem;
-    border-radius: 0.4rem;
+    padding: calc(0.8rem / var(--root-font-size));
+    border-radius: calc(0.4rem / var(--root-font-size));
     transition: 0.2s all;
     border: 1px solid transparent;
     cursor: pointer;
@@ -52,29 +52,29 @@
       overflow: hidden;
     }
     &-title {
-      font-size: 1.2rem;
-      line-height: 1.6rem;
+      font-size: calc(1.2rem / var(--root-font-size));
+      line-height: calc(1.6rem / var(--root-font-size));
       text-align: center;
       font-weight: 300;
-      margin-top: 0.8rem;
+      margin-top: calc(0.8rem / var(--root-font-size));
     }
     &-quickship {
       background: #828282;
       display: flex;
       align-items: center;
-      font-size: 1rem;
+      font-size: calc(1rem / var(--root-font-size));
       justify-content: center;
-      padding: 0 0.8rem;
-      height: 2rem;
-      border-radius: 1rem;
+      padding: 0 calc(0.8rem / var(--root-font-size));
+      height: calc(2rem / var(--root-font-size));
+      border-radius: calc(1rem / var(--root-font-size));
       color: white;
       font-weight: 300;
       margin: 0 auto;
-      margin-top: 0.8rem;
+      margin-top: calc(0.8rem / var(--root-font-size));
       width: min-content;
     }
     &-qctext {
-      margin-left: 0.4rem;
+      margin-left: calc(0.4rem / var(--root-font-size));
       word-break: keep-all;
     }
 

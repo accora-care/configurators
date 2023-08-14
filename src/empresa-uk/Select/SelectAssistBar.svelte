@@ -73,7 +73,7 @@
 <style lang="scss" global>
   .acc-exception {
     font-size: 0.6em !important;
-    line-height: 1.4 !important;
+    line-height: calc(1.4 / var(--root-font-size)) !important;
     display: block;
   }
 </style>

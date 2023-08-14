@@ -19,11 +19,11 @@
   .acc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 0.8rem;
-    row-gap: 0.8rem;
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
     border-bottom: 1px solid var(--border-color);
+    column-gap: calc(0.8rem / var(--root-font-size));
+    row-gap: calc(0.8rem / var(--root-font-size));
+    padding-top: calc(2.7rem / var(--root-font-size));
+    padding-bottom: calc(1.6rem / var(--root-font-size));
     transition: 0.2s all;
     max-height: 1000px;
     overflow: hidden;
@@ -41,9 +41,9 @@
     }
   }
   .acc-grid-title {
-    font-size: 1.6rem;
+    font-size: calc(1.6rem / var(--root-font-size));
     display: block;
-    padding-top: 1rem;
+    padding-top: calc(2rem / var(--root-font-size));
     padding-left: 1.6em;
   }
   :global(.acc-grid.acc-grid-hidden) {
