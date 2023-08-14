@@ -15,6 +15,9 @@
     --border-color: rgba(234, 234, 234, 1);
     --radius: calc(0.5rem / var(--root-font-size));
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
+    --grid-item-background: none;
+    --selected-grid-item-background: none;
+
     p {
       margin-bottom: 0;
     }

@@ -31,6 +31,11 @@
 </div>
 
 <style lang="scss" global>
+  #acc-empresa-uk {
+    --grid-item-background: #F6F6F6;
+    --selected-grid-item-background: #fff;
+  }
+
   .acc-grid-item {
     padding: calc(0.8rem / var(--root-font-size));
     border-radius: calc(0.4rem / var(--root-font-size));
@@ -41,9 +46,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: var(--grid-item-background);
 
     &.active {
       border: 1px solid var(--primary);
+      background: var(--selected-grid-item-background);
     }
     &:hover {
       background: rgba(0, 0, 0, 0.02);

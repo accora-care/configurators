@@ -3,19 +3,31 @@
   export let title: string = "";
 </script>
 
-<div class="acc-grid-container">
-  {#if !!title}
-    <span class="acc-grid-title">{title}</span>
-  {/if}
-  <div class="acc-grid" class:acc-grid-hidden={!visible}>
-    <slot />
+<div class="acc-grid-wrapper" class:acc-grid-hidden={!visible}>
+  <div class="acc-grid-container" class:with-border={"Wooden Styles" === title || "Fabric Styles" === title}>
+    {#if !!title}
+      <span class="acc-grid-title">{title}</span>
+    {/if}
+    <div class="acc-grid" class:with-border={"Wooden Styles" === title || "Fabric Styles" === title}>
+      <slot />
+    </div>
   </div>
 </div>
 
 <style lang="scss" global>
-  .acc-grid-container {
+  .acc-grid-wrapper {
     overflow: hidden;
+
+    .acc-grid-container {
+      &.with-border {
+        border: 1px solid var(--border-color);
+        border-radius: 0.625rem;
+        margin-top: calc(1.5625rem / var(--root-font-size));
+        padding: 0 0.5rem calc(1.6rem / var(--root-font-size));
+      }
+    }
   }
+
   .acc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -39,14 +51,19 @@
     & > * {
       transition: 0.4s all;
     }
+
+    &.with-border {
+      border-bottom: none;
+    }
   }
   .acc-grid-title {
     font-size: calc(1.6rem / var(--root-font-size));
     display: block;
     padding-top: calc(2rem / var(--root-font-size));
     padding-left: 1.6em;
+    text-align: center;
   }
-  :global(.acc-grid.acc-grid-hidden) {
+  :global(.acc-grid-wrapper.acc-grid-hidden) {
     opacity: 0;
     height: 0px;
     max-height: 50px;
