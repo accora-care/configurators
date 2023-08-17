@@ -4,7 +4,7 @@
 
 <style lang="scss" global>
   .acc-configurator {
-    font-family: "Poppins";
+    font-family: "Poppins Regular", "Poppins";
     box-sizing: border-box;
     position: relative;
     * {
