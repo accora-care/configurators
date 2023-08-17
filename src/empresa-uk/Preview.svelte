@@ -22,7 +22,7 @@
 
   $: headboardImage = isFabricBedVariant
     ? `/images/empresa-uk/headboards/fabric/${$configStore.variant}_${$configStore.fabric}.png`
-    : `/images/empresa/headboards/${$configStore.variant}_${$configStore.color}.png`;
+    : `/images/empresa-uk/headboards/${$configStore.variant}_${$configStore.color}.png`;
 
   $: beddingImage = isFabricBedVariant
     ? `/images/base/fabric/bedding.png`
@@ -30,7 +30,7 @@
 
   $: proTectSideRailImage = isFabricBedVariant
     ? `/images/empresa-uk/accessory/fabric/Accessory - Protect Rails.png`
-    : `/images/empresa/accessory/Accessory - Protect Rails.png`;
+    : `/images/empresa-uk/accessory/Accessory - Protect Rails.png`;
 
   $: assistBarImage = isFabricBedVariant
     ? `/images/empresa-uk/accessory/fabric/Accessory - Assist Bar ${$configStore.assistBar}.png`
@@ -40,13 +40,13 @@
     ? 'Alexander with Wood' === $configStore.variant
       ? `/images/empresa-uk/footboards/fabric/${$configStore.variant}.png`
       : `/images/empresa-uk/footboards/fabric/${$configStore.variant}_${$configStore.fabric}.png`
-    : `/images/empresa/footboards/${$configStore.variant}_${$configStore.color}.png`;
+    : `/images/empresa-uk/footboards/${$configStore.variant}_${$configStore.color}.png`;
 
   $: sidePanelImage = isFabricBedVariant
     ? 'Alexander with Wood' === $configStore.variant
       ? `/images/empresa-uk/sidePanels/fabric/Wood_1.png`
       : `/images/empresa-uk/sidePanels/fabric/${$configStore.fabric}_1.png`
-    : `/images/empresa/sidePanels/${$configStore.color}_1.png`;
+    : `/images/empresa-uk/sidePanels/${$configStore.color}_1.png`;
 
   $: safetyMatImage = isFabricBedVariant
     ? `/images/empresa-uk/accessory/fabric/safety_mat.png`

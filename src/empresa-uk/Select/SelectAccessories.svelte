@@ -21,7 +21,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa/accessory/Protect Rails - preview.jpg`}
+      src={`/images/empresa-uk/accessory/Protect Rails - preview.jpg`}
       alt={"ProTect side rail"}
     />
   </SelectionGridItem>
@@ -39,7 +39,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa/accessory/Lifting Pole - preview.jpg`}
+      src={`/images/empresa-uk/accessory/Lifting Pole - preview.jpg`}
       alt={"Lifting pole"}
     />
   </SelectionGridItem>
@@ -56,7 +56,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa/accessory/Safety Mat - preview.jpg`}
+      src={`/images/empresa-uk/accessory/Safety Mat - preview.jpg`}
       alt={"Safety mat"}
     />
   </SelectionGridItem>
