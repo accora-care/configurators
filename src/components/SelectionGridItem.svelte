@@ -62,6 +62,7 @@
       font-size: calc(1.2rem / var(--root-font-size));
       line-height: calc(1.6rem / var(--root-font-size));
       text-align: center;
+      font-family: "Poppins Light", "Poppins";
       font-weight: 300;
       margin-top: calc(0.8rem / var(--root-font-size));
     }
@@ -75,6 +76,7 @@
       height: calc(2rem / var(--root-font-size));
       border-radius: calc(1rem / var(--root-font-size));
       color: white;
+      font-family: "Poppins Light", "Poppins";
       font-weight: 300;
       margin: 0 auto;
       margin-top: calc(0.8rem / var(--root-font-size));

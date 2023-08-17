@@ -18,6 +18,7 @@
     color: white;
     font-size: calc(1.8rem / var(--root-font-size));
     line-height: calc(2.4rem / var(--root-font-size));
+    font-family: "Poppins Regular", "Poppins";
     font-weight: 400;
     @media screen and (max-width: 860px) {
       display: none;

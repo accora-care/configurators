@@ -61,6 +61,7 @@
     }
 
     .booking-info {
+      font-family: "Poppins Light", "Poppins";
       font-weight: 300;
       text-align: center;
       font-size: calc(1.4rem / var(--root-font-size));

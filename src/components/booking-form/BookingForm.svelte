@@ -138,6 +138,7 @@
     padding-left: 0;
     padding-top: 0;
     .acc-booking-item-title {
+      font-family: "Poppins Medium", "Poppins";
       font-weight: 500;
     }
   }
@@ -258,6 +259,7 @@
       text-align: left;
       display: block;
       padding: 0;
+      font-family: "Poppins Regular", "Poppins";
       font-weight: 400;
     }
     form {

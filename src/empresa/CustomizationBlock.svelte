@@ -71,6 +71,7 @@
     flex-shrink: 1;
     padding-right: calc(1.6rem / var(--root-font-size));
     .title {
+      font-family: "Poppins Medium", "Poppins";
       font-weight: 500;
       font-size: calc(1.6rem / var(--root-font-size));
     }
@@ -147,6 +148,7 @@
       display: flex;
       align-items: center;
 
+      font-family: "Poppins Regular", "Poppins";
       font-weight: 400;
       font-size: calc(1.2rem / var(--root-font-size));
       line-height: calc(1.6rem / var(--root-font-size));
