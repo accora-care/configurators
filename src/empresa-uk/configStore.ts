@@ -22,7 +22,7 @@ export type StoreValues = {
 };
 
 export const initVal: StoreValues = {
-  variant: "ARC",
+  variant: "Arc",
   color: "Vicenza Oak",
   fabric: "Silver",
   sidePanel: "Not included",

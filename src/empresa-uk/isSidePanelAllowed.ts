@@ -1,7 +1,7 @@
 import type { StoreValues } from "./configStore";
 
 export const isSidePanelAllowed = (state: StoreValues) => {
-  if (state.variant === "ARC") {
+  if (state.variant === "Arc") {
     return false;
   }
 
@@ -9,8 +9,8 @@ export const isSidePanelAllowed = (state: StoreValues) => {
 };
 
 export const sidePanelExceptionReason = (state: StoreValues) => {
-  if (state.variant === "ARC") {
-    return "Not available for ARC";
+  if (state.variant === "Arc") {
+    return "Not available for Arc";
   }
 
   return null;
