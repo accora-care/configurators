@@ -3,7 +3,7 @@ export const fabricsOrder = [
 	"Hessian",
 	"Steel",
 	"Dove",
-	"Charbis",
+	"Chablis",
 	"Sky",
 	"Ocean",
 	"Fern Green",

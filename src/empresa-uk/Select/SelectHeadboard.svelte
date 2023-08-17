@@ -44,7 +44,7 @@
       }}
     >
       <SelectionGridItemImage
-        src={`/images/empresa/headboards_preview/${title}.jpg`}
+        src={`/images/empresa-uk/headboards_preview/${title}.png`}
         alt={title}
       />
     </SelectionGridItem>

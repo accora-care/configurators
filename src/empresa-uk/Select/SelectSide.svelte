@@ -24,7 +24,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa/sidePanels_preview/noSidePanel.jpg`}
+      src={`/images/empresa-uk/sidePanels_preview/noSidePanel.png`}
       alt="No side panels"
     />
   </SelectionGridItem>
@@ -43,7 +43,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa/sidePanels_preview/noSidePanel.jpg`}
+      src={`/images/empresa-uk/sidePanels_preview/withSidePanel.png`}
       alt="With side panels"
     />
   </SelectionGridItem>

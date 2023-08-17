@@ -18,7 +18,7 @@ export interface Options {
 
 export const bedVariants: BedVariants = {
 	wooden: {
-		ARC: [
+		Arc: [
 			{ title: "Vicenza Oak", options: { quickship: true } },
 			{ title: "Natural Lancaster Oak", options: {} },
 			{ title: "Lissa Oak", options: {} },
@@ -144,7 +144,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Anthracite Fineline Metallic", options: {} },
 			{ title: "Sand Orleans Oak", options: {} },
 		],
-		"Custom ARC": [
+		"Custom Arc": [
 			{ title: "Vicenza Oak", options: {} },
 			{ title: "Natural Lancaster Oak", options: {} },
 			{ title: "Lissa Oak", options: {} },
@@ -169,7 +169,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
@@ -187,7 +187,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
@@ -205,7 +205,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
@@ -223,7 +223,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
@@ -241,7 +241,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
@@ -259,7 +259,7 @@ export const bedVariants: BedVariants = {
 			{ title: "Hessian", options: {} },
 			{ title: "Steel", options: {} },
 			{ title: "Dove", options: {} },
-			{ title: "Charbis", options: {} },
+			{ title: "Chablis", options: {} },
 			{ title: "Sky", options: {} },
 			{ title: "Ocean", options: {} },
 			{ title: "Fern Green", options: {} },
