@@ -29,7 +29,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/${"Short"} - preview.jpg`}
+      src={`/images/empresa-uk/accessory/${"Short"} - preview.png`}
       alt={"Short assist bar"}
     />
   </SelectionGridItem>

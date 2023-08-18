@@ -2,9 +2,13 @@
   export let active: boolean;
   export let onClick: () => void;
   export let title: string = "";
+  export let description: string = "";
+  export let learnMoreUrl: string = "";
   export let isQuickship: boolean = false;
   export let disabled: boolean = false;
   export let notAllowedMessage: string = "";
+  export let visible: boolean = true;
+  export let ukStyle: boolean = false;
   import IconQuickship from "./assets/icon-quickship.svg";
 </script>
 
@@ -12,21 +16,57 @@
   class="acc-grid-item"
   class:active
   class:disabled={!!notAllowedMessage || disabled}
+  class:uk-style={ukStyle}
   on:click={onClick}
 >
-  <div>
-    <slot />
-    {#if !!notAllowedMessage}
-      <span class="acc-exception">{notAllowedMessage}</span>
-    {/if}
-    {#if title}
-      <div class="acc-grid-item-title">{title}</div>
-    {/if}
-  </div>
-  {#if isQuickship}
-    <div class="acc-grid-item-quickship">
-      <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+  
+  {#if ukStyle}
+    <div class="acc-grid-item-image">
+      <slot />
     </div>
+    <div class="acc-grid-item-details">
+      <div>
+        {#if !!notAllowedMessage}
+          <span class="acc-exception">{notAllowedMessage}</span>
+        {/if}
+        {#if title}
+          <div class="acc-grid-item-title-wrapper">
+            <div class="acc-grid-item-title">{title}</div>
+            {#if ! visible}
+              <div class="acc-grid-item-not-visible">
+                <IconQuickship /> <span class="acc-grid-item-qctext">Not Visible</span>
+              </div>
+            {/if}
+          </div>
+        {/if}
+      </div>
+      {#if description}
+        <p class="acc-grid-item-description">{description}</p>
+      {/if}
+      {#if learnMoreUrl}
+        <a href={learnMoreUrl} class="acc-grid-item-link">Learn more</a>
+      {/if}
+      {#if isQuickship}
+        <div class="acc-grid-item-quickship">
+          <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+        </div>
+      {/if}
+    </div>
+  {:else}
+    <div>
+      <slot />
+      {#if !!notAllowedMessage}
+        <span class="acc-exception">{notAllowedMessage}</span>
+      {/if}
+      {#if title}
+        <div class="acc-grid-item-title">{title}</div>
+      {/if}
+    </div>
+    {#if isQuickship}
+      <div class="acc-grid-item-quickship">
+        <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+      </div>
+    {/if}
   {/if}
 </div>
 
@@ -66,7 +106,8 @@
       font-weight: 300;
       margin-top: calc(0.8rem / var(--root-font-size));
     }
-    &-quickship {
+    &-quickship,
+    &-not-visible {
       background: #828282;
       display: flex;
       align-items: center;
@@ -81,6 +122,7 @@
       margin: 0 auto;
       margin-top: calc(0.8rem / var(--root-font-size));
       width: min-content;
+      white-space: nowrap;
     }
     &-qctext {
       margin-left: calc(0.4rem / var(--root-font-size));
@@ -95,6 +137,46 @@
       }
       img {
         opacity: 0.4;
+      }
+    }
+
+    &.uk-style {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      text-align: left;
+      gap: 2rem;
+      align-items: center;
+
+      .acc-grid-item-details {
+        .acc-grid-item-title-wrapper {
+          display: flex;
+          align-items: center;
+          gap: calc(1rem / var(--root-font-size));
+          margin-bottom: calc(0.2rem / var(--root-font-size));
+          width: fit-content;
+
+          .acc-grid-item-title {
+            text-align: left;
+            font-size: calc(1.4rem / var(--root-font-size));
+            line-height: normal;
+          }
+
+          .acc-grid-item-not-visible {
+            justify-content: flex-start;
+          }
+        }
+
+        .acc-grid-item-description {
+          font-size: calc(1rem / var(--root-font-size));
+          line-height: normal;
+          margin-bottom: calc(0.5rem / var(--root-font-size));
+        }
+
+        .acc-grid-item-link {
+          font-size: calc(1.2rem / var(--root-font-size));
+          line-height: normal;
+          color: var(--link-color);
+        }
       }
     }
   }

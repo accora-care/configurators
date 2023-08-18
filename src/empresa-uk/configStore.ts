@@ -18,6 +18,11 @@ export type StoreValues = {
   safetyMat: "Included" | "Not included";
   assistBar: "Long" | "Short" | "None";
   proTectSideRail: "Included" | "Not included";
+  fabricSideRails: "Included" | "Not included";
+  foldingSideRails: "Included" | "Not included";
+  foldingSideRailsWithBumper: "Included" | "Not included";
+  widthAdjustmentKit: "Included" | "Not included";
+  bedWallBumper: "Included" | "Not included";
   selectorView: SELECTOR_VIEW | null;
 };
 
@@ -30,6 +35,11 @@ export const initVal: StoreValues = {
   safetyMat: "Not included",
   assistBar: "None",
   proTectSideRail: "Not included",
+  fabricSideRails: "Not included",
+  foldingSideRails: "Not included",
+  foldingSideRailsWithBumper: "Not included",
+  widthAdjustmentKit: "Not included",
+  bedWallBumper: "Not included",
   selectorView: null,
 };
 

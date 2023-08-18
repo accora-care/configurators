@@ -17,6 +17,7 @@
     --box-shadow-block: 0 0 40px 0 rgba(0, 0, 0, 0.07);
     --grid-item-background: none;
     --selected-grid-item-background: none;
+    --link-color: rgba(0, 136, 113, 1);
 
     p {
       margin-bottom: 0;

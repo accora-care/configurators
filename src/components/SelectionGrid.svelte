@@ -1,6 +1,7 @@
 <script lang="ts">
   export let visible: boolean;
   export let title: string = "";
+  export let ukStyle: boolean = false;
 </script>
 
 <div class="acc-grid-wrapper" class:acc-grid-hidden={!visible}>
@@ -8,7 +9,7 @@
     {#if !!title}
       <span class="acc-grid-title">{title}</span>
     {/if}
-    <div class="acc-grid" class:with-border={"Wooden Styles" === title || "Fabric Styles" === title}>
+    <div class="acc-grid" class:with-border={"Wooden Styles" === title || "Fabric Styles" === title} class:uk-style={ukStyle}>
       <slot />
     </div>
   </div>
@@ -54,6 +55,11 @@
 
     &.with-border {
       border-bottom: none;
+    }
+
+    &.uk-style {
+      grid-template-columns: 1fr;
+      max-height: none;
     }
   }
   .acc-grid-title {

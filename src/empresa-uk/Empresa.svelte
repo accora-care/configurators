@@ -5,7 +5,7 @@
   import SelectPreviewFabric from "./Select/SelectPreviewFabric.svelte";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
-  import SelectAssisBar from "./Select/SelectAssistBar.svelte";
+  // import SelectAssistBar from "./Select/SelectAssistBar.svelte";
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
   import SelectHeadboard from "./Select/SelectHeadboard.svelte";
@@ -30,7 +30,11 @@
     accessoriesDisplayValue =
       [
         $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
-
+        $configStore.fabricSideRails === "Included" ? "Fabric side rails" : null,
+        $configStore.foldingSideRails === "Included" ? "Folding side rails" : null,
+        $configStore.foldingSideRailsWithBumper === "Included" ? "Folding side rails with bumper" : null,
+        $configStore.widthAdjustmentKit === "Included" ? "Width adjustment kit" : null,
+        $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
         $configStore.liftingPole === "Included" ? "Lifting pole" : null,
         $configStore.safetyMat === "Included" ? "Safety mat" : null,
       ]
@@ -77,19 +81,19 @@
           length={2}
         />
         <SelectSide />
-        <CustomizationBlock
+        <!-- <CustomizationBlock
           title="Assist Bar"
           targetSelectView="ASSIST_BAR"
           value={$configStore.assistBar}
           length={2}
         />
-        <SelectAssisBar bind:value={$configStore.assistBar} />
+        <SelectAssistBar bind:value={$configStore.assistBar} /> -->
 
         <CustomizationBlock
           title="Accessories"
           targetSelectView="ACCESSORIES"
           value={accessoriesDisplayValue}
-          length={3}
+          length={9}
         />
         <SelectAccessories />
         <div
@@ -129,6 +133,11 @@
           value:
             [
               $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
+              $configStore.fabricSideRails === "Included" ? "Fabric side rails" : null,
+              $configStore.foldingSideRails === "Included" ? "Folding side rails" : null,
+              $configStore.foldingSideRailsWithBumper === "Included" ? "Folding side rails with bumper" : null,
+              $configStore.widthAdjustmentKit === "Included" ? "Width adjustment kit" : null,
+              $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
               $configStore.liftingPole === "Included" ? "Lifting pole" : null,
               $configStore.safetyMat === "Included" ? "Safety mat" : null,
             ]
