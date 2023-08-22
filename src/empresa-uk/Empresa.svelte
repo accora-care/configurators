@@ -53,7 +53,7 @@
       <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
-          title="Headboard"
+          title="Headboard & Footboard"
           targetSelectView="HEADBOARD"
           value={$configStore.variant}
           length={Object.keys(bedVariants.wooden).length + Object.keys(bedVariants.fabric).length}

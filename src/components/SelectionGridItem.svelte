@@ -97,6 +97,7 @@
     }
     &-wrapper {
       overflow: hidden;
+      margin-top: calc(0.8rem / var(--root-font-size));
     }
     &-title {
       font-size: calc(1.2rem / var(--root-font-size));
@@ -104,7 +105,6 @@
       text-align: center;
       font-family: "Poppins Light", "Poppins";
       font-weight: 300;
-      margin-top: calc(0.8rem / var(--root-font-size));
     }
     &-quickship,
     &-not-visible {
@@ -120,7 +120,6 @@
       font-family: "Poppins Light", "Poppins";
       font-weight: 300;
       margin: 0 auto;
-      margin-top: calc(0.8rem / var(--root-font-size));
       width: min-content;
       white-space: nowrap;
     }
@@ -145,15 +144,17 @@
       grid-template-columns: 1fr 3fr;
       text-align: left;
       gap: 2rem;
-      align-items: center;
 
       .acc-grid-item-details {
+        color: black;
+
         .acc-grid-item-title-wrapper {
           display: flex;
           align-items: center;
-          gap: calc(1rem / var(--root-font-size));
-          margin-bottom: calc(0.2rem / var(--root-font-size));
+          column-gap: calc(1rem / var(--root-font-size));
+          margin-bottom: calc(0.5rem / var(--root-font-size));
           width: fit-content;
+          flex-wrap: wrap;
 
           .acc-grid-item-title {
             text-align: left;
@@ -163,6 +164,8 @@
 
           .acc-grid-item-not-visible {
             justify-content: flex-start;
+            text-align: left;
+            margin: 0;
           }
         }
 
@@ -175,7 +178,7 @@
         .acc-grid-item-link {
           font-size: calc(1.2rem / var(--root-font-size));
           line-height: normal;
-          color: var(--link-color);
+          color: var(--primary);
         }
       }
     }

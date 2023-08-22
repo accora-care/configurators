@@ -38,7 +38,7 @@
     padding-top: calc(2.7rem / var(--root-font-size));
     padding-bottom: calc(1.6rem / var(--root-font-size));
     transition: 0.2s all;
-    max-height: 1000px;
+    max-height: 1200px;
     overflow: hidden;
     @media screen and (max-width: 1300px) {
       grid-template-columns: 1fr 1fr 1fr;

@@ -79,8 +79,8 @@
     flex-shrink: 1;
     padding-right: calc(1.6rem / var(--root-font-size));
     .title {
-      font-family: "Poppins Medium", "Poppins";
-      font-weight: 500;
+      font-family: "Poppins Regular", "Poppins";
+      font-weight: 400;
       font-size: calc(1.6rem / var(--root-font-size));
     }
     .value {
@@ -102,10 +102,14 @@
     &.disabled {
       opacity: 0.5;
     }
+    path {
+      fill: var(--primary);
+    }
   }
   .acc-customization-icon-container {
     padding: calc(1.6rem / var(--root-font-size));
     flex-shrink: 0;
+    display: flex;
     @media screen and (max-width: 1200px) {
       padding-left: 0;
     }
