@@ -102,8 +102,10 @@
     &.disabled {
       opacity: 0.5;
     }
-    path {
-      fill: var(--primary);
+    .acc-chevron {
+      path {
+        fill: var(--primary);
+      }
     }
   }
   .acc-customization-icon-container {
