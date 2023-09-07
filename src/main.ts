@@ -1,6 +1,7 @@
 import type { InitConfig } from "./Config.types";
 import App from "./empresa/Empresa.svelte";
 import EmpresaUK from "./empresa-uk/Empresa.svelte";
+import AltidaUK from "./altida-uk/Altida.svelte";
 import ConfiguraAdvanceSvelte from "./configura-advance/ConfiguraAdvance.svelte";
 import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
 
@@ -27,6 +28,23 @@ const empresaUK = new EmpresaUK({
     config: {
       ...initConfig,
       mainTitle: "Customize your Accora Empressa",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "31",
+        productFieldName: "ProductName",
+        optionsFieldName: "ConfiguratorOptions",
+      },
+    }
+  },
+});
+
+const altidaUK = new AltidaUK({
+  target: document.getElementById("altida-uk"),
+  props: {
+    config: {
+      ...initConfig,
+      mainTitle: "Customize your Accora Altida",
       hubspotFormConfig: undefined,
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",

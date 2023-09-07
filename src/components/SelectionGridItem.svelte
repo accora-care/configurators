@@ -71,7 +71,8 @@
 </div>
 
 <style lang="scss" global>
-  #acc-empresa-uk {
+  #acc-empresa-uk,
+  #acc-altida-uk {
     --grid-item-background: #F6F6F6;
     --selected-grid-item-background: #fff;
   }

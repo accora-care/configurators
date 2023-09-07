@@ -94,6 +94,17 @@ Include only configurator you want to appear on specific page.
 </script>
 ```
 
+#### Altida (UK)
+
+```html
+<!--Where you want to render the configurator-->
+<div id="altida-uk-configurator"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.AltidaUK("altida-uk-configurator");
+</script>
+```
+
 #### Floorbed1
 
 ```html

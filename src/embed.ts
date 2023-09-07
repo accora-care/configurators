@@ -2,6 +2,7 @@ import type { HubspotFormConfig, CognitoFormConfig, InitConfig } from "./Config.
 import ConfiguraAdvance from "./configura-advance/ConfiguraAdvance.svelte";
 import Empresa from "./empresa/Empresa.svelte";
 import EmpresaUK from "./empresa-uk/Empresa.svelte";
+import AltidaUK from "./altida-uk/Altida.svelte";
 import Floorbed1 from "./floorbed1/Floorbed1.svelte";
 
 const DEFAULT_HUBSPOT_CONFIG = {
@@ -89,6 +90,29 @@ export const EmpresaUKConfigurator = (
 };
 
 /**
+ * Altida (UK)
+ */
+export const AltidaUKConfigurator = (
+  targetId: string,
+  config: InitConfig,
+  cognitoFormConfig: CognitoFormConfig = DEFAULT_COGNITO_CONFIG
+) => {
+  const app = new AltidaUK({
+    target: document.getElementById(targetId),
+    props: {
+      config: {
+        mainTitle: "Customize your Accora Altida",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+        ...config,
+        cognitoFormConfig,
+      },
+    },
+  });
+
+  return app;
+};
+
+/**
  * Configura advance
  */
 
@@ -115,6 +139,7 @@ export const ConfiguraAdvanceConfigurator = (
 (window as any).AccoraConfigurators = {
   Empresa: EmpresaConfigurator,
   EmpresaUK: EmpresaUKConfigurator,
+  AltidaUK: AltidaUKConfigurator,
   ConfiguraAdvance: ConfiguraAdvanceConfigurator,
   FloorbedOne: AccoraFloorbedOne,
 };
