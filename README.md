@@ -116,6 +116,17 @@ Include only configurator you want to appear on specific page.
 </script>
 ```
 
+#### Floorbed1 (UK)
+
+```html
+<!--Where you want to render the configurator-->
+<div id="floorbed1-uk-configurator"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.FloorbedOneUK("floorbed1-uk-configurator");
+</script>
+```
+
 #### Configura Advance
 
 ```html

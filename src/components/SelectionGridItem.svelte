@@ -72,7 +72,8 @@
 
 <style lang="scss" global>
   #acc-empresa-uk,
-  #acc-altida-uk {
+  #acc-altida-uk,
+  #acc-floorbed1-uk {
     --grid-item-background: #F6F6F6;
     --selected-grid-item-background: #fff;
   }

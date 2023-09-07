@@ -4,6 +4,7 @@ import Empresa from "./empresa/Empresa.svelte";
 import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import AltidaUK from "./altida-uk/Altida.svelte";
 import Floorbed1 from "./floorbed1/Floorbed1.svelte";
+import Floorbed1UK from "./floorbed1-uk/Floorbed1.svelte";
 
 const DEFAULT_HUBSPOT_CONFIG = {
   region: "eu1",
@@ -42,6 +43,31 @@ export const AccoraFloorbedOne = (
 };
 
 (window as any).AccoraFloorbedOne = AccoraFloorbedOne;
+
+/**
+ * Floorbed1 (UK)
+ */
+export const AccoraFloorbedOneUK = (
+  targetId: string,
+  config: InitConfig,
+  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
+) => {
+  const app = new Floorbed1UK({
+    target: document.getElementById(targetId),
+    props: {
+      config: {
+        mainTitle: "Customize your Accora Floorbed 1",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+        ...config,
+        hubspotFormConfig,
+      },
+    },
+  });
+
+  return app;
+};
+
+(window as any).AccoraFloorbedOneUK = AccoraFloorbedOneUK;
 
 /**
  * Empresa
@@ -142,4 +168,5 @@ export const ConfiguraAdvanceConfigurator = (
   AltidaUK: AltidaUKConfigurator,
   ConfiguraAdvance: ConfiguraAdvanceConfigurator,
   FloorbedOne: AccoraFloorbedOne,
+  FloorbedOneUK: AccoraFloorbedOneUK,
 };

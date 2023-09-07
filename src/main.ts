@@ -4,6 +4,7 @@ import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import AltidaUK from "./altida-uk/Altida.svelte";
 import ConfiguraAdvanceSvelte from "./configura-advance/ConfiguraAdvance.svelte";
 import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
+import Floorbed1UKSvelte from "./floorbed1-uk/Floorbed1.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Floor Bed",
@@ -74,6 +75,24 @@ const floorbed1 = new Floorbed1Svelte({
       ...initConfig,
       mainTitle: "Customize your Accora Floorbed 1",
       bookADemoHref: "https://us.accora.care/book-a-demo",
+    },
+  },
+});
+
+const floorbed1UK = new Floorbed1UKSvelte({
+  target: document.getElementById("floorbed1-uk"),
+  props: {
+    config: {
+      ...initConfig,
+      mainTitle: "Customize your Accora Floorbed 1",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "31",
+        productFieldName: "ProductName",
+        optionsFieldName: "ConfiguratorOptions",
+      },
+      bookADemoHref: "https://accora.care/book-a-joint-visit",
     },
   },
 });
