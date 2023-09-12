@@ -9,13 +9,14 @@
 
   import IconSafety from "./assets/icon-safety.svg";
   import IconSidePanels from "./assets/icon-sidepanels.svg";
-  import IconAccessory from "./assets/icon-accessory.svg";
+  import IconMobility from "./assets/icon-mobility.svg";
+  import IconExtras from "./assets/icon-extras.svg";
 
-  export const icons: { [key in SELECTOR_VIEW]: typeof IconAccessory } = {
+  export const icons: { [key in SELECTOR_VIEW]: typeof IconSidePanels } = {
     SIDE_RAILS: IconSidePanels,
     SAFETY: IconSafety,
-    MOBILITY: IconAccessory,
-    EXTRAS: IconAccessory,
+    MOBILITY: IconMobility,
+    EXTRAS: IconExtras,
   };
   const Icon = icons[targetSelectView];
 </script>

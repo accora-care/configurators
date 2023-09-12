@@ -6,7 +6,6 @@ export type SELECTOR_VIEW =
   | "FABRIC"
   | "ACCESSORIES"
   | "SIDE_PANEL"
-  | "ASSIST_BAR"
   | "HEADBOARD";
 
 export type StoreValues = {

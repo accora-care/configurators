@@ -10,7 +10,6 @@
   import IconHeadboard from "./assets/icon-headboard.svg";
   import IconColor from "./assets/icon-color.svg";
   import IconFabric from "./assets/icon-fabric.svg";
-  import IconSafety from "./assets/icon-safety.svg";
   import IconSidepanels from "./assets/icon-sidepanels.svg";
   import IconAccessory from "./assets/icon-accessory.svg";
   import Chevron from "./assets/chevron.svg";
@@ -20,7 +19,6 @@
     FABRIC: IconFabric,
     ACCESSORIES: IconAccessory,
     SIDE_PANEL: IconSidepanels,
-    ASSIST_BAR: IconSafety,
     HEADBOARD: IconHeadboard,
   };
   const Icon = icons[targetSelectView];
@@ -33,8 +31,8 @@
   on:click={() => {
     if (! disabled) {
       configStore.update((s) => {
-        if (s.selectorView === "COLOR") {
-          // color was too long, collapsed color will not move the scroll, we do it manually
+        if (s.selectorView === "COLOR" || s.selectorView === "FABRIC") {
+          // color/fabric was too long, collapsed color/fabric will not move the scroll, we do it manually
           try {
             document.getElementById("acc-empresa-uk").scrollIntoView({
               behavior: "smooth",

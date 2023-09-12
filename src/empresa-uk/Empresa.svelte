@@ -81,13 +81,6 @@
           length={2}
         />
         <SelectSide />
-        <!-- <CustomizationBlock
-          title="Assist Bar"
-          targetSelectView="ASSIST_BAR"
-          value={$configStore.assistBar}
-          length={2}
-        />
-        <SelectAssistBar bind:value={$configStore.assistBar} /> -->
 
         <CustomizationBlock
           title="Accessories"
