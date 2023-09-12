@@ -15,6 +15,8 @@ export const getFabricSideRailsException = (state: StoreValues) => {
 export const getBumpersException = (state: StoreValues) => {
   if (state.juniorKit) {
     return "Included with Junior Kit";
+  } else if (state.pumpHolder) {
+    return "Not available with Mattress Pump Holder";
   }
 
   return null;
@@ -33,7 +35,9 @@ export const getSafetySleeveException = (state: StoreValues) => {
 export const getJuniorKitException = (state: StoreValues) => {
   if (state.sideRails === "Fabric") {
     return "Not available with Fabric Side Rails";
-  }
+  } else if (state.lever !== "None" || state.liftingPole) {
+    return "Not available with mobility options";
+	}
 
   return null;
 };

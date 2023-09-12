@@ -56,7 +56,7 @@
   </SelectionGridItem>
   <SelectionGridItem
     notAllowedMessage={mobilityOptionsException}
-    active={$configStore.pumpHolder}
+    active={$configStore.liftingPole}
     title="Lifting Pole"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
     ukStyle={true}
