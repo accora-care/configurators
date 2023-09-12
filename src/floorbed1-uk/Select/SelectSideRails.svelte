@@ -31,7 +31,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/sideRails_preview.png`}
+      src={`/images/floorbed1-uk/sideRails_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -51,7 +51,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/juniorSideRails_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>

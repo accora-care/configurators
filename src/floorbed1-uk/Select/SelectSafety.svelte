@@ -36,7 +36,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/bumpers_preview.png`}
+      src={`/images/floorbed1-uk/bumpers_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -56,7 +56,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/safetyMat_preview.png`}
+      src={`/images/floorbed1-uk/safetyMat_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -76,7 +76,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/safetyMat_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -96,7 +96,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/safetySleeve_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -118,7 +118,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/juniorKit_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>

@@ -36,7 +36,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/pumpHolder_preview.png`}
+      src={`/images/floorbed1-uk/pumpHolder_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -45,6 +45,7 @@
     title="Mattress Infill"
     description="Fits down both sides of a standard mattress in between the mattress and the side rail."
     ukStyle={true}
+    visible={false}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -55,7 +56,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/mattressInfill_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -65,6 +66,7 @@
     title="Bed Extension"
     description="Allows our FloorBed to be extended by 200mm length."
     ukStyle={true}
+    visible={false}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -75,7 +77,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/bedExtension_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -85,6 +87,7 @@
     title="Mattress Extension Foam"
     description="200 mm (20 cm) mattress infill to be used when the bed is extended by 200 mm."
     ukStyle={true}
+    visible={false}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -95,7 +98,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/mattressExtensionFoam_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -105,6 +108,7 @@
     title="Bed Extension Kit"
     description="Includes mattress frame extension and mattress extension foam to provide an  extra 200mm in length."
     ukStyle={true}
+    visible={false}
     onClick={() => {
       configStore.update((s) => {
         const nextState = !s.safetyMat;
@@ -118,7 +122,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/bedExtensionKit_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>

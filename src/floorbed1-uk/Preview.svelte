@@ -29,6 +29,9 @@
   {#if $configStore.pumpHolder}
     <Img src={`/images/floorbed1-uk/1200/pumpHolder.png`} />
   {/if}
+  {#if $configStore.safetySleeve || $configStore.juniorKit}
+    <Img src={`/images/floorbed1-uk/1200/safetySleeve.png`} />
+  {/if}
   {#if "High" === $configStore.safetyMat}
     <Img src={`/images/floorbed1-uk/1200/safetyMat.png`} />
   {/if}

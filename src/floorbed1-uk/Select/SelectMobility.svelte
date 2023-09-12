@@ -30,7 +30,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/lever_preview.png`}
+      src={`/images/floorbed1-uk/lever_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -50,7 +50,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/option_preview.png`}
+      src={`/images/floorbed1-uk/shortLever_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -70,7 +70,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/liftingPole_preview.png`}
+      src={`/images/floorbed1-uk/liftingPole_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
