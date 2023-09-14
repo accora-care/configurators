@@ -85,6 +85,10 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+
+      #acc-altida-uk & {
+        font-weight: 300;
+      }
     }
   }
 
@@ -134,7 +138,7 @@
   }
   .acc-chevron {
     cursor: pointer;
-    transition: 0.2s all;
+    transition: 0.3s all;
   }
 
   // select container
