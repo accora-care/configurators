@@ -11,6 +11,7 @@
   import IconSidePanels from "./assets/icon-sidepanels.svg";
   import IconMobility from "./assets/icon-mobility.svg";
   import IconExtras from "./assets/icon-extras.svg";
+  import Chevron from "./assets/chevron.svg";
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconSidePanels } = {
     SIDE_RAILS: IconSidePanels,
@@ -55,6 +56,7 @@
         >&nbsp;available</span
       >
     </div>
+    <Chevron class="acc-chevron" />
   </div>
 </div>
 
@@ -75,6 +77,10 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+
+      #acc-floorbed1-uk & {
+        font-weight: 300;
+      }
     }
   }
 
@@ -124,7 +130,7 @@
   }
   .acc-chevron {
     cursor: pointer;
-    transition: 0.2s all;
+    transition: 0.3s all;
   }
 
   // select container

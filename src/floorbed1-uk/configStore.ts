@@ -8,12 +8,12 @@ export type SELECTOR_VIEW =
   | "EXTRAS";
 
 export type StoreValues = {
-  sideRails: "Fabric" | "Junior" | "None";
+  sideRails: "Fabric Side Rails" | "Integrated Junior Padded Side Rails" | "None";
   bumpers: boolean;
-  safetyMat: "High" | "High with Slide Sheets" | "None";
+  safetyMat: "High Safety Mat" | "High Safety Mat with Slide Sheets" | "None";
 	safetySleeve: boolean;
 	juniorKit: boolean;
-  lever: "Standard" | "Short" | "None";
+  lever: "Bed Lever" | "Short Bed Lever" | "None";
   liftingPole: boolean;
   pumpHolder: boolean;
 	mattressInfill: boolean;

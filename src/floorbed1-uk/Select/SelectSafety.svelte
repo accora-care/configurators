@@ -21,7 +21,7 @@
   <SelectionGridItem
     notAllowedMessage={bumpersException}
     active={$configStore.bumpers}
-    title="Head and foot bumpers"
+    title="Head and Foot Bumpers"
     description="These bumpers are designed to reduce impact and minimise the risk of injury."
     learnMoreUrl="/bed-accessories/head-and-footboard-bumpers"
     ukStyle={true}
@@ -41,7 +41,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={"High" === $configStore.safetyMat}
+    active={"High Safety Mat" === $configStore.safetyMat}
     title="High Safety Mat"
     description="Even-plane safety mat providing an extended surface for individuals who are prone to falling out of bed."
     learnMoreUrl="/bed-accessories/high-safety-mat"
@@ -50,7 +50,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          safetyMat: "High" !== s.safetyMat ? "High" : "None",
+          safetyMat: "High Safety Mat" !== s.safetyMat ? "High Safety Mat" : "None",
         };
       });
     }}
@@ -61,7 +61,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={"High with Slide Sheets" === $configStore.safetyMat}
+    active={"High Safety Mat with Slide Sheets" === $configStore.safetyMat}
     title="High Safety Mat with Slide Sheets"
     description="An even-plane safety mat including slide sheets to make it easier to single handedly transfer users back into bed."
     learnMoreUrl="/bed-accessories/high-safety-mat-with-slide-sheets"
@@ -70,7 +70,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          safetyMat: "High with Slide Sheets" !== s.safetyMat ? "High with Slide Sheets" : "None",
+          safetyMat: "High Safety Mat with Slide Sheets" !== s.safetyMat ? "High Safety Mat with Slide Sheets" : "None",
         };
       });
     }}

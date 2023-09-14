@@ -16,7 +16,7 @@
 <SelectionGrid visible={$configStore.selectorView === "MOBILITY"} ukStyle={true}>
   <SelectionGridItem
     notAllowedMessage={mobilityOptionsException}
-    active={"Standard" === $configStore.lever}
+    active={"Bed Lever" === $configStore.lever}
     title="Bed Lever"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
     ukStyle={true}
@@ -24,7 +24,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          lever: "Standard" !== s.lever ? "Standard" : "None",
+          lever: "Bed Lever" !== s.lever ? "Bed Lever" : "None",
         };
       });
     }}
@@ -36,7 +36,7 @@
   </SelectionGridItem>
   <SelectionGridItem
     notAllowedMessage={mobilityOptionsException}
-    active={"Short" === $configStore.lever}
+    active={"Short Bed Lever" === $configStore.lever}
     title="Short Bed Lever"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
     ukStyle={true}
@@ -44,7 +44,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          lever: "Short" !== s.lever ? "Short" : "None",
+          lever: "Short Bed Lever" !== s.lever ? "Short Bed Lever" : "None",
         };
       });
     }}

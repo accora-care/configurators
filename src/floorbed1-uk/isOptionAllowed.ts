@@ -33,7 +33,7 @@ export const getSafetySleeveException = (state: StoreValues) => {
 };
 
 export const getJuniorKitException = (state: StoreValues) => {
-  if (state.sideRails === "Fabric") {
+  if (state.sideRails === "Fabric Side Rails") {
     return "Not available with Fabric Side Rails";
   } else if (state.lever !== "None" || state.liftingPole) {
     return "Not available with mobility options";

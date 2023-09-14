@@ -13,7 +13,46 @@
   import Footer from "../components/Footer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
 
+  import { getFabricSideRailsException } from "./isOptionAllowed";
+
   export let config: InitConfig;
+
+  let valueSideRails = "";
+  let safetyDisplayValue = "None";
+  let mobilityDisplayValue = "None";
+  let extrasDisplayValue = "None";
+
+  configStore.subscribe((state) => {
+    valueSideRails = getFabricSideRailsException(state) || state.sideRails;
+    safetyDisplayValue =
+      [
+        $configStore.bumpers ? "Head and Foot Bumpers" : null,
+        $configStore.safetyMat !== "None" ? $configStore.safetyMat : null,
+        $configStore.safetySleeve ? "Safety Sleeve" : null,
+        $configStore.juniorKit ? "Junior Kit" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
+    mobilityDisplayValue =
+      [
+        $configStore.lever !== "None" ? $configStore.lever : null,
+        $configStore.liftingPole ? "Lifting Pole" : null,
+        $configStore.safetySleeve ? "Safety Sleeve" : null,
+        $configStore.juniorKit ? "Junior Kit" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
+    extrasDisplayValue =
+      [
+        $configStore.pumpHolder ? "Mattress Pump Holder" : null,
+        $configStore.mattressInfill ? "Mattress Infill" : null,
+        $configStore.bedExtension ? "Bed Extension" : null,
+        $configStore.mattressExtensionFoam ? "Mattress Extension Foam" : null,
+        $configStore.bedExtensionKit ? "Bed Extension Kit" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
+  });
 </script>
 
 <ConfiguratorContainer>
@@ -28,24 +67,28 @@
         <CustomizationBlock
           title="Side Rails"
           targetSelectView="SIDE_RAILS"
+          value={valueSideRails}
           length={2}
         />
         <SelectSideRails />
         <CustomizationBlock
           title="Safety"
           targetSelectView="SAFETY"
+          value={safetyDisplayValue}
           length={5}
         />
         <SelectSafety />
         <CustomizationBlock
           title="Mobility"
           targetSelectView="MOBILITY"
+          value={mobilityDisplayValue}
           length={3}
         />
         <SelectMobility />
         <CustomizationBlock
           title="Extras"
           targetSelectView="EXTRAS"
+          value={extrasDisplayValue}
           length={5}
         />
         <SelectExtras />
@@ -62,55 +105,55 @@
       </div>
     </div>
     <Footer
-      title="Floorbed 1"
+      title="Floorbed 1 (UK)"
       {config}
       descriptionFormField={[
         {
-          label: "Side rails",
+          label: "Side Rails",
           value: "None" !== $configStore.sideRails ? $configStore.sideRails + " ✓" : "Not included",
         },
         {
-          label: "Head and foot bumbers",
+          label: "Head and Foot Bumpers",
           value: $configStore.bumpers ? "Included ✓" : "Not included",
         },
         {
-          label: "Safety mat",
+          label: "Safety Mat",
           value: "None" !== $configStore.safetyMat ? $configStore.safetyMat + " ✓" : "Not included",
         },
         {
-          label: "Safety sleeve",
+          label: "Safety Sleeve",
           value: $configStore.safetySleeve ? "Included ✓" : "Not included",
         },
         {
-          label: "Junior kit",
+          label: "Junior Kit",
           value: $configStore.juniorKit ? "Included ✓" : "Not included",
         },
         {
-          label: "Bed lever",
+          label: "Bed Lever",
           value: "None" !== $configStore.lever ? $configStore.lever + " ✓" : "Not included",
         },
         {
-          label: "Lifting pole",
+          label: "Lifting Pole",
           value: $configStore.liftingPole ? "Included ✓" : "Not included",
         },
         {
-          label: "Pump holder",
+          label: "Mattress Pump Holder",
           value: $configStore.pumpHolder ? "Included ✓" : "Not included",
         },
         {
-          label: "Mattress infill",
+          label: "Mattress Infill",
           value: $configStore.mattressInfill ? "Included ✓" : "Not included",
         },
         {
-          label: "Bed extension",
+          label: "Bed Extension",
           value: $configStore.bedExtension ? "Included ✓" : "Not included",
         },
         {
-          label: "Mattress extension foam",
+          label: "Mattress Extension Foam",
           value: $configStore.mattressExtensionFoam ? "Included ✓" : "Not included",
         },
         {
-          label: "Bed extension kit",
+          label: "Bed Extension Kit",
           value: $configStore.bedExtensionKit ? "Included ✓" : "Not included",
         },
       ]}
