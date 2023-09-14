@@ -164,7 +164,7 @@ export const ConfiguraAdvanceConfigurator = (
 };
 
 /**
- * Configura advance
+ * Configura Advance (UK)
  */
 
 export const ConfiguraAdvanceUKConfigurator = (

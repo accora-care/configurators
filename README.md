@@ -219,7 +219,7 @@ At the end of `<body>`, include this script, make sure to edit the config:
 
 ---
 
-## Configura Advance Configurator onlyDEFAULT_HUBSPOT_CONFIG
+## Configura Advance Configurator only
 
 Include styles in `<head>`
 

@@ -135,7 +135,7 @@
   <SelectionGridItem
   active={"Lateral Support Wedges" === $configStore.lateralSupport}
   visible={false}
-    title="Lateral Support Wedges "
+    title="Lateral Support Wedges"
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

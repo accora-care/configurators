@@ -38,7 +38,7 @@
   <SelectionGridItem
     active={$configStore.dropdownArmrest}
     title="Dropdown armrests"
-    description="Fitting on either side of the chair these armrests can be set to three different heights, to accommodate different users’ needs.."
+    description="Fitting on either side of the chair these armrests can be set to three different heights, to accommodate different users’ needs."
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

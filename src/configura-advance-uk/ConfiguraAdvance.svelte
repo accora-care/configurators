@@ -135,7 +135,7 @@
         },
         {
           label: "Lateral support",
-          value: "External Lateral Supports" === $configStore.lateralSupport ? "External" : "Lateral Support Wedges" === $configStore.lateralSupport ? "Wedges" : "Not Included",
+          value: "External Lateral Supports" === $configStore.lateralSupport ? "External Lateral Supports" : "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : "Not Included",
         },
         {
           label: "Armrests",
