@@ -56,11 +56,3 @@
     />
   </SelectionGridItem>
 </SelectionGrid>
-
-<style lang="scss" global>
-  .acc-exception {
-    font-size: 0.6rem !important;
-    line-height: calc(1.4 / var(--root-font-size)) !important;
-    display: block;
-  }
-</style>

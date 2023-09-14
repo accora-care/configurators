@@ -79,9 +79,14 @@
   #acc-empresa-uk,
   #acc-altida-uk,
   #acc-floorbed1-uk,
-  #acc-configura-advance-uk {
+  #acc-configura-advance-uk,
+  #acc-configura-comfort-uk {
     --grid-item-background: #F6F6F6;
     --selected-grid-item-background: #fff;
+
+    .acc-exception {
+      font-size: 0.6rem !important;
+    }
   }
 
   .acc-grid-item {

@@ -4,6 +4,7 @@ import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import AltidaUK from "./altida-uk/Altida.svelte";
 import ConfiguraAdvanceSvelte from "./configura-advance/ConfiguraAdvance.svelte";
 import ConfiguraAdvanceUKSvelte from "./configura-advance-uk/ConfiguraAdvance.svelte";
+import ConfiguraComfortUKSvelte from "./configura-comfort-uk/ConfiguraComfort.svelte";
 import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
 import Floorbed1UKSvelte from "./floorbed1-uk/Floorbed1.svelte";
 
@@ -75,6 +76,17 @@ const configuraUK = new ConfiguraAdvanceUKSvelte({
     config: {
       ...initConfig,
       mainTitle: "Customize your Accora Configura Advance",
+      bookADemoHref: "https://us.accora.care/book-a-demo",
+    },
+  },
+});
+
+const configuraComfortUK = new ConfiguraComfortUKSvelte({
+  target: document.getElementById("configura-comfort-uk"),
+  props: {
+    config: {
+      ...initConfig,
+      mainTitle: "Customize your Accora Configura Comfort",
       bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
