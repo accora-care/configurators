@@ -18,10 +18,14 @@
 
   export let config: InitConfig;
 
+  const fabricBedVariants = Object.keys(bedVariants.fabric);
+
   let valueSidePanels = "";
   let accessoriesDisplayValue = "none";
   let availableColors = [];
   let availableFabrics = [];
+
+  $: isFabricBedVariant = fabricBedVariants.includes($configStore.variant);
 
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
@@ -110,8 +114,8 @@
           value: $configStore.variant,
         },
         {
-          label: "Wood finish",
-          value: $configStore.color,
+          label: isFabricBedVariant ? "Fabric Finish" : "Wood finish",
+          value: isFabricBedVariant ? $configStore.fabric : $configStore.color,
         },
         {
           label: "Side panel",
