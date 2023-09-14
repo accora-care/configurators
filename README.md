@@ -138,6 +138,17 @@ Include only configurator you want to appear on specific page.
 </script>
 ```
 
+#### Configura Advance (UK)
+
+```html
+<!--Where you want to render the configurator-->
+<div id="configura-advance-uk"></div>
+<!--At the end of body-->
+<script type="text/javascript">
+  AccoraConfigurators.ConfiguraAdvanceUK("configura-advance-uk");
+</script>
+```
+
 ## Empresa Configurator only
 
 Include styles in `<head>`

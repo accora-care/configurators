@@ -1,5 +1,6 @@
 import type { HubspotFormConfig, CognitoFormConfig, InitConfig } from "./Config.types";
 import ConfiguraAdvance from "./configura-advance/ConfiguraAdvance.svelte";
+import ConfiguraAdvanceUK from "./configura-advance-uk/ConfiguraAdvance.svelte";
 import Empresa from "./empresa/Empresa.svelte";
 import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import AltidaUK from "./altida-uk/Altida.svelte";
@@ -162,11 +163,36 @@ export const ConfiguraAdvanceConfigurator = (
   return app;
 };
 
+/**
+ * Configura advance
+ */
+
+export const ConfiguraAdvanceUKConfigurator = (
+  targetId: string,
+  config: InitConfig,
+  cognitoFormConfig: CognitoFormConfig = DEFAULT_COGNITO_CONFIG
+) => {
+  const app = new ConfiguraAdvanceUK({
+    target: document.getElementById(targetId),
+    props: {
+      config: {
+        mainTitle: "Customize your Accora Configura Advance",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+        ...config,
+        cognitoFormConfig,
+      },
+    },
+  });
+
+  return app;
+};
+
 (window as any).AccoraConfigurators = {
   Empresa: EmpresaConfigurator,
   EmpresaUK: EmpresaUKConfigurator,
   AltidaUK: AltidaUKConfigurator,
   ConfiguraAdvance: ConfiguraAdvanceConfigurator,
+  ConfiguraAdvanceUK: ConfiguraAdvanceUKConfigurator,
   FloorbedOne: AccoraFloorbedOne,
   FloorbedOneUK: AccoraFloorbedOneUK,
 };

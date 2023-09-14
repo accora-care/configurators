@@ -62,6 +62,11 @@
         <div class="acc-grid-item-title">{title}</div>
       {/if}
     </div>
+    {#if ! visible}
+      <div class="acc-grid-item-not-visible">
+        <IconQuickship /> <span class="acc-grid-item-qctext">Not Visible</span>
+      </div>
+    {/if}
     {#if isQuickship}
       <div class="acc-grid-item-quickship">
         <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
@@ -73,7 +78,8 @@
 <style lang="scss" global>
   #acc-empresa-uk,
   #acc-altida-uk,
-  #acc-floorbed1-uk {
+  #acc-floorbed1-uk,
+  #acc-configura-advance-uk {
     --grid-item-background: #F6F6F6;
     --selected-grid-item-background: #fff;
   }
@@ -146,6 +152,13 @@
       grid-template-columns: 1fr 3fr;
       text-align: left;
       gap: 2rem;
+
+      .acc-grid-item-preview-image {
+        &[src$=".svg"] {
+          background-color: var(--grid-item-background);
+          padding: 1.25rem;
+        }
+      }
 
       .acc-grid-item-details {
         color: black;
