@@ -4,12 +4,14 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
-  import { getBackrestException } from "../isOptionAllowed";
+  import { getLateralSupportBackrestsException, getLateralSupportWedgesException } from "../isOptionAllowed";
 
-  let backrestException = "";
+  let lateralSupportBackrestsException = "";
+  let lateralSupportWedgesException = "";
 
   configStore.subscribe((state) => {
-    backrestException = getBackrestException(state);
+    lateralSupportBackrestsException = getLateralSupportBackrestsException(state);
+    lateralSupportWedgesException = getLateralSupportWedgesException(state);
   });
 
   const ukStyle = false;
@@ -21,6 +23,7 @@
   <SelectionGridItem
     active={$configStore.backrest === "Waterfall"}
     title="Waterfall"
+    standard={true}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -32,14 +35,12 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-comfort-uk/posture-backrest--waterfall--preview.webp`}
+      src={`/images/configura-comfort-uk/posture-backrest--waterfall--${$configStore.vinyl ? 'vinyl' : 'duratec'}--preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
   <SelectionGridItem
-    notAllowedMessage={backrestException}
     active={$configStore.backrest === "Cocoon"}
-    disabled={null !== backrestException}
     title="Cocoon"
     ukStyle={ukStyle}
     onClick={() => {
@@ -57,10 +58,10 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    notAllowedMessage={backrestException}
+    notAllowedMessage={lateralSupportBackrestsException}
     active={$configStore.backrest === "Lateral Support Backrest"}
     title="Lateral Support Backrest"
-    disabled={null !== backrestException}
+    disabled={null !== lateralSupportBackrestsException}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -77,10 +78,10 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    notAllowedMessage={backrestException}
+    notAllowedMessage={lateralSupportBackrestsException}
     active={$configStore.backrest === "Adjustable Lateral Support"}
     title="Adjustable Lateral Support"
-    disabled={null !== backrestException}
+    disabled={null !== lateralSupportBackrestsException}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -102,9 +103,11 @@
   <!-- OTHER -->
 
   <SelectionGridItem
-  active={"Lateral Support Wedges" === $configStore.lateralSupport}
-  visible={false}
+    notAllowedMessage={lateralSupportWedgesException}
+    active={"Lateral Support Wedges" === $configStore.lateralSupport}
+    visible={false}
     title="Lateral Support Wedges "
+    disabled={null !== lateralSupportWedgesException}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -117,6 +120,26 @@
   >
     <SelectionGridItemImage
       src={`/images/configura-comfort-uk/posture-other--lateralSupportWedges--preview.webp`}
+      class="image-frame-img"
+    />
+  </SelectionGridItem>
+
+  <SelectionGridItem
+    active={$configStore.profiledHeadrest}
+    title="Profiled Headrest"
+    description="The profiled headrest offers increased head and neck support."
+    ukStyle={ukStyle}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          profiledHeadrest: !s.profiledHeadrest,
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/configura-comfort-uk/accessory--profiledHeadrest--preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>

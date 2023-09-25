@@ -6,6 +6,7 @@
   export let config: InitConfig;
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
+  export let submitButtonDisclaimer = "";
 </script>
 
 <div class="acc-submit">
@@ -26,6 +27,9 @@
       </span>
     {:else}
       <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
+    {/if}
+    {#if submitButtonDisclaimer}
+      <div class="acc-submit-button-disclaimer">{submitButtonDisclaimer}</div>
     {/if}
   </div>
 </div>
@@ -91,5 +95,12 @@
     &:hover {
       background-color: var(--primary-hover);
     }
+  }
+
+  .acc-submit-button-disclaimer {
+    font-size: calc(1.2rem / var(--root-font-size));
+    margin-top: calc(1rem / var(--root-font-size));
+    text-align: center;
+    font-weight: 300;
   }
 </style>

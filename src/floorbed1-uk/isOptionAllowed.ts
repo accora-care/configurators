@@ -15,8 +15,6 @@ export const getFabricSideRailsException = (state: StoreValues) => {
 export const getBumpersException = (state: StoreValues) => {
   if (state.juniorKit) {
     return "Included with Junior Kit";
-  } else if (state.pumpHolder) {
-    return "Not available with Mattress Pump Holder";
   }
 
   return null;
@@ -45,8 +43,8 @@ export const getJuniorKitException = (state: StoreValues) => {
 // Mobility
 
 export const getMobilityOptionsException = (state: StoreValues) => {
-  if (state.safetySleeve) {
-    return "Not available with Safety Sleeve";
+  if (state.safetySleeve || state.juniorKit) {
+    return "Not available with Safety Sleeve or Junior Kit";
   }
 
   return null;
@@ -54,9 +52,9 @@ export const getMobilityOptionsException = (state: StoreValues) => {
 
 // Extras
 
-export const getPumpHolderException = (state: StoreValues) => {
-  if (state.bumpers) {
-    return "Not available with Head and Footboard Bumpers";
+export const getMatressInfillException = (state: StoreValues) => {
+  if ("Fabric Side Rails" !== state.sideRails) {
+    return "Only available with Fabric Side Rails";
   }
 
   return null;
@@ -65,8 +63,8 @@ export const getPumpHolderException = (state: StoreValues) => {
 export const getBedExtensionException = (state: StoreValues) => {
   if (state.bedExtensionKit) {
     return "Included with Bed Extension Kit";
-  } else if (state.safetySleeve) {
-    return "Not available with Safety Sleeve";
+  } else if (state.safetySleeve || state.juniorKit) {
+    return "Not available with Safety Sleeve or Junior Kit";
   }
 
   return null;
@@ -75,16 +73,16 @@ export const getBedExtensionException = (state: StoreValues) => {
 export const getMattressExtensionFoamException = (state: StoreValues) => {
   if (state.bedExtensionKit) {
     return "Included with Bed Extension Kit";
-  } else if (state.safetySleeve) {
-    return "Not available with Safety Sleeve";
+  } else if (state.safetySleeve || state.juniorKit) {
+    return "Not available with Safety Sleeve or Junior Kit";
   }
 
   return null;
 };
 
 export const getBedExtensionKitException = (state: StoreValues) => {
-  if (state.safetySleeve) {
-    return "Not available with Safety Sleeve";
+  if (state.safetySleeve || state.juniorKit) {
+    return "Not available with Safety Sleeve or Junior Kit";
   }
 
   return null;

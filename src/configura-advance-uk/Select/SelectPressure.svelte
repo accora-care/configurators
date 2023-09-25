@@ -20,6 +20,7 @@
   <SelectionGridItem
     active={$configStore.pressure === "Visco"}
     visible={false}
+    standard={true}
     title="Visco"
     description="This static pressure-reducing cushion comes as standard with the chair. "
     ukStyle={ukStyle}

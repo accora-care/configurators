@@ -1,6 +1,6 @@
 <script lang="ts">
   import Img from "./Img.svelte";
-  let { class: cls, src, ...rest } = $$restProps;
+  export let { class: cls, src, ...rest } = $$restProps;
 </script>
 
 <Img class={"acc-grid-item-preview-image " + cls} alt="" {...rest} {src} />

@@ -4,15 +4,15 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
-  import { getPumpHolderException, getBedExtensionException, getMattressExtensionFoamException, getBedExtensionKitException } from "../isOptionAllowed";
+  import { getMatressInfillException, getBedExtensionException, getMattressExtensionFoamException, getBedExtensionKitException } from "../isOptionAllowed";
 
-  let pumpHolderException = "";
+  let matressInfillException = "";
   let bedExtensionException = "";
   let mattressExtensionFoamException = "";
   let bedExtensionKitException = "";
 
   configStore.subscribe((state) => {
-    pumpHolderException = getPumpHolderException(state);
+    matressInfillException = getMatressInfillException(state);
     bedExtensionException = getBedExtensionException(state);
     mattressExtensionFoamException = getMattressExtensionFoamException(state);
     bedExtensionKitException = getBedExtensionKitException(state);
@@ -21,7 +21,6 @@
 
 <SelectionGrid visible={$configStore.selectorView === "EXTRAS"} ukStyle={true}>
   <SelectionGridItem
-    notAllowedMessage={pumpHolderException}
     active={$configStore.pumpHolder}
     title="Mattress Pump Holder"
     description="The pump holder easily fits over the end of the bed to hold the pump of an alternating air mattresses."
@@ -41,8 +40,10 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={matressInfillException}
     active={$configStore.mattressInfill}
     title="Mattress Infill"
+    disabled={null !== matressInfillException}
     description="Fits down both sides of a standard mattress in between the mattress and the side rail."
     ukStyle={true}
     visible={false}
@@ -61,9 +62,10 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-  notAllowedMessage={bedExtensionException}
+    notAllowedMessage={bedExtensionException}
     active={$configStore.bedExtension}
     title="Bed Extension"
+    disabled={null !== bedExtensionException}
     description="Allows our FloorBed to be extended by 200mm length."
     ukStyle={true}
     visible={false}
@@ -85,6 +87,7 @@
     notAllowedMessage={mattressExtensionFoamException}
     active={$configStore.mattressExtensionFoam}
     title="Mattress Extension Foam"
+    disabled={null !== mattressExtensionFoamException}
     description="200 mm (20 cm) mattress infill to be used when the bed is extended by 200 mm."
     ukStyle={true}
     visible={false}
@@ -106,6 +109,7 @@
     notAllowedMessage={bedExtensionKitException}
     active={$configStore.bedExtensionKit}
     title="Bed Extension Kit"
+    disabled={null !== bedExtensionKitException}
     description="Includes mattress frame extension and mattress extension foam to provide an  extra 200mm in length."
     ukStyle={true}
     visible={false}

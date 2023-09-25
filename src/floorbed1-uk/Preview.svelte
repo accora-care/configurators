@@ -11,12 +11,6 @@
     <Img src={`/images/floorbed1-uk/1200/liftingPole.png`} />
   {/if}
   <Img src={`/images/floorbed1-uk/1200/mattress.png`} />
-  {#if "Fabric Side Rails" === $configStore.sideRails}
-    <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
-  {/if}
-  {#if "Integrated Junior Padded Side Rails" === $configStore.sideRails}
-    <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
-  {/if}
   {#if $configStore.bumpers || $configStore.juniorKit}
     <Img src={`/images/floorbed1-uk/1200/bumpers.png`} />
   {/if}
@@ -24,7 +18,13 @@
     <Img src={`/images/floorbed1-uk/1200/lever.png`} />
   {/if}
   {#if "Short Bed Lever" === $configStore.lever}
-    <Img src={`/images/floorbed1-uk/1200/lever.png`} />
+    <Img src={`/images/floorbed1-uk/1200/shortLever.png`} />
+  {/if}
+  {#if "Fabric Side Rails" === $configStore.sideRails}
+    <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
+  {/if}
+  {#if "Integrated Junior Padded Side Rails" === $configStore.sideRails}
+    <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
   {/if}
   {#if $configStore.pumpHolder}
     <Img src={`/images/floorbed1-uk/1200/pumpHolder.png`} />
@@ -36,6 +36,6 @@
     <Img src={`/images/floorbed1-uk/1200/safetyMat.png`} />
   {/if}
   {#if "High Safety Mat with Slide Sheets" === $configStore.safetyMat}
-    <Img src={`/images/floorbed1-uk/1200/safetyMat.png`} />
+    <Img src={`/images/floorbed1-uk/1200/safetyMatWithSlideSheet.png`} />
   {/if}
 </PreviewFrame>

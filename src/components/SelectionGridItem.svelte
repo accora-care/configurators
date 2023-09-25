@@ -8,6 +8,7 @@
   export let disabled: boolean = false;
   export let notAllowedMessage: string = "";
   export let visible: boolean = true;
+  export let standard: boolean = false;
   export let ukStyle: boolean = false;
   import IconQuickship from "./assets/icon-quickship.svg";
 </script>
@@ -34,7 +35,12 @@
             <div class="acc-grid-item-title">{title}</div>
             {#if ! visible}
               <div class="acc-grid-item-not-visible">
-                <IconQuickship /> <span class="acc-grid-item-qctext">Not Visible</span>
+                <IconQuickship /> <span class="acc-grid-item-nvtext">Not Visible</span>
+              </div>
+            {/if}
+            {#if standard}
+              <div class="acc-grid-item-is-standard">
+                <span class="acc-grid-item-sttext">Standard</span>
               </div>
             {/if}
           </div>
@@ -64,7 +70,12 @@
     </div>
     {#if ! visible}
       <div class="acc-grid-item-not-visible">
-        <IconQuickship /> <span class="acc-grid-item-qctext">Not Visible</span>
+        <IconQuickship /> <span class="acc-grid-item-nvtext">Not Visible</span>
+      </div>
+    {/if}
+    {#if standard}
+      <div class="acc-grid-item-is-standard">
+        <span class="acc-grid-item-sttext">Standard</span>
       </div>
     {/if}
     {#if isQuickship}
@@ -120,7 +131,8 @@
       font-weight: 300;
     }
     &-quickship,
-    &-not-visible {
+    &-not-visible,
+    &-is-standard {
       background: #828282;
       display: flex;
       align-items: center;
@@ -136,9 +148,14 @@
       width: min-content;
       white-space: nowrap;
     }
-    &-qctext {
+    &-qctext,
+    &-nvtext,
+    &-sttext {
       margin-left: calc(0.4rem / var(--root-font-size));
       word-break: keep-all;
+    }
+    &-sttext {
+      margin-left: 0;
     }
 
     &.disabled {
@@ -161,7 +178,7 @@
       .acc-grid-item-preview-image {
         &[src$=".svg"] {
           background-color: var(--grid-item-background);
-          padding: 1.25rem;
+          padding: 2rem;
         }
       }
 

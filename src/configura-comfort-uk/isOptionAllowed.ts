@@ -1,16 +1,16 @@
 import type { StoreValues } from "./configStore";
 
-export const getHeadrestException = (state: StoreValues) => {
-  if (state.backrest !== "Waterfall") {
-    return "Only available with Waterfall backrest.";
-  }
+export const getLateralSupportBackrestsException = (state: StoreValues) => {
+	if ("None" !== state.lateralSupport) {
+    return "Not available with Lateral Support Wedges.";
+	}
 
   return null;
 };
 
-export const getBackrestException = (state: StoreValues) => {
-  if (state.profiledHeadrest) {
-    return "Not available with Profiled Headrest.";
+export const getLateralSupportWedgesException = (state: StoreValues) => {
+  if ("Lateral Support Backrest" === state.backrest || "Adjustable Lateral Support" === state.backrest) {
+    return "Not available with Lateral Support Backrests.";
   }
 
   return null;

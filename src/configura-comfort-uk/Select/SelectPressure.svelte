@@ -16,6 +16,7 @@
     visible={false}
     title="Visco"
     description="This static pressure-reducing cushion comes as standard with the chair. "
+    standard={true}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

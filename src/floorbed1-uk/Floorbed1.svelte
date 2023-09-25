@@ -37,8 +37,6 @@
       [
         $configStore.lever !== "None" ? $configStore.lever : null,
         $configStore.liftingPole ? "Lifting Pole" : null,
-        $configStore.safetySleeve ? "Safety Sleeve" : null,
-        $configStore.juniorKit ? "Junior Kit" : null,
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
@@ -62,7 +60,6 @@
 
   <div id="acc-floorbed1-uk" class="acc-content">
     <div class="acc-form">
-      <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
           title="Side Rails"
@@ -107,6 +104,7 @@
     <Footer
       title="Floorbed 1 (UK)"
       {config}
+      submitButtonDisclaimer={"Quick delivery | 100-night risk-free trial | Training & implementation."}
       descriptionFormField={[
         {
           label: "Side Rails",
@@ -196,8 +194,7 @@
     }
   }
   .acc-form-content {
-    padding: calc(2.4rem / var(--root-font-size));
-    padding-bottom: calc(0.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

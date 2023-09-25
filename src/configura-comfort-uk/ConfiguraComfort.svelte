@@ -3,7 +3,6 @@
 
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
-  import SelectAccessories from "./Select/SelectAccessories.svelte";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
@@ -55,7 +54,6 @@
 
   <div id="acc-configura-comfort-uk" class="acc-content">
     <div class="acc-form">
-      <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
           title="Fabric"
@@ -91,14 +89,7 @@
           length={2}
         />
         <SelectArmrests />
-        <CustomizationBlock
-          title="Accessories"
-          targetSelectView="ACCESSORIES"
-          value={accessoriesDisplayValue}
-          length={4}
-        />
-        <SelectAccessories />
-        <button
+        <div
           class="reset-form"
           on:click={() => {
             configStore.update((s) => {
@@ -107,7 +98,7 @@
           }}
         >
           Reset to default options
-        </button>
+        </div>
       </div>
     </div>
     <Footer
@@ -187,8 +178,7 @@
     }
   }
   .acc-form-content {
-    padding: calc(2.4rem / var(--root-font-size));
-    padding-bottom: calc(0.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

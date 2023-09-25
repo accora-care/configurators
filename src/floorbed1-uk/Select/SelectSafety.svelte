@@ -76,7 +76,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/floorbed1-uk/safetyMat_preview.webp`}
+      src={`/images/floorbed1-uk/safetyMatWithSlideSheet_preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>

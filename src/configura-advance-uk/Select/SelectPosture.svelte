@@ -21,6 +21,7 @@
     active={$configStore.backrest === "Waterfall"}
     title="Waterfall"
     description="sdd"
+    standard={true}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

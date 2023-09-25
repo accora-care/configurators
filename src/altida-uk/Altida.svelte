@@ -38,7 +38,6 @@
 
   <div id="acc-altida-uk" class="acc-content">
     <div class="acc-form">
-      <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
           title="Headboard & Footboard"
@@ -85,6 +84,7 @@
     <Footer
       title="Altida (UK)"
       {config}
+      submitButtonDisclaimer={"Quick delivery | 100-night risk-free trial | Training & implementation."}
       descriptionFormField={[
         {
           label: "Headboard and footboard",
@@ -138,8 +138,7 @@
     }
   }
   .acc-form-content {
-    padding: calc(2.4rem / var(--root-font-size));
-    padding-bottom: calc(0.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

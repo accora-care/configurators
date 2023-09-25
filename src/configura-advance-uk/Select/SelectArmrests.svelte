@@ -20,6 +20,7 @@
     active={!$configStore.dropdownArmrest}
     title="Fixed armrests"
     description="Static, non-adjustable armrests, providing a stable and consistent resting place for the arms."
+    standard={true}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

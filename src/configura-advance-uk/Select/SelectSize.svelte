@@ -19,6 +19,7 @@
       <label>
         Width
         <select bind:value={$configStore.width}>
+          <option value="{null}">Please select&hellip;</option>
           <option value={16}>16"</option>
           <option value={18}>18"</option>
           <option value={20}>20"</option>
@@ -30,6 +31,7 @@
       <label>
         Depth
         <select bind:value={$configStore.depth}>
+          <option value="{null}">Please select&hellip;</option>
           <option value={16}>16"</option>
           <option value={17}>17"</option>
           <option value={18}>18"</option>
@@ -43,6 +45,7 @@
       <label>
         Height
         <select bind:value={$configStore.height}>
+          <option value="{null}">Please select&hellip;</option>
           <option value={13}>13"</option>
           <option value={14}>14"</option>
           <option value={15}>15"</option>

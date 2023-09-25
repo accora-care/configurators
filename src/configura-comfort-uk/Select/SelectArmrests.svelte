@@ -6,6 +6,7 @@
   import { configStore } from "../configStore";
 
   const ukStyle = true;
+
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ARMRESTS"} ukStyle={ukStyle}>
@@ -14,6 +15,7 @@
     active={!$configStore.dropdownArmrest}
     title="Fixed armrests"
     description="Static, non-adjustable armrests, providing a stable and consistent resting place for the arms."
+    standard={true}
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -25,7 +27,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-comfort-uk/armrest--fixed--preview.webp`}
+      src={`/images/configura-comfort-uk/armrest--fixed--${$configStore.vinyl ? 'vinyl' : 'duratec'}--preview.webp`}
       class="image-frame-img"
     />
   </SelectionGridItem>
@@ -44,8 +46,8 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/configura-comfort-uk/armrest--dropdown--preview.webp`}
-      class="image-frame-img"
+    src={`/images/configura-comfort-uk/armrest--dropdown--${$configStore.vinyl ? 'vinyl' : 'duratec'}--preview.webp`}
+    class="image-frame-img"
     />
   </SelectionGridItem>
 </SelectionGrid>

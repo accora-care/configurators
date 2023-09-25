@@ -31,10 +31,11 @@
 <SelectionGrid visible={$configStore.selectorView === "SIZE"} ukStyle={ukStyle}>
   <!-- SIZE -->
   <form>
-    <fieldset>
+    <fieldset> 
       <label>
         Width
         <select bind:value={$configStore.width} on:change={initHeight}>
+          <option value="{null}">Please select&hellip;</option>
           <option value={18}>18"</option>
           <option value={20}>20"</option>
           <option value={22}>22"</option>
@@ -45,6 +46,7 @@
       <label>
         Depth
         <select bind:value={$configStore.depth}>
+          <option value="{null}">Please select&hellip;</option>
           <option value={18}>18"</option>
           <option value={20}>20"</option>
         </select>
@@ -54,6 +56,7 @@
       <label>
         Height
         <select bind:value={$configStore.height}>
+          <option value="{null}">Please select&hellip;</option>
           {#each availableHeights($configStore.width) as height}
             <option value={height}>{height}"</option>
           {/each}
