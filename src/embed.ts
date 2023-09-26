@@ -52,7 +52,7 @@ export const AccoraFloorbedOne = (
 export const AccoraFloorbedOneUK = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
+  cognitoFormConfig: CognitoFormConfig = DEFAULT_COGNITO_CONFIG
 ) => {
   const app = new Floorbed1UK({
     target: document.getElementById(targetId),
@@ -61,7 +61,7 @@ export const AccoraFloorbedOneUK = (
         mainTitle: "Customize your Accora Floorbed 1",
         bookADemoHref: "https://us.accora.care/book-a-demo",
         ...config,
-        hubspotFormConfig,
+        cognitoFormConfig,
       },
     },
   });
