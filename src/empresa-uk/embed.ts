@@ -1,4 +1,4 @@
-import type { HubspotFormConfig, InitConfig } from "../Config.types";
+import type { CognitoFormConfig, InitConfig } from "../Config.types";
 import App from "./Empresa.svelte";
 
 const initConfig: InitConfig = {
@@ -9,7 +9,7 @@ const initConfig: InitConfig = {
 export const EmpresaConfigurator = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig
+  cognitoFormConfig: CognitoFormConfig
 ) => {
   const app = new App({
     target: document.getElementById(targetId),
@@ -17,7 +17,7 @@ export const EmpresaConfigurator = (
       config: {
         ...initConfig,
         ...config,
-        hubspotFormConfig,
+        cognitoFormConfig,
       },
     },
   });

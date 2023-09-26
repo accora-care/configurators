@@ -37,6 +37,7 @@
     visible={false}
     title="CushionAir"
     description="A dynamic pressure relieving cushion which is recommended for users who have developed pressure damage."
+    learnMoreUrl="/chair-accessories/cushionair"
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {
@@ -57,6 +58,7 @@
     visible={false}
     title="Allevia Duo Cushion"
     description="A hybrid cushion that can be used in various configurations to achieve the pressure relief that is required for the individual."
+    learnMoreUrl="/chair-accessories/allevia-duo-cushion"
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

@@ -33,8 +33,9 @@
   </SelectionGridItem>
   <SelectionGridItem
     active={$configStore.dropdownArmrest}
-    title="Dropdown armrests"
+    title="Drop-down armrests"
     description="Fitting on either side of the chair these armrests can help facilitate sideways transfers, for example using a slideboard."
+    learnMoreUrl="/chair-accessories/drop-down-armrest"
     ukStyle={ukStyle}
     onClick={() => {
       configStore.update((s) => {

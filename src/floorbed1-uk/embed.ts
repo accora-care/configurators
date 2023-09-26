@@ -1,4 +1,4 @@
-import type { HubspotFormConfig, InitConfig } from "../Config.types";
+import type { CognitoFormConfig, InitConfig } from "../Config.types";
 import Floorbed1Svelte from "./Floorbed1.svelte";
 
 const initConfig: InitConfig = {
@@ -9,7 +9,7 @@ const initConfig: InitConfig = {
 export const AccoraFloorbedOne = (
   targetId: string,
   config: InitConfig,
-  hubspotFormConfig: HubspotFormConfig
+  cognitoFormConfig: CognitoFormConfig
 ) => {
   const app = new Floorbed1Svelte({
     target: document.getElementById(targetId),
@@ -17,7 +17,7 @@ export const AccoraFloorbedOne = (
       config: {
         ...initConfig,
         ...config,
-        hubspotFormConfig,
+        cognitoFormConfig,
       },
     },
   });

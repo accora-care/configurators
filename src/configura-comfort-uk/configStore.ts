@@ -14,9 +14,9 @@ export type BACKREST_OPTIONS =
 
 export type StoreValues = {
 	vinyl: boolean;
-	width: 18 | 20 | 22;
-	depth: 18 | 20;
-	height: 15 | 16 | 17 | 18 | 19 | 20;
+	width: 18 | 20 | 22 | null;
+	depth: 18 | 20 | null;
+	height: 15 | 16 | 17 | 18 | 19 | 20 | null;
 	pressure: "Visco" | "CushionAir" | "Allevia Duo Cushion";
 	backrest: BACKREST_OPTIONS;
 	lateralSupport: "Lateral Support Wedges" | "None";
@@ -27,9 +27,9 @@ export type StoreValues = {
 
 export const initVal: StoreValues = {
 	vinyl: false,
-	width: 18,
-	depth: 20,
-	height: 15,
+	width: null,
+	depth: null,
+	height: null,
 	pressure: "Visco",
 	backrest: "Waterfall",
 	lateralSupport: "None",

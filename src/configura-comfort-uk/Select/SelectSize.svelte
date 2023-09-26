@@ -5,13 +5,15 @@
 
   const ukStyle = true;
 
-  $: availableHeights = (width: number): number[] => {
+  $: availableHeights = (width: number | null): number[] => {
     switch (width) {
       case 18:
         return [15, 16, 17, 18];
       case 20:
       case 22:
         return [17, 18, 19, 20];
+      default:
+        return[null];
     }
   }
 
@@ -24,6 +26,8 @@
       case 22:
         $configStore.height = 18;
         break;
+      default:
+        $configStore.height = null;
     }
   };
 </script>

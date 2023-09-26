@@ -85,6 +85,7 @@
     active={$configStore.safetySleeve}
     title="Safety Sleeve"
     description="Encases the platform mechanism to help protect against risk of entrapment."
+    learnMoreUrl="/bed-accessories/safety-sleeve"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -105,6 +106,7 @@
     active={$configStore.juniorKit}
     title="Junior Kit"
     description="A suite of combined accessories that provide a complete solution to meet the children’s bed standard."
+    learnMoreUrl="/bed-accessories/junior-kit"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {

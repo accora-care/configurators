@@ -24,6 +24,7 @@
     active={$configStore.pumpHolder}
     title="Mattress Pump Holder"
     description="The pump holder easily fits over the end of the bed to hold the pump of an alternating air mattresses."
+    learnMoreUrl="/bed-accessories/pump-holder"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -45,6 +46,7 @@
     title="Mattress Infill"
     disabled={null !== matressInfillException}
     description="Fits down both sides of a standard mattress in between the mattress and the side rail."
+    learnMoreUrl="/bed-accessories/mattress-infill"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -67,6 +69,7 @@
     title="Bed Extension"
     disabled={null !== bedExtensionException}
     description="Allows our FloorBed to be extended by 200mm length."
+    learnMoreUrl="/bed-accessories/bed-extension"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -89,6 +92,7 @@
     title="Mattress Extension Foam"
     disabled={null !== mattressExtensionFoamException}
     description="200 mm (20 cm) mattress infill to be used when the bed is extended by 200 mm."
+    learnMoreUrl="/bed-accessories/mattress-extension-foam"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -111,6 +115,7 @@
     title="Bed Extension Kit"
     disabled={null !== bedExtensionKitException}
     description="Includes mattress frame extension and mattress extension foam to provide an  extra 200mm in length."
+    learnMoreUrl="/bed-accessories/bed-extension-kit"
     ukStyle={true}
     visible={false}
     onClick={() => {

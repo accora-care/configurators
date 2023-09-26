@@ -72,6 +72,8 @@
         <div
           class="reset-form"
           on:click={() => {
+            initVal.selectorView = $configStore.selectorView;
+
             configStore.update((s) => {
               return initVal;
             });

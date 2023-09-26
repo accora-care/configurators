@@ -95,6 +95,8 @@
         <div
           class="reset-form"
           on:click={() => {
+            initVal.selectorView = $configStore.selectorView;
+
             configStore.update((s) => {
               return initVal;
             });
@@ -122,13 +124,10 @@
           value: valueSidePanels,
         },
         {
-          label: "Accessories - assist bar",
-          value: $configStore.assistBar,
-        },
-        {
-          label: "Accessories - other",
+          label: "Accessories",
           value:
             [
+              $configStore.assistBar !== "None" ? `Bed Lever` : null,
               $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
               $configStore.fabricSideRails === "Included" ? "Fabric side rails" : null,
               $configStore.foldingSideRails === "Included" ? "Folding side rails" : null,

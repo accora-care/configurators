@@ -19,6 +19,7 @@
     active={"Bed Lever" === $configStore.lever}
     title="Bed Lever"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
+    learnMoreUrl="/bed-accessories/bed-lever"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -39,6 +40,7 @@
     active={"Short Bed Lever" === $configStore.lever}
     title="Short Bed Lever"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
+    learnMoreUrl="/bed-accessories/short-bed-lever"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -59,6 +61,7 @@
     active={$configStore.liftingPole}
     title="Lifting Pole"
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
+    learnMoreUrl="/bed-accessories/lifting-pole"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {

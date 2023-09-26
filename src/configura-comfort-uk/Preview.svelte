@@ -37,11 +37,11 @@
 
   <Img src={getBackrestImage($configStore.backrest)} />
 
-  {#if "Lateral Support Backrest" === $configStore.backrest || "Adjustable Lateral Support" === $configStore.backrest}
+  {#if ("Lateral Support Backrest" === $configStore.backrest || "Adjustable Lateral Support" === $configStore.backrest) && ! $configStore.profiledHeadrest}
     <Img src={`/images/configura-comfort-uk/posture-backrest--waterfall-top.png`} />
   {/if}
 
-  {#if $configStore.profiledHeadrest}
+  {#if $configStore.profiledHeadrest && "Cocoon" !== $configStore.backrest}
     <Img src={`/images/configura-comfort-uk/accessory--profiledHeadrest.png`} />
   {/if}
 

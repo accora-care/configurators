@@ -9,6 +9,7 @@
 <SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} ukStyle={true}>
   <SelectionGridItem
     active={$configStore.proTectSideRail === "Included"}
+    visible={false}
     title="ProTect Side Rail"
     description="A concealed side rail system incorporating mesh and integrated padding."
     learnMoreUrl="/bed-accessories/protect-siderail"

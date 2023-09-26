@@ -12,7 +12,7 @@
   {/if}
   <Img src={`/images/floorbed1-uk/1200/mattress.png`} />
   {#if $configStore.bumpers || $configStore.juniorKit}
-    <Img src={`/images/floorbed1-uk/1200/bumpers.png`} />
+    <Img src={`/images/floorbed1-uk/1200/headboardBumper.png`} />
   {/if}
   {#if "Bed Lever" === $configStore.lever}
     <Img src={`/images/floorbed1-uk/1200/lever.png`} />
@@ -23,8 +23,8 @@
   {#if "Fabric Side Rails" === $configStore.sideRails}
     <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
   {/if}
-  {#if "Integrated Junior Padded Side Rails" === $configStore.sideRails}
-    <Img src={`/images/floorbed1-uk/1200/sideRails.png`} />
+  {#if $configStore.bumpers || $configStore.juniorKit}
+    <Img src={`/images/floorbed1-uk/1200/footboardBumper.png`} />
   {/if}
   {#if $configStore.pumpHolder}
     <Img src={`/images/floorbed1-uk/1200/pumpHolder.png`} />

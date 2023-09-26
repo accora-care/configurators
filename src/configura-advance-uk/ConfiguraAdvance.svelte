@@ -29,7 +29,7 @@
         $configStore.height ? `Height ${$configStore.height}"` : null,
       ]
         .filter((item) => !!item)
-        .join(", ") || "None";
+        .join(", ") || "Not selected";
 
     postureDisplayValue =
       [
@@ -89,7 +89,7 @@
         <CustomizationBlock
           title="Armrests"
           targetSelectView="ARMRESTS"
-          value={$configStore.dropdownArmrest ? "Dropdown" : "Fixed"}
+          value={$configStore.dropdownArmrest ? "Drop-down" : "Fixed"}
           length={2}
         />
         <SelectArmrests />
@@ -103,6 +103,8 @@
         <div
           class="reset-form"
           on:click={() => {
+            initVal.selectorView = $configStore.selectorView;
+
             configStore.update((s) => {
               return initVal;
             });
@@ -138,7 +140,7 @@
         },
         {
           label: "Armrests",
-          value: $configStore.dropdownArmrest ? "Dropdown" : "Fixed",
+          value: $configStore.dropdownArmrest ? "Drop-down" : "Fixed",
         },
         {
           label: "Accessories",

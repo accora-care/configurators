@@ -37,6 +37,7 @@
   </SelectionGridItem>
   <SelectionGridItem
     active={$configStore.sideRails === "Integrated Junior Padded Side Rails"}
+    visible={false}
     title="Integrated Junior Padded Side Rails"
     description="These side rails are compliant with the children's standard and offer even more safety."
     learnMoreUrl="/bed-accessories/integrated-junior-padded-side-rails"

@@ -126,6 +126,7 @@
 
   <SelectionGridItem
     active={$configStore.profiledHeadrest}
+    visible={"Cocoon" !== $configStore.backrest}
     title="Profiled Headrest"
     description="The profiled headrest offers increased head and neck support."
     ukStyle={ukStyle}
