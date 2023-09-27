@@ -38,7 +38,7 @@
 
   <Img src={beddingImage} alt={`bedding`} />
 
-  {#if $configStore.sidePanel === "Included" && isSidePanelAllowed($configStore)}
+  {#if $configStore.sidePanel === "With Side Panels" && isSidePanelAllowed($configStore)}
     <Img src={sidePanelImage} alt={`${$configStore.variant} side panel`} />
   {/if}
 

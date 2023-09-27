@@ -42,7 +42,7 @@
         <CustomizationBlock
           title="Headboard & Footboard"
           targetSelectView="HEADBOARD"
-          value={$configStore.variant}
+          value={`${$configStore.variant} – ${isFabricBedVariant ? 'Fabric' : 'Wooden'}`}
           length={Object.keys(bedVariants.wooden).length + Object.keys(bedVariants.fabric).length}
         />
         <SelectHeadboard />
@@ -122,6 +122,7 @@
   }
 
   .acc-form {
+    background: #fff;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;

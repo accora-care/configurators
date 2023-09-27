@@ -17,6 +17,7 @@
 <SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} ukStyle={ukStyle}>
   <SelectionGridItem
     active={$configStore.profiledHeadrest}
+    visible={false}
     title="Profiled Headrest"
     description="The profiled headrest offers increased head and neck support."
     ukStyle={ukStyle}

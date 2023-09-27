@@ -163,7 +163,7 @@
     position: fixed;
     z-index: 10000;
     height: -webkit-fill-available;
-    height: calc(100vh);
+    height: calc(100dvh);
     background-color: rgba(0, 0, 0, 0.4);
     top: 0;
     width: 100%;

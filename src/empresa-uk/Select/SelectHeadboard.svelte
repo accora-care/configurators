@@ -35,10 +35,13 @@
       {title}
       active={$configStore.variant === title}
       onClick={() => {
+        const woodenFinishesForVariant = woodenVariantsByOrder.filter(variant => title === variant.title)[0].colors;
+
         configStore.update((s) => {
           return {
             ...s,
             variant: title,
+            color: woodenFinishesForVariant.filter(variant => s.color === variant.title).length > 0 ? s.color : woodenFinishesForVariant[0].title,
           };
         });
       }}
@@ -58,10 +61,13 @@
       {title}
       active={$configStore.variant === title}
       onClick={() => {
+        const fabricFinishesForVariant = fabricVariantsByOrder.filter(variant => title === variant.title)[0].fabrics;
+
         configStore.update((s) => {
           return {
             ...s,
             variant: title,
+            fabric: fabricFinishesForVariant.filter(variant => s.fabric === variant.title).length > 0 ? s.fabric : fabricFinishesForVariant[0].title,
           };
         });
       }}

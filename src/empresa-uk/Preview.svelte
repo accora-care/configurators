@@ -33,7 +33,7 @@
     : `/images/empresa-uk/sidePanels/${$configStore.color}_1.png`;
 
   $: safetyMatImage = isFabricBedVariant
-    ? `/images/empresa-uk/accessory/safety_mat.png`
+    ? `/images/empresa-uk/accessory/fabric/safety_mat.png`
     : `/images/empresa-uk/accessory/safety_mat.png`;
 
 </script>
@@ -59,7 +59,7 @@
     <Img src={`/images/empresa-uk/accessory/Accessory - Lifting Pole - Part 2.png`} alt={`Lifting pole`} />
   {/if}
 
-  {#if $configStore.sidePanel === "Included" && isSidePanelAllowed($configStore)}
+  {#if $configStore.sidePanel === "With Side Panels" && isSidePanelAllowed($configStore)}
     <Img src={sidePanelImage} alt={`${$configStore.variant} side panel`} />
   {/if}
 

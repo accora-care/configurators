@@ -11,7 +11,7 @@ export type StoreValues = {
   variant: string;
   color: string;
   fabric: string;
-  sidePanel: "Included" | "Not included";
+  sidePanel: "With Side Panels" | "No Side Panels";
   selectorView: SELECTOR_VIEW | null;
 };
 
@@ -19,7 +19,7 @@ export const initVal: StoreValues = {
   variant: "Arc",
   color: "Vicenza Oak",
   fabric: "Silver",
-  sidePanel: "Not included",
+  sidePanel: "No Side Panels",
   selectorView: null,
 };
 

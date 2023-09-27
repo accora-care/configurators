@@ -116,6 +116,7 @@
 
   <SelectionGridItem
     active={"External Lateral Supports" === $configStore.lateralSupport}
+    visible={false}
     title="External Lateral Supports"
     ukStyle={ukStyle}
     onClick={() => {

@@ -17,11 +17,11 @@
       case "Lateral Support Backrest":
         return `/images/configura-advance-uk/posture-backrest--lateralSupportBackrest.png`;
       case "Postural Backrest":
-        // return `/images/configura-advance-uk/posture-backrest--posturalBackrest.png`;
+        return `/images/configura-advance-uk/posture-backrest--posturalBackrest.png`;
       case "Cocoon":
-        // return `/images/configura-advance-uk/posture-backrest--cocoon.png`;
+        return `/images/configura-advance-uk/posture-backrest--cocoon.png`;
       case "Waterfall":
-        // return `/images/configura-advance-uk/posture-backrest--waterfall.png`;
+        return `/images/configura-advance-uk/posture-backrest--waterfall.png`;
     }
 
     return '';
@@ -37,9 +37,9 @@
 
   <Img src={getBackrestImage($configStore.backrest)} />
 
-  {#if $configStore.profiledHeadrest}
-    <!-- <Img src={`/images/configura-advance-uk/accessory--profiledHeadrest.png`} /> -->
-  {/if}
+  <!-- {#if $configStore.profiledHeadrest}
+    <Img src={`/images/configura-advance-uk/accessory--profiledHeadrest.png`} />
+  {/if} -->
 
   <Img
     src={$configStore.dropdownArmrest
@@ -47,10 +47,10 @@
       : `/images/configura-advance-uk/base--standard.png`}
   />
 
-  {#if "External Lateral Supports" === $configStore.lateralSupport}
+  <!-- {#if "External Lateral Supports" === $configStore.lateralSupport}
     <Img src={`/images/configura-advance-uk/lat_support_left.png`} />
     <Img src={`/images/configura-advance-uk/lat_support_right.png`} />
-  {/if}
+  {/if} -->
 
   <Img
     src={$configStore.dropdownArmrest

@@ -12,7 +12,7 @@ export type StoreValues = {
   variant: string;
   color: string;
   fabric: string;
-  sidePanel: "Included" | "Not included";
+  sidePanel: "With Side Panels" | "No Side Panels";
   liftingPole: "Included" | "Not included";
   safetyMat: "Included" | "Not included";
   assistBar: "Long" | "Short" | "None";
@@ -29,7 +29,7 @@ export const initVal: StoreValues = {
   variant: "Arc",
   color: "Vicenza Oak",
   fabric: "Silver",
-  sidePanel: "Not included",
+  sidePanel: "No Side Panels",
   liftingPole: "Not included",
   safetyMat: "Not included",
   assistBar: "None",

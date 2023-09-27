@@ -175,7 +175,7 @@
       color: #333232;
       .acc-select-container__sticker__available {
         @media screen and (max-width: 1200px) {
-          display: none;
+          // display: none;
         }
       }
     }

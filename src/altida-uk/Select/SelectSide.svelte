@@ -12,13 +12,13 @@
   visible={$configStore.selectorView === "SIDE_PANEL"}
 >
   <SelectionGridItem
-    active={$configStore.sidePanel === "Not included"}
+    active={$configStore.sidePanel === "No Side Panels"}
     title="No side panels"
     onClick={() => {
       configStore.update((s) => {
         return {
           ...s,
-          sidePanel: "Not included",
+          sidePanel: "No Side Panels",
         };
       });
     }}
@@ -30,14 +30,14 @@
   </SelectionGridItem>
 
   <SelectionGridItem
-    active={$configStore.sidePanel === "Included"}
+    active={$configStore.sidePanel === "With Side Panels"}
     title="With side panels{!isSidePanelAllowed($configStore) ? ' - not available' : ''}"
     disabled={!isSidePanelAllowed($configStore)}
     onClick={() => {
       configStore.update((s) => {
         return {
           ...s,
-          sidePanel: "Included",
+          sidePanel: "With Side Panels",
         };
       });
     }}

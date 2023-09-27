@@ -176,6 +176,7 @@
   }
 
   .acc-form {
+    background: #fff;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
