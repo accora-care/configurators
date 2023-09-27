@@ -128,6 +128,10 @@
           value: "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : "Not Included",
         },
         {
+          label: "Profiled Headrest",
+          value: $configStore.profiledHeadrest ? "Profiled Headrest" : "Not Included",
+        },
+        {
           label: "Armrests",
           value: $configStore.dropdownArmrest ? "Drop-down" : "Fixed",
         },

@@ -60,8 +60,9 @@ export const AccoraFloorbedOneUK = (
       config: {
         mainTitle: "Customize your Accora Floorbed 1",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
+				hubspotFormConfig: undefined,
         cognitoFormConfig,
+        ...config,
       },
     },
   });
@@ -108,8 +109,9 @@ export const EmpresaUKConfigurator = (
       config: {
         mainTitle: "Customize your Accora Empresa",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
+				hubspotFormConfig: undefined,
         cognitoFormConfig,
+        ...config,
       },
     },
   });
@@ -131,8 +133,9 @@ export const AltidaUKConfigurator = (
       config: {
         mainTitle: "Customize your Accora Altida",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
+				hubspotFormConfig: undefined,
         cognitoFormConfig,
+        ...config,
       },
     },
   });
@@ -179,8 +182,9 @@ export const ConfiguraAdvanceUKConfigurator = (
       config: {
         mainTitle: "Customize your Accora Configura Advance",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
+				hubspotFormConfig: undefined,
         cognitoFormConfig,
+        ...config,
       },
     },
   });
@@ -203,8 +207,9 @@ export const ConfiguraComfortUKConfigurator = (
       config: {
         mainTitle: "Customize your Accora Configura Comfort",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
+				hubspotFormConfig: undefined,
         cognitoFormConfig,
+        ...config,
       },
     },
   });

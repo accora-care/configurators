@@ -4,37 +4,11 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
-  import { getHeadrestException } from "../isHeadrestAllowed";
-
-  let headrestException = "";
-  configStore.subscribe((state) => {
-    headrestException = getHeadrestException(state);
-  });
 
   const ukStyle = true;
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} ukStyle={ukStyle}>
-  <SelectionGridItem
-    active={$configStore.profiledHeadrest}
-    visible={false}
-    title="Profiled Headrest"
-    description="The profiled headrest offers increased head and neck support."
-    ukStyle={ukStyle}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          profiledHeadrest: !s.profiledHeadrest,
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/configura-advance-uk/accessory--profiledHeadrest--preview.webp`}
-      class="image-frame-img"
-    />
-  </SelectionGridItem>
   <SelectionGridItem
     active={$configStore.pelvicStrap}
     visible={false}

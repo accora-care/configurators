@@ -35,13 +35,13 @@
       [
         $configStore.backrest,
         $configStore.lateralSupport !== "None" ? $configStore.lateralSupport : null,
+        $configStore.profiledHeadrest ? "Profiled Headrest" : null,
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
 
     accessoriesDisplayValue =
       [
-        $configStore.profiledHeadrest ? "Profiled Headrest" : null,
         $configStore.pelvicStrap ? "Pelvic Strap" : null,
         $configStore.tray ? "Tray" : null,
         $configStore.environmentalControlInterface ? "Environmental Control Interface" : null,
@@ -136,7 +136,11 @@
         },
         {
           label: "Lateral support",
-          value: "External Lateral Supports" === $configStore.lateralSupport ? "External Lateral Supports" : "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : "Not Included",
+          value: "None" !== $configStore.lateralSupport ? $configStore.lateralSupport : "Not Included",
+        },
+        {
+          label: "Profiled Headrest",
+          value: $configStore.profiledHeadrest ? "Profiled Headrest" : "Not Included",
         },
         {
           label: "Armrests",
@@ -146,7 +150,6 @@
           label: "Accessories",
           value:
             [
-              $configStore.profiledHeadrest ? "Profiled Headrest" : null,
               $configStore.pelvicStrap ? "Pelvic Strap" : null,
               $configStore.tray ? "Tray" : null,
               $configStore.environmentalControlInterface ? "Environmental Control Interface" : null,

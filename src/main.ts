@@ -76,6 +76,13 @@ const configuraUK = new ConfiguraAdvanceUKSvelte({
     config: {
       ...initConfig,
       mainTitle: "Customize your Accora Configura Advance",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "26",
+        productFieldName: "ProductName",
+        optionsFieldName: "ConfiguratorOptions",
+      },
       bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
@@ -87,6 +94,13 @@ const configuraComfortUK = new ConfiguraComfortUKSvelte({
     config: {
       ...initConfig,
       mainTitle: "Customize your Accora Configura Comfort",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "27",
+        productFieldName: "ProductName",
+        optionsFieldName: "ConfiguratorOptions",
+      },
       bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
@@ -112,7 +126,7 @@ const floorbed1UK = new Floorbed1UKSvelte({
       hubspotFormConfig: undefined,
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",
-        form: "31",
+        form: "29",
         productFieldName: "ProductName",
         optionsFieldName: "ConfiguratorOptions",
       },

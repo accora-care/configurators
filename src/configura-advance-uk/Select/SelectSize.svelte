@@ -85,6 +85,7 @@
           font-size: calc(1.6rem / var(--root-font-size));
           line-height: 1.5;
           padding: calc(1.2rem / var(--root-font-size));
+          padding-right: calc(4.2rem / var(--root-font-size));
           border: 1px solid rgba(0, 0, 0, 0.2);
           background-color: rgba(246, 246, 246, 1);
           appearance: none;
@@ -92,6 +93,10 @@
           background-repeat: no-repeat;
           background-position-x: calc(100% - calc(2rem / var(--root-font-size)));
           background-position-y: 50%;
+
+          @media screen and (max-width: 460px) {
+            font-size: calc(1.4rem / var(--root-font-size));
+          }
         }
       }
     }

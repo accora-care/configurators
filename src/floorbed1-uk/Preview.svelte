@@ -27,7 +27,11 @@
     <Img src={`/images/floorbed1-uk/1200/footboardBumper.png`} />
   {/if}
   {#if $configStore.pumpHolder}
-    <Img src={`/images/floorbed1-uk/1200/pumpHolder.png`} />
+    {#if $configStore.bumpers}
+      <Img src={`/images/floorbed1-uk/1200/pumpHolderWithBumpers.png`} />
+    {:else}
+      <Img src={`/images/floorbed1-uk/1200/pumpHolder.png`} />
+    {/if}
   {/if}
   {#if $configStore.safetySleeve || $configStore.juniorKit}
     <Img src={`/images/floorbed1-uk/1200/safetySleeve.png`} />

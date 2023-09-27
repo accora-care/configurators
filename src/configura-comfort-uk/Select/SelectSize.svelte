@@ -101,6 +101,10 @@
           background-repeat: no-repeat;
           background-position-x: calc(100% - calc(2rem / var(--root-font-size)));
           background-position-y: 50%;
+
+          @media screen and (max-width: 460px) {
+            font-size: calc(1.4rem / var(--root-font-size));
+          }
         }
       }
     }

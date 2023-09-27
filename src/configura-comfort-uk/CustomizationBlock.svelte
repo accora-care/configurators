@@ -85,6 +85,7 @@
       text-overflow: ellipsis;
 
       #acc-configura-comfort-uk & {
+        font-size: calc(1.6rem / var(--root-font-size));
         font-weight: 300;
       }
     }

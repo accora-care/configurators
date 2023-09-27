@@ -178,7 +178,11 @@
       .acc-grid-item-preview-image {
         &[src$=".svg"] {
           background-color: var(--grid-item-background);
-          padding: 2rem;
+          padding: calc(3.2rem / var(--root-font-size));
+
+          @media screen and (max-width: 460px) {
+            padding: calc(1.6rem / var(--root-font-size));
+          }
         }
       }
 
