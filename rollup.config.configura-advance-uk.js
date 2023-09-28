@@ -9,7 +9,7 @@ export default createRollupConfigEmbed((config) => {
       format: "umd",
       exports: "named",
       name: "ConfiguraAdvanceUK",
-      file: "public/configura-advance-uk/configura-advance-configurator.js",
+      file: "public/configura-advance-uk/configura-advance-uk-configurator.js",
     },
   };
 });

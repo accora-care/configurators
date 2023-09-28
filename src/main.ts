@@ -126,7 +126,7 @@ const floorbed1UK = new Floorbed1UKSvelte({
       hubspotFormConfig: undefined,
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",
-        form: "29",
+        form: "31",
         productFieldName: "ProductName",
         optionsFieldName: "ConfiguratorOptions",
       },

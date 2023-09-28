@@ -58,11 +58,10 @@ export const AccoraFloorbedOneUK = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Floorbed 1",
-        bookADemoHref: "https://us.accora.care/book-a-demo",
-				hubspotFormConfig: undefined,
-        cognitoFormConfig,
         ...config,
+        mainTitle: "Customize your Accora Floorbed 1",
+        bookADemoHref: "https://accora.care/book-a-join-visit",
+        cognitoFormConfig,
       },
     },
   });
@@ -84,9 +83,9 @@ export const EmpresaConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
+        ...config,
         mainTitle: "Customize your Accora Empresa",
         bookADemoHref: "https://us.accora.care/book-a-demo",
-        ...config,
         hubspotFormConfig,
       },
     },
@@ -107,11 +106,10 @@ export const EmpresaUKConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Empresa",
-        bookADemoHref: "https://us.accora.care/book-a-demo",
-				hubspotFormConfig: undefined,
-        cognitoFormConfig,
         ...config,
+        mainTitle: "Customize your Accora Empresa",
+        bookADemoHref: "https://accora.care/book-a-join-visit",
+        cognitoFormConfig,
       },
     },
   });
@@ -131,11 +129,10 @@ export const AltidaUKConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Altida",
-        bookADemoHref: "https://us.accora.care/book-a-demo",
-				hubspotFormConfig: undefined,
-        cognitoFormConfig,
         ...config,
+        mainTitle: "Customize your Accora Altida",
+        bookADemoHref: "https://accora.care/book-a-join-visit",
+        cognitoFormConfig,
       },
     },
   });
@@ -180,11 +177,10 @@ export const ConfiguraAdvanceUKConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Configura Advance",
-        bookADemoHref: "https://us.accora.care/book-a-demo",
-				hubspotFormConfig: undefined,
-        cognitoFormConfig,
         ...config,
+        mainTitle: "Customize your Accora Configura Advance",
+        bookADemoHref: "https://accora.care/book-a-join-visit",
+        cognitoFormConfig,
       },
     },
   });
@@ -205,11 +201,10 @@ export const ConfiguraComfortUKConfigurator = (
     target: document.getElementById(targetId),
     props: {
       config: {
-        mainTitle: "Customize your Accora Configura Comfort",
-        bookADemoHref: "https://us.accora.care/book-a-demo",
-				hubspotFormConfig: undefined,
-        cognitoFormConfig,
         ...config,
+        mainTitle: "Customize your Accora Configura Comfort",
+        bookADemoHref: "https://accora.care/book-a-join-visit",
+        cognitoFormConfig,
       },
     },
   });

@@ -9,7 +9,7 @@ export default createRollupConfigEmbed((config) => {
       format: "umd",
       exports: "named",
       name: "ConfiguraComfortUK",
-      file: "public/configura-comfort-uk/configura-comfort-configurator.js",
+      file: "public/configura-comfort-uk/configura-comfort-uk-configurator.js",
     },
   };
 });

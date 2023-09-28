@@ -1,4 +1,4 @@
-import type { CognitoFormConfig, InitConfig } from "../Config.types";
+import type { InitConfig } from "../Config.types";
 import App from "./Altida.svelte";
 
 const initConfig: InitConfig = {
@@ -9,7 +9,6 @@ const initConfig: InitConfig = {
 export const AltidaConfigurator = (
   targetId: string,
   config: InitConfig,
-  cognitoFormConfig: CognitoFormConfig
 ) => {
   const app = new App({
     target: document.getElementById(targetId),
@@ -17,7 +16,6 @@ export const AltidaConfigurator = (
       config: {
         ...initConfig,
         ...config,
-        cognitoFormConfig,
       },
     },
   });
