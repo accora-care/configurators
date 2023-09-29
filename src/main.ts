@@ -83,7 +83,6 @@ const configuraUK = new ConfiguraAdvanceUKSvelte({
         productFieldName: "ProductName",
         optionsFieldName: "ConfiguratorOptions",
       },
-      bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
 });
@@ -101,7 +100,6 @@ const configuraComfortUK = new ConfiguraComfortUKSvelte({
         productFieldName: "ProductName",
         optionsFieldName: "ConfiguratorOptions",
       },
-      bookADemoHref: "https://us.accora.care/book-a-demo",
     },
   },
 });
@@ -130,7 +128,6 @@ const floorbed1UK = new Floorbed1UKSvelte({
         productFieldName: "ProductName",
         optionsFieldName: "ConfiguratorOptions",
       },
-      bookADemoHref: "https://accora.care/book-a-joint-visit",
     },
   },
 });

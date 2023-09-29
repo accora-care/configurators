@@ -3,7 +3,7 @@ import Floorbed1Svelte from "./Floorbed1.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Floorbed 1",
-  bookADemoHref: "https://us.accora.care/book-a-demo",
+  bookADemoHref: "https://accora.care/book-a-join-visit",
 };
 
 export const AccoraFloorbedOne = (

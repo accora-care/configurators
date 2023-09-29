@@ -43,11 +43,11 @@
       // @ts-ignore
       const cognitoApi = Cognito(config.cognitoFormConfig.key);
       const cognitoForm = cognitoApi.mount(config.cognitoFormConfig.form, '#acc-quote-form');
+
+      const prefillData = {};
       
       if (config.cognitoFormConfig.productFieldName) {
-        cognitoForm.prefill({
-          [config.cognitoFormConfig.productFieldName]: title,
-        });
+        prefillData[config.cognitoFormConfig.productFieldName] = title;
       }
 
       if (config.cognitoFormConfig.optionsFieldName) {
@@ -59,10 +59,10 @@
           }
         });
 
-        cognitoForm.prefill({
-          [config.cognitoFormConfig.optionsFieldName]: configuratorOptions.join(", "),
-        });
+        prefillData[config.cognitoFormConfig.optionsFieldName] = configuratorOptions.join(", ");
       }
+
+      cognitoForm.prefill(prefillData);
     }
   });
 </script>

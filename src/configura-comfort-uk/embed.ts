@@ -3,7 +3,7 @@ import App from "./ConfiguraComfort.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Configura Comfort",
-  bookADemoHref: "https://us.accora.care/book-a-demo",
+  bookADemoHref: "https://accora.care/book-a-join-visit",
 };
 
 export const ConfiguraComfort = (

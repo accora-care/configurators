@@ -3,7 +3,7 @@ import App from "./Empresa.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Floor Bed",
-  bookADemoHref: "https://us.accora.care/book-a-demo",
+  bookADemoHref: "https://accora.care/book-a-join-visit",
 };
 
 export const EmpresaConfigurator = (
