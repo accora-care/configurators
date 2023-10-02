@@ -35,7 +35,9 @@
     <Img src={`/images/configura-comfort-uk/posture-backrest--waterfall-mid.png`} />
   {/if}
 
-  <Img src={getBackrestImage($configStore.backrest)} />
+  {#if ! ("Waterfall" === $configStore.backrest && $configStore.profiledHeadrest)}
+    <Img src={getBackrestImage($configStore.backrest)} />
+  {/if}
 
   {#if ("Lateral Support Backrest" === $configStore.backrest || "Adjustable Lateral Support" === $configStore.backrest) && ! $configStore.profiledHeadrest}
     <Img src={`/images/configura-comfort-uk/posture-backrest--waterfall-top.png`} />

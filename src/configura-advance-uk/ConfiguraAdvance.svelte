@@ -136,11 +136,11 @@
         },
         {
           label: "Lateral support",
-          value: "None" !== $configStore.lateralSupport ? $configStore.lateralSupport : "Not Included",
+          value: "None" !== $configStore.lateralSupport ? $configStore.lateralSupport : null,
         },
         {
           label: "Profiled Headrest",
-          value: $configStore.profiledHeadrest ? "Profiled Headrest" : "Not Included",
+          value: $configStore.profiledHeadrest ? "Profiled Headrest" : null,
         },
         {
           label: "Armrests",
@@ -148,14 +148,7 @@
         },
         {
           label: "Accessories",
-          value:
-            [
-              $configStore.pelvicStrap ? "Pelvic Strap" : null,
-              $configStore.tray ? "Tray" : null,
-              $configStore.environmentalControlInterface ? "Environmental Control Interface" : null,
-            ]
-              .filter((item) => !!item)
-              .join(", ") || "None",
+          value: accessoriesDisplayValue,
         },
       ]}
     >

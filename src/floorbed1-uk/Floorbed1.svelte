@@ -110,51 +110,51 @@
       descriptionFormField={[
         {
           label: "Side Rails",
-          value: "None" !== $configStore.sideRails ? $configStore.sideRails + " ✓" : "Not included",
+          value: "None" !== $configStore.sideRails ? $configStore.sideRails : null,
         },
         {
           label: "Head and Foot Bumpers",
-          value: $configStore.bumpers ? "Included ✓" : "Not included",
+          value: $configStore.bumpers ? "Included" : null,
         },
         {
           label: "Safety Mat",
-          value: "None" !== $configStore.safetyMat ? $configStore.safetyMat + " ✓" : "Not included",
+          value: "None" !== $configStore.safetyMat ? $configStore.safetyMat :  null,
         },
         {
           label: "Safety Sleeve",
-          value: $configStore.safetySleeve ? "Included ✓" : "Not included",
+          value: $configStore.safetySleeve ? "Included" : null,
         },
         {
           label: "Junior Kit",
-          value: $configStore.juniorKit ? "Included ✓" : "Not included",
+          value: $configStore.juniorKit ? "Included" : null,
         },
         {
           label: "Bed Lever",
-          value: "None" !== $configStore.lever ? $configStore.lever + " ✓" : "Not included",
+          value: "None" !== $configStore.lever ? $configStore.lever : null,
         },
         {
           label: "Lifting Pole",
-          value: $configStore.liftingPole ? "Included ✓" : "Not included",
+          value: $configStore.liftingPole ? "Included" : null,
         },
         {
           label: "Mattress Pump Holder",
-          value: $configStore.pumpHolder ? "Included ✓" : "Not included",
+          value: $configStore.pumpHolder ? "Included" : null,
         },
         {
           label: "Mattress Infill",
-          value: $configStore.mattressInfill ? "Included ✓" : "Not included",
+          value: $configStore.mattressInfill ? "Included" : null,
         },
         {
           label: "Bed Extension",
-          value: $configStore.bedExtension ? "Included ✓" : "Not included",
+          value: $configStore.bedExtension ? "Included" : null,
         },
         {
           label: "Mattress Extension Foam",
-          value: $configStore.mattressExtensionFoam ? "Included ✓" : "Not included",
+          value: $configStore.mattressExtensionFoam ? "Included" : null,
         },
         {
           label: "Bed Extension Kit",
-          value: $configStore.bedExtensionKit ? "Included ✓" : "Not included",
+          value: $configStore.bedExtensionKit ? "Included" : null,
         },
       ]}
     >

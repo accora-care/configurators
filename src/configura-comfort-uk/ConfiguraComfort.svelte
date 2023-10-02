@@ -121,28 +121,19 @@
         },
         {
           label: "Backrest",
-          value: $configStore.backrest,
+          value: postureDisplayValue,
         },
         {
           label: "Lateral support",
-          value: "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : "Not Included",
+          value: "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : null,
         },
         {
           label: "Profiled Headrest",
-          value: $configStore.profiledHeadrest ? "Profiled Headrest" : "Not Included",
+          value: $configStore.profiledHeadrest ? "Included" : null,
         },
         {
           label: "Armrests",
           value: $configStore.dropdownArmrest ? "Drop-down" : "Fixed",
-        },
-        {
-          label: "Accessories",
-          value:
-            [
-              $configStore.profiledHeadrest ? "Profiled Headrest" : null,
-            ]
-              .filter((item) => !!item)
-              .join(", ") || "None",
         },
       ]}
     >

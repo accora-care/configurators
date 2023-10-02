@@ -51,15 +51,10 @@
       }
 
       if (config.cognitoFormConfig.optionsFieldName) {
-        const configuratorOptions = [];
-
-        descriptionFormField.forEach((item) => {
-          if (item.value) {
-            configuratorOptions.push(`${item.label}: ${item.value}`);
-          }
-        });
-
-        prefillData[config.cognitoFormConfig.optionsFieldName] = configuratorOptions.join(", ");
+        prefillData[config.cognitoFormConfig.optionsFieldName] = descriptionFormField
+          .filter((item) => null !== item.value)
+          .map((item) => `${item.label}: ${item.value}`)
+          .join("\n");;
       }
 
       cognitoForm.prefill(prefillData);
