@@ -79,7 +79,7 @@
           title="Posture"
           targetSelectView="POSTURE"
           value={postureDisplayValue}
-          length={7}
+          length={6}
         />
         <SelectBackrest />
         <CustomizationBlock
@@ -106,6 +106,7 @@
     <Footer
       title="Configura Comfort (UK)"
       {config}
+      ukStyle={true}
       descriptionFormField={[
         {
           label: "Fabric",

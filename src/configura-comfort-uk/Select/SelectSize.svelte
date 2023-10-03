@@ -13,7 +13,7 @@
       case 22:
         return [17, 18, 19, 20];
       default:
-        return[null];
+        return[];
     }
   }
 
@@ -32,7 +32,7 @@
   };
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "SIZE"} ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "SIZE"} {ukStyle}>
   <!-- SIZE -->
   <form>
     <fieldset> 
@@ -40,9 +40,9 @@
         Width
         <select bind:value={$configStore.width} on:change={initHeight}>
           <option value="{null}">Please select&hellip;</option>
-          <option value={18}>18"</option>
-          <option value={20}>20"</option>
-          <option value={22}>22"</option>
+          <option value={18}>18 inches</option>
+          <option value={20}>20 inches</option>
+          <option value={22}>22 inches</option>
         </select>
       </label>
     </fieldset>
@@ -51,8 +51,8 @@
         Depth
         <select bind:value={$configStore.depth}>
           <option value="{null}">Please select&hellip;</option>
-          <option value={18}>18"</option>
-          <option value={20}>20"</option>
+          <option value={18}>18 inches</option>
+          <option value={20}>20 inches</option>
         </select>
       </label>
     </fieldset>
@@ -62,7 +62,7 @@
         <select bind:value={$configStore.height}>
           <option value="{null}">Please select&hellip;</option>
           {#each availableHeights($configStore.width) as height}
-            <option value={height}>{height}"</option>
+            <option value={height}>{height} inches</option>
           {/each}
         </select>
       </label>
@@ -107,6 +107,10 @@
           }
         }
       }
+    }
+
+    @media screen and (max-width: 460px) {
+      grid-template-columns: 1fr;
     }
   }
 </style>

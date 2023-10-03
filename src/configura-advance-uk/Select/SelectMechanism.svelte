@@ -14,14 +14,14 @@
   const ukStyle = true;
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "MECHANISM"} ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "MECHANISM"} {ukStyle}>
   <!-- BACKREST -->
 
   <SelectionGridItem
     active={! $configStore.electric}
     title="Manual"
     description="Manually operated functions such as tilt-in-space and backrest angle adjustment."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -40,7 +40,7 @@
     active={$configStore.electric}
     title="Electric"
     description="An electric motor is utilised for tilt-in-space and legrest functions."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {

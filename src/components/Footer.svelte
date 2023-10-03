@@ -7,6 +7,7 @@
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
   export let submitButtonDisclaimer = "";
+  export let ukStyle: boolean = false;
 </script>
 
 <div class="acc-submit">
@@ -38,6 +39,7 @@
     {title}
     {descriptionFormField}
     {config}
+    {ukStyle}
     handleClose={() => {
       settingsStore.update((s) => {
         return {

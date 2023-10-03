@@ -9,14 +9,14 @@
 
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "ARMRESTS"} ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "ARMRESTS"} {ukStyle}>
   <!-- ARMRESTS -->
   <SelectionGridItem
     active={!$configStore.dropdownArmrest}
     title="Fixed armrests"
     description="Static, non-adjustable armrests, providing a stable and consistent resting place for the arms."
     standard={true}
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -35,8 +35,8 @@
     active={$configStore.dropdownArmrest}
     title="Drop-down armrests"
     description="Fitting on either side of the chair these armrests can help facilitate sideways transfers, for example using a slideboard."
-    learnMoreUrl="/chair-accessories/drop-down-armrest"
-    ukStyle={ukStyle}
+    learnMoreUrl="/specialist-seating/chair-accessories/drop-down-armrest"
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {

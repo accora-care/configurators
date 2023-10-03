@@ -83,7 +83,7 @@
           title="Posture"
           targetSelectView="POSTURE"
           value={postureDisplayValue}
-          length={7}
+          length={8}
         />
         <SelectBackrest />
         <CustomizationBlock
@@ -117,6 +117,7 @@
     <Footer
       title="Configura Advance (UK)"
       {config}
+      ukStyle={true}
       descriptionFormField={[
         {
           label: "Mechanism",

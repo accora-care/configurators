@@ -11,6 +11,7 @@
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
   export let config: InitConfig;
+  export let ukStyle: boolean = false;
 
   let submitted = false;
 
@@ -69,7 +70,12 @@
       <div class="acc-modal-scrollarea">
         {#if !submitted}
           <div class="acc-modal-header">
-            <h3>Request a quote - {title}</h3>
+            <h3>
+              Request a quote
+              {#if ! ukStyle}
+               - {title}
+              {/if}
+            </h3>
             <div class="acc-preview-description">
               <div class="acc-form-preview-container">
                 <slot />

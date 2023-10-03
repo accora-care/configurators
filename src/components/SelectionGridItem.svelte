@@ -35,7 +35,7 @@
             <div class="acc-grid-item-title">{title}</div>
             {#if ! visible}
               <div class="acc-grid-item-not-visible">
-                <IconQuickship /> <span class="acc-grid-item-nvtext">Not Visible</span>
+                <span class="acc-grid-item-nvtext">Not Visible</span>
               </div>
             {/if}
             {#if standard}
@@ -70,7 +70,7 @@
     </div>
     {#if ! visible}
       <div class="acc-grid-item-not-visible">
-        <IconQuickship /> <span class="acc-grid-item-nvtext">Not Visible</span>
+        <span class="acc-grid-item-nvtext">Not Visible</span>
       </div>
     {/if}
     {#if standard}

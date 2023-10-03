@@ -8,13 +8,13 @@
   const ukStyle = false;
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "FABRIC"} ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "FABRIC"} {ukStyle}>
   <!-- BACKREST -->
 
   <SelectionGridItem
     active={! $configStore.vinyl}
     title="Duratek"
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -32,7 +32,7 @@
   <SelectionGridItem
     active={$configStore.vinyl}
     title="Vinyl"
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {

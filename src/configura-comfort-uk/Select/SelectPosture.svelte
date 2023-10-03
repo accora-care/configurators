@@ -17,14 +17,14 @@
   const ukStyle = false;
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "POSTURE"} title="Backrests" ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "POSTURE"} title="Backrests" {ukStyle}>
   <!-- BACKREST -->
 
   <SelectionGridItem
     active={$configStore.backrest === "Waterfall"}
     title="Waterfall"
     standard={true}
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -42,7 +42,7 @@
   <SelectionGridItem
     active={$configStore.backrest === "Cocoon"}
     title="Cocoon"
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -62,7 +62,7 @@
     active={$configStore.backrest === "Lateral Support Backrest"}
     title="Lateral Support Backrest"
     disabled={null !== lateralSupportBackrestsException}
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -82,7 +82,7 @@
     active={$configStore.backrest === "Adjustable Lateral Support"}
     title="Adjustable Lateral Support"
     disabled={null !== lateralSupportBackrestsException}
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -99,7 +99,7 @@
   </SelectionGridItem>
 </SelectionGrid>
 
-<SelectionGrid visible={$configStore.selectorView === "POSTURE"} title="Other" ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "POSTURE"} title="Other" {ukStyle}>
   <!-- OTHER -->
 
   <SelectionGridItem
@@ -108,7 +108,7 @@
     visible={false}
     title="Lateral Support Wedges "
     disabled={null !== lateralSupportWedgesException}
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -129,7 +129,7 @@
     visible={"Cocoon" !== $configStore.backrest}
     title="Profiled Headrest"
     description="The profiled headrest offers increased head and neck support."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {

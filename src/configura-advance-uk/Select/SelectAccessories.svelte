@@ -8,13 +8,13 @@
   const ukStyle = true;
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} ukStyle={ukStyle}>
+<SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} {ukStyle}>
   <SelectionGridItem
     active={$configStore.pelvicStrap}
     visible={false}
     title="Pelvic Strap"
     description="A four-point pelvic strap to act as a prompt to aid pelvic positioning."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -34,7 +34,7 @@
     visible={false}
     title="Tray"
     description="Securely attaches to the chair's side piece using poppers to provide a convenient and stable surface for meals or other items."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -54,7 +54,7 @@
     visible={false}
     title="Environmental Control Interface"
     description="A control interface that enables the chair to be controlled with third party kits e.g. Possum, Eyegaze."
-    ukStyle={ukStyle}
+    {ukStyle}
     onClick={() => {
       configStore.update((s) => {
         return {
