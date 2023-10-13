@@ -107,7 +107,6 @@
       title="Floorbed 1 (UK)"
       {config}
       ukStyle={true}
-      submitButtonDisclaimer={"Quick delivery | 100-night risk-free trial | Training & implementation."}
       descriptionFormField={[
         {
           label: "Side Rails",

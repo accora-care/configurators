@@ -110,7 +110,6 @@
       title="Empresa (UK)"
       {config}
       ukStyle={true}
-      submitButtonDisclaimer={"Quick delivery | 100-night risk-free trial | Training & implementation."}
       descriptionFormField={[
         {
           label: "Headboard and footboard",
