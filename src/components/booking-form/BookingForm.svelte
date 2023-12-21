@@ -54,7 +54,15 @@
       if (config.cognitoFormConfig.optionsFieldName) {
         prefillData[config.cognitoFormConfig.optionsFieldName] = descriptionFormField
           .filter((item) => null !== item.value)
-          .map((item) => `${item.label}: ${item.value}`)
+          .map((item) => {
+            let value = `${item.label}: ${item.value}`;
+
+            if (item.code) {
+              value += ` [${item.code}]`;
+            }
+
+            return value;
+          })
           .join("\n");;
       }
 

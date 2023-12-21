@@ -20,4 +20,4 @@ export type InitConfig = {
   thankYouTitle?: string;
 };
 
-export type SubmitFormDescription = { label: string; value: string }[];
+export type SubmitFormDescription = { label: string; value: string, code?: string }[];

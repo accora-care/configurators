@@ -7,13 +7,37 @@ export type SELECTOR_VIEW =
   | "MOBILITY"
   | "EXTRAS";
 
-export type StoreValues = {
-  sideRails: "Fabric Side Rails" | "Integrated Junior Padded Side Rails" | "None";
+interface StoreValueOption {
+	name: string;
+	code: string;
+}
+
+interface SideRailStoreValueOption extends StoreValueOption {
+	name:	SideRailStoreValue,
+	code: string;
+};
+
+interface SafetyMatStoreValueOption extends StoreValueOption {
+	name:	SafetyMatStoreValue,
+	code: string;
+};
+
+interface LeverStoreValueOption extends StoreValueOption {
+	name:	LeverStoreValue,
+	code: string;
+};
+
+export type SideRailStoreValue = "Fabric Side Rails" | "Integrated Junior Padded Side Rails" | "None";
+export type SafetyMatStoreValue = "High Safety Mat" | "High Safety Mat with Slide Sheets" | "None";
+export type LeverStoreValue = "Bed Lever" | "Short Bed Lever" | "None";
+
+export interface StoreValues {
+  sideRails: SideRailStoreValue;
   bumpers: boolean;
-  safetyMat: "High Safety Mat" | "High Safety Mat with Slide Sheets" | "None";
+  safetyMat: SafetyMatStoreValue;
 	safetySleeve: boolean;
 	juniorKit: boolean;
-  lever: "Bed Lever" | "Short Bed Lever" | "None";
+  lever: LeverStoreValue;
   liftingPole: boolean;
   pumpHolder: boolean;
 	mattressInfill: boolean;

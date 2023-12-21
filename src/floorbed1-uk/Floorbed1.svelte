@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { configStore, initVal } from "./configStore";
+  import { configStore, getProductCode, initVal } from "./configStore";
 
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
@@ -14,6 +14,7 @@
   import FormTitle from "../components/FormTitle.svelte";
 
   import { getFabricSideRailsException } from "./isOptionAllowed";
+  import { getBedExtensionKitProductCode, getBedExtensionProductCode, getBumpersProductCode, getJuniorKitProductCode, getLeverProductCode, getLiftingPoleProductCode, getMattressExtensionFoamProductCode, getMattressInfillProductCode, getPumpHolderProductCode, getSafetyMatProductCode, getSafetySleeveProductCode, getSideRailsProductCode } from "./getProductCode";
 
   export let config: InitConfig;
 
@@ -21,6 +22,19 @@
   let safetyDisplayValue = "None";
   let mobilityDisplayValue = "None";
   let extrasDisplayValue = "None";
+
+  let sideRailsProductCode = "";
+  let bumpersProductCode = "";
+  let safetyMatProductCode = "";
+  let safetySleeveProductCode = "";
+  let juniorKitProductCode = "";
+  let leverProductCode = "";
+  let liftingPoleProductCode = "";
+  let pumpHolderProductCode = "";
+  let mattressInfillProductCode = "";
+  let bedExtensionProductCode = "";
+  let mattressExtensionFoamProductCode = "";
+  let bedExtensionKitProductCode = "";
 
   configStore.subscribe((state) => {
     valueSideRails = getFabricSideRailsException(state) || state.sideRails;
@@ -50,6 +64,19 @@
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
+
+      sideRailsProductCode = getSideRailsProductCode(state);
+      bumpersProductCode = getBumpersProductCode(state);
+      safetyMatProductCode = getSafetyMatProductCode(state);
+      safetySleeveProductCode = getSafetySleeveProductCode(state);
+      juniorKitProductCode = getJuniorKitProductCode(state);
+      leverProductCode = getLeverProductCode(state);
+      liftingPoleProductCode = getLiftingPoleProductCode(state);
+      pumpHolderProductCode = getPumpHolderProductCode(state);
+      mattressInfillProductCode = getMattressInfillProductCode(state);
+      bedExtensionProductCode = getBedExtensionProductCode(state);
+      mattressExtensionFoamProductCode = getMattressExtensionFoamProductCode(state);
+      bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
   });
 </script>
 
@@ -111,50 +138,62 @@
         {
           label: "Side Rails",
           value: "None" !== $configStore.sideRails ? $configStore.sideRails : null,
+          code: sideRailsProductCode,
         },
         {
           label: "Head and Foot Bumpers",
           value: $configStore.bumpers ? "Included" : null,
+          code: bumpersProductCode,
         },
         {
           label: "Safety Mat",
           value: "None" !== $configStore.safetyMat ? $configStore.safetyMat :  null,
+          code: safetyMatProductCode,
         },
         {
           label: "Safety Sleeve",
           value: $configStore.safetySleeve ? "Included" : null,
+          code: safetySleeveProductCode,
         },
         {
           label: "Junior Kit",
           value: $configStore.juniorKit ? "Included" : null,
+          code: juniorKitProductCode,
         },
         {
           label: "Bed Lever",
           value: "None" !== $configStore.lever ? $configStore.lever : null,
+          code: leverProductCode,
         },
         {
           label: "Lifting Pole",
           value: $configStore.liftingPole ? "Included" : null,
+          code: liftingPoleProductCode,
         },
         {
           label: "Mattress Pump Holder",
           value: $configStore.pumpHolder ? "Included" : null,
+          code: pumpHolderProductCode,
         },
         {
           label: "Mattress Infill",
           value: $configStore.mattressInfill ? "Included" : null,
+          code: mattressInfillProductCode,
         },
         {
           label: "Bed Extension",
           value: $configStore.bedExtension ? "Included" : null,
+          code: bedExtensionProductCode,
         },
         {
           label: "Mattress Extension Foam",
           value: $configStore.mattressExtensionFoam ? "Included" : null,
+          code: mattressExtensionFoamProductCode,
         },
         {
           label: "Bed Extension Kit",
           value: $configStore.bedExtensionKit ? "Included" : null,
+          code: bedExtensionKitProductCode,
         },
       ]}
     >
