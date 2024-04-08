@@ -1,5 +1,9 @@
 import type { StoreValues } from "../floorbed1-uk/configStore";
 
+export const getBedProductCode = (): string | null => {
+	return "NSB-0-FL1-200";
+}
+
 export const getSideRailsProductCode = (state: StoreValues): string | null => {
 	switch (state.sideRails) {
 

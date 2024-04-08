@@ -14,7 +14,7 @@
   import FormTitle from "../components/FormTitle.svelte";
 
   import { getFabricSideRailsException } from "./isOptionAllowed";
-  import { getBedExtensionKitProductCode, getBedExtensionProductCode, getBumpersProductCode, getJuniorKitProductCode, getLeverProductCode, getLiftingPoleProductCode, getMattressExtensionFoamProductCode, getMattressInfillProductCode, getPumpHolderProductCode, getSafetyMatProductCode, getSafetySleeveProductCode, getSideRailsProductCode } from "./getProductCode";
+  import { getBedExtensionKitProductCode, getBedExtensionProductCode, getBedProductCode, getBumpersProductCode, getJuniorKitProductCode, getLeverProductCode, getLiftingPoleProductCode, getMattressExtensionFoamProductCode, getMattressInfillProductCode, getPumpHolderProductCode, getSafetyMatProductCode, getSafetySleeveProductCode, getSideRailsProductCode } from "./getProductCode";
 
   export let config: InitConfig;
 
@@ -23,6 +23,7 @@
   let mobilityDisplayValue = "None";
   let extrasDisplayValue = "None";
 
+  let bedProductCode = "";
   let sideRailsProductCode = "";
   let bumpersProductCode = "";
   let safetyMatProductCode = "";
@@ -65,6 +66,7 @@
         .filter((item) => !!item)
         .join(", ") || "None";
 
+      bedProductCode = getBedProductCode();
       sideRailsProductCode = getSideRailsProductCode(state);
       bumpersProductCode = getBumpersProductCode(state);
       safetyMatProductCode = getSafetyMatProductCode(state);
@@ -135,6 +137,11 @@
       {config}
       ukStyle={true}
       descriptionFormField={[
+        {
+          label: "Bed",
+          value: "FloorBed 1",
+          code: bedProductCode,
+        },
         {
           label: "Side Rails",
           value: "None" !== $configStore.sideRails ? $configStore.sideRails : null,
