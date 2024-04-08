@@ -26,6 +26,7 @@
         return {
           ...s,
           sideRails: "Fabric Side Rails" !== s.sideRails ? "Fabric Side Rails" : "None",
+          mattressInfill: "Fabric Side Rails" !== s.sideRails ? s.mattressInfill : false,
         };
       });
     }}
