@@ -4,12 +4,14 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
-  import { getFabricSideRailsException } from "../isOptionAllowed";
+  import { getFabricSideRailsException, getJuniorPaddedSideRailsException } from "../isOptionAllowed";
 
   let fabricSideRailsException = "";
+  let juniorPaddedSideRailsException = "";
 
   configStore.subscribe((state) => {
     fabricSideRailsException = getFabricSideRailsException(state);
+    juniorPaddedSideRailsException = getJuniorPaddedSideRailsException(state);
   });
 </script>
 
@@ -37,6 +39,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={juniorPaddedSideRailsException}
     active={$configStore.sideRails === "Integrated Junior Padded Side Rails"}
     visible={false}
     title="Integrated Junior Padded Side Rails"
