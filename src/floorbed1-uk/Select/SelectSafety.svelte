@@ -104,7 +104,7 @@
   <SelectionGridItem
     notAllowedMessage={juniorKitException}
     active={$configStore.juniorKit}
-    title="Junior Kit"
+    title="JuniorKit"
     description="A suite of combined accessories that provide a complete solution to meet the children’s bed standard."
     learnMoreUrl="/bed-accessories/junior-kit"
     ukStyle={true}

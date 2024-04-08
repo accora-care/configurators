@@ -43,7 +43,7 @@
         $configStore.bumpers ? "Head and Foot Bumpers" : null,
         $configStore.safetyMat !== "None" ? $configStore.safetyMat : null,
         $configStore.safetySleeve ? "Safety Sleeve" : null,
-        $configStore.juniorKit ? "Junior Kit" : null,
+        $configStore.juniorKit ? "JuniorKit" : null,
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
@@ -156,7 +156,7 @@
           code: safetySleeveProductCode,
         },
         {
-          label: "Junior Kit",
+          label: "JuniorKit",
           value: $configStore.juniorKit ? "Included" : null,
           code: juniorKitProductCode,
         },
