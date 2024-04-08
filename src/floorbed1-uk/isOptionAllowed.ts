@@ -3,10 +3,6 @@
 import type { StoreValues } from "./configStore";
 
 export const getFabricSideRailsException = (state: StoreValues) => {
-  if (state.juniorKit) {
-    return "Not available with JuniorKit";
-  }
-
   return null;
 }
 
