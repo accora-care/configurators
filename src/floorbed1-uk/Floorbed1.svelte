@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { configStore, getProductCode, initVal } from "./configStore";
+  import { configStore, initVal } from "./configStore";
 
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
