@@ -11,10 +11,23 @@
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import Footer from "../components/Footer.svelte";
-  import FormTitle from "../components/FormTitle.svelte";
 
   import { getFabricSideRailsException } from "./isOptionAllowed";
-  import { getBedExtensionKitProductCode, getBedExtensionProductCode, getBedProductCode, getBumpersProductCode, getJuniorKitProductCode, getLeverProductCode, getLiftingPoleProductCode, getMattressExtensionFoamProductCode, getMattressInfillProductCode, getPumpHolderProductCode, getSafetyMatProductCode, getSafetySleeveProductCode, getSideRailsProductCode } from "./getProductCode";
+  import {
+    getBedExtensionKitProductCode,
+    getBedExtensionProductCode,
+    getBedProductCode,
+    getBumpersProductCode,
+    getJuniorKitProductCode,
+    getLeverProductCode,
+    getLiftingPoleProductCode,
+    getMattressExtensionFoamProductCode,
+    getMattressInfillProductCode,
+    getPumpHolderProductCode,
+    getSafetyMatProductCode,
+    getSafetySleeveProductCode,
+    getSideRailsProductCode,
+  } from "./getProductCode";
 
   export let config: InitConfig;
 
@@ -66,19 +79,19 @@
         .filter((item) => !!item)
         .join(", ") || "None";
 
-      bedProductCode = getBedProductCode();
-      sideRailsProductCode = getSideRailsProductCode(state);
-      bumpersProductCode = getBumpersProductCode(state);
-      safetyMatProductCode = getSafetyMatProductCode(state);
-      safetySleeveProductCode = getSafetySleeveProductCode(state);
-      juniorKitProductCode = getJuniorKitProductCode(state);
-      leverProductCode = getLeverProductCode(state);
-      liftingPoleProductCode = getLiftingPoleProductCode(state);
-      pumpHolderProductCode = getPumpHolderProductCode(state);
-      mattressInfillProductCode = getMattressInfillProductCode(state);
-      bedExtensionProductCode = getBedExtensionProductCode(state);
-      mattressExtensionFoamProductCode = getMattressExtensionFoamProductCode(state);
-      bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
+    bedProductCode = getBedProductCode();
+    sideRailsProductCode = getSideRailsProductCode(state);
+    bumpersProductCode = getBumpersProductCode(state);
+    safetyMatProductCode = getSafetyMatProductCode(state);
+    safetySleeveProductCode = getSafetySleeveProductCode(state);
+    juniorKitProductCode = getJuniorKitProductCode(state);
+    leverProductCode = getLeverProductCode(state);
+    liftingPoleProductCode = getLiftingPoleProductCode(state);
+    pumpHolderProductCode = getPumpHolderProductCode(state);
+    mattressInfillProductCode = getMattressInfillProductCode(state);
+    bedExtensionProductCode = getBedExtensionProductCode(state);
+    mattressExtensionFoamProductCode = getMattressExtensionFoamProductCode(state);
+    bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
   });
 </script>
 

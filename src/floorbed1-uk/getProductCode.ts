@@ -1,4 +1,4 @@
-import type { StoreValues } from "../floorbed1-uk/configStore";
+import type { StoreValues } from "./configStore";
 
 export const getBedProductCode = (): string | null => {
 	return "NSB-0-FL1-200";
