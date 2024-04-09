@@ -6,7 +6,6 @@
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
-  import FormTitle from "../components/FormTitle.svelte";
   import Footer from "../components/Footer.svelte";
   import type { InitConfig } from "../Config.types";
   import SelectBackrest from "./Select/SelectPosture.svelte";
@@ -14,12 +13,31 @@
   import SelectArmrests from "./Select/SelectArmrests.svelte";
   import SelectMechanism from "./Select/SelectMechanism.svelte";
   import SelectSize from "./Select/SelectSize.svelte";
+  import {
+    getChairProductCode,
+    getMechanismProductCode,
+    getPressureProductCode,
+    getBackrestProductCode,
+    getLateralSupportProductCode,
+    getProfiledHeadrestProductCode,
+    getArmrestsProductCode,
+    getAccessoriesProductCode,
+  } from "./getProductCode";
 
   export let config: InitConfig;
 
   let sizeDisplayValue = "";
   let postureDisplayValue = "Waterfall";
   let accessoriesDisplayValue = "none";
+
+  let chairProductCode = "";
+  let mechanismProductCode = "";
+  let pressureProductCode = "";
+  let backrestProductCode = "";
+  let lateralSupportProductCode = "";
+  let profiledHeadrestProductCode = "";
+  let armrestsProductCode = "";
+  let accessoriesProductCode = "";
 
   configStore.subscribe((state) => {
     sizeDisplayValue =
@@ -48,6 +66,15 @@
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
+
+    chairProductCode = getChairProductCode();
+    mechanismProductCode = getMechanismProductCode(state);
+    pressureProductCode = getPressureProductCode(state);
+    backrestProductCode = getBackrestProductCode(state);
+    lateralSupportProductCode = getLateralSupportProductCode(state);
+    profiledHeadrestProductCode = getProfiledHeadrestProductCode(state);
+    armrestsProductCode = getArmrestsProductCode(state);
+    accessoriesProductCode = getAccessoriesProductCode(state);
 });
 </script>
 
@@ -120,8 +147,14 @@
       ukStyle={true}
       descriptionFormField={[
         {
+          label: "Chair",
+          value: chairProductCode ? "Configura Advance" : null,
+          code: chairProductCode,
+        },
+        {
           label: "Mechanism",
           value: $configStore.electric ? "Electric" : "Manual",
+          code: mechanismProductCode,
         },
         {
           label: "Size",
@@ -130,26 +163,32 @@
         {
           label: "Pressure",
           value: $configStore.pressure,
+          code: pressureProductCode,
         },
         {
           label: "Backrest",
           value: $configStore.backrest,
+          code: backrestProductCode,
         },
         {
           label: "Lateral support",
           value: "None" !== $configStore.lateralSupport ? $configStore.lateralSupport : null,
+          code: lateralSupportProductCode,
         },
         {
           label: "Profiled Headrest",
           value: $configStore.profiledHeadrest ? "Profiled Headrest" : null,
+          code: profiledHeadrestProductCode,
         },
         {
           label: "Armrests",
           value: $configStore.dropdownArmrest ? "Drop-down" : "Fixed",
+          code: armrestsProductCode,
         },
         {
           label: "Accessories",
           value: accessoriesDisplayValue,
+          code: accessoriesProductCode,
         },
       ]}
     >
