@@ -11,8 +11,8 @@ export const sidePanels: { title: string }[] = [
 	{ title: "Lincoln Walnut" },
 	{ title: "Polar Aland Pine" },
 	{ title: "Bavarian Beech" },
-	{ title: "Grey Beige Bamenda" },
-	{ title: "Brown Fineline Metallic" },
+	{ title: "Grey Sacramento Oak" },
+	{ title: "Brown Tonsberg Oak" },
 	{ title: "Anthracite Fineline Metallic" },
 	{ title: "Sand Orleans Oak" },
 ];

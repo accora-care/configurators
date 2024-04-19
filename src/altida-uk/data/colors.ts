@@ -11,8 +11,8 @@ export const colorsOrder = [
   "Lincoln Walnut",
   "Polar Aland Pine",
   "Bavarian Beech",
-  "Grey Beige Bamenda",
-  "Brown Fineline Metallic",
+  "Grey Sacramento Oak",
+  "Brown Tonsberg Oak",
   "Anthracite Fineline Metallic",
   "Sand Orleans Oak",
 ];

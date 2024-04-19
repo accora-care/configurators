@@ -5,7 +5,7 @@ export const colorsOrder = [
   "Anthracite Fineline Metallic",
   "Bavarian Beech",
   "Black Brown Thermo Oak",
-  "Brown Fineline Metallic",
+  "Brown Tonsberg Oak",
   "Brown Tossini Elm",
   "Grey Beige Bamenda",
   "Grey Beige Tossini Elm",
