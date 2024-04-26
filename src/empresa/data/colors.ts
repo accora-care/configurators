@@ -7,7 +7,7 @@ export const colorsOrder = [
   "Black Brown Thermo Oak",
   "Brown Tonsberg Oak",
   "Brown Tossini Elm",
-  "Grey Beige Bamenda",
+  "Grey Sacramento Oak",
   "Grey Beige Tossini Elm",
   "Lincoln Walnut",
   "Polar Aland Pine",
