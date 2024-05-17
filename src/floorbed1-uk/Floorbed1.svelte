@@ -7,6 +7,7 @@
   import SelectSideRails from "./Select/SelectSideRails.svelte";
   import SelectMobility from "./Select/SelectMobility.svelte";
   import SelectExtras from "./Select/SelectExtras.svelte";
+  import SelectMattresses from "./Select/SelectMattresses.svelte";
   import type { InitConfig } from "../Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
@@ -35,6 +36,7 @@
   let safetyDisplayValue = "None";
   let mobilityDisplayValue = "None";
   let extrasDisplayValue = "None";
+  let mattressesDisplayValue = "None";
 
   let bedProductCode = "";
   let sideRailsProductCode = "";
@@ -79,6 +81,17 @@
         .filter((item) => !!item)
         .join(", ") || "None";
 
+    mattressesDisplayValue =
+      [
+        $configStore.alleviaComfort ? "Allevia Comfort" : null,
+        $configStore.alleviaComfortFirmEdge ? "Allevia Comfort FirmEdge" : null,
+        $configStore.alleviaDuo ? "Allevia Duo" : null,
+        $configStore.alleviaDuoPlus ? "Allevia Duo Plus" : null,
+        $configStore.alleviaSense ? "Allevia Sense" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
+
     bedProductCode = getBedProductCode();
     sideRailsProductCode = getSideRailsProductCode(state);
     bumpersProductCode = getBumpersProductCode(state);
@@ -90,7 +103,8 @@
     pumpHolderProductCode = getPumpHolderProductCode(state);
     mattressInfillProductCode = getMattressInfillProductCode(state);
     bedExtensionProductCode = getBedExtensionProductCode(state);
-    mattressExtensionFoamProductCode = getMattressExtensionFoamProductCode(state);
+    mattressExtensionFoamProductCode =
+      getMattressExtensionFoamProductCode(state);
     bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
   });
 </script>
@@ -131,6 +145,13 @@
           length={5}
         />
         <SelectExtras />
+        <CustomizationBlock
+          title="Mattresses"
+          targetSelectView="MATTRESSES"
+          value={mattressesDisplayValue}
+          length={5}
+        />
+        <SelectMattresses />
         <div
           class="reset-form"
           on:click={() => {
@@ -157,7 +178,8 @@
         },
         {
           label: "Side Rails",
-          value: "None" !== $configStore.sideRails ? $configStore.sideRails : null,
+          value:
+            "None" !== $configStore.sideRails ? $configStore.sideRails : null,
           code: sideRailsProductCode,
         },
         {
@@ -167,7 +189,8 @@
         },
         {
           label: "Safety Mat",
-          value: "None" !== $configStore.safetyMat ? $configStore.safetyMat :  null,
+          value:
+            "None" !== $configStore.safetyMat ? $configStore.safetyMat : null,
           code: safetyMatProductCode,
         },
         {
@@ -256,7 +279,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size))
+      calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>
