@@ -86,21 +86,33 @@ export const getBedExtensionKitProductCode = (state: StoreValues): string | null
 }
 
 export const getAlleviaComfortProductCode = (state: StoreValues): string | null => {
-	return state.alleviaComfort ? "ALLCOM-0-FL1-100" : null;
+	return state.alleviaComfort ? "VISMAT-0-FM5-000" : null;
 }
 
 export const getAlleviaComfortFirmEdgeProductCode = (state: StoreValues): string | null => {
-	return state.alleviaComfortFirmEdge ? "ALLCOMFE-0-FL1-100" : null;
+	return state.alleviaComfortFirmEdge ? "VISMATB-0-FM5-000" : null;
 }
 
 export const getAlleviaDuoProductCode = (state: StoreValues): string | null => {
-	return state.alleviaDuo ? "ALLDUO-0-FL1-100" : null;
+	return state.alleviaDuo
+		? state.pumpOption === "withPump"
+			? "AIRFOAP-0-AF2-000"
+			: state.pumpOption === "withOutPump"
+				? "AIRFOA-0-AF2-000"
+				: null
+		: null;
 }
 
 export const getAlleviaDuoPlusProductCode = (state: StoreValues): string | null => {
-	return state.alleviaDuoPlus ? "ALLDUOP-0-FL1-100" : null;
+	return state.alleviaDuoPlus
+		? state.pumpOption === "withPump"
+			? "AIRVISP-0-AF3-000"
+			: state.pumpOption === "withOutPump"
+				? "AIRVIS-0-AF3-000"
+				: null
+		: null;
 }
 
 export const getAlleviaSenseProductCode = (state: StoreValues): string | null => {
-	return state.alleviaSense ? "ALLSEN-0-FL1-100" : null;
+	return state.alleviaSense ? "AIRMATP-0-AM3-000" : null;
 }

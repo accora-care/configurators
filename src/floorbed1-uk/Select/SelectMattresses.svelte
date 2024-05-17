@@ -59,6 +59,15 @@
     learnMoreUrl="/bed-accessories/pump-holder"
     ukStyle={true}
     visible={false}
+    pumpOptions={true}
+    on:pumpOption={(e) => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          pumpOption: e.detail,
+        };
+      });
+    }}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -80,6 +89,15 @@
     learnMoreUrl="/bed-accessories/pump-holder"
     ukStyle={true}
     visible={false}
+    pumpOptions={true}
+    on:pumpOption={(e) => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          pumpOption: e.detail,
+        };
+      });
+    }}
     onClick={() => {
       configStore.update((s) => {
         return {
