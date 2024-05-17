@@ -4,24 +4,6 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
-  import {
-    getMatressInfillException,
-    getBedExtensionException,
-    getMattressExtensionFoamException,
-    getBedExtensionKitException,
-  } from "../isOptionAllowed";
-
-  let matressInfillException = "";
-  let bedExtensionException = "";
-  let mattressExtensionFoamException = "";
-  let bedExtensionKitException = "";
-
-  configStore.subscribe((state) => {
-    matressInfillException = getMatressInfillException(state);
-    bedExtensionException = getBedExtensionException(state);
-    mattressExtensionFoamException = getMattressExtensionFoamException(state);
-    bedExtensionKitException = getBedExtensionKitException(state);
-  });
 </script>
 
 <SelectionGrid

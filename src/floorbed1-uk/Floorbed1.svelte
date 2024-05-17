@@ -28,6 +28,11 @@
     getSafetyMatProductCode,
     getSafetySleeveProductCode,
     getSideRailsProductCode,
+    getAlleviaComfortProductCode,
+    getAlleviaComfortFirmEdgeProductCode,
+    getAlleviaDuoProductCode,
+    getAlleviaDuoPlusProductCode,
+    getAlleviaSenseProductCode,
   } from "./getProductCode";
 
   export let config: InitConfig;
@@ -51,6 +56,11 @@
   let bedExtensionProductCode = "";
   let mattressExtensionFoamProductCode = "";
   let bedExtensionKitProductCode = "";
+  let alleviaComfortProductCode = "";
+  let alleviaComfortFirmEdgeProductCode = "";
+  let alleviaDuoProductCode = "";
+  let alleviaDuoPlusProductCode = "";
+  let alleviaSenseProductCode = "";
 
   configStore.subscribe((state) => {
     valueSideRails = getFabricSideRailsException(state) || state.sideRails;
@@ -106,6 +116,12 @@
     mattressExtensionFoamProductCode =
       getMattressExtensionFoamProductCode(state);
     bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
+    alleviaComfortProductCode = getAlleviaComfortProductCode(state);
+    alleviaComfortFirmEdgeProductCode =
+      getAlleviaComfortFirmEdgeProductCode(state);
+    alleviaDuoProductCode = getAlleviaDuoProductCode(state);
+    alleviaDuoPlusProductCode = getAlleviaDuoPlusProductCode(state);
+    alleviaSenseProductCode = getAlleviaSenseProductCode(state);
   });
 </script>
 
@@ -237,6 +253,31 @@
           label: "Bed Extension Kit",
           value: $configStore.bedExtensionKit ? "Included" : null,
           code: bedExtensionKitProductCode,
+        },
+        {
+          label: "Allevia Comfort",
+          value: $configStore.alleviaComfort ? "Included" : null,
+          code: alleviaComfortProductCode,
+        },
+        {
+          label: "Allevia Comfort FirmEdge",
+          value: $configStore.alleviaComfortFirmEdge ? "Included" : null,
+          code: alleviaComfortFirmEdgeProductCode,
+        },
+        {
+          label: "Allevia Duo",
+          value: $configStore.alleviaDuo ? "Included" : null,
+          code: alleviaDuoProductCode,
+        },
+        {
+          label: "Allevia Duo Plus",
+          value: $configStore.alleviaDuoPlus ? "Included" : null,
+          code: alleviaDuoPlusProductCode,
+        },
+        {
+          label: "Allevia Sense",
+          value: $configStore.alleviaSense ? "Included" : null,
+          code: alleviaSenseProductCode,
         },
       ]}
     >

@@ -84,3 +84,23 @@ export const getMattressExtensionFoamProductCode = (state: StoreValues): string 
 export const getBedExtensionKitProductCode = (state: StoreValues): string | null => {
 	return state.bedExtensionKit ? "SDEXKIT-0-FL1-100" : null;
 }
+
+export const getAlleviaComfortProductCode = (state: StoreValues): string | null => {
+	return state.alleviaComfort ? "ALLCOM-0-FL1-100" : null;
+}
+
+export const getAlleviaComfortFirmEdgeProductCode = (state: StoreValues): string | null => {
+	return state.alleviaComfortFirmEdge ? "ALLCOMFE-0-FL1-100" : null;
+}
+
+export const getAlleviaDuoProductCode = (state: StoreValues): string | null => {
+	return state.alleviaDuo ? "ALLDUO-0-FL1-100" : null;
+}
+
+export const getAlleviaDuoPlusProductCode = (state: StoreValues): string | null => {
+	return state.alleviaDuoPlus ? "ALLDUOP-0-FL1-100" : null;
+}
+
+export const getAlleviaSenseProductCode = (state: StoreValues): string | null => {
+	return state.alleviaSense ? "ALLSEN-0-FL1-100" : null;
+}
