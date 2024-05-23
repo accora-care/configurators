@@ -50,7 +50,7 @@ export interface StoreValues {
 	alleviaDuo: boolean;
 	alleviaDuoPlus: boolean;
 	alleviaSense: boolean;
-	pumpOption: 'withPump' | 'withOutPump';
+	pumpOption: 'withPump' | 'withoutPump';
 	selectorView: SELECTOR_VIEW | null;
 };
 

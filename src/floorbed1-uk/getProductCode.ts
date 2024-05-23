@@ -97,7 +97,7 @@ export const getAlleviaDuoProductCode = (state: StoreValues): string | null => {
 	return state.alleviaDuo
 		? state.pumpOption === "withPump"
 			? "AIRFOAP-0-AF2-000"
-			: state.pumpOption === "withOutPump"
+			: state.pumpOption === "withoutPump"
 				? "AIRFOA-0-AF2-000"
 				: null
 		: null;
@@ -107,7 +107,7 @@ export const getAlleviaDuoPlusProductCode = (state: StoreValues): string | null 
 	return state.alleviaDuoPlus
 		? state.pumpOption === "withPump"
 			? "AIRVISP-0-AF3-000"
-			: state.pumpOption === "withOutPump"
+			: state.pumpOption === "withoutPump"
 				? "AIRVIS-0-AF3-000"
 				: null
 		: null;

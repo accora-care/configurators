@@ -78,8 +78,8 @@
           {handlePumpOption}
         />
         <PumpOption
-          title="WithOut pump"
-          option="withOutPump"
+          title="Without pump"
+          option="withoutPump"
           {pumpOption}
           {handlePumpOption}
         />
