@@ -2,10 +2,11 @@
 import { writable } from "svelte/store";
 
 export type SELECTOR_VIEW =
-  | "SIDE_RAILS"
-  | "SAFETY"
-  | "MOBILITY"
-  | "EXTRAS";
+	| "SIDE_RAILS"
+	| "SAFETY"
+	| "MOBILITY"
+	| "EXTRAS"
+	| "MATTRESSES";
 
 interface StoreValueOption {
 	name: string;
@@ -13,17 +14,17 @@ interface StoreValueOption {
 }
 
 interface SideRailStoreValueOption extends StoreValueOption {
-	name:	SideRailStoreValue,
+	name: SideRailStoreValue,
 	code: string;
 };
 
 interface SafetyMatStoreValueOption extends StoreValueOption {
-	name:	SafetyMatStoreValue,
+	name: SafetyMatStoreValue,
 	code: string;
 };
 
 interface LeverStoreValueOption extends StoreValueOption {
-	name:	LeverStoreValue,
+	name: LeverStoreValue,
 	code: string;
 };
 
@@ -32,34 +33,46 @@ export type SafetyMatStoreValue = "High Safety Mat" | "High Safety Mat with Slid
 export type LeverStoreValue = "Bed Lever" | "Short Bed Lever" | "None";
 
 export interface StoreValues {
-  sideRails: SideRailStoreValue;
-  bumpers: boolean;
-  safetyMat: SafetyMatStoreValue;
+	sideRails: SideRailStoreValue;
+	bumpers: boolean;
+	safetyMat: SafetyMatStoreValue;
 	safetySleeve: boolean;
 	juniorKit: boolean;
-  lever: LeverStoreValue;
-  liftingPole: boolean;
-  pumpHolder: boolean;
+	lever: LeverStoreValue;
+	liftingPole: boolean;
+	pumpHolder: boolean;
 	mattressInfill: boolean;
 	bedExtension: boolean;
 	mattressExtensionFoam: boolean;
 	bedExtensionKit: boolean;
-  selectorView: SELECTOR_VIEW | null;
+	alleviaComfort: boolean;
+	alleviaComfortFirmEdge: boolean;
+	alleviaDuo: boolean;
+	alleviaDuoPlus: boolean;
+	alleviaSense: boolean;
+	pumpOption: 'withPump' | 'withoutPump';
+	selectorView: SELECTOR_VIEW | null;
 };
 
 export const initVal: StoreValues = {
-  sideRails: "None",
-  bumpers: false,
-  safetyMat: "None",
+	sideRails: "None",
+	bumpers: false,
+	safetyMat: "None",
 	safetySleeve: false,
 	juniorKit: false,
-  lever: "None",
-  liftingPole: false,
-  pumpHolder: false,
+	lever: "None",
+	liftingPole: false,
+	pumpHolder: false,
 	mattressInfill: false,
 	bedExtension: false,
 	mattressExtensionFoam: false,
 	bedExtensionKit: false,
+	alleviaComfort: false,
+	alleviaComfortFirmEdge: false,
+	alleviaDuo: false,
+	alleviaDuoPlus: false,
+	alleviaSense: false,
+	pumpOption: 'withPump',
 	selectorView: null,
 };
 

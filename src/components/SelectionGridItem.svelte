@@ -10,7 +10,19 @@
   export let visible: boolean = true;
   export let standard: boolean = false;
   export let ukStyle: boolean = false;
+  export let pumpOptions: boolean = false;
   import IconQuickship from "./assets/icon-quickship.svg";
+  import PumpOption from "./PumpOption.svelte";
+
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+  let pumpOption = "withPump";
+
+  const handlePumpOption = (value: string) => {
+    dispatch("pumpOption", value);
+    pumpOption = value;
+  };
 </script>
 
 <div
@@ -20,7 +32,6 @@
   class:uk-style={ukStyle}
   on:click={onClick}
 >
-  
   {#if ukStyle}
     <div class="acc-grid-item-image">
       <slot />
@@ -33,7 +44,7 @@
         {#if title}
           <div class="acc-grid-item-title-wrapper">
             <div class="acc-grid-item-title">{title}</div>
-            {#if ! visible}
+            {#if !visible}
               <div class="acc-grid-item-not-visible">
                 <span class="acc-grid-item-nvtext">Not Visible</span>
               </div>
@@ -58,6 +69,22 @@
         </div>
       {/if}
     </div>
+    {#if pumpOptions && active}
+      <div class="acc-grid-item-pump-options">
+        <PumpOption
+          title="With pump"
+          option="withPump"
+          {pumpOption}
+          {handlePumpOption}
+        />
+        <PumpOption
+          title="Without pump"
+          option="withoutPump"
+          {pumpOption}
+          {handlePumpOption}
+        />
+      </div>
+    {/if}
   {:else}
     <div>
       <slot />
@@ -68,7 +95,7 @@
         <div class="acc-grid-item-title">{title}</div>
       {/if}
     </div>
-    {#if ! visible}
+    {#if !visible}
       <div class="acc-grid-item-not-visible">
         <span class="acc-grid-item-nvtext">Not Visible</span>
       </div>
@@ -92,7 +119,7 @@
   #acc-floorbed1-uk,
   #acc-configura-advance-uk,
   #acc-configura-comfort-uk {
-    --grid-item-background: #F6F6F6;
+    --grid-item-background: #f6f6f6;
     --selected-grid-item-background: #fff;
 
     .acc-exception {
@@ -123,6 +150,13 @@
       overflow: hidden;
       margin-top: calc(0.8rem / var(--root-font-size));
     }
+
+    &-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     &-title {
       font-size: calc(1.2rem / var(--root-font-size));
       line-height: calc(1.6rem / var(--root-font-size));
@@ -220,6 +254,65 @@
           font-size: calc(1.2rem / var(--root-font-size));
           line-height: normal;
           color: var(--primary);
+        }
+      }
+
+      .acc-grid-item-pump-options {
+        display: flex;
+        grid-column: 1 / 3;
+        justify-content: space-between;
+        gap: calc(2rem / var(--root-font-size));
+        margin-bottom: calc(1rem / var(--root-font-size));
+
+        .acc-grid-item-pump-option {
+          display: flex;
+          align-items: center;
+          border: 1px solid rgba(196, 196, 196, 0.5);
+          padding: 12px;
+          border-radius: 5px;
+          flex: 1;
+          transition: 250ms border-color;
+
+          &:hover {
+            border-color: var(--primary);
+          }
+
+          &.active {
+            border-color: var(--primary);
+          }
+
+          &-icon {
+            background-color: rgba(196, 196, 196, 1);
+            width: 23px;
+            height: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: calc(1rem / var(--root-font-size));
+            transition: 250ms background-color;
+          }
+
+          &:hover .acc-grid-item-pump-option-icon {
+            background-color: var(--primary);
+          }
+
+          &.active .acc-grid-item-pump-option-icon {
+            background-color: var(--primary);
+          }
+
+          &-text {
+            font-size: calc(1.2rem / var(--root-font-size));
+            line-height: calc(1.6rem / var(--root-font-size));
+            text-align: center;
+            font-family: "Poppins Light", "Poppins";
+            font-weight: 300;
+          }
+        }
+
+        @media screen and (max-width: 460px) {
+          flex-direction: column;
+          gap: 1rem;
         }
       }
     }

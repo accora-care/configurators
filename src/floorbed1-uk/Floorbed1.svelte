@@ -7,6 +7,7 @@
   import SelectSideRails from "./Select/SelectSideRails.svelte";
   import SelectMobility from "./Select/SelectMobility.svelte";
   import SelectExtras from "./Select/SelectExtras.svelte";
+  import SelectMattresses from "./Select/SelectMattresses.svelte";
   import type { InitConfig } from "../Config.types";
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
@@ -27,6 +28,11 @@
     getSafetyMatProductCode,
     getSafetySleeveProductCode,
     getSideRailsProductCode,
+    getAlleviaComfortProductCode,
+    getAlleviaComfortFirmEdgeProductCode,
+    getAlleviaDuoProductCode,
+    getAlleviaDuoPlusProductCode,
+    getAlleviaSenseProductCode,
   } from "./getProductCode";
 
   export let config: InitConfig;
@@ -35,6 +41,7 @@
   let safetyDisplayValue = "None";
   let mobilityDisplayValue = "None";
   let extrasDisplayValue = "None";
+  let mattressesDisplayValue = "None";
 
   let bedProductCode = "";
   let sideRailsProductCode = "";
@@ -49,6 +56,11 @@
   let bedExtensionProductCode = "";
   let mattressExtensionFoamProductCode = "";
   let bedExtensionKitProductCode = "";
+  let alleviaComfortProductCode = "";
+  let alleviaComfortFirmEdgeProductCode = "";
+  let alleviaDuoProductCode = "";
+  let alleviaDuoPlusProductCode = "";
+  let alleviaSenseProductCode = "";
 
   configStore.subscribe((state) => {
     valueSideRails = getFabricSideRailsException(state) || state.sideRails;
@@ -79,6 +91,17 @@
         .filter((item) => !!item)
         .join(", ") || "None";
 
+    mattressesDisplayValue =
+      [
+        $configStore.alleviaComfort ? "Allevia Comfort" : null,
+        $configStore.alleviaComfortFirmEdge ? "Allevia Comfort FirmEdge" : null,
+        $configStore.alleviaDuo ? "Allevia Duo" : null,
+        $configStore.alleviaDuoPlus ? "Allevia Duo Plus" : null,
+        $configStore.alleviaSense ? "Allevia Sense" : null,
+      ]
+        .filter((item) => !!item)
+        .join(", ") || "None";
+
     bedProductCode = getBedProductCode();
     sideRailsProductCode = getSideRailsProductCode(state);
     bumpersProductCode = getBumpersProductCode(state);
@@ -90,8 +113,15 @@
     pumpHolderProductCode = getPumpHolderProductCode(state);
     mattressInfillProductCode = getMattressInfillProductCode(state);
     bedExtensionProductCode = getBedExtensionProductCode(state);
-    mattressExtensionFoamProductCode = getMattressExtensionFoamProductCode(state);
+    mattressExtensionFoamProductCode =
+      getMattressExtensionFoamProductCode(state);
     bedExtensionKitProductCode = getBedExtensionKitProductCode(state);
+    alleviaComfortProductCode = getAlleviaComfortProductCode(state);
+    alleviaComfortFirmEdgeProductCode =
+      getAlleviaComfortFirmEdgeProductCode(state);
+    alleviaDuoProductCode = getAlleviaDuoProductCode(state);
+    alleviaDuoPlusProductCode = getAlleviaDuoPlusProductCode(state);
+    alleviaSenseProductCode = getAlleviaSenseProductCode(state);
   });
 </script>
 
@@ -131,6 +161,13 @@
           length={5}
         />
         <SelectExtras />
+        <CustomizationBlock
+          title="Mattresses"
+          targetSelectView="MATTRESSES"
+          value={mattressesDisplayValue}
+          length={5}
+        />
+        <SelectMattresses />
         <div
           class="reset-form"
           on:click={() => {
@@ -157,7 +194,8 @@
         },
         {
           label: "Side Rails",
-          value: "None" !== $configStore.sideRails ? $configStore.sideRails : null,
+          value:
+            "None" !== $configStore.sideRails ? $configStore.sideRails : null,
           code: sideRailsProductCode,
         },
         {
@@ -167,7 +205,8 @@
         },
         {
           label: "Safety Mat",
-          value: "None" !== $configStore.safetyMat ? $configStore.safetyMat :  null,
+          value:
+            "None" !== $configStore.safetyMat ? $configStore.safetyMat : null,
           code: safetyMatProductCode,
         },
         {
@@ -215,6 +254,31 @@
           value: $configStore.bedExtensionKit ? "Included" : null,
           code: bedExtensionKitProductCode,
         },
+        {
+          label: "Allevia Comfort",
+          value: $configStore.alleviaComfort ? "Included" : null,
+          code: alleviaComfortProductCode,
+        },
+        {
+          label: "Allevia Comfort FirmEdge",
+          value: $configStore.alleviaComfortFirmEdge ? "Included" : null,
+          code: alleviaComfortFirmEdgeProductCode,
+        },
+        {
+          label: "Allevia Duo",
+          value: $configStore.alleviaDuo ? "Included" : null,
+          code: alleviaDuoProductCode,
+        },
+        {
+          label: "Allevia Duo Plus",
+          value: $configStore.alleviaDuoPlus ? "Included" : null,
+          code: alleviaDuoPlusProductCode,
+        },
+        {
+          label: "Allevia Sense",
+          value: $configStore.alleviaSense ? "Included" : null,
+          code: alleviaSenseProductCode,
+        },
       ]}
     >
       <Preview />
@@ -256,7 +320,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size))
+      calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

@@ -5,12 +5,13 @@
   export let targetSelectView: SELECTOR_VIEW;
   import { configStore, SELECTOR_VIEW } from "./configStore";
 
-  $: disabled = ! length;
+  $: disabled = !length;
 
   import IconSafety from "./assets/icon-safety.svg";
   import IconSidePanels from "./assets/icon-sidepanels.svg";
   import IconMobility from "./assets/icon-mobility.svg";
   import IconExtras from "./assets/icon-extras.svg";
+  import IconMattress from "./assets/icon-mattress.svg";
   import Chevron from "./assets/chevron.svg";
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconSidePanels } = {
@@ -18,15 +19,17 @@
     SAFETY: IconSafety,
     MOBILITY: IconMobility,
     EXTRAS: IconExtras,
+    MATTRESSES: IconMattress,
   };
   const Icon = icons[targetSelectView];
 </script>
 
-<div class="acc-customization-select"
-  class:disabled={disabled}
+<div
+  class="acc-customization-select"
+  class:disabled
   class:active={$configStore.selectorView === targetSelectView}
   on:click={() => {
-    if (! disabled) {
+    if (!disabled) {
       configStore.update((s) => {
         return {
           ...s,
