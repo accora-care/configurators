@@ -7,9 +7,9 @@ export const getFabricSideRailsException = (state: StoreValues) => {
 }
 
 export const getJuniorPaddedSideRailsException = (state: StoreValues) => {
-	if (state.bedExtension || state.bedExtensionKit || state.mattressExtensionFoam) {
-		return "Not available with Bed Extension"
-	}
+  if (state.bedExtension || state.bedExtensionKit || state.mattressExtensionFoam) {
+    return "Not available with Bed Extension"
+  }
 
   return null;
 };
@@ -31,7 +31,7 @@ export const getSafetySleeveException = (state: StoreValues) => {
     return "Not available with mobility options";
   } else if (state.bedExtension || state.bedExtensionKit || state.mattressExtensionFoam) {
     return "Not available with Bed Extension"
-	}
+  }
 
   return null;
 };
@@ -41,7 +41,7 @@ export const getJuniorKitException = (state: StoreValues) => {
     return "Not available with mobility options";
   } else if (state.bedExtension || state.bedExtensionKit || state.mattressExtensionFoam) {
     return "Not available with Bed Extension"
-	}
+  }
 
   return null;
 };
@@ -71,7 +71,7 @@ export const getBedExtensionException = (state: StoreValues) => {
     return "Included with Bed Extension Kit";
   } else if (state.safetySleeve || state.juniorKit) {
     return "Not available with Safety Sleeve or JuniorKit";
-  }	else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
+  } else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
     return "Not available with Integrated Junior Padded Side Rails";
   }
 
@@ -83,7 +83,7 @@ export const getMattressExtensionFoamException = (state: StoreValues) => {
     return "Included with Bed Extension Kit";
   } else if (state.safetySleeve || state.juniorKit) {
     return "Not available with Safety Sleeve or JuniorKit";
-  }	else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
+  } else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
     return "Not available with Integrated Junior Padded Side Rails";
   }
 
@@ -93,9 +93,19 @@ export const getMattressExtensionFoamException = (state: StoreValues) => {
 export const getBedExtensionKitException = (state: StoreValues) => {
   if (state.safetySleeve || state.juniorKit) {
     return "Not available with Safety Sleeve or JuniorKit";
-  }	else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
+  } else if ("Integrated Junior Padded Side Rails" === state.sideRails) {
     return "Not available with Integrated Junior Padded Side Rails";
   }
 
   return null;
 };
+
+// Mattresses
+
+export const getMattressesException = (state: StoreValues) => {
+  if (state.juniorKit) {
+    return "Not available with JuniorKit";
+  }
+
+  return null;
+}

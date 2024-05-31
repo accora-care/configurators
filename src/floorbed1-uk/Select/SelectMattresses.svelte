@@ -4,6 +4,14 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
+
+  import { getMattressesException } from "../isOptionAllowed";
+
+  let mattressesException = "";
+
+  configStore.subscribe((state) => {
+    mattressesException = getMattressesException(state);
+  });
 </script>
 
 <SelectionGrid
@@ -11,10 +19,11 @@
   ukStyle={true}
 >
   <SelectionGridItem
+    notAllowedMessage={mattressesException}
     active={$configStore.mattresses === "Allevia Comfort"}
     title="Allevia Comfort"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-    learnMoreUrl="/bed-accessories/pump-holder"
+    description="This mattress has a base layer of high-density foam for support, with a top layer of soft, pressure-reducing visco foam."
+    learnMoreUrl="/mattresses/allevia-comfort"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -35,8 +44,8 @@
   <SelectionGridItem
     active={$configStore.mattresses === "Allevia Comfort FirmEdge"}
     title="Allevia Comfort FirmEdge"
-    description="Fits down both sides of a standard mattress in between the mattress and the side rail."
-    learnMoreUrl="/bed-accessories/pump-holder"
+    description="This mattress has a base layer of high-density foam for support, with a top layer of soft, pressure-reducing visco foam. It also features a firm edge which offers more support for transfers."
+    learnMoreUrl="/mattresses/allevia-comfort-firmedge"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -59,8 +68,8 @@
   <SelectionGridItem
     active={$configStore.mattresses === "Allevia Duo"}
     title="Allevia Duo"
-    description="Allows our FloorBed to be extended by 200mm length."
-    learnMoreUrl="/bed-accessories/pump-holder"
+    description="This mattress uses a step-up/step-down hybrid foam system with extra quiet pump and foam-filled alternating cells that provide comfort as well as therapy."
+    learnMoreUrl="/mattresses/allevia-duo"
     ukStyle={true}
     visible={false}
     pumpOptions={true}
@@ -87,10 +96,11 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={mattressesException}
     active={$configStore.mattresses === "Allevia Duo Plus"}
     title="Allevia Duo Plus"
-    description="Includes mattress frame extension and mattress extension foam to provide an  extra 200mm in length."
-    learnMoreUrl="/bed-accessories/pump-holder"
+    description="This mattress uses a step-up/step-down hybrid foam system with foam-filled alternating cells. It features a heel slope to minimise surface contact and a top layer of visco foam for comfort."
+    learnMoreUrl="/mattresses/allevia-duo-plus"
     ukStyle={true}
     visible={false}
     pumpOptions={true}
@@ -118,10 +128,12 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={mattressesException}
     active={$configStore.mattresses === "Allevia Sense"}
     title="Allevia Sense"
-    description="xxx"
-    learnMoreUrl="/bed-accessories/pump-holder"
+    description="This mattress uses a dynamic mattress system with alternating cells for pressure relief. The cells are 18 cm deep to provide deep immersion, and the heel slope is created by lower heel cells.
+    "
+    learnMoreUrl="/mattresses/allevia-sense"
     ukStyle={true}
     visible={false}
     onClick={() => {
