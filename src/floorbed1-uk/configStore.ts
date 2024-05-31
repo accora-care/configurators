@@ -31,6 +31,7 @@ interface LeverStoreValueOption extends StoreValueOption {
 export type SideRailStoreValue = "Fabric Side Rails" | "Integrated Junior Padded Side Rails" | "None";
 export type SafetyMatStoreValue = "High Safety Mat" | "High Safety Mat with Slide Sheets" | "None";
 export type LeverStoreValue = "Bed Lever" | "Short Bed Lever" | "None";
+export type MattressesValue = "Allevia Comfort" | "Allevia Comfort FirmEdge" | "Allevia Duo" | "Allevia Duo Plus" | "Allevia Sense" | "None";
 
 export interface StoreValues {
 	sideRails: SideRailStoreValue;
@@ -45,11 +46,7 @@ export interface StoreValues {
 	bedExtension: boolean;
 	mattressExtensionFoam: boolean;
 	bedExtensionKit: boolean;
-	alleviaComfort: boolean;
-	alleviaComfortFirmEdge: boolean;
-	alleviaDuo: boolean;
-	alleviaDuoPlus: boolean;
-	alleviaSense: boolean;
+	mattresses: MattressesValue;
 	pumpOption: 'withPump' | 'withoutPump';
 	selectorView: SELECTOR_VIEW | null;
 };
@@ -67,11 +64,7 @@ export const initVal: StoreValues = {
 	bedExtension: false,
 	mattressExtensionFoam: false,
 	bedExtensionKit: false,
-	alleviaComfort: false,
-	alleviaComfortFirmEdge: false,
-	alleviaDuo: false,
-	alleviaDuoPlus: false,
-	alleviaSense: false,
+	mattresses: "None",
 	pumpOption: 'withPump',
 	selectorView: null,
 };

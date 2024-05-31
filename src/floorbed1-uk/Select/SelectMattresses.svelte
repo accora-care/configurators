@@ -11,7 +11,7 @@
   ukStyle={true}
 >
   <SelectionGridItem
-    active={$configStore.alleviaComfort}
+    active={$configStore.mattresses === "Allevia Comfort"}
     title="Allevia Comfort"
     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
     learnMoreUrl="/bed-accessories/pump-holder"
@@ -21,7 +21,8 @@
       configStore.update((s) => {
         return {
           ...s,
-          alleviaComfort: !s.alleviaComfort,
+          mattresses:
+            "Allevia Comfort" !== s.mattresses ? "Allevia Comfort" : "None",
         };
       });
     }}
@@ -32,7 +33,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.alleviaComfortFirmEdge}
+    active={$configStore.mattresses === "Allevia Comfort FirmEdge"}
     title="Allevia Comfort FirmEdge"
     description="Fits down both sides of a standard mattress in between the mattress and the side rail."
     learnMoreUrl="/bed-accessories/pump-holder"
@@ -42,7 +43,10 @@
       configStore.update((s) => {
         return {
           ...s,
-          alleviaComfortFirmEdge: !s.alleviaComfortFirmEdge,
+          mattresses:
+            "Allevia Comfort FirmEdge" !== s.mattresses
+              ? "Allevia Comfort FirmEdge"
+              : "None",
         };
       });
     }}
@@ -53,7 +57,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.alleviaDuo}
+    active={$configStore.mattresses === "Allevia Duo"}
     title="Allevia Duo"
     description="Allows our FloorBed to be extended by 200mm length."
     learnMoreUrl="/bed-accessories/pump-holder"
@@ -72,7 +76,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          alleviaDuo: !s.alleviaDuo,
+          mattresses: "Allevia Duo" !== s.mattresses ? "Allevia Duo" : "None",
         };
       });
     }}
@@ -83,7 +87,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.alleviaDuoPlus}
+    active={$configStore.mattresses === "Allevia Duo Plus"}
     title="Allevia Duo Plus"
     description="Includes mattress frame extension and mattress extension foam to provide an  extra 200mm in length."
     learnMoreUrl="/bed-accessories/pump-holder"
@@ -102,7 +106,8 @@
       configStore.update((s) => {
         return {
           ...s,
-          alleviaDuoPlus: !s.alleviaDuoPlus,
+          mattresses:
+            "Allevia Duo Plus" !== s.mattresses ? "Allevia Duo Plus" : "None",
         };
       });
     }}
@@ -113,7 +118,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.alleviaSense}
+    active={$configStore.mattresses === "Allevia Sense"}
     title="Allevia Sense"
     description="xxx"
     learnMoreUrl="/bed-accessories/pump-holder"
@@ -123,7 +128,8 @@
       configStore.update((s) => {
         return {
           ...s,
-          alleviaSense: !s.alleviaSense,
+          mattresses:
+            "Allevia Sense" !== s.mattresses ? "Allevia Sense" : "None",
         };
       });
     }}
