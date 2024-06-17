@@ -1,0 +1,1 @@
+export const depths = [16, 18, 20];
