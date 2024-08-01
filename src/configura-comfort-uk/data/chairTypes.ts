@@ -35,4 +35,4 @@ export const chairTypes: ChairType[] = [
   },
   { type: "Configura Mediatric", width: 24, height: 16, depth: 20 },
   { type: "Configura Mediatric", width: 26, height: 16, depth: 20 },
-] as const;
+];
