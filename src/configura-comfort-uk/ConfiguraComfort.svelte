@@ -13,6 +13,13 @@
   import SelectArmrests from "./Select/SelectArmrests.svelte";
   import SelectFabric from "./Select/SelectFabric.svelte";
   import SelectSize from "./Select/SelectSize.svelte";
+  import {
+    getSizeProductCode,
+    getPressureProductCode,
+    getBackrestProductCode,
+    getLateralSupportProductCode,
+    getProfiledHeadrestProductCode,
+  } from "./getProductCode";
 
   export let config: InitConfig;
 
@@ -20,12 +27,18 @@
   let postureDisplayValue = "Waterfall";
   let accessoriesDisplayValue = "none";
 
+  let sizeProductCode = "";
+  let pressureProductCode = "";
+  let backrestProductCode = "";
+  let lateralSupportProductCode = "";
+  let profiledHeadrestProductCode = "";
+
   configStore.subscribe((state) => {
     sizeDisplayValue =
       [
-        $configStore.width ? `Width ${$configStore.width}"` : null,
-        $configStore.depth ? `Depth ${$configStore.depth}"` : null,
+        $configStore.chairType,
         $configStore.height ? `Height ${$configStore.height}"` : null,
+        $configStore.depth ? `Depth ${$configStore.depth}"` : null,
       ]
         .filter((item) => !!item)
         .join(", ") || "Not selected";
@@ -33,18 +46,24 @@
     postureDisplayValue =
       [
         $configStore.backrest,
-        $configStore.lateralSupport !== "None" ? $configStore.lateralSupport : null,
+        $configStore.lateralSupport !== "None"
+          ? $configStore.lateralSupport
+          : null,
       ]
         .filter((item) => !!item)
         .join(", ") || "None";
 
     accessoriesDisplayValue =
-      [
-        $configStore.profiledHeadrest ? "Profiled Headrest" : null,
-      ]
+      [$configStore.profiledHeadrest ? "Profiled Headrest" : null]
         .filter((item) => !!item)
         .join(", ") || "None";
-});
+
+    sizeProductCode = getSizeProductCode(state);
+    pressureProductCode = getPressureProductCode(state);
+    backrestProductCode = getBackrestProductCode(state);
+    lateralSupportProductCode = getLateralSupportProductCode(state);
+    profiledHeadrestProductCode = getProfiledHeadrestProductCode(state);
+  });
 </script>
 
 <ConfiguratorContainer>
@@ -115,22 +134,30 @@
         {
           label: "Size",
           value: sizeDisplayValue,
+          code: sizeProductCode,
         },
         {
           label: "Pressure",
           value: $configStore.pressure,
+          code: pressureProductCode,
         },
         {
           label: "Backrest",
-          value: postureDisplayValue,
+          value: $configStore.backrest,
+          code: backrestProductCode,
         },
         {
           label: "Lateral support",
-          value: "Lateral Support Wedges" === $configStore.lateralSupport ? "Lateral Support Wedges" : null,
+          value:
+            "Lateral Support Wedges" === $configStore.lateralSupport
+              ? "Lateral Support Wedges"
+              : null,
+          code: lateralSupportProductCode,
         },
         {
           label: "Profiled Headrest",
           value: $configStore.profiledHeadrest ? "Included" : null,
+          code: profiledHeadrestProductCode,
         },
         {
           label: "Armrests",
@@ -177,7 +204,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size))
+      calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>
