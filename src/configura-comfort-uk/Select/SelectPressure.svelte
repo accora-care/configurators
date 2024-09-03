@@ -2,8 +2,14 @@
   import SelectionGrid from "../../components/SelectionGrid.svelte";
   import SelectionGridItem from "../../components/SelectionGridItem.svelte";
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
-
   import { configStore } from "../configStore";
+  import { getPressureCareOptionsException } from "../isOptionAllowed";
+
+  let pressureCareOptionsException = "";
+
+  configStore.subscribe((state) => {
+    pressureCareOptionsException = getPressureCareOptionsException(state);
+  });
 
   const ukStyle = true;
 </script>
@@ -33,6 +39,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={pressureCareOptionsException}
     active={$configStore.pressure === "CushionAir"}
     visible={false}
     title="CushionAir"
@@ -54,6 +61,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    notAllowedMessage={pressureCareOptionsException}
     active={$configStore.pressure === "Allevia Duo Cushion"}
     visible={false}
     title="Allevia Duo Cushion"
