@@ -153,14 +153,14 @@
   }
 
   .acc-modal-header {
+    border-bottom: 1px solid var(--border-color);
     padding: 3em;
-
     padding-bottom: 0;
+
     @media screen and (max-width: 768px) {
       padding: 2em;
       padding-bottom: 0;
     }
-    border-bottom: 1px solid var(--border-color);
   }
   .acc-modal-wrapper {
     --primary: rgba(0, 136, 113, 1);
@@ -188,10 +188,11 @@
       color: var(--text-primary);
       opacity: 0.7;
       cursor: pointer;
+      text-decoration: none;
+
       &:hover {
         opacity: 1;
       }
-      text-decoration: none;
     }
   }
   .acc-modal-scrollarea {
@@ -248,11 +249,12 @@
   .acc-modal-content,
   .acc-thank-you-title,
   .acc-modal-footer {
+    max-width: 900px;
     padding: 3em;
+
     @media screen and (max-width: 768px) {
       padding: 2em;
     }
-    max-width: 900px;
   }
   .acc-thank-you-title {
     padding-bottom: 0 !important;

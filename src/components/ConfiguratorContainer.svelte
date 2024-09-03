@@ -7,9 +7,8 @@
     font-family: "Poppins Regular", "Poppins";
     box-sizing: border-box;
     position: relative;
-    * {
-      box-sizing: border-box;
-    }
+    display: flex;
+
     --primary: rgba(0, 136, 113, 1);
     --primary-hover: rgba(25, 162, 144, 1);
     --border-color: rgba(234, 234, 234, 1);
@@ -21,7 +20,11 @@
     p {
       margin-bottom: 0;
     }
-    display: flex;
+
+    * {
+      box-sizing: border-box;
+    }
+
     @media screen and (max-width: 860px) {
       flex-direction: column;
     }
