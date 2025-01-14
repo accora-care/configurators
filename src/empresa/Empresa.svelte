@@ -32,6 +32,12 @@
         .filter((item) => !!item)
         .join(", ") || "None";
   });
+
+  const resetOptions = () => {
+    configStore.update((s) => {
+      return initVal;
+    });
+  };
 </script>
 
 <ConfiguratorContainer>
@@ -80,14 +86,7 @@
           length={2}
         />
         <SelectAccessories />
-        <div
-          class="reset-form"
-          on:click={() => {
-            configStore.update((s) => {
-              return initVal;
-            });
-          }}
-        >
+        <div class="reset-form" on:click={() => resetOptions()}>
           Reset to default options
         </div>
       </div>
