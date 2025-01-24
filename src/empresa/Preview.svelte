@@ -4,7 +4,6 @@
 
   import { configStore } from "./configStore";
   import { isSidePanelAllowed } from "./isSidePanelAllowed";
-  import { assistBarLongException } from "./isLongBarAllowed";
 </script>
 
 <PreviewFrame>
@@ -25,7 +24,7 @@
       alt={`bedding`}
     />
   {/if}
-  {#if $configStore.assistBar === "Long" && !assistBarLongException($configStore)}
+  {#if $configStore.assistBar === "Long"}
     <Img
       src={`/images/accessory/Accessory - Assist Bar ${$configStore.assistBar}.png`}
       alt={`bedding`}

@@ -6,20 +6,12 @@
   export let value: string;
 
   import { configStore } from "../configStore";
-  import { assistBarLongException } from "../isLongBarAllowed";
-
-  let assistBarException = "";
-
-  configStore.subscribe((state) => {
-    assistBarException = assistBarLongException(state);
-  });
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ASSIST_BAR"}>
   <SelectionGridItem
     active={value === "Long"}
     title={"Long"}
-    notAllowedMessage={assistBarException}
     onClick={() => {
       configStore.update((s) => {
         return {
