@@ -23,12 +23,20 @@
   let availableFabrics = [];
 
   $: isFabricBedVariant = fabricBedVariants.includes($configStore.variant);
-  
+
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
     availableColors = bedVariants.wooden[state.variant] || [];
     availableFabrics = bedVariants.fabric[state.variant] || [];
   });
+
+  const resetOptions = () => {
+    initVal.selectorView = $configStore.selectorView;
+
+    configStore.update((s) => {
+      return initVal;
+    });
+  };
 </script>
 
 <ConfiguratorContainer>
@@ -42,8 +50,9 @@
         <CustomizationBlock
           title="Headboard & Footboard"
           targetSelectView="HEADBOARD"
-          value={`${$configStore.variant} – ${isFabricBedVariant ? 'Fabric' : 'Wooden'}`}
-          length={Object.keys(bedVariants.wooden).length + Object.keys(bedVariants.fabric).length}
+          value={`${$configStore.variant} – ${isFabricBedVariant ? "Fabric" : "Wooden"}`}
+          length={Object.keys(bedVariants.wooden).length +
+            Object.keys(bedVariants.fabric).length}
         />
         <SelectHeadboard />
         <CustomizationBlock
@@ -69,16 +78,7 @@
         />
         <SelectSide />
 
-        <div
-          class="reset-form"
-          on:click={() => {
-            initVal.selectorView = $configStore.selectorView;
-
-            configStore.update((s) => {
-              return initVal;
-            });
-          }}
-        >
+        <div class="reset-form" on:click={() => resetOptions()}>
           Reset to default options
         </div>
       </div>
@@ -141,7 +141,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size))
+      calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

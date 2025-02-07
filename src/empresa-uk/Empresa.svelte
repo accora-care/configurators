@@ -33,11 +33,21 @@
     availableFabrics = bedVariants.fabric[state.variant] || [];
     accessoriesDisplayValue =
       [
-        $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
-        $configStore.fabricSideRails === "Included" ? "Fabric side rails" : null,
-        $configStore.foldingSideRails === "Included" ? "Folding side rails" : null,
-        $configStore.foldingSideRailsWithBumper === "Included" ? "Folding side rails with bumper" : null,
-        $configStore.widthAdjustmentKit === "Included" ? "Width adjustment kit" : null,
+        $configStore.proTectSideRail === "Included"
+          ? "ProTect side rail"
+          : null,
+        $configStore.fabricSideRails === "Included"
+          ? "Fabric side rails"
+          : null,
+        $configStore.foldingSideRails === "Included"
+          ? "Folding side rails"
+          : null,
+        $configStore.foldingSideRailsWithBumper === "Included"
+          ? "Folding side rails with bumper"
+          : null,
+        $configStore.widthAdjustmentKit === "Included"
+          ? "Width adjustment kit"
+          : null,
         $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
         $configStore.liftingPole === "Included" ? "Lifting pole" : null,
         $configStore.safetyMat === "Included" ? "Safety mat" : null,
@@ -45,6 +55,14 @@
         .filter((item) => !!item)
         .join(", ") || "None";
   });
+
+  const resetOptions = () => {
+    initVal.selectorView = $configStore.selectorView;
+
+    configStore.update((s) => {
+      return initVal;
+    });
+  };
 </script>
 
 <ConfiguratorContainer>
@@ -58,8 +76,9 @@
         <CustomizationBlock
           title="Headboard & Footboard"
           targetSelectView="HEADBOARD"
-          value={`${$configStore.variant} – ${isFabricBedVariant ? 'Fabric' : 'Wooden'}`}
-          length={Object.keys(bedVariants.wooden).length + Object.keys(bedVariants.fabric).length}
+          value={`${$configStore.variant} – ${isFabricBedVariant ? "Fabric" : "Wooden"}`}
+          length={Object.keys(bedVariants.wooden).length +
+            Object.keys(bedVariants.fabric).length}
         />
         <SelectHeadboard />
         <CustomizationBlock
@@ -92,16 +111,7 @@
           length={9}
         />
         <SelectAccessories />
-        <div
-          class="reset-form"
-          on:click={() => {
-            initVal.selectorView = $configStore.selectorView;
-
-            configStore.update((s) => {
-              return initVal;
-            });
-          }}
-        >
+        <div class="reset-form" on:click={() => resetOptions()}>
           Reset to default options
         </div>
       </div>
@@ -128,12 +138,24 @@
           value:
             [
               $configStore.assistBar !== "None" ? `Bed Lever` : null,
-              $configStore.proTectSideRail === "Included" ? "ProTect side rail" : null,
-              $configStore.fabricSideRails === "Included" ? "Fabric side rails" : null,
-              $configStore.foldingSideRails === "Included" ? "Folding side rails" : null,
-              $configStore.foldingSideRailsWithBumper === "Included" ? "Folding side rails with bumper" : null,
-              $configStore.widthAdjustmentKit === "Included" ? "Width adjustment kit" : null,
-              $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
+              $configStore.proTectSideRail === "Included"
+                ? "ProTect side rail"
+                : null,
+              $configStore.fabricSideRails === "Included"
+                ? "Fabric side rails"
+                : null,
+              $configStore.foldingSideRails === "Included"
+                ? "Folding side rails"
+                : null,
+              $configStore.foldingSideRailsWithBumper === "Included"
+                ? "Folding side rails with bumper"
+                : null,
+              $configStore.widthAdjustmentKit === "Included"
+                ? "Width adjustment kit"
+                : null,
+              $configStore.bedWallBumper === "Included"
+                ? "Bed wall bumper"
+                : null,
               $configStore.liftingPole === "Included" ? "Lifting pole" : null,
               $configStore.safetyMat === "Included" ? "Safety mat" : null,
             ]
@@ -181,7 +203,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size)) calc(2.4rem / var(--root-font-size));
+    padding: calc(0.4rem / var(--root-font-size))
+      calc(2.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

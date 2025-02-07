@@ -5,7 +5,7 @@
   export let targetSelectView: SELECTOR_VIEW;
   import { configStore, SELECTOR_VIEW } from "./configStore";
 
-  $: disabled = ! length;
+  $: disabled = !length;
 
   import IconHeadboard from "./assets/icon-headboard.svg";
   import IconColor from "./assets/icon-color.svg";
@@ -22,14 +22,9 @@
     HEADBOARD: IconHeadboard,
   };
   const Icon = icons[targetSelectView];
-</script>
 
-<div
-  class="acc-customization-select"
-  class:disabled={disabled}
-  class:active={$configStore.selectorView === targetSelectView}
-  on:click={() => {
-    if (! disabled) {
+  const onConfigStoreUpdate = () => {
+    if (!disabled) {
       configStore.update((s) => {
         if (s.selectorView === "COLOR" || s.selectorView === "FABRIC") {
           // color/fabric was too long, collapsed color/fabric will not move the scroll, we do it manually
@@ -46,7 +41,15 @@
         };
       });
     }
-  }}
+  };
+</script>
+
+<div
+  class="acc-customization-select"
+  class:disabled
+  class:active={$configStore.selectorView === targetSelectView}
+  on:click={onConfigStoreUpdate}
+  on:keypress={onConfigStoreUpdate}
 >
   <div class="acc-customization-icon-container">
     <Icon class="acc-customization-icon-container__icon" />
