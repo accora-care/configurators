@@ -1,0 +1,18 @@
+export const colorsOrder = [
+  "Vicenza Oak",
+  "Natural Lancaster Oak",
+  "Lissa Oak",
+  "Tobacco Gladstone Oak",
+  "Black Brown Thermo Oak",
+  "Beige Grey Lorenzo Oak",
+  "Truffle Brown Davos Oak",
+  "Natural Dijon Walnut",
+  "Standard Walnut",
+  "Lincoln Walnut",
+  "Polar Aland Pine",
+  "Bavarian Beech",
+  "Grey Sacramento Oak",
+  "Brown Tonsberg Oak",
+  "Anthracite Fineline Metallic",
+  "Sand Orleans Oak",
+];
