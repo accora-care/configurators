@@ -1,12 +1,12 @@
 import type { HubspotFormConfig, InitConfig } from "../Config.types";
-import App from "./Empresa.svelte";
+import App from "./Contesa.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora Empresa",
+  mainTitle: "Customize your Accora Contesa",
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 
-export const EmpresaConfigurator = (
+export const ContesaConfigurator = (
   targetId: string,
   config: InitConfig,
   hubspotFormConfig: HubspotFormConfig
@@ -25,5 +25,5 @@ export const EmpresaConfigurator = (
   return app;
 };
 
-(window as any).EmpresaConfigurator = EmpresaConfigurator;
-export default EmpresaConfigurator;
+(window as any).ContesaConfigurator = ContesaConfigurator;
+export default ContesaConfigurator;

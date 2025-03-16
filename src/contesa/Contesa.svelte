@@ -2,10 +2,9 @@
   import { bedVariants } from "./data/bedVariants";
   import { configStore, initVal } from "./configStore";
   import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
-  import SelectPreviewFabric from "./Select/SelectPreviewFabric.svelte";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
-  // import SelectAssistBar from "./Select/SelectAssistBar.svelte";
+  import SelectAssisBar from "./Select/SelectAssistBar.svelte";
   import SelectAccessories from "./Select/SelectAccessories.svelte";
   import SelectSide from "./Select/SelectSide.svelte";
   import SelectHeadboard from "./Select/SelectHeadboard.svelte";
@@ -18,37 +17,15 @@
 
   export let config: InitConfig;
 
-  const fabricBedVariants = Object.keys(bedVariants.fabric);
-
   let valueSidePanels = "";
   let accessoriesDisplayValue = "none";
   let availableColors = [];
-  let availableFabrics = [];
-
-  $: isFabricBedVariant = fabricBedVariants.includes($configStore.variant);
 
   configStore.subscribe((state) => {
     valueSidePanels = sidePanelExceptionReason(state) || state.sidePanel;
-    availableColors = bedVariants.wooden[state.variant] || [];
-    availableFabrics = bedVariants.fabric[state.variant] || [];
+    availableColors = bedVariants[state.variant] || [];
     accessoriesDisplayValue =
       [
-        $configStore.proTectSideRail === "Included"
-          ? "ProTect side rail"
-          : null,
-        $configStore.fabricSideRails === "Included"
-          ? "Fabric side rails"
-          : null,
-        $configStore.foldingSideRails === "Included"
-          ? "Folding side rails"
-          : null,
-        $configStore.foldingSideRailsWithBumper === "Included"
-          ? "Folding side rails with bumper"
-          : null,
-        $configStore.widthAdjustmentKit === "Included"
-          ? "Width adjustment kit"
-          : null,
-        $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
         $configStore.liftingPole === "Included" ? "Lifting pole" : null,
         $configStore.safetyMat === "Included" ? "Safety mat" : null,
       ]
@@ -57,8 +34,6 @@
   });
 
   const resetOptions = () => {
-    initVal.selectorView = $configStore.selectorView;
-
     configStore.update((s) => {
       return initVal;
     });
@@ -69,32 +44,25 @@
   <PreviewContainer>
     <Preview />
   </PreviewContainer>
-
-  <div id="acc-empresa-uk" class="acc-content">
+  contesa
+  <div id="acc-contesa" class="acc-content">
     <div class="acc-form">
+      <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
-          title="Headboard & Footboard"
+          title="Headboard"
           targetSelectView="HEADBOARD"
-          value={`${$configStore.variant} – ${isFabricBedVariant ? "Fabric" : "Wooden"}`}
-          length={Object.keys(bedVariants.wooden).length +
-            Object.keys(bedVariants.fabric).length}
+          value={$configStore.variant}
+          length={Object.keys(bedVariants).length}
         />
         <SelectHeadboard />
         <CustomizationBlock
-          title="Wood Finish"
+          title="Color"
           targetSelectView="COLOR"
           value={$configStore.color}
           length={availableColors.length}
         />
         <SelectPreviewColor colors={availableColors} />
-        <CustomizationBlock
-          title="Fabric Finish"
-          targetSelectView="FABRIC"
-          value={$configStore.fabric}
-          length={availableFabrics.length}
-        />
-        <SelectPreviewFabric fabrics={availableFabrics} />
 
         <CustomizationBlock
           title="Side Panels"
@@ -103,59 +71,52 @@
           length={2}
         />
         <SelectSide />
+        <CustomizationBlock
+          title="Assist Bar"
+          targetSelectView="ASSIST_BAR"
+          value={$configStore.assistBar}
+          length={2}
+        />
+        <SelectAssisBar bind:value={$configStore.assistBar} />
 
         <CustomizationBlock
           title="Accessories"
           targetSelectView="ACCESSORIES"
           value={accessoriesDisplayValue}
-          length={9}
+          length={2}
         />
+        SelectAccessories
         <SelectAccessories />
+        SelectAccessories
         <div class="reset-form" on:click={() => resetOptions()}>
           Reset to default options
         </div>
       </div>
     </div>
     <Footer
-      title="Empresa (UK)"
+      title="Empresa"
       {config}
-      ukStyle={true}
       descriptionFormField={[
         {
           label: "Headboard and footboard",
           value: $configStore.variant,
         },
         {
-          label: isFabricBedVariant ? "Fabric Finish" : "Wood finish",
-          value: isFabricBedVariant ? $configStore.fabric : $configStore.color,
+          label: "Wood finish",
+          value: $configStore.color,
         },
         {
           label: "Side panel",
           value: valueSidePanels,
         },
         {
-          label: "Accessories",
+          label: "Accessories - assist bar",
+          value: $configStore.assistBar,
+        },
+        {
+          label: "Accessories - other",
           value:
             [
-              $configStore.assistBar !== "None" ? `Bed Lever` : null,
-              $configStore.proTectSideRail === "Included"
-                ? "ProTect side rail"
-                : null,
-              $configStore.fabricSideRails === "Included"
-                ? "Fabric side rails"
-                : null,
-              $configStore.foldingSideRails === "Included"
-                ? "Folding side rails"
-                : null,
-              $configStore.foldingSideRailsWithBumper === "Included"
-                ? "Folding side rails with bumper"
-                : null,
-              $configStore.widthAdjustmentKit === "Included"
-                ? "Width adjustment kit"
-                : null,
-              $configStore.bedWallBumper === "Included"
-                ? "Bed wall bumper"
-                : null,
               $configStore.liftingPole === "Included" ? "Lifting pole" : null,
               $configStore.safetyMat === "Included" ? "Safety mat" : null,
             ]
@@ -184,7 +145,6 @@
   }
 
   .acc-form {
-    background: #fff;
     box-shadow: var(--box-shadow-block);
     border-radius: var(--radius);
     overflow: hidden;
@@ -203,8 +163,8 @@
     }
   }
   .acc-form-content {
-    padding: calc(0.4rem / var(--root-font-size))
-      calc(2.4rem / var(--root-font-size));
+    padding: calc(2.4rem / var(--root-font-size));
+    padding-bottom: calc(0.4rem / var(--root-font-size));
     border-radius: 0 0 var(--radius) var(--radius);
   }
 </style>

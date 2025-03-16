@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "deploy": "yarn build && node gh-pages",
-    "build:embed:test": "rollup -c rollup.config.all.js && rollup -c rollup.config.empresa.js && rollup -c rollup.config.empresa-uk.js && rollup -c rollup.config.altida-uk.js && rollup -c rollup.config.floorbed1.js && rollup -c rollup.config.floorbed1-uk.js && rollup -c rollup.config.configura-advance.js && rollup -c rollup.config.configura-advance-uk.js && rollup -c rollup.config.configura-comfort-uk.js",
+    "build:embed:test": "rollup -c rollup.config.all.js && rollup -c rollup.config.contesa.js && rollup -c rollup.config.empresa.js && rollup -c rollup.config.empresa-uk.js && rollup -c rollup.config.altida-uk.js && rollup -c rollup.config.floorbed1.js && rollup -c rollup.config.floorbed1-uk.js && rollup -c rollup.config.configura-advance.js && rollup -c rollup.config.configura-advance-uk.js && rollup -c rollup.config.configura-comfort-uk.js",
     "build:embed": "yarn build:embed:test && git add . && git commit -m 'new build'",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",

@@ -1,15 +1,12 @@
 import type { InitConfig } from "../Config.types";
-import App from "./Empresa.svelte";
+import App from "./Contesa.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora FloorBed",
+  mainTitle: "Customize your Accora Contesa",
   bookADemoHref: "https://accora.care/book-a-join-visit",
 };
 
-export const EmpresaConfigurator = (
-  targetId: string,
-  config: InitConfig,
-) => {
+export const ContesaConfigurator = (targetId: string, config: InitConfig) => {
   const app = new App({
     target: document.getElementById(targetId),
     props: {
@@ -23,5 +20,5 @@ export const EmpresaConfigurator = (
   return app;
 };
 
-(window as any).EmpresaConfigurator = EmpresaConfigurator;
-export default EmpresaConfigurator;
+(window as any).ContesaConfigurator = ContesaConfigurator;
+export default ContesaConfigurator;

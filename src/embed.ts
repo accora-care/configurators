@@ -1,7 +1,13 @@
-import type { HubspotFormConfig, CognitoFormConfig, InitConfig } from "./Config.types";
+import type {
+  HubspotFormConfig,
+  CognitoFormConfig,
+  InitConfig,
+} from "./Config.types";
 import ConfiguraAdvance from "./configura-advance/ConfiguraAdvance.svelte";
 import ConfiguraAdvanceUK from "./configura-advance-uk/ConfiguraAdvance.svelte";
 import ConfiguraComfortUK from "./configura-comfort-uk/ConfiguraComfort.svelte";
+import Contesa from "./contesa/Contesa.svelte";
+import ContesaUK from "./contesa-uk/Contesa.svelte";
 import Empresa from "./empresa/Empresa.svelte";
 import EmpresaUK from "./empresa-uk/Empresa.svelte";
 import AltidaUK from "./altida-uk/Altida.svelte";
@@ -70,6 +76,29 @@ export const AccoraFloorbedOneUK = (
 };
 
 (window as any).AccoraFloorbedOneUK = AccoraFloorbedOneUK;
+
+/**
+ * Contesa
+ */
+export const ContesaConfigurator = (
+  targetId: string,
+  config: InitConfig,
+  hubspotFormConfig: HubspotFormConfig = DEFAULT_HUBSPOT_CONFIG
+) => {
+  const app = new Contesa({
+    target: document.getElementById(targetId),
+    props: {
+      config: {
+        ...config,
+        mainTitle: "Customize your Accora Contesa",
+        bookADemoHref: "https://us.accora.care/book-a-demo",
+        hubspotFormConfig,
+      },
+    },
+  });
+
+  return app;
+};
 
 /**
  * Empresa
@@ -213,6 +242,7 @@ export const ConfiguraComfortUKConfigurator = (
 };
 
 (window as any).AccoraConfigurators = {
+  Contesa: ContesaConfigurator,
   Empresa: EmpresaConfigurator,
   EmpresaUK: EmpresaUKConfigurator,
   AltidaUK: AltidaUKConfigurator,
