@@ -44,6 +44,20 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    active={value === "Folding"}
+    title={"Folding assist bars"}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          assistBar: "Folding",
+        };
+      });
+    }}
+  >
+    Folding assist bars
+  </SelectionGridItem>
+  <SelectionGridItem
     active={value === "None"}
     title={"None"}
     onClick={() => {

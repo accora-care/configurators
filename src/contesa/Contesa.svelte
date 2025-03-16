@@ -75,7 +75,7 @@
           title="Assist Bar"
           targetSelectView="ASSIST_BAR"
           value={$configStore.assistBar}
-          length={2}
+          length={3}
         />
         <SelectAssisBar bind:value={$configStore.assistBar} />
 
@@ -83,7 +83,7 @@
           title="Accessories"
           targetSelectView="ACCESSORIES"
           value={accessoriesDisplayValue}
-          length={2}
+          length={3}
         />
         SelectAccessories
         <SelectAccessories />

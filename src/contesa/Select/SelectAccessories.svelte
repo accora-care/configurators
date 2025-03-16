@@ -42,6 +42,22 @@
       alt={"Lifting pole"}
     />
   </SelectionGridItem>
+
+  <SelectionGridItem
+    active={$configStore.lengthExtension === "Included"}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          lengthExtension:
+            s.lengthExtension === "Included" ? "Not included" : "Included",
+        };
+      });
+    }}
+    title="length extension"
+  >
+    Length extension
+  </SelectionGridItem>
 </SelectionGrid>
 
 <style lang="scss">
