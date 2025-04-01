@@ -44,6 +44,7 @@
   </SelectionGridItem>
 
   <SelectionGridItem
+    visible={false}
     active={$configStore.lengthExtension === "Included"}
     onClick={() => {
       configStore.update((s) => {

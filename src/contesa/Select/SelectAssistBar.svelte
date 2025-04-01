@@ -44,6 +44,7 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    visible={false}
     active={value === "Folding"}
     title={"Folding assist bars"}
     onClick={() => {

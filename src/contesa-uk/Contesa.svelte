@@ -69,7 +69,7 @@
   <PreviewContainer>
     <Preview />
   </PreviewContainer>
-  contesa-uk
+
   <div id="acc-contesa-uk" class="acc-content">
     <div class="acc-form">
       <div class="acc-form-content">

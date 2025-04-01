@@ -44,7 +44,7 @@
   <PreviewContainer>
     <Preview />
   </PreviewContainer>
-  contesa
+
   <div id="acc-contesa" class="acc-content">
     <div class="acc-form">
       <FormTitle title={config.mainTitle} />
@@ -85,9 +85,9 @@
           value={accessoriesDisplayValue}
           length={3}
         />
-        SelectAccessories
+
         <SelectAccessories />
-        SelectAccessories
+
         <div class="reset-form" on:click={() => resetOptions()}>
           Reset to default options
         </div>

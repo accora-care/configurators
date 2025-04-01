@@ -10,28 +10,6 @@
   visible={$configStore.selectorView === "ACCESSORIES"}
   ukStyle={true}
 >
-  <!-- <SelectionGridItem
-    active={$configStore.proTectSideRail === "Included"}
-    visible={false}
-    title="ProTect Side Rail"
-    description="A concealed side rail system incorporating mesh and integrated padding."
-    learnMoreUrl="/bed-accessories/protect-siderail"
-    ukStyle={true}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          proTectSideRail:
-            s.proTectSideRail === "Included" ? "Not included" : "Included",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/Protect Rails - preview.png`}
-      alt={"ProTect Side Rail"}
-    />
-  </SelectionGridItem> -->
   <SelectionGridItem
     active={$configStore.fabricSideRails === "Included"}
     title="Fabric Side Rails"
@@ -54,52 +32,7 @@
       alt={"Fabric Side Rails"}
     />
   </SelectionGridItem>
-  <!-- <SelectionGridItem
-    active={$configStore.foldingSideRails === "Included"}
-    title="Folding Side Rails"
-    description="Folding side rails  intended to help to create a safer environment for the bed user."
-    learnMoreUrl="/bed-accessories/folding-side-rails"
-    ukStyle={true}
-    visible={false}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          foldingSideRails:
-            s.foldingSideRails === "Included" ? "Not included" : "Included",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/Folding Side Rails - preview.png`}
-      alt={"Folding Side Rails"}
-    />
-  </SelectionGridItem> -->
-  <!-- <SelectionGridItem
-    active={$configStore.foldingSideRailsWithBumper === "Included"}
-    title="Folding Side Rails with Bumper"
-    description="The folding side rail bumpers offer a soft padded surface to reduce the risk of injury."
-    learnMoreUrl="/bed-accessories/folding-side-rail-bumpers"
-    ukStyle={true}
-    visible={false}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          foldingSideRailsWithBumper:
-            s.foldingSideRailsWithBumper === "Included"
-              ? "Not included"
-              : "Included",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/Folding Side Rails with Bumper - preview.png`}
-      alt={"Folding Side Rails with Bumper"}
-    />
-  </SelectionGridItem> -->
+
   <SelectionGridItem
     active={$configStore.assistBar === "Short"}
     title={"Bed Lever"}
