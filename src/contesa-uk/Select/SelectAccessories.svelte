@@ -6,8 +6,11 @@
   import { configStore } from "../configStore";
 </script>
 
-<SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"} ukStyle={true}>
-  <SelectionGridItem
+<SelectionGrid
+  visible={$configStore.selectorView === "ACCESSORIES"}
+  ukStyle={true}
+>
+  <!-- <SelectionGridItem
     active={$configStore.proTectSideRail === "Included"}
     visible={false}
     title="ProTect Side Rail"
@@ -28,7 +31,7 @@
       src={`/images/empresa-uk/accessory/Protect Rails - preview.png`}
       alt={"ProTect Side Rail"}
     />
-  </SelectionGridItem>
+  </SelectionGridItem> -->
   <SelectionGridItem
     active={$configStore.fabricSideRails === "Included"}
     title="Fabric Side Rails"
@@ -51,7 +54,7 @@
       alt={"Fabric Side Rails"}
     />
   </SelectionGridItem>
-  <SelectionGridItem
+  <!-- <SelectionGridItem
     active={$configStore.foldingSideRails === "Included"}
     title="Folding Side Rails"
     description="Folding side rails  intended to help to create a safer environment for the bed user."
@@ -72,8 +75,8 @@
       src={`/images/empresa-uk/accessory/Folding Side Rails - preview.png`}
       alt={"Folding Side Rails"}
     />
-  </SelectionGridItem>
-  <SelectionGridItem
+  </SelectionGridItem> -->
+  <!-- <SelectionGridItem
     active={$configStore.foldingSideRailsWithBumper === "Included"}
     title="Folding Side Rails with Bumper"
     description="The folding side rail bumpers offer a soft padded surface to reduce the risk of injury."
@@ -85,7 +88,9 @@
         return {
           ...s,
           foldingSideRailsWithBumper:
-            s.foldingSideRailsWithBumper === "Included" ? "Not included" : "Included",
+            s.foldingSideRailsWithBumper === "Included"
+              ? "Not included"
+              : "Included",
         };
       });
     }}
@@ -94,7 +99,7 @@
       src={`/images/empresa-uk/accessory/Folding Side Rails with Bumper - preview.png`}
       alt={"Folding Side Rails with Bumper"}
     />
-  </SelectionGridItem>
+  </SelectionGridItem> -->
   <SelectionGridItem
     active={$configStore.assistBar === "Short"}
     title={"Bed Lever"}
@@ -105,8 +110,7 @@
       configStore.update((s) => {
         return {
           ...s,
-          assistBar:
-            s.assistBar === "Short" ? "None" : "Short",
+          assistBar: s.assistBar === "Short" ? "None" : "Short",
         };
       });
     }}
@@ -158,9 +162,9 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.widthAdjustmentKit === "Included"}
-    title="Width Adjustment Kit"
-    description="Increases the width of a standard bed by 150mm, making it suitable for individuals who need or prefer a wider bed."
+    active={$configStore.lengthExtension === "Included"}
+    title="Length Extension"
+    description="Allows the bed to be extended by 200 mm length to accommodate taller individuals."
     learnMoreUrl="/bed-accessories/width-adjustment-kit"
     ukStyle={true}
     visible={false}
@@ -168,21 +172,21 @@
       configStore.update((s) => {
         return {
           ...s,
-          widthAdjustmentKit:
-            s.widthAdjustmentKit === "Included" ? "Not included" : "Included",
+          lengthExtension:
+            s.lengthExtension === "Included" ? "Not included" : "Included",
         };
       });
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/Width Adjustment Kit - preview.png`}
-      alt={"Width Adjustment Kit"}
+      src={`/images/contesa-uk/accessory/Length extension.jpg`}
+      alt={"Length extension"}
     />
   </SelectionGridItem>
   <SelectionGridItem
-    active={$configStore.bedWallBumper === "Included"}
-    title="Bed Wall Bumper"
-    description="Enables users to position the head or footboard of the bed at a fixed distance from the wall."
+    active={$configStore.foldingBedLever === "Included"}
+    title="Folding Bed Lever"
+    description="The bed lever securely attaches to either side of the bed frame, providing support for bed mobility and transfers. It can be folded away when not in use."
     learnMoreUrl="/bed-accessories/wall-bumper"
     ukStyle={true}
     visible={false}
@@ -190,14 +194,14 @@
       configStore.update((s) => {
         return {
           ...s,
-          bedWallBumper:
-            s.bedWallBumper === "Included" ? "Not included" : "Included",
+          foldingBedLever:
+            s.foldingBedLever === "Included" ? "Not included" : "Included",
         };
       });
     }}
   >
     <SelectionGridItemImage
-      src={`/images/empresa-uk/accessory/Bed Wall Bumper - preview.png`}
+      src={`/images/contesa-uk/accessory/Folding assist bar.png`}
       alt={"Bed Wall Bumper"}
     />
   </SelectionGridItem>

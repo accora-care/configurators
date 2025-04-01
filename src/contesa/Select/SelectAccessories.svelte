@@ -56,7 +56,10 @@
     }}
     title="length extension"
   >
-    Length extension
+    <SelectionGridItemImage
+      src={`/images/contesa-uk/accessory/Length extension.jpg`}
+      alt={"Lifting pole"}
+    />
   </SelectionGridItem>
 </SelectionGrid>
 

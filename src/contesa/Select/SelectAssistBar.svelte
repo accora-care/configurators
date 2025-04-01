@@ -55,7 +55,10 @@
       });
     }}
   >
-    Folding assist bars
+    <SelectionGridItemImage
+      src={`/images/contesa-uk/accessory/Folding assist bar.png`}
+      alt={"Short assist bar"}
+    />
   </SelectionGridItem>
   <SelectionGridItem
     active={value === "None"}

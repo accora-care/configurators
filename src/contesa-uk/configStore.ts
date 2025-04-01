@@ -22,6 +22,8 @@ export type StoreValues = {
   foldingSideRailsWithBumper: "Included" | "Not included";
   widthAdjustmentKit: "Included" | "Not included";
   bedWallBumper: "Included" | "Not included";
+  lengthExtension: "Included" | "Not included";
+  foldingBedLever: "Included" | "Not included";
   selectorView: SELECTOR_VIEW | null;
 };
 
@@ -39,6 +41,8 @@ export const initVal: StoreValues = {
   foldingSideRailsWithBumper: "Not included",
   widthAdjustmentKit: "Not included",
   bedWallBumper: "Not included",
+  lengthExtension: "Not included",
+  foldingBedLever: "Not included",
   selectorView: null,
 };
 

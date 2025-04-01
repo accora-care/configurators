@@ -108,7 +108,7 @@
           title="Accessories"
           targetSelectView="ACCESSORIES"
           value={accessoriesDisplayValue}
-          length={9}
+          length={6}
         />
         <SelectAccessories />
         <div class="reset-form" on:click={() => resetOptions()}>
