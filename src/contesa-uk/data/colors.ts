@@ -10,7 +10,7 @@ export const colorsOrder = [
   "Standard Walnut",
   "Lincoln Walnut",
   "Polar Aland Pine",
-  "Bavarian Beech",
+  "Oiled Kendal Oak",
   "Grey Sacramento Oak",
   "Brown Tonsberg Oak",
   "Anthracite Fineline Metallic",
