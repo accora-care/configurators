@@ -3,7 +3,7 @@ export const colorsOrder = [
   "Locarno Cherry",
   "Natural Dijon Walnut",
   "Anthracite Fineline Metallic",
-  "Bavarian Beech",
+  "Oiled Kendal Oak",
   "Black Brown Thermo Oak",
   "Brown Tonsberg Oak",
   "Truffle Brown Davos Oak",
