@@ -112,7 +112,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/contesa-uk/accessory/Length extension.jpg`}
+      src={`/images/contesa-uk/accessory/Length extension UK.png`}
       alt={"Length extension"}
     />
   </SelectionGridItem>
@@ -134,7 +134,7 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/contesa-uk/accessory/Folding assist bar.png`}
+      src={`/images/contesa-uk/accessory/Folding assist bar UK.png`}
       alt={"Bed Wall Bumper"}
     />
   </SelectionGridItem>
