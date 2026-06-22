@@ -117,8 +117,9 @@
   </SelectionGridItem>
   <SelectionGridItem
     active={$configStore.lengthExtension === "Included"}
-    title="Length Extension"
+    title={`Length Extension${$configStore.sidePanel === "With Side Panels" ? ' - not available' : ''}`}
     description="Allows the bed to be extended by 200 mm length to accommodate taller individuals."
+    disabled={$configStore.sidePanel === "With Side Panels"}
     ukStyle={true}
     visible={false}
     onClick={() => {
