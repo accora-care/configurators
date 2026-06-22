@@ -49,7 +49,7 @@ const contesaUK = new ContesaUK({
   props: {
     config: {
       ...initConfig,
-      mainTitle: "Customize your Accora contesa",
+      mainTitle: "Customise Contesa",
       hubspotFormConfig: undefined,
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",
