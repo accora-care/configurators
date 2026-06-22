@@ -54,6 +54,27 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    active={$configStore.foldingBedLever === "Included"}
+    title="Folding Bed Lever"
+    description="The bed lever securely attaches to either side of the bed frame, providing support for bed mobility and transfers. It can be folded away when not in use."
+    ukStyle={true}
+    visible={false}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          foldingBedLever:
+            s.foldingBedLever === "Included" ? "Not included" : "Included",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/contesa-uk/accessory/Folding assist bar UK.png`}
+      alt={"Bed Wall Bumper"}
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
     active={$configStore.liftingPole === "Included"}
     title="Lifting Pole"
     description="The lifting pole can be used by individuals to help with bed mobility."
@@ -98,7 +119,6 @@
     active={$configStore.lengthExtension === "Included"}
     title="Length Extension"
     description="Allows the bed to be extended by 200 mm length to accommodate taller individuals."
-    learnMoreUrl="/bed-accessories/width-adjustment-kit"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -114,28 +134,6 @@
     <SelectionGridItemImage
       src={`/images/contesa-uk/accessory/Length extension UK.png`}
       alt={"Length extension"}
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
-    active={$configStore.foldingBedLever === "Included"}
-    title="Folding Bed Lever"
-    description="The bed lever securely attaches to either side of the bed frame, providing support for bed mobility and transfers. It can be folded away when not in use."
-    learnMoreUrl="/bed-accessories/wall-bumper"
-    ukStyle={true}
-    visible={false}
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          foldingBedLever:
-            s.foldingBedLever === "Included" ? "Not included" : "Included",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/contesa-uk/accessory/Folding assist bar UK.png`}
-      alt={"Bed Wall Bumper"}
     />
   </SelectionGridItem>
 </SelectionGrid>
