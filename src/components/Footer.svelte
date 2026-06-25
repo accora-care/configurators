@@ -7,6 +7,7 @@
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
   export let submitButtonDisclaimer = "";
+  export let submitButtonText = "Request a quote";
   export let ukStyle: boolean = false;
 </script>
 
@@ -24,7 +25,7 @@
           });
         }}
       >
-        Request a quote
+        {submitButtonText}
       </span>
     {:else}
       <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>

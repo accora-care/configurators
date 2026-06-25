@@ -9,6 +9,7 @@ import Floorbed1Svelte from "./floorbed1/Floorbed1.svelte";
 import Floorbed1UKSvelte from "./floorbed1-uk/Floorbed1.svelte";
 import ContesaConfigurator from "./contesa/Contesa.svelte";
 import ContesaUK from "./contesa-uk/Contesa.svelte";
+import ContesaFR from "./contesa-fr/Contesa.svelte";
 
 const initConfig: InitConfig = {
   mainTitle: "Customize your Accora Floor Bed",
@@ -50,6 +51,23 @@ const contesaUK = new ContesaUK({
     config: {
       ...initConfig,
       mainTitle: "Customize your Accora contesa",
+      hubspotFormConfig: undefined,
+      cognitoFormConfig: {
+        key: "2xcyxIw4NUSCrwloJjtcpg",
+        form: "31",
+        productFieldName: "ProductName",
+        optionsFieldName: "ConfiguratorOptions",
+      },
+    },
+  },
+});
+
+const contesaFR = new ContesaFR({
+  target: document.getElementById("acc-contesa-fr"),
+  props: {
+    config: {
+      ...initConfig,
+      mainTitle: "Personnaliser Contesa",
       hubspotFormConfig: undefined,
       cognitoFormConfig: {
         key: "2xcyxIw4NUSCrwloJjtcpg",
