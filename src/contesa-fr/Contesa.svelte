@@ -13,7 +13,7 @@
   import { sidePanelExceptionReason } from "./isSidePanelAllowed";
   import { colorLabels } from "./data/colorLabels";
   import type { InitConfig } from "../Config.types";
-  import Footer from "../components/Footer.svelte";
+  import Footer from "./Footer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
 
   export let config: InitConfig;

@@ -34,6 +34,28 @@
   </SelectionGridItem>
 
   <SelectionGridItem
+    active={$configStore.foldingSideRails === "Included"}
+    title="Barrière ¾ escamotables"
+    description="Folding side rails intended to help to create a safer environment for the bed user."
+    learnMoreUrl="/bed-accessories/folding-side-rails"
+    ukStyle={true}
+    visible={false}
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          foldingSideRails:
+            s.foldingSideRails === "Included" ? "Not included" : "Included",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/empresa-uk/accessory/Folding Side Rails - preview.png`}
+      alt={"Folding Side Rails"}
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
     active={$configStore.assistBar === "Short"}
     title={"Barre d'appui fixe"}
     description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
