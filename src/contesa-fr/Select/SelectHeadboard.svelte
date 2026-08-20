@@ -21,6 +21,7 @@
   {#each woodenVariantsByOrder as { title, isQuickship }}
     <SelectionGridItem
       {isQuickship}
+      quickshipText="Modèle en stock"
       title={headboardLabels[title] || title}
       active={$configStore.variant === title}
       onClick={() => {

@@ -34,7 +34,7 @@
     accessoriesDisplayValue =
       [
         $configStore.proTectSideRail === "Included"
-          ? "ProTect side rail"
+          ? "Barrière latérale ProTect"
           : null,
         $configStore.fabricSideRails === "Included"
           ? "Barrières latérales en tissu"
@@ -43,12 +43,12 @@
           ? "Barrière ¾ escamotables"
           : null,
         $configStore.foldingSideRailsWithBumper === "Included"
-          ? "Folding side rails with bumper"
+          ? "Barrière ¾ escamotables avec pare-chocs"
           : null,
         $configStore.widthAdjustmentKit === "Included"
-          ? "Width adjustment kit"
+          ? "Kit d'élargissement"
           : null,
-        $configStore.bedWallBumper === "Included" ? "Bed wall bumper" : null,
+        $configStore.bedWallBumper === "Included" ? "Butoir de lit" : null,
         $configStore.liftingPole === "Included" ? "Potence" : null,
         $configStore.safetyMat === "Included" ? "Prolongement de matelas" : null,
       ]
@@ -108,7 +108,7 @@
       </div>
     </div>
     <Footer
-      title="Empresa (FR)"
+      title="Contesa (FR)"
       {config}
       ukStyle={true}
       submitButtonText="Demander un devis"
@@ -131,7 +131,7 @@
             [
               $configStore.assistBar !== "None" ? "Barre d'appui fixe" : null,
               $configStore.proTectSideRail === "Included"
-                ? "ProTect side rail"
+                ? "Barrière latérale ProTect"
                 : null,
               $configStore.fabricSideRails === "Included"
                 ? "Barrières latérales en tissu"
@@ -140,13 +140,13 @@
                 ? "Barrière ¾ escamotables"
                 : null,
               $configStore.foldingSideRailsWithBumper === "Included"
-                ? "Folding side rails with bumper"
+                ? "Barrière ¾ escamotables avec pare-chocs"
                 : null,
               $configStore.widthAdjustmentKit === "Included"
-                ? "Width adjustment kit"
+                ? "Kit d'élargissement"
                 : null,
               $configStore.bedWallBumper === "Included"
-                ? "Bed wall bumper"
+                ? "Butoir de lit"
                 : null,
               $configStore.liftingPole === "Included" ? "Potence" : null,
               $configStore.safetyMat === "Included" ? "Prolongement de matelas" : null,

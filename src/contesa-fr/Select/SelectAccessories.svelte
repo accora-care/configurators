@@ -13,8 +13,6 @@
   <SelectionGridItem
     active={$configStore.fabricSideRails === "Included"}
     title="Barrières latérales en tissu"
-    description="Full-length mesh side rails with integrated padding are designed to create a safer environment for the bed user."
-    learnMoreUrl="/bed-accessories/fabric-side-rails"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -36,8 +34,6 @@
   <SelectionGridItem
     active={$configStore.foldingSideRails === "Included"}
     title="Barrière ¾ escamotables"
-    description="Folding side rails intended to help to create a safer environment for the bed user."
-    learnMoreUrl="/bed-accessories/folding-side-rails"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -58,8 +54,6 @@
   <SelectionGridItem
     active={$configStore.assistBar === "Short"}
     title={"Barre d'appui fixe"}
-    description="The bed lever securely fixes to either side of the bed frame providing support for bed mobility and transfers."
-    learnMoreUrl="/bed-accessories/bed-lever"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -78,8 +72,6 @@
   <SelectionGridItem
     active={$configStore.liftingPole === "Included"}
     title="Potence"
-    description="The lifting pole can be used by individuals to help with bed mobility."
-    learnMoreUrl="/bed-accessories/lifting-pole"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -99,8 +91,6 @@
   <SelectionGridItem
     active={$configStore.safetyMat === "Included"}
     title="Prolongement de matelas"
-    description="Even-plane safety mat providing an extended surface for individuals who are prone to falling out of bed."
-    learnMoreUrl="/bed-accessories/high-safety-mat"
     ukStyle={true}
     onClick={() => {
       configStore.update((s) => {
@@ -119,8 +109,6 @@
   <SelectionGridItem
     active={$configStore.lengthExtension === "Included"}
     title="Extension de longueur"
-    description="Allows the bed to be extended by 200 mm length to accommodate taller individuals."
-    learnMoreUrl="/bed-accessories/width-adjustment-kit"
     ukStyle={true}
     visible={false}
     onClick={() => {
@@ -141,8 +129,6 @@
   <SelectionGridItem
     active={$configStore.foldingBedLever === "Included"}
     title="Barre d'appui amovible"
-    description="The bed lever securely attaches to either side of the bed frame, providing support for bed mobility and transfers. It can be folded away when not in use."
-    learnMoreUrl="/bed-accessories/wall-bumper"
     ukStyle={true}
     visible={false}
     onClick={() => {
