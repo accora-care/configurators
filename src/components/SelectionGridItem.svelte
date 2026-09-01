@@ -10,6 +10,7 @@
   export let disabled: boolean = false;
   export let notAllowedMessage: string = "";
   export let visible: boolean = true;
+  export let notVisibleText: string = "Not Visible";
   export let standard: boolean = false;
   export let ukStyle: boolean = false;
   export let pumpOptions: boolean = false;
@@ -48,7 +49,7 @@
             <div class="acc-grid-item-title">{title}</div>
             {#if !visible}
               <div class="acc-grid-item-not-visible">
-                <span class="acc-grid-item-nvtext">Not Visible</span>
+                <span class="acc-grid-item-nvtext">{notVisibleText}</span>
               </div>
             {/if}
             {#if standard}
@@ -99,7 +100,7 @@
     </div>
     {#if !visible}
       <div class="acc-grid-item-not-visible">
-        <span class="acc-grid-item-nvtext">Not Visible</span>
+        <span class="acc-grid-item-nvtext">{notVisibleText}</span>
       </div>
     {/if}
     {#if standard}

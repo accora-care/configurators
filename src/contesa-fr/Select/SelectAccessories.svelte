@@ -15,6 +15,7 @@
     title="Barrières latérales en tissu"
     ukStyle={true}
     visible={false}
+    notVisibleText="Non visible"
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -27,7 +28,7 @@
   >
     <SelectionGridItemImage
       src={`/images/empresa-uk/accessory/Fabric Side Rails - preview.png`}
-      alt={"Fabric Side Rails"}
+      alt={"Barrières latérales en tissu"}
     />
   </SelectionGridItem>
 
@@ -36,6 +37,7 @@
     title="Barrière ¾ escamotables"
     ukStyle={true}
     visible={false}
+    notVisibleText="Non visible"
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -48,7 +50,7 @@
   >
     <SelectionGridItemImage
       src={`/images/empresa-uk/accessory/Folding Side Rails - preview.png`}
-      alt={"Folding Side Rails"}
+      alt={"Barrière ¾ escamotables"}
     />
   </SelectionGridItem>
   <SelectionGridItem
@@ -66,7 +68,7 @@
   >
     <SelectionGridItemImage
       src={`/images/empresa-uk/accessory/${"Short"} - preview.png`}
-      alt={"Bed Lever"}
+      alt={"Barre d'appui fixe"}
     />
   </SelectionGridItem>
   <SelectionGridItem
@@ -85,7 +87,7 @@
   >
     <SelectionGridItemImage
       src={`/images/empresa-uk/accessory/Lifting Pole - preview.png`}
-      alt={"Lifting Pole"}
+      alt={"Potence"}
     />
   </SelectionGridItem>
   <SelectionGridItem
@@ -103,7 +105,7 @@
   >
     <SelectionGridItemImage
       src={`/images/empresa-uk/accessory/Safety Mat - preview.png`}
-      alt={"High Safety Mat"}
+      alt={"Prolongement de matelas"}
     />
   </SelectionGridItem>
   <SelectionGridItem
@@ -111,6 +113,7 @@
     title="Extension de longueur"
     ukStyle={true}
     visible={false}
+    notVisibleText="Non visible"
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -123,7 +126,7 @@
   >
     <SelectionGridItemImage
       src={`/images/contesa-fr/accessory/Length extension.jpg`}
-      alt={"Length extension"}
+      alt={"Extension de longueur"}
     />
   </SelectionGridItem>
   <SelectionGridItem
@@ -131,6 +134,7 @@
     title="Barre d'appui amovible"
     ukStyle={true}
     visible={false}
+    notVisibleText="Non visible"
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -143,7 +147,7 @@
   >
     <SelectionGridItemImage
       src={`/images/contesa-fr/accessory/Folding assist bar.png`}
-      alt={"Bed Wall Bumper"}
+      alt={"Barre d'appui amovible"}
     />
   </SelectionGridItem>
 </SelectionGrid>

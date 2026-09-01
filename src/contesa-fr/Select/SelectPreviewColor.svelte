@@ -19,6 +19,7 @@
   {#each sortedColors as colorVariant}
     <SelectionGridItem
       isQuickship={colorVariant.options.quickship}
+      quickshipText="Modèle en stock"
       title={colorLabels[colorVariant.title] || colorVariant.title}
       active={$configStore.color === colorVariant.title}
       onClick={() => {

@@ -12,6 +12,7 @@
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import { sidePanelExceptionReason } from "./isSidePanelAllowed";
   import { colorLabels } from "./data/colorLabels";
+  import { headboardLabels } from "./data/headboardLabels";
   import type { InitConfig } from "../Config.types";
   import Footer from "./Footer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
@@ -115,11 +116,11 @@
       descriptionFormField={[
         {
           label: "Tête et pied de lit",
-          value: $configStore.variant,
+          value: headboardLabels[$configStore.variant] || $configStore.variant,
         },
         {
           label: "Finitions en bois",
-          value: $configStore.color,
+          value: colorLabels[$configStore.color] || $configStore.color,
         },
         {
           label: "Longs pans",
