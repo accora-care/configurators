@@ -72,6 +72,7 @@
 
   <div id="acc-contesa-uk" class="acc-content">
     <div class="acc-form">
+      <FormTitle title={config.mainTitle} />
       <div class="acc-form-content">
         <CustomizationBlock
           title="Headboard & Footboard"
@@ -117,7 +118,7 @@
       </div>
     </div>
     <Footer
-      title="Empresa (UK)"
+      title="Contesa (UK)"
       {config}
       ukStyle={true}
       descriptionFormField={[
