@@ -1,0 +1,18 @@
+export const colorLabels: Record<string, string> = {
+  "Vicenza Oak": "Chêne Vicenza",
+  "Natural Lancaster Oak": "Chêne Lancaster naturel",
+  "Lissa Oak": "Chêne Lissa",
+  "Tobacco Gladstone Oak": "Chêne Gladstone tabac",
+  "Black Brown Thermo Oak": "Chêne Thermo noir/marron",
+  "Beige Grey Lorenzo Oak": "Chêne gris beige Lorenzo",
+  "Truffle Brown Davos Oak": "Chêne marron truffe Davos",
+  "Natural Dijon Walnut": "Noyer de Bourgogne naturel",
+  "Standard Walnut": "Noyer standard",
+  "Lincoln Walnut": "Noyer Lincoln",
+  "Polar Aland Pine": "Pin Aland polaire",
+  "Oiled Kendal Oak": "Chêne vernis Kendal",
+  "Grey Sacramento Oak": "Chêne gris de Sacramento",
+  "Brown Tonsberg Oak": "Chêne brun de Tonsberg",
+  "Anthracite Fineline Metallic": "Anthracite métallique Fineline",
+  "Sand Orleans Oak": "Chêne d'Orléans sable",
+};
