@@ -66,7 +66,7 @@
       {length}
       option{#if 1 !== length}s{/if}
       <span class="acc-select-container__sticker__available"
-        >&nbsp;available</span
+        >&nbsp;disponible{#if 1 !== length}s{/if}</span
       >
     </div>
     <Chevron class="acc-chevron" />
