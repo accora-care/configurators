@@ -287,11 +287,14 @@
     }
     fieldset {
       display: flex;
-      flex-wrap: wrap;
+      /*flex-wrap: wrap;*/
       gap: 1em;
       max-width: none;
       margin-bottom: 1em;
       flex-direction: row;
+      @media screen and (max-width: 580px) {
+        flex-direction: column;
+      }
       & > * {
         flex-grow: 1;
       }
@@ -309,7 +312,7 @@
     .hs-form-field,
     fieldset.form-columns-1 .hs-form-field,
     fieldset.form-columns-2 .hs-form-field {
-      width: 1px !important;
+      width: 100% !important;
       min-width: 200px;
       flex-grow: 1;
     }
