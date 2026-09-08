@@ -1,13 +1,13 @@
 <script lang="ts">
   import { settingsStore } from "../common/settings";
   import type { InitConfig, SubmitFormDescription } from "../Config.types";
-  import BookingForm from "../components/booking-form/BookingForm.svelte";
+  import BookingForm from "./BookingForm.svelte";
 
   export let config: InitConfig;
   export let descriptionFormField: SubmitFormDescription;
   export let title: string;
   export let submitButtonDisclaimer = "";
-  export let submitButtonText = "Request a quote";
+  export let submitButtonText = "Demander un devis";
   export let ukStyle: boolean = false;
 </script>
 
@@ -28,7 +28,7 @@
         {submitButtonText}
       </span>
     {:else}
-      <a class="acc-submit-button" href={config.bookADemoHref}>Book a demo</a>
+      <a class="acc-submit-button" href={config.bookADemoHref}>Réserver une démonstration</a>
     {/if}
     {#if submitButtonDisclaimer}
       <div class="acc-submit-button-disclaimer">{submitButtonDisclaimer}</div>
