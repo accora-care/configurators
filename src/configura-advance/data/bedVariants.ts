@@ -3,7 +3,7 @@ export const bedVariants: {
 } = {
   ARC: [
     { title: "Anthracite Fineline Metallic", options: {} },
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
     { title: "Brown Tossini Elm", options: {} },
@@ -24,7 +24,7 @@ export const bedVariants: {
     { title: "Vicenza Oak", options: {} },
   ],
   Atelier: [
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Anthracite Fineline Metallic", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
@@ -42,7 +42,7 @@ export const bedVariants: {
   ],
   Bento: [
     { title: "Anthracite Fineline Metallic", options: {} },
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
     { title: "Brown Tossini Elm", options: {} },
@@ -58,7 +58,7 @@ export const bedVariants: {
     { title: "Vicenza Oak", options: {} },
   ],
   Chateau: [
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Anthracite Fineline Metallic", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
@@ -76,7 +76,7 @@ export const bedVariants: {
   ],
   Classic: [
     { title: "Anthracite Fineline Metallic", options: {} },
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
     { title: "Brown Tossini Elm", options: {} },
@@ -93,7 +93,7 @@ export const bedVariants: {
   ],
   Skandi: [
     { title: "Anthracite Fineline Metallic", options: {} },
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
     { title: "Brown Tossini Elm", options: {} },
@@ -115,7 +115,7 @@ export const bedVariants: {
   ],
   Vogue: [
     { title: "Anthracite Fineline Metallic", options: {} },
-    { title: "Bavarian Beech", options: {} },
+    { title: "Oiled Kendal Oak", options: {} },
     { title: "Black Brown Thermo Oak", options: {} },
     { title: "Brown Fineline Metallic", options: {} },
     { title: "Brown Tossini Elm", options: {} },

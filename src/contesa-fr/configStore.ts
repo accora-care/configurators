@@ -1,17 +1,11 @@
 // store.js
 import { writable } from "svelte/store";
 
-export type SELECTOR_VIEW =
-  | "COLOR"
-  | "FABRIC"
-  | "ACCESSORIES"
-  | "SIDE_PANEL"
-  | "HEADBOARD";
+export type SELECTOR_VIEW = "ACCESSORIES" | "SIDE_PANEL" | "HEADBOARD";
 
 export type StoreValues = {
   variant: string;
   color: string;
-  fabric: string;
   sidePanel: "With Side Panels" | "No Side Panels";
   liftingPole: "Included" | "Not included";
   safetyMat: "Included" | "Not included";
@@ -30,7 +24,6 @@ export type StoreValues = {
 export const initVal: StoreValues = {
   variant: "Arc",
   color: "Vicenza Oak",
-  fabric: "Silver",
   sidePanel: "No Side Panels",
   liftingPole: "Not included",
   safetyMat: "Not included",

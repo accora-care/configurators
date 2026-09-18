@@ -8,15 +8,11 @@
   $: disabled = !length;
 
   import IconHeadboard from "./assets/icon-headboard.svg";
-  import IconColor from "./assets/icon-color.svg";
-  import IconFabric from "./assets/icon-fabric.svg";
   import IconSidepanels from "./assets/icon-sidepanels.svg";
   import IconAccessory from "./assets/icon-accessory.svg";
   import Chevron from "./assets/chevron.svg";
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconHeadboard } = {
-    COLOR: IconColor,
-    FABRIC: IconFabric,
     ACCESSORIES: IconAccessory,
     SIDE_PANEL: IconSidepanels,
     HEADBOARD: IconHeadboard,
@@ -26,14 +22,6 @@
   const onConfigStoreUpdate = () => {
     if (!disabled) {
       configStore.update((s) => {
-        if (s.selectorView === "COLOR" || s.selectorView === "FABRIC") {
-          // color/fabric was too long, collapsed color/fabric will not move the scroll, we do it manually
-          try {
-            document.getElementById("acc-empresa-uk").scrollIntoView({
-              behavior: "smooth",
-            });
-          } catch {}
-        }
         return {
           ...s,
           selectorView:
