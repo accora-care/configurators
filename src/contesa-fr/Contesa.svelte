@@ -1,7 +1,6 @@
 <script lang="ts">
   import { bedVariants } from "./data/bedVariants";
   import { configStore, initVal } from "./configStore";
-  import SelectPreviewColor from "./Select/SelectPreviewColor.svelte";
   import CustomizationBlock from "./CustomizationBlock.svelte";
   import Preview from "./Preview.svelte";
   // import SelectAssistBar from "./Select/SelectAssistBar.svelte";
@@ -11,7 +10,6 @@
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import { sidePanelExceptionReason } from "./isSidePanelAllowed";
-  import { colorLabels } from "./data/colorLabels";
   import { headboardLabels } from "./data/headboardLabels";
   import type { InitConfig } from "../Config.types";
   import Footer from "./Footer.svelte";
@@ -21,7 +19,6 @@
 
   let valueSidePanels = "";
   let accessoriesDisplayValue = "none";
-  let availableColors = [];
 
   const sidePanelDisplayValues: Record<string, string> = {
     "No Side Panels": "Sans longs pans",
@@ -31,7 +28,6 @@
   configStore.subscribe((state) => {
     const raw = sidePanelExceptionReason(state) || state.sidePanel;
     valueSidePanels = sidePanelDisplayValues[raw] || raw;
-    availableColors = bedVariants.wooden[state.variant] || [];
     accessoriesDisplayValue =
       [
         $configStore.proTectSideRail === "Included"
@@ -82,13 +78,6 @@
         />
         <SelectHeadboard />
         <CustomizationBlock
-          title="Finitions en bois"
-          targetSelectView="COLOR"
-          value={colorLabels[$configStore.color] || $configStore.color}
-          length={availableColors.length}
-        />
-        <SelectPreviewColor colors={availableColors} />
-        <CustomizationBlock
           title="Longs pans"
           targetSelectView="SIDE_PANEL"
           value={valueSidePanels}
@@ -117,10 +106,6 @@
         {
           label: "Tête et pied de lit",
           value: headboardLabels[$configStore.variant] || $configStore.variant,
-        },
-        {
-          label: "Finitions en bois",
-          value: colorLabels[$configStore.color] || $configStore.color,
         },
         {
           label: "Longs pans",
