@@ -2,7 +2,7 @@ import type { HubspotFormConfig, InitConfig } from "../Config.types";
 import App from "./Contesa.svelte";
 
 const initConfig: InitConfig = {
-  mainTitle: "Customize your Accora Contesa",
+  mainTitle: "Customise Contesa",
   bookADemoHref: "https://us.accora.care/book-a-demo",
 };
 
