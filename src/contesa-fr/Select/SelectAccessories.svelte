@@ -72,6 +72,27 @@
     />
   </SelectionGridItem>
   <SelectionGridItem
+    active={$configStore.foldingBedLever === "Included"}
+    title="Barre d'appui amovible"
+    ukStyle={true}
+    visible={false}
+    notVisibleText="Non visible"
+    onClick={() => {
+      configStore.update((s) => {
+        return {
+          ...s,
+          foldingBedLever:
+            s.foldingBedLever === "Included" ? "Not included" : "Included",
+        };
+      });
+    }}
+  >
+    <SelectionGridItemImage
+      src={`/images/contesa-fr/accessory/Folding assist bar.png`}
+      alt={"Barre d'appui amovible"}
+    />
+  </SelectionGridItem>
+  <SelectionGridItem
     active={$configStore.liftingPole === "Included"}
     title="Potence"
     ukStyle={true}
@@ -127,27 +148,6 @@
     <SelectionGridItemImage
       src={`/images/contesa-fr/accessory/Length extension.jpg`}
       alt={"Extension de longueur"}
-    />
-  </SelectionGridItem>
-  <SelectionGridItem
-    active={$configStore.foldingBedLever === "Included"}
-    title="Barre d'appui amovible"
-    ukStyle={true}
-    visible={false}
-    notVisibleText="Non visible"
-    onClick={() => {
-      configStore.update((s) => {
-        return {
-          ...s,
-          foldingBedLever:
-            s.foldingBedLever === "Included" ? "Not included" : "Included",
-        };
-      });
-    }}
-  >
-    <SelectionGridItemImage
-      src={`/images/contesa-fr/accessory/Folding assist bar.png`}
-      alt={"Barre d'appui amovible"}
     />
   </SelectionGridItem>
 </SelectionGrid>
