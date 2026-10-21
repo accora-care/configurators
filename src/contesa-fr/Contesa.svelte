@@ -10,7 +10,6 @@
   import ConfiguratorContainer from "../components/ConfiguratorContainer.svelte";
   import PreviewContainer from "../components/PreviewContainer.svelte";
   import { sidePanelExceptionReason } from "./isSidePanelAllowed";
-  import { headboardLabels } from "./data/headboardLabels";
   import type { InitConfig } from "../Config.types";
   import Footer from "./Footer.svelte";
   import FormTitle from "../components/FormTitle.svelte";
@@ -105,7 +104,7 @@
       descriptionFormField={[
         {
           label: "Tête et pied de lit",
-          value: headboardLabels[$configStore.variant] || $configStore.variant,
+          value: $configStore.variant,
         },
         {
           label: "Longs pans",
@@ -116,6 +115,9 @@
           value:
             [
               $configStore.assistBar !== "None" ? "Barre d'appui fixe" : null,
+              $configStore.foldingBedLever === "Included"
+                ? "Barre d'appui amovible"
+                : null,
               $configStore.proTectSideRail === "Included"
                 ? "Barrière latérale ProTect"
                 : null,

@@ -4,7 +4,6 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
   import { configStore } from "../configStore";
   import { bedVariants } from "../data/bedVariants";
-  import { headboardLabels } from "../data/headboardLabels";
 
   $: woodenVariantsByOrder = Object.entries(bedVariants.wooden)
     .map(([bedVariant, colors]) => {
@@ -22,7 +21,7 @@
     <SelectionGridItem
       {isQuickship}
       quickshipText="Modèle en stock"
-      title={headboardLabels[title] || title}
+      {title}
       active={$configStore.variant === title}
       onClick={() => {
         const woodenFinishesForVariant = woodenVariantsByOrder.filter(variant => title === variant.title)[0].colors;
