@@ -8,11 +8,13 @@
   $: disabled = !length;
 
   import IconHeadboard from "./assets/icon-headboard.svg";
+  import IconColor from "./assets/icon-color.svg";
   import IconSidepanels from "./assets/icon-sidepanels.svg";
   import IconAccessory from "./assets/icon-accessory.svg";
   import Chevron from "./assets/chevron.svg";
 
   export const icons: { [key in SELECTOR_VIEW]: typeof IconHeadboard } = {
+    COLOR: IconColor,
     ACCESSORIES: IconAccessory,
     SIDE_PANEL: IconSidepanels,
     HEADBOARD: IconHeadboard,
@@ -22,6 +24,14 @@
   const onConfigStoreUpdate = () => {
     if (!disabled) {
       configStore.update((s) => {
+        if (s.selectorView === "COLOR") {
+          // color was too long, collapsed color will not move the scroll, we do it manually
+          try {
+            document.getElementById("acc-contesa-fr").scrollIntoView({
+              behavior: "smooth",
+            });
+          } catch {}
+        }
         return {
           ...s,
           selectorView:

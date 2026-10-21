@@ -1,7 +1,7 @@
 // store.js
 import { writable } from "svelte/store";
 
-export type SELECTOR_VIEW = "ACCESSORIES" | "SIDE_PANEL" | "HEADBOARD";
+export type SELECTOR_VIEW = "COLOR" | "ACCESSORIES" | "SIDE_PANEL" | "HEADBOARD";
 
 export type StoreValues = {
   variant: string;
