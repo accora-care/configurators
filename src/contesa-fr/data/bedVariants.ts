@@ -1,0 +1,57 @@
+export interface BedVariants {
+  wooden: Style;
+}
+
+export interface Style {
+  [k: string]: Variant[];
+}
+
+export interface Variant {
+  title: string;
+  options: Options;
+}
+
+export interface Options {
+  quickship?: boolean;
+}
+
+export const bedVariants: BedVariants = {
+  wooden: {
+    Arc: [
+      { title: "Vicenza Oak", options: { quickship: true } },
+      { title: "Natural Lancaster Oak", options: {} },
+      { title: "Lissa Oak", options: {} },
+      { title: "Tobacco Gladstone Oak", options: {} },
+      { title: "Black Brown Thermo Oak", options: {} },
+      { title: "Beige Grey Lorenzo Oak", options: {} },
+      { title: "Truffle Brown Davos Oak", options: {} },
+      { title: "Natural Dijon Walnut", options: {} },
+      { title: "Standard Walnut", options: {} },
+      { title: "Lincoln Walnut", options: {} },
+      { title: "Polar Aland Pine", options: {} },
+      { title: "Oiled Kendal Oak", options: {} },
+      { title: "Grey Sacramento Oak", options: {} },
+      { title: "Brown Tonsberg Oak", options: {} },
+      { title: "Anthracite Fineline Metallic", options: {} },
+      { title: "Sand Orleans Oak", options: {} },
+    ],
+    Skandi: [
+      { title: "Vicenza Oak", options: {} },
+      { title: "Natural Lancaster Oak", options: {} },
+      { title: "Lissa Oak", options: {} },
+      { title: "Tobacco Gladstone Oak", options: {} },
+      { title: "Black Brown Thermo Oak", options: {} },
+      { title: "Beige Grey Lorenzo Oak", options: {} },
+      { title: "Truffle Brown Davos Oak", options: {} },
+      { title: "Natural Dijon Walnut", options: {} },
+      { title: "Standard Walnut", options: {} },
+      { title: "Lincoln Walnut", options: {} },
+      { title: "Polar Aland Pine", options: {} },
+      { title: "Oiled Kendal Oak", options: {} },
+      { title: "Grey Sacramento Oak", options: {} },
+      { title: "Brown Tonsberg Oak", options: {} },
+      { title: "Anthracite Fineline Metallic", options: {} },
+      { title: "Sand Orleans Oak", options: {} },
+    ],
+  },
+};
