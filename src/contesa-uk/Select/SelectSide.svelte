@@ -38,6 +38,7 @@
         return {
           ...s,
           sidePanel: "With Side Panels",
+          lengthExtension: "Not included",
         };
       });
     }}
