@@ -4,10 +4,13 @@
   export let title: string = "";
   export let description: string = "";
   export let learnMoreUrl: string = "";
+  export let learnMoreText: string = "Learn more";
   export let isQuickship: boolean = false;
+  export let quickshipText: string = "Quickship";
   export let disabled: boolean = false;
   export let notAllowedMessage: string = "";
   export let visible: boolean = true;
+  export let notVisibleText: string = "Not Visible";
   export let standard: boolean = false;
   export let ukStyle: boolean = false;
   export let pumpOptions: boolean = false;
@@ -46,7 +49,7 @@
             <div class="acc-grid-item-title">{title}</div>
             {#if !visible}
               <div class="acc-grid-item-not-visible">
-                <span class="acc-grid-item-nvtext">Not Visible</span>
+                <span class="acc-grid-item-nvtext">{notVisibleText}</span>
               </div>
             {/if}
             {#if standard}
@@ -61,11 +64,11 @@
         <p class="acc-grid-item-description">{description}</p>
       {/if}
       {#if learnMoreUrl}
-        <a href={learnMoreUrl} class="acc-grid-item-link">Learn more</a>
+        <a href={learnMoreUrl} class="acc-grid-item-link">{learnMoreText}</a>
       {/if}
       {#if isQuickship}
         <div class="acc-grid-item-quickship">
-          <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+          <IconQuickship /> <span class="acc-grid-item-qctext">{quickshipText}</span>
         </div>
       {/if}
     </div>
@@ -97,7 +100,7 @@
     </div>
     {#if !visible}
       <div class="acc-grid-item-not-visible">
-        <span class="acc-grid-item-nvtext">Not Visible</span>
+        <span class="acc-grid-item-nvtext">{notVisibleText}</span>
       </div>
     {/if}
     {#if standard}
@@ -107,7 +110,7 @@
     {/if}
     {#if isQuickship}
       <div class="acc-grid-item-quickship">
-        <IconQuickship /> <span class="acc-grid-item-qctext">Quickship</span>
+        <IconQuickship /> <span class="acc-grid-item-qctext">{quickshipText}</span>
       </div>
     {/if}
   {/if}

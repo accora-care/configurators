@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<rect x="232.9" y="306.7" width="250.1" height="26.5"/>
+<rect x="117.1" y="168" transform="matrix(0.7723 -0.6353 0.6353 0.7723 -124.9901 141.9825)" width="37" height="154.7"/>
+<path d="M198.9,293.3c0,0,8.3,13.4,34,13.4s20.5,31.1,20.5,31.1l-42.9,3.9c0,0-18.5,1.1-40.1-25S198.9,293.3,198.9,293.3z"/>
+<g>
+	<rect x="9.3" y="200.6" width="13.5" height="155.4"/>
+	<rect x="487.2" y="200.6" width="13.5" height="155.4"/>
+	<rect x="27.1" y="325.8" width="455.9" height="30.3"/>
+</g>
+</svg>
