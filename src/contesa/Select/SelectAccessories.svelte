@@ -64,7 +64,7 @@
     title="Length extension"
   >
     <SelectionGridItemImage
-      src={`/images/contesa-uk/accessory/Length extension UK.png`}
+      src={`/images/contesa-uk/accessory/Length extension.jpg`}
       alt={"Length extension"}
     />
   </SelectionGridItem>
