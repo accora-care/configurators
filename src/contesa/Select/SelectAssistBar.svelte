@@ -57,8 +57,8 @@
     }}
   >
     <SelectionGridItemImage
-      src={`/images/contesa-uk/accessory/Folding assist bar.png`}
-      alt={"Short assist bar"}
+      src={`/images/contesa-uk/accessory/Folding assist bar UK.png`}
+      alt={"Folding assist bar"}
     />
   </SelectionGridItem>
   <SelectionGridItem
