@@ -4,6 +4,10 @@
   import SelectionGridItemImage from "../../components/SelectionGridItemImage.svelte";
 
   import { configStore } from "../configStore";
+
+  $: if ($configStore.sidePanel === "Included" && $configStore.lengthExtension === "Included") {
+    configStore.update((s) => ({ ...s, lengthExtension: "Not included" }));
+  }
 </script>
 
 <SelectionGrid visible={$configStore.selectorView === "ACCESSORIES"}>
@@ -44,8 +48,9 @@
   </SelectionGridItem>
 
   <SelectionGridItem
-    visible={false}
     active={$configStore.lengthExtension === "Included"}
+    disabled={$configStore.sidePanel === "Included"}
+    notAllowedMessage={$configStore.sidePanel === "Included" ? "Not available with side panels" : ""}
     onClick={() => {
       configStore.update((s) => {
         return {
@@ -55,7 +60,7 @@
         };
       });
     }}
-    title="length extension"
+    title="Length extension"
   >
     <SelectionGridItemImage
       src={`/images/contesa-uk/accessory/Length extension.jpg`}
