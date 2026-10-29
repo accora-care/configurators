@@ -48,6 +48,7 @@
   </SelectionGridItem>
 
   <SelectionGridItem
+    visible={false}
     active={$configStore.lengthExtension === "Included"}
     disabled={$configStore.sidePanel === "Included"}
     notAllowedMessage={$configStore.sidePanel === "Included" ? "Not available with side panels" : ""}
@@ -64,7 +65,7 @@
   >
     <SelectionGridItemImage
       src={`/images/contesa-uk/accessory/Length extension.jpg`}
-      alt={"Lifting pole"}
+      alt={"Length extension"}
     />
   </SelectionGridItem>
 </SelectionGrid>
