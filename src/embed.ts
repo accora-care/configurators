@@ -90,7 +90,7 @@ export const ContesaConfigurator = (
     props: {
       config: {
         ...config,
-        mainTitle: "Customize your Accora Contesa",
+        mainTitle: "Customise Contesa",
         bookADemoHref: "https://us.accora.care/book-a-demo",
         hubspotFormConfig,
       },
